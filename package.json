@@ -1,0 +1,26 @@
+{
+  "name": "pokemon-deck-builder",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync",
+    "test": "playwright test",
+    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.20.0",
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "svelte": "^3.44.0"
+  },
+  "type": "module"
+}
