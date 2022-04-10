@@ -3,6 +3,9 @@
 	import { cubicInOut } from 'svelte/easing';
 	import { activeCard } from '$lib/stores/activeCard.js';
 
+	import Glare from "$lib/components/card-glare.svelte";
+	import Shine from "$lib/components/card-shine.svelte";
+
 	export let cardBack = '/global/tcg-card-back-2x.jpg';
 	export let img = cardBack;
 	export let type = 'normal';
@@ -18,7 +21,7 @@
 	const springR = { stiffness: 0.066, damping: 0.25 };
 	const springD = { stiffness: 0.033, damping: 0.35 };
 	let springRotate = spring({ x: 0, y: 0 }, springR);
-	let springGlare = spring({ x: 50, y: 50 }, springR);
+	let springGlare = spring({ x: 50, y: 50, o: 0 }, springR);
 	let springBackground = spring({ x: 50, y: 50 }, springR);
 	let springRotateDelta = spring({ x: 0, y: 0 }, springD);
 	let springTranslate = spring({ x: 0, y: 0 }, springD);
@@ -63,7 +66,8 @@
 		springGlare.damping = springR.damping;
 		springGlare.set({
 			x: percent.x,
-			y: percent.y
+			y: percent.y,
+			o: 1
 		});
 	};
 
@@ -75,7 +79,7 @@
 			springRotate.set({ x: 0, y: 0 });
 			springGlare.stiffness = 0.01;
 			springGlare.damping = 0.06;
-			springGlare.set({ x: 50, y: 50 });
+			springGlare.set({ x: 50, y: 50, o: 0 });
 			springBackground.set({ x: 50, y: 50 });
 		}, delay);
 	};
@@ -147,6 +151,7 @@
 		--tx: ${$springTranslate.x}px;
 		--ty: ${$springTranslate.y}px;
 		--s: ${$springScale};
+		--o: ${$springGlare.o};
 		--rx: ${$springRotate.x + $springRotateDelta.x}deg;
 		--ry: ${$springRotate.y + $springRotateDelta.y}deg;
 		--pos: ${$springBackground.x}% ${$springBackground.y}%; 
@@ -157,7 +162,7 @@
 
 <svelte:window on:scroll="{reposition}" />
 
-<div class="card" class:active class:interacting style={styles} bind:this={thisCard}>
+<div class="card {type}" class:active class:interacting style={styles} bind:this={thisCard}>
 	<div class="card__translater">
 		<div
 			class="card__rotator"
@@ -171,8 +176,8 @@
 				<img class="card__back" src="{base}{cardBack}" alt="" />
 				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" />
 			</div>
-			<!-- <div class="card__shine {type}" class:stage={stage > 0} /> -->
-			<div class="card__light {type}" />
+			<Shine {type} {stage} />
+			<Glare {type} {stage} />
 		</div>
 	</div>
 </div>
@@ -182,10 +187,14 @@
 		--mx: 50%;
 		--my: 50%;
 		--s: 1;
+		--o: 0;
 		--tx: 0px;
 		--ty: 0px;
 		--rx: 0deg;
 		--ry: 0deg;
+		--pos: 50% 50%; 
+		--posx: 50%; 
+		--posy: 50%;
 	}
 
 	.card {
@@ -217,7 +226,7 @@
 		transform-origin: center;
 	}
 
-	.card__rotator * {
+	.card__rotator :global(*) {
 		width: 100%;
 		grid-area: 1/1;
 		border-radius: var(--radius);
@@ -237,30 +246,8 @@
 	}
 
 	.card__images {
+		/* aspect-ratio: 200/307; */
 		transform: translateZ(-1px);
-	}
-
-	.card__shine {
-		transform: translateZ(1px);
-		z-index: 3;
-		/* background: rgb(255, 255, 0); */
-	}
-	.card__light {
-		transform: translateZ(1.2px);
-		z-index: 4;
-		background: radial-gradient(
-			farthest-corner circle at var(--mx) var(--my),
-			rgba(255, 255, 255, 0.8) 10%,
-			rgba(255, 255, 255, 0.65) 20%,
-			rgba(0, 0, 0, 0.5) 90%
-		);
-		mix-blend-mode: overlay;
-		opacity: 0;
-		transition: opacity 1s cubic-bezier(0.77, 0, 0.18, 1);
-	}
-
-	.card.interacting .card__light {
-		opacity: 1;
-		transition: opacity 0.2s cubic-bezier(0.77, 0, 0.18, 1);
+		background: rgb(168, 168, 168);
 	}
 </style>

@@ -19,7 +19,7 @@
 	<Card img="/expansions/brilliant-stars/cards/en-us/SWSH09_EN_154-2x.jpg"  type="valt" />
 	<Card img="/expansions/brilliant-stars/cards/en-us/SWSH09_EN_29-2x.jpg"  type="vmax" />
 	<Card img="/expansions/vivid-voltage/cards/en-us/SWSH4_EN_188-2x.jpg"  type="vmax" />
-	<Card img="/expansions/brilliant-stars/cards/en-us/SWSH09_EN_18-2x.jpg"  type="vmax" />
+	<Card img="/expansions/brilliant-stars/cards/en-us/SWSH09_EN_18-2x.jpg"  type="vstar" />
 	<Card img="https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/EVS/EVS_214_R_EN.png"  type="vmax" />
 	<Card img="/expansions/chilling-reign/cards/en-us/SWSH06_EN_196-2x.jpg"  type="trainerholo" />
 </CardList>
