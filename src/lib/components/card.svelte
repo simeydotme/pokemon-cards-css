@@ -17,9 +17,10 @@
 	let rotator;
 	let active = false;
 	let interacting = false;
+	let firstPop = true;
 
 	const springR = { stiffness: 0.066, damping: 0.25 };
-	const springD = { stiffness: 0.033, damping: 0.35 };
+	const springD = { stiffness: 0.033, damping: 0.45 };
 	let springRotate = spring({ x: 0, y: 0 }, springR);
 	let springGlare = spring({ x: 50, y: 50, o: 0 }, springR);
 	let springBackground = spring({ x: 50, y: 50 }, springR);
@@ -47,8 +48,8 @@
 			x: percent.x - 50,
 			y: percent.y - 50
 		};
-		const angle =
-			(Math.atan2(absolute.y - rect.height / 2, absolute.x - rect.width / 2) * 180) / Math.PI + 90;
+		// const angle =
+		// 	(Math.atan2(absolute.y - rect.height / 2, absolute.x - rect.width / 2) * 180) / Math.PI + 90;
 
 		interacting = true;
 
@@ -113,13 +114,18 @@
 	};
 
 	const popover = () => {
+		let delay = 100;
 		setCenter();
-		springRotateDelta.set({
-			x: 360,
-			y: 0
-		});
+		if ( firstPop ) {
+			delay = 1000;
+			springRotateDelta.set({
+				x: 360,
+				y: 0
+			});
+		}
+		firstPop = false;
 		springScale.set(1.5);
-		interactEnd(null, 1000);
+		interactEnd(null, delay);
 	};
 
 	const retreat = () => {

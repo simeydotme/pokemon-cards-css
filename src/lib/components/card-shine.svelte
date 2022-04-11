@@ -43,9 +43,9 @@
       repeating-linear-gradient( 
         var(--angle), 
         #0e152e 0%, 
-        hsl(180, 20%, 50%) 4%, 
+        hsl(180, 36%, 52%) 4%, 
         hsl(180, 29%, 71%) 4.5%, 
-        hsl(180, 20%, 50%) 5%, 
+        hsl(22, 36%, 52%) 5%, 
         #0e152e 10% , 
         #0e152e 12% 
         ),
@@ -54,15 +54,14 @@
         at var(--mx) var(--my), 
         rgba(0, 0, 0, 0) 0%, 
         rgba(0, 0, 0, 0.1) 25%, 
-        rgba(0, 0, 0, 0.75) 85%, 
+        rgba(0, 0, 0, 0.5) 85%, 
         rgb(0, 0, 0) 100% 
       );
       background-blend-mode: hue, color-burn;
       background-size: 525%, 300%, 200%;
 		  background-position: var(--pos), var(--posx) var(--posy), var(--posx) var(--posy);
       
-      filter: brightness(1) contrast(1.5) saturate(.5);
-
+      filter: brightness(1) contrast(1.5) saturate(.65);
   }
 
   .card__shine.v:after {

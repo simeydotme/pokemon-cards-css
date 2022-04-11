@@ -31,9 +31,9 @@
       radial-gradient( 
         farthest-corner circle 
         at var(--mx) var(--my), 
-        rgb(224, 234, 244) 10%, 
-        rgba(143, 143, 143, 0.33) 50%, 
-        rgb(0, 0, 0) 80% 
+        rgb(255, 255, 255) 10%, 
+        rgba(143, 143, 143, 0.45) 50%, 
+        rgba(0, 0, 0, .66) 80% 
       );
   }
 
