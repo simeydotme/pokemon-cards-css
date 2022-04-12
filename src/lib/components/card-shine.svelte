@@ -91,6 +91,7 @@
     --space: 1.12%;
     --angle: 133deg;
     background-image:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuMiI+PC9yZWN0Pgo8L3N2Zz4="),
       repeating-linear-gradient( calc( var(--angle) * 1.05), 
         rgb(255, 119, 115) calc(var(--space)*1), 
         rgba(255,237,95,1) calc(var(--space)*2), 
@@ -117,17 +118,19 @@
         rgba(0, 0, 0, 0.5) 85%, 
         rgb(0, 0, 0) 100% 
       );
-      background-blend-mode: hue, color-burn;
-      background-size: 525%, 300%, 200%;
-		  background-position: var(--pos), var(--posx) var(--posy), var(--posx) var(--posy);
+      background-blend-mode: screen, hue, color-burn;
+      background-size: 500px, 525%, 300%, 200%;
+		  background-position: center, var(--pos), var(--posx) var(--posy), var(--posx) var(--posy);
       
-      filter: brightness(1) contrast(1.5) saturate(.45);
+      filter: brightness(1) contrast(1.65) saturate(.375);
+      opacity: 1;
+      /* mix-blend-mode: normal; */
   }
 
   .card__shine.v:after {
     content: "";
-    background-position: center, calc( var(--posx) * -.9) calc( var(--posy) * -.9), var(--posx) var(--posy);
-    background-size: 725%, 195%, 200%;
+    background-position: center, center, calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
+    background-size: 500px, 725%, 195%, 200%;
     filter: brightness(.9) contrast(3) saturate(1);
     mix-blend-mode: soft-light;
   }
