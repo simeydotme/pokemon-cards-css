@@ -123,8 +123,6 @@
 		  background-position: center, var(--pos), var(--posx) var(--posy), var(--posx) var(--posy);
       
       filter: brightness(1) contrast(1.65) saturate(.375);
-      opacity: 1;
-      /* mix-blend-mode: normal; */
   }
 
   .card__shine.v:after {

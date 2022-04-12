@@ -244,17 +244,18 @@
 		border-radius: var(--radius);
 		image-rendering: optimizeQuality;
 		transform-style: preserve-3d;
-		backface-visibility: visible;
+		backface-visibility: hidden;
 	}
 
 	.card__back {
-		transform: translateZ(-0.5px) rotateY(180deg);
-		z-index: 1;
+		transform: rotateY(180deg) translateZ(0px);
+		backface-visibility: visible;
+		z-index: 2;
 	}
 
 	.card__front {
 		transform: translateZ(1px);
-		z-index: 2;
+		z-index: 1;
 	}
 
 	.card__images {
