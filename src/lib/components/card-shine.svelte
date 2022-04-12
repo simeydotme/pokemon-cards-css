@@ -26,6 +26,66 @@
     grid-area: 1/1;
   }
 
+  .card__shine.holo {
+
+    --space: 3px;
+    --l: 50%;
+    --s: 70%;
+    --h: 21;
+    background-image: 
+      repeating-linear-gradient( 90deg, var(--vio), var(--blu), var(--gre), var(--yel), var(--red) 15%, var(--vio) 17%, var(--blu), var(--gre), var(--yel), var(--red) 30%, var(--vio) 32%, var(--blu), var(--gre), var(--yel), var(--red) 45%, var(--vio) 47%),
+      repeating-linear-gradient( 90deg, 
+        hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*0), hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*1), 
+        black calc(var(--space)*1.001), black calc(var(--space)*1.999),
+        hsl(calc(var(--h)*1), var(--s), var(--l)) calc(var(--space)*2), hsl(calc(var(--h)*1), var(--s), var(--l)) calc(var(--space)*3), 
+        black calc(var(--space)*3.001), black calc(var(--space)*3.999),
+        hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*4), hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*5), 
+        black calc(var(--space)*5.001), black calc(var(--space)*5.999),
+        hsl(calc(var(--h)*3), var(--s), var(--l)) calc(var(--space)*6), hsl(calc(var(--h)*3), var(--s), var(--l)) calc(var(--space)*7), 
+        black calc(var(--space)*7.001), black calc(var(--space)*7.999),
+        hsl(calc(var(--h)*4), var(--s), var(--l)) calc(var(--space)*8), hsl(calc(var(--h)*4), var(--s), var(--l)) calc(var(--space)*9), 
+        black calc(var(--space)*9.001), black calc(var(--space)*9.999),
+        hsl(calc(var(--h)*5), var(--s), var(--l)) calc(var(--space)*10), hsl(calc(var(--h)*5), var(--s), var(--l)) calc(var(--space)*11), 
+        black calc(var(--space)*11.001), black calc(var(--space)*11.999),
+        hsl(calc(var(--h)*6), var(--s), var(--l)) calc(var(--space)*12), hsl(calc(var(--h)*6), var(--s), var(--l)) calc(var(--space)*13), 
+        black calc(var(--space)*13.001), black calc(var(--space)*13.999),
+        hsl(calc(var(--h)*7), var(--s), var(--l)) calc(var(--space)*14), hsl(calc(var(--h)*7), var(--s), var(--l)) calc(var(--space)*15), 
+        black calc(var(--space)*15.001), black calc(var(--space)*15.999),
+        hsl(calc(var(--h)*8), var(--s), var(--l)) calc(var(--space)*16), hsl(calc(var(--h)*8), var(--s), var(--l)) calc(var(--space)*17), 
+        black calc(var(--space)*17.001), black calc(var(--space)*17.999),
+        hsl(calc(var(--h)*9), var(--s), var(--l)) calc(var(--space)*18), hsl(calc(var(--h)*9), var(--s), var(--l)) calc(var(--space)*19), 
+        black calc(var(--space)*19.001), black calc(var(--space)*19.999),
+        hsl(calc(var(--h)*10), var(--s), var(--l)) calc(var(--space)*20), hsl(calc(var(--h)*10), var(--s), var(--l)) calc(var(--space)*21), 
+        black calc(var(--space)*21.001), black calc(var(--space)*21.999),
+        hsl(calc(var(--h)*11), var(--s), var(--l)) calc(var(--space)*22), hsl(calc(var(--h)*11), var(--s), var(--l)) calc(var(--space)*23), 
+        black calc(var(--space)*23.001), black calc(var(--space)*23.999),
+        hsl(calc(var(--h)*12), var(--s), var(--l)) calc(var(--space)*24), hsl(calc(var(--h)*12), var(--s), var(--l)) calc(var(--space)*25), 
+        black calc(var(--space)*25.001), black calc(var(--space)*25.999),
+        hsl(calc(var(--h)*13), var(--s), var(--l)) calc(var(--space)*26), hsl(calc(var(--h)*13), var(--s), var(--l)) calc(var(--space)*27), 
+        black calc(var(--space)*27.001), black calc(var(--space)*27.999),
+        hsl(calc(var(--h)*14), var(--s), var(--l)) calc(var(--space)*28), hsl(calc(var(--h)*14), var(--s), var(--l)) calc(var(--space)*29), 
+        black calc(var(--space)*29.001), black calc(var(--space)*29.999),
+        hsl(calc(var(--h)*15), var(--s), var(--l)) calc(var(--space)*30), hsl(calc(var(--h)*15), var(--s), var(--l)) calc(var(--space)*31), 
+        black calc(var(--space)*31.001), black calc(var(--space)*31.999)
+      ),
+			radial-gradient(
+        farthest-corner circle 
+          at var(--mx) var(--my), 
+          rgba(255, 255, 255, .75) 0%, 
+          rgba(255, 255, 255, 0.15) 25%, 
+          rgba(0,0,0,1) 90%
+        );
+		clip-path: inset(10% 8.5% 52.5% 8.5%);
+		background-position: var(--pos), center, center;
+		background-size: 300% 300%, 110% 110%, 120% 120%;
+		background-blend-mode: color, screen;
+		filter: brightness(.60) contrast(3.15) saturate(.46);
+  }
+
+  .card__shine.holo.stage {
+		clip-path: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
+	}
+
   .card__shine.v,
   .card__shine.v:after {
     --space: 1.12%;
@@ -61,34 +121,16 @@
       background-size: 525%, 300%, 200%;
 		  background-position: var(--pos), var(--posx) var(--posy), var(--posx) var(--posy);
       
-      filter: brightness(1) contrast(1.5) saturate(.65);
+      filter: brightness(1) contrast(1.5) saturate(.45);
   }
 
   .card__shine.v:after {
     content: "";
-
-    background-position: center, calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
+    background-position: center, calc( var(--posx) * -.9) calc( var(--posy) * -.9), var(--posx) var(--posy);
     background-size: 725%, 195%, 200%;
-
     filter: brightness(.9) contrast(3) saturate(1);
     mix-blend-mode: soft-light;
-    
   }
 
-  /* .card__shine.v {
-		
-		background-image: 
-			repeating-linear-gradient(126deg, rgba(255,116,111,1) 0%, rgba(255,237,95,1) 3%, rgba(168,255,95,1) 6%, rgba(131,255,247,1) 9%, rgba(120,148,255,1) 12%, rgba(213,105,255,1) 15%, rgba(255,116,111,1) 18%), 
-			url(https://st3.depositphotos.com/3205185/13034/v/450/depositphotos_130341042-stock-illustration-abstract-background-with-glowing-lines.jpg), 
-			url(https://st2.depositphotos.com/2172801/6147/i/450/depositphotos_61477739-stock-photo-wonderful-abstract-stripe-background-design.jpg), 
-			radial-gradient(farthest-corner circle at var(--mx) var(--my), rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, .3) 20%, rgb(0, 0, 0) 80%);
-		
-		background-position: var(--pos),var(--pos), var(--pos), var(--pos);
-		background-size: 160% 160%, 130% 130%, 180% 180%, 200% 200%;
-		background-blend-mode: hue, color-burn, overlay;
-		filter: brightness(.8) contrast(2.15) saturate(.8);
-		mix-blend-mode: color-dodge;
-		
-	} */
 
 </style>
