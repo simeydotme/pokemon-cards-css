@@ -22,6 +22,10 @@
 		opacity: var(--o);
 	}
 
+  .card__glare.holo {
+		opacity: calc(var(--o)*.75);
+  }
+
 	.card__glare.v,
 	.card__glare.vfull,
 	.card__glare.vmax,

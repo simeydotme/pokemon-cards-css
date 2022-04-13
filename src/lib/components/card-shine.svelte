@@ -27,13 +27,20 @@
   }
 
   .card__shine.holo {
-
-    --space: 3px;
+    --space: 2px;
     --l: 50%;
     --s: 70%;
     --h: 21;
     background-image: 
-      repeating-linear-gradient( 90deg, var(--vio), var(--blu), var(--gre), var(--yel), var(--red) 15%, var(--vio) 17%, var(--blu), var(--gre), var(--yel), var(--red) 30%, var(--vio) 32%, var(--blu), var(--gre), var(--yel), var(--red) 45%, var(--vio) 47%),
+      repeating-linear-gradient( 90deg, 
+        black 25px, white 40px, black 55px, white 70px, black 85px, black 200px
+      ),
+      repeating-linear-gradient( 90deg, 
+        black 25px, rgb(255, 255, 255) 40px, black 55px, white 70px, black 85px, black 200px
+      ),
+      repeating-linear-gradient( 90deg, 
+        var(--vio), var(--blu), var(--gre), var(--yel), var(--red) 15%, var(--vio) 17%, var(--blu), var(--gre), var(--yel), var(--red) 30%, var(--vio) 32%, var(--blu), var(--gre), var(--yel), var(--red) 45%, var(--vio) 47%
+      ),
       repeating-linear-gradient( 90deg, 
         hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*0), hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*1), 
         black calc(var(--space)*1.001), black calc(var(--space)*1.999),
@@ -71,15 +78,15 @@
 			radial-gradient(
         farthest-corner circle 
           at var(--mx) var(--my), 
-          rgba(255, 255, 255, .75) 0%, 
-          rgba(255, 255, 255, 0.15) 25%, 
-          rgba(0,0,0,1) 90%
+          rgba(255, 255, 255, .66) 0%, 
+          rgba(255, 255, 255, .025) 30%, 
+          rgba(0,0,0,1) 100%
         );
 		clip-path: inset(10% 8.5% 52.5% 8.5%);
-		background-position: var(--pos), center, center;
-		background-size: 300% 300%, 110% 110%, 120% 120%;
-		background-blend-mode: color, screen;
-		filter: brightness(.60) contrast(3.15) saturate(.46);
+		background-position: calc(var(--posx)*-1.2) var(--posy), var(--pos), calc(var(--posx)*3) var(--posy), center, center;
+		background-size: 250%, 200%, 250%, 100%, 100%;
+    background-blend-mode: soft-light, soft-light, color, overlay;
+    filter: brightness(.95) contrast(1.25) saturate(.55);
   }
 
   .card__shine.holo.stage {
@@ -91,7 +98,7 @@
     --space: 1.12%;
     --angle: 133deg;
     background-image:
-    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuMiI+PC9yZWN0Pgo8L3N2Zz4="),
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9InR1cmJ1bGVuY2UgIiBiYXNlRnJlcXVlbmN5PSIuNSIgbnVtT2N0YXZlcz0iMiI+PC9mZVR1cmJ1bGVuY2U+CgogIDwvZmlsdGVyPgogIAo8cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzAwMCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIuNSI+PC9yZWN0Pgo8L3N2Zz4="),
       repeating-linear-gradient( calc( var(--angle) * 1.05), 
         rgb(255, 119, 115) calc(var(--space)*1), 
         rgba(255,237,95,1) calc(var(--space)*2), 
@@ -104,9 +111,9 @@
       repeating-linear-gradient( 
         var(--angle), 
         #0e152e 0%, 
-        hsl(180, 36%, 52%) 4%, 
+        hsl(180, 36%, 52%) 3.8%, 
         hsl(180, 29%, 71%) 4.5%, 
-        hsl(22, 36%, 52%) 5%, 
+        hsl(22, 36%, 52%) 5.2%, 
         #0e152e 10% , 
         #0e152e 12% 
         ),
