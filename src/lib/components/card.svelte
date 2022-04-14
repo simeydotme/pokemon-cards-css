@@ -211,10 +211,11 @@
 
 	.card {
 		--radius: 4.55% / 3.5%;
+		z-index: calc( var(--s) * 100 );
 	}
 
-	.card.active {
-		z-index: 9;
+	.card.interacting {
+		z-index: calc( var(--s) * 120 );
 	}
 
 	.card__translater {
