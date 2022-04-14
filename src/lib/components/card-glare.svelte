@@ -23,7 +23,8 @@
 	}
 
   .card__glare.holo {
-		opacity: calc(var(--o)*.75);
+		opacity: calc(var(--o)*.8);
+    filter: brightness(0.8) contrast(1.5);
   }
 
 	.card__glare.v,

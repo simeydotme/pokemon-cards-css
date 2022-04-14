@@ -31,7 +31,66 @@
     --l: 50%;
     --s: 70%;
     --h: 21;
-    background-image: 
+    --bars: 24px;
+    --bar-color: rgba(255, 255, 255, 0.6);
+		clip-path: inset(10% 8.5% 52.5% 8.5%);
+    background-image:
+			radial-gradient(
+        farthest-corner circle 
+          at var(--mx) var(--my), 
+          rgba(255, 255, 255, .76) 0%, 
+          rgba(255, 255, 255, .3) 10%, 
+          rgba(0,0,0,1) 85%
+        ),
+      repeating-linear-gradient( 90deg, 
+        hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*0), hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*1), 
+        black calc(var(--space)*1.001), black calc(var(--space)*1.999),
+        hsl(calc(var(--h)*1), var(--s), var(--l)) calc(var(--space)*2), hsl(calc(var(--h)*1), var(--s), var(--l)) calc(var(--space)*3), 
+        black calc(var(--space)*3.001), black calc(var(--space)*3.999),
+        hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*4), hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*5), 
+        black calc(var(--space)*5.001), black calc(var(--space)*5.999),
+        hsl(calc(var(--h)*3), var(--s), var(--l)) calc(var(--space)*6), hsl(calc(var(--h)*3), var(--s), var(--l)) calc(var(--space)*7), 
+        black calc(var(--space)*7.001), black calc(var(--space)*7.999),
+        hsl(calc(var(--h)*4), var(--s), var(--l)) calc(var(--space)*8), hsl(calc(var(--h)*4), var(--s), var(--l)) calc(var(--space)*9), 
+        black calc(var(--space)*9.001), black calc(var(--space)*9.999),
+        hsl(calc(var(--h)*5), var(--s), var(--l)) calc(var(--space)*10), hsl(calc(var(--h)*5), var(--s), var(--l)) calc(var(--space)*11), 
+        black calc(var(--space)*11.001), black calc(var(--space)*11.999),
+        hsl(calc(var(--h)*6), var(--s), var(--l)) calc(var(--space)*12), hsl(calc(var(--h)*6), var(--s), var(--l)) calc(var(--space)*13), 
+        black calc(var(--space)*13.001), black calc(var(--space)*13.999),
+        hsl(calc(var(--h)*7), var(--s), var(--l)) calc(var(--space)*14), hsl(calc(var(--h)*7), var(--s), var(--l)) calc(var(--space)*15), 
+        black calc(var(--space)*15.001), black calc(var(--space)*15.999),
+        hsl(calc(var(--h)*8), var(--s), var(--l)) calc(var(--space)*16), hsl(calc(var(--h)*8), var(--s), var(--l)) calc(var(--space)*17), 
+        black calc(var(--space)*17.001), black calc(var(--space)*17.999),
+        hsl(calc(var(--h)*9), var(--s), var(--l)) calc(var(--space)*18), hsl(calc(var(--h)*9), var(--s), var(--l)) calc(var(--space)*19), 
+        black calc(var(--space)*19.001), black calc(var(--space)*19.999),
+        hsl(calc(var(--h)*10), var(--s), var(--l)) calc(var(--space)*20), hsl(calc(var(--h)*10), var(--s), var(--l)) calc(var(--space)*21), 
+        black calc(var(--space)*21.001), black calc(var(--space)*21.999),
+        hsl(calc(var(--h)*11), var(--s), var(--l)) calc(var(--space)*22), hsl(calc(var(--h)*11), var(--s), var(--l)) calc(var(--space)*23), 
+        black calc(var(--space)*23.001), black calc(var(--space)*23.999),
+        hsl(calc(var(--h)*12), var(--s), var(--l)) calc(var(--space)*24), hsl(calc(var(--h)*12), var(--s), var(--l)) calc(var(--space)*25), 
+        black calc(var(--space)*25.001), black calc(var(--space)*25.999),
+        hsl(calc(var(--h)*13), var(--s), var(--l)) calc(var(--space)*26), hsl(calc(var(--h)*13), var(--s), var(--l)) calc(var(--space)*27), 
+        black calc(var(--space)*27.001), black calc(var(--space)*27.999),
+        hsl(calc(var(--h)*14), var(--s), var(--l)) calc(var(--space)*28), hsl(calc(var(--h)*14), var(--s), var(--l)) calc(var(--space)*29), 
+        black calc(var(--space)*29.001), black calc(var(--space)*29.999),
+        hsl(calc(var(--h)*15), var(--s), var(--l)) calc(var(--space)*30), hsl(calc(var(--h)*15), var(--s), var(--l)) calc(var(--space)*31), 
+        black calc(var(--space)*31.001), black calc(var(--space)*31.999)
+      ),
+      repeating-linear-gradient( 90deg, 
+        var(--vio), var(--blu), var(--gre), var(--yel), var(--red) 15%, var(--vio) 17%, var(--blu), var(--gre), var(--yel), var(--red) 30%, var(--vio) 32%, var(--blu), var(--gre), var(--yel), var(--red) 45%, var(--vio) 47%
+      ),
+      repeating-linear-gradient( 90deg, 
+        black calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), black calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), black calc(var(--bars)*5), black calc(var(--bars)*12)
+      ),
+      repeating-linear-gradient( 90deg, 
+        black calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), black calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), black calc(var(--bars)*5), black calc(var(--bars)*9)
+      );
+      background-blend-mode: overlay, color, soft-light, screen, overlay;
+      background-position: center, center, var(--pos), calc(var(--posx)*-1.2) var(--posy), var(--pos);
+      background-size: cover, 100%, 250%,  237%,  195%;
+      filter: brightness(.8) contrast(1.9) saturate(.45);
+ 
+    /* background-image: 
       repeating-linear-gradient( 90deg, 
         black 25px, white 40px, black 55px, white 70px, black 85px, black 200px
       ),
@@ -82,11 +141,10 @@
           rgba(255, 255, 255, .025) 30%, 
           rgba(0,0,0,1) 100%
         );
-		clip-path: inset(10% 8.5% 52.5% 8.5%);
-		background-position: calc(var(--posx)*-1.2) var(--posy), var(--pos), calc(var(--posx)*3) var(--posy), center, center;
-		background-size: 250%, 200%, 250%, 100%, 100%;
-    background-blend-mode: soft-light, soft-light, color, overlay;
-    filter: brightness(.95) contrast(1.25) saturate(.55);
+        background-position: calc(var(--posx)*-1.2) var(--posy), var(--pos), calc(var(--posx)*3) var(--posy), center, center;
+        background-size: 250%, 200%, 250%, 100%, 100%;
+        background-blend-mode: soft-light, soft-light, color, overlay;
+    filter: brightness(.95) contrast(1.25) saturate(.55); */
   }
 
   .card__shine.holo.stage {
