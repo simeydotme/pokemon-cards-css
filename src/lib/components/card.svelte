@@ -160,9 +160,10 @@
 		--o: ${$springGlare.o};
 		--rx: ${$springRotate.x + $springRotateDelta.x}deg;
 		--ry: ${$springRotate.y + $springRotateDelta.y}deg;
-		--pos: ${$springBackground.x}% ${$springBackground.y}%; 
-		--posx: ${$springBackground.x}%; 
+		--pos: ${$springBackground.x}% ${$springBackground.y}%;
+		--posx: ${$springBackground.x}%;
 		--posy: ${$springBackground.y}%;
+		--hyp: ${ Math.sqrt( ($springGlare.y-50) * ($springGlare.y-50) +  ($springGlare.x-50) * ($springGlare.x-50) ) / 50};
 	`;
 </script>
 
@@ -198,12 +199,13 @@
 		--ty: 0px;
 		--rx: 0deg;
 		--ry: 0deg;
-		--pos: 50% 50%; 
-		--posx: 50%; 
+		--pos: 50% 50%;
+		--posx: 50%;
 		--posy: 50%;
+		--hyp: 0;
 
 		--red: #cd196d;
-    --yel: #f2e51f;
+    --yel: #aca21b;
     --gre: #6fbb77;
     --blu: #1698c0;
     --vio: rgb(163, 71, 206);

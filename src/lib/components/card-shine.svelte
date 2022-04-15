@@ -38,9 +38,9 @@
 			radial-gradient(
         farthest-corner circle 
           at var(--mx) var(--my), 
-          rgba(255, 255, 255, .76) 0%, 
-          rgba(255, 255, 255, .3) 10%, 
-          rgba(0,0,0,1) 85%
+          rgba(250, 250, 250, 0.8) 0%, 
+          rgba(200, 200, 200, .05) 40%, 
+          rgb(0, 50, 200) 100%
         ),
       repeating-linear-gradient( 90deg, 
         hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*0), hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*1), 
@@ -76,8 +76,8 @@
         hsl(calc(var(--h)*15), var(--s), var(--l)) calc(var(--space)*30), hsl(calc(var(--h)*15), var(--s), var(--l)) calc(var(--space)*31), 
         black calc(var(--space)*31.001), black calc(var(--space)*31.999)
       ),
-      repeating-linear-gradient( 90deg, 
-        var(--vio), var(--blu), var(--gre), var(--yel), var(--red) 15%, var(--vio) 17%, var(--blu), var(--gre), var(--yel), var(--red) 30%, var(--vio) 32%, var(--blu), var(--gre), var(--yel), var(--red) 45%, var(--vio) 47%
+      repeating-linear-gradient( 0deg, 
+        var(--vio), var(--blu), var(--gre), var(--yel), var(--red), var(--vio)
       ),
       repeating-linear-gradient( 90deg, 
         black calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), black calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), black calc(var(--bars)*5), black calc(var(--bars)*12)
@@ -85,10 +85,10 @@
       repeating-linear-gradient( 90deg, 
         black calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), black calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), black calc(var(--bars)*5), black calc(var(--bars)*9)
       );
-      background-blend-mode: overlay, color, soft-light, screen, overlay;
-      background-position: center, center, var(--pos), calc(var(--posx)*-1.2) var(--posy), var(--pos);
-      background-size: cover, 100%, 250%,  237%,  195%;
-      filter: brightness(.8) contrast(1.9) saturate(.45);
+      background-blend-mode: overlay, soft-light, soft-light, screen, overlay;
+      background-position: center, center, 0% calc(var(--posy)*5) , calc(var(--posx)*-1.2) var(--posy), var(--pos);
+      background-size: cover, 100% 100%, 300% 190%, 237% 237%, 195% 195%;
+      filter: brightness(calc((var(--hyp) + 0.7)*0.7)) contrast(3.2) saturate(.66);
  
     /* background-image: 
       repeating-linear-gradient( 90deg, 
@@ -150,6 +150,9 @@
   .card__shine.holo.stage {
 		clip-path: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
 	}
+  .card__shine.holo.trainer {
+		clip-path: inset(14.5% 7.9% 48.2% 8.7%);
+  }
 
   .card__shine.v,
   .card__shine.v:after {
