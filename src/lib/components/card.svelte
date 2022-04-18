@@ -1,17 +1,18 @@
 <script>
-	import { spring } from 'svelte/motion';
-	import { cubicInOut } from 'svelte/easing';
-	import { activeCard } from '$lib/stores/activeCard.js';
+	import { spring } from "svelte/motion";
+	import { cubicInOut } from "svelte/easing";
+	import { activeCard } from "$lib/stores/activeCard.js";
 
 	import Glare from "$lib/components/card-glare.svelte";
 	import Shine from "$lib/components/card-shine.svelte";
 
-	export let cardBack = '/global/tcg-card-back-2x.jpg';
+	export let cardBack = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
 	export let img = cardBack;
-	export let type = 'normal';
-	export let stage = 0;
+	export let subtypes = "basic";
+	export let rarity = "common";
 
-	const base = 'https://tcg.pokemon.com/assets/img';
+	// const base = "https://tcg.pokemon.com/assets/img";
+	const base = "https://images.pokemontcg.io/"
 
 	let thisCard;
 	let rotator;
@@ -165,11 +166,22 @@
 		--posy: ${$springBackground.y}%;
 		--hyp: ${ Math.sqrt( ($springGlare.y-50) * ($springGlare.y-50) +  ($springGlare.x-50) * ($springGlare.x-50) ) / 50};
 	`;
+
+	rarity = rarity.toLowerCase();
+	if ( Array.isArray( subtypes ) ) {
+		subtypes = subtypes.join( " " ).toLowerCase();
+	}
+	if ( rarity.includes( "holo" ) ) {
+		subtypes = subtypes + " holo";
+	}
+	if ( subtypes.includes( "supporter" ) ) {
+		subtypes = subtypes + " trainer";
+	}
 </script>
 
 <svelte:window on:scroll="{reposition}" />
 
-<div class="card {type}" class:active class:interacting style={styles} bind:this={thisCard}>
+<div class="card {subtypes}" class:active class:interacting style={styles} bind:this={thisCard}>
 	<div class="card__translater">
 		<div
 			class="card__rotator"
@@ -183,8 +195,8 @@
 				<img class="card__back" src="{base}{cardBack}" alt="" />
 				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" />
 			</div>
-			<Shine {type} {stage} />
-			<Glare {type} {stage} />
+			<Shine {subtypes} />
+			<Glare {subtypes} />
 		</div>
 	</div>
 </div>
@@ -214,23 +226,13 @@
 	.card {
 		--radius: 4.55% / 3.5%;
 		z-index: calc( var(--s) * 100 );
+		transform: translate3d(0,0,0.1px);
+		will-change: transform, visibility;
+		transform-style: preserve-3d;
 	}
 
 	.card.interacting {
 		z-index: calc( var(--s) * 120 );
-	}
-
-	.card__translater {
-		display: grid;
-		position: relative;
-		width: auto;
-		transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
-	}
-
-	.card__rotator {
-		transform: rotateY(var(--rx)) rotateX(var(--ry));
-		transform-style: preserve-3d;
-		transition: opacity 0.75s cubic-bezier(0.77, 0, 0.18, 1);
 	}
 
 	.card__translater,
@@ -239,6 +241,19 @@
 		display: grid;
 		perspective: 600px;
 		transform-origin: center;
+		will-change: transform;
+	}
+
+	.card__translater {
+		width: auto;
+		position: relative;
+		transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
+	}
+
+	.card__rotator {
+		transform: rotateY(var(--rx)) rotateX(var(--ry));
+		transform-style: preserve-3d;
+		/* transition: opacity 0.75s cubic-bezier(0.77, 0, 0.18, 1); */
 	}
 
 	.card__rotator :global(*) {
@@ -247,7 +262,13 @@
 		border-radius: var(--radius);
 		image-rendering: optimizeQuality;
 		transform-style: preserve-3d;
-		backface-visibility: hidden;
+	}
+
+	.card__images {
+		/* aspect-ratio: 200/307; */
+		transform: translateZ(-1px);
+		transform-style: preserve-3d;
+		background: rgb(168, 168, 168);
 	}
 
 	.card__back {
@@ -258,12 +279,7 @@
 
 	.card__front {
 		transform: translateZ(1px);
+		backface-visibility: hidden;
 		z-index: 1;
-	}
-
-	.card__images {
-		/* aspect-ratio: 200/307; */
-		transform: translateZ(-1px);
-		background: rgb(168, 168, 168);
 	}
 </style>
