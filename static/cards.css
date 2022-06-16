@@ -182,49 +182,20 @@
 }
 
 
-.card[data-rarity="rare ultra"][data-subtypes="supporter"] .card__shine,
-.card[data-rarity="rare ultra"][data-subtypes="supporter"] .card__shine:after {
-  --space: 5%;
-  --angle: 133deg;
-  background-image:
-    url("/trainerbg.jpg"),
-    repeating-linear-gradient( 0deg, 
-      rgb(255, 119, 115) calc(var(--space)*1), 
-      rgba(255,237,95,1) calc(var(--space)*2), 
-      rgba(168,255,95,1) calc(var(--space)*3), 
-      rgba(131,255,247,1) calc(var(--space)*4), 
-      rgba(120,148,255,1) calc(var(--space)*5), 
-      rgb(216, 117, 255) calc(var(--space)*6), 
-      rgb(255, 119, 115) calc(var(--space)*7)
-    ),
-    repeating-linear-gradient( 
-      var(--angle), 
-      #0e152e 0%, 
-      hsl(180, 10%, 60%) 3.8%, 
-      hsl(180, 29%, 66%) 4.5%, 
-      hsl(180, 10%, 60%) 5.2%, 
-      #0e152e 10% , 
-      #0e152e 12% 
-      ),
-    radial-gradient(
-      farthest-corner circle 
-      at var(--mx) var(--my),
-      rgba(0, 0, 0, .1) 12%, 
-      rgba(0, 0, 0, .15) 20%, 
-      rgba(0, 0, 0, .25) 120%
-    );
 
-  background-blend-mode: difference, hue, soft-light;
-  background-size: 50%, 200% 700%, 300%, 200%;
-  background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
-  
-  filter: brightness(0.5) contrast(3.95) saturate(1);
 
-}
+
+
+
+
+
+
 
 
 .card[data-rarity="rare ultra"][data-subtypes="supporter"] .card__shine,
-.card[data-rarity="rare ultra"][data-subtypes="supporter"] .card__shine:after {
+.card[data-rarity="rare ultra"][data-subtypes="supporter"] .card__shine:after,
+.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine,
+.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after {
   --space: 5%;
   --angle: 133deg;
   background-image:
@@ -261,13 +232,59 @@
     filter: brightness(0.75) contrast(2.5) saturate(.75);
 }
 
-.card[data-rarity="rare ultra"][data-subtypes="supporter"] .card__shine:after {
+.card[data-rarity="rare ultra"][data-subtypes="supporter"] .card__shine:after,
+.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after {
   content: "";
   background-size: 50%, 200% 400%, 195%, 200%;
   background-position: center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
   filter: brightness(1.2) contrast(1) saturate(1.75);
   mix-blend-mode: exclusion;
 }
+
+
+.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine,
+.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after {
+
+  background-image:
+    url("/angular.webp"),
+    repeating-linear-gradient( 0deg, 
+      rgb(255, 119, 115) calc(var(--space)*1), 
+      rgba(255,237,95,1) calc(var(--space)*2), 
+      rgba(168,255,95,1) calc(var(--space)*3), 
+      rgba(131,255,247,1) calc(var(--space)*4), 
+      rgba(120,148,255,1) calc(var(--space)*5), 
+      rgb(216, 117, 255) calc(var(--space)*6), 
+      rgb(255, 119, 115) calc(var(--space)*7)
+    ),
+    repeating-linear-gradient( 
+      var(--angle), 
+      #0e152e 0%, 
+      hsl(180, 10%, 60%) 3.8%, 
+      hsl(180, 29%, 66%) 4.5%, 
+      hsl(180, 10%, 60%) 5.2%, 
+      #0e152e 10% , 
+      #0e152e 12% 
+      ),
+    radial-gradient(
+      farthest-corner circle 
+      at var(--mx) var(--my),
+      rgba(0, 0, 0, .1) 12%, 
+      rgba(0, 0, 0, .15) 20%, 
+      rgba(0, 0, 0, .25) 120%
+    );
+    background-size: 300px, 200% 700%, 300%, 200%;
+    background-blend-mode: exclusion, hue, hard-light;
+    filter: brightness(calc((var(--hyp)*0.25) + 0.625)) contrast(4) saturate(.875);
+}
+.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after {
+  background-size: 300px, 200% 400%, 195%, 200%;
+  filter: brightness(calc((var(--hyp)*0.45) + 0.925)) contrast(1) saturate(1.75);
+}
+
+
+
+
+
 
 
 
@@ -301,7 +318,7 @@
     ),
     url(/illusion.webp);
 
-  background-size: 100% 100%, 500% 500%, 1000% 1000%, 450px 450px;
+  background-size: 100% 100%, 500% 500%, 1000% 1000%, 350px;
   background-position: center, 0% calc( var(--posy) * 1.5 ), var(--posx) var(--posy), center;
   background-blend-mode: color-burn, soft-light, normal;
   filter: brightness(calc((var(--hyp)*0.25) + 0.66)) contrast(4) saturate(.75);
@@ -313,5 +330,54 @@
   --angle: 70deg;
   content: "";
   background-position: center, 0% calc( var(--posy) * -1 ), calc( var(--posx) * -1 ) calc( var(--posy) * -1 ), center;
+  mix-blend-mode: exclusion;
+}
+
+
+
+
+
+
+
+
+
+
+.card[data-rarity="rare secret"] .card__shine,
+.card[data-rarity="rare secret"] .card__shine:after {
+  --angle: 110deg;
+  background-image:
+    /* url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjY3MiIgbnVtT2N0YXZlcz0iMiIgc3RpdGNoVGlsZXM9InN0aXRjaCI+PC9mZVR1cmJ1bGVuY2U+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzAwMCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjciPjwvcmVjdD4KPC9zdmc+"), */
+    url(/rainbow.jpg),
+    repeating-linear-gradient( var(--angle), 
+      rgba(89, 46, 80, 0.5) 0%, 
+      hsl(39, 37%, 61%) 2.5%, 
+      rgb(248, 208, 151) 5%, 
+      hsl(39, 38%, 57%) 7.5%, 
+      rgba(14, 21, 46, 0.5) 10% , 
+      rgba(14, 21, 46, 0.5) 15% 
+    ), url(/ancient.webp);
+
+  background-size: 100% 100%, 600% 600%, 250px;
+  background-position: center, var(--posx) var(--posy), center;
+  background-blend-mode: color-burn, darken;
+  filter: brightness(calc((var(--hyp)*0.4) + 0.67)) contrast(3) saturate(.33);
+
+}
+
+.card[data-rarity="rare secret"] .card__shine:after {
+  content: "";
+  background-image:
+    url(/rainbow.jpg),
+    repeating-linear-gradient( var(--angle), 
+      rgba(89, 46, 80, 0.5) 0%, 
+      hsl(39, 37%, 61%) 2.5%, 
+      rgb(248, 208, 151) 5%, 
+      hsl(39, 38%, 57%) 7.5%, 
+      rgba(14, 21, 46, 0.5) 10% , 
+      rgba(14, 21, 46, 0.5) 15% 
+    );
+
+  background-position: center, calc( var(--posx) * -1 ) calc( var(--posy) * -1 ), center;
+  filter: brightness(calc((var(--hyp)*0.3) + 0.6)) contrast(1.5) saturate(.33);
   mix-blend-mode: exclusion;
 }
