@@ -9,6 +9,7 @@
 	export let cardBack = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
 	export let img = cardBack;
 	export let subtypes = "basic";
+	export let supertype = "pokémon";
 	export let rarity = "common";
 
 	// const base = "https://tcg.pokemon.com/assets/img";
@@ -168,20 +169,26 @@
 	`;
 
 	rarity = rarity.toLowerCase();
+	supertype = supertype.toLowerCase();
+	
 	if ( Array.isArray( subtypes ) ) {
 		subtypes = subtypes.join( " " ).toLowerCase();
 	}
-	if ( rarity.includes( "holo" ) ) {
-		subtypes = subtypes + " holo";
-	}
-	if ( subtypes.includes( "supporter" ) ) {
-		subtypes = subtypes + " trainer";
-	}
+	
 </script>
 
 <svelte:window on:scroll="{reposition}" />
 
-<div class="card {subtypes}" class:active class:interacting style={styles} bind:this={thisCard}>
+<div 
+	class="card"
+	class:active 
+	class:interacting 
+	data-subtypes="{subtypes}"
+	data-supertype="{supertype}"
+	data-rarity="{rarity}" 
+	style={styles} 
+	bind:this={thisCard}>
+
 	<div class="card__translater">
 		<div
 			class="card__rotator"
@@ -195,7 +202,7 @@
 				<img class="card__back" src="{base}{cardBack}" alt="" />
 				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" />
 			</div>
-			<Shine {subtypes} />
+			<Shine {subtypes} {supertype} />
 			<Glare {subtypes} />
 		</div>
 	</div>
