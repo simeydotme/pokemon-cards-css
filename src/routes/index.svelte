@@ -29,7 +29,7 @@
 	const headers = new Headers({ "X-Api-Key": key });
 
 	const getCards = async () => {
-		const json = await fetch( "https://api.pokemontcg.io/v2/cards?q=set.id:swsh7", { headers });
+		const json = await fetch( "https://api.pokemontcg.io/v2/cards?q=set.id:swsh10", { headers });
 		const sets = await json.json();
 		return sets.data;
 	}
