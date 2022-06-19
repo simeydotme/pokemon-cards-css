@@ -12,7 +12,6 @@
 	export let supertype = "pokémon";
 	export let rarity = "common";
 
-	// const base = "https://tcg.pokemon.com/assets/img";
 	const base = "https://images.pokemontcg.io/"
 
 	let thisCard;
@@ -20,6 +19,7 @@
 	let active = false;
 	let interacting = false;
 	let firstPop = true;
+	let loading = true;
 
 	const springR = { stiffness: 0.066, damping: 0.25 };
 	const springD = { stiffness: 0.033, damping: 0.45 };
@@ -29,6 +29,7 @@
 	let springRotateDelta = spring({ x: 0, y: 0 }, springD);
 	let springTranslate = spring({ x: 0, y: 0 }, springD);
 	let springScale = spring(1, springD);
+	
 
 	const round = (v) => parseFloat(v.toFixed(3));
 
@@ -174,6 +175,10 @@
 	if ( Array.isArray( subtypes ) ) {
 		subtypes = subtypes.join( " " ).toLowerCase();
 	}
+
+	const imageLoader = (e) => {
+		loading = false;
+	}
 	
 </script>
 
@@ -183,6 +188,7 @@
 	class="card"
 	class:active 
 	class:interacting 
+	class:loading
 	data-subtypes="{subtypes}"
 	data-supertype="{supertype}"
 	data-rarity="{rarity}" 
@@ -200,7 +206,7 @@
 		>
 			<div class="card__images">
 				<img class="card__back" src="{base}{cardBack}" alt="" />
-				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" />
+				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" on:load="{imageLoader}" />
 			</div>
 			<Shine {subtypes} {supertype} />
 			<Glare {subtypes} />
@@ -288,5 +294,13 @@
 		transform: translateZ(1px);
 		backface-visibility: hidden;
 		z-index: 1;
+		opacity: 1;
+		transition: opacity .2s ease-out;
 	}
+
+	.loading .card__front,
+	.loading :global(.card__shine) {
+		opacity: 0;
+	}
+
 </style>
