@@ -29,9 +29,12 @@
 	const headers = new Headers({ "X-Api-Key": key });
 
 	const getCards = async () => {
-		const json = await fetch( "https://api.pokemontcg.io/v2/cards?q=set.id:swsh10", { headers });
-		const sets = await json.json();
-		return sets.data;
+		const setj = await fetch( "https://api.pokemontcg.io/v2/sets", { headers });
+		const sets = await setj.json();
+		console.log(sets);
+		const json = await fetch( "https://api.pokemontcg.io/v2/cards?q=set.id:swsh9tg", { headers });
+		const cards = await json.json();
+		return cards.data;
 	}
 	
 </script>
@@ -42,7 +45,7 @@
 		loading...
 	{:then cards}
 		{#each cards as card, id}
-			<Card img="{ card.images.large }" supertype="{ card.supertype }" subtypes="{ card.subtypes }" rarity="{ card.rarity }" />
+			<Card img="{ card.images.large }" number={ card.number } supertype="{ card.supertype }" subtypes="{ card.subtypes }" rarity="{ card.rarity }" />
 		{/each}
 	{/await}
 

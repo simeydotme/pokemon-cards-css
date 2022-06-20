@@ -8,9 +8,11 @@
 
 	export let cardBack = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
 	export let img = cardBack;
+	export let number = cardBack;
 	export let subtypes = "basic";
 	export let supertype = "pokémon";
 	export let rarity = "common";
+	export let gallery = false;
 
 	const base = "https://images.pokemontcg.io/"
 
@@ -176,6 +178,10 @@
 		subtypes = subtypes.join( " " ).toLowerCase();
 	}
 
+	if ( number.startsWith( "TG" ) ) {
+		gallery = true;
+	}
+
 	const imageLoader = (e) => {
 		loading = false;
 	}
@@ -192,6 +198,7 @@
 	data-subtypes="{subtypes}"
 	data-supertype="{supertype}"
 	data-rarity="{rarity}" 
+	data-gallery="{gallery}" 
 	style={styles} 
 	bind:this={thisCard}>
 
@@ -205,7 +212,7 @@
 			on:click={activate}
 		>
 			<div class="card__images">
-				<img class="card__back" src="{base}{cardBack}" alt="" />
+				<img class="card__back" src="{cardBack}" alt="" />
 				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" on:load="{imageLoader}" />
 			</div>
 			<Shine {subtypes} {supertype} />
@@ -266,7 +273,8 @@
 	.card__rotator {
 		transform: rotateY(var(--rx)) rotateX(var(--ry));
 		transform-style: preserve-3d;
-		/* transition: opacity 0.75s cubic-bezier(0.77, 0, 0.18, 1); */
+		box-shadow: 0px 10px 30px -5px;
+		border-radius: var(--radius);
 	}
 
 	.card__rotator :global(*) {
