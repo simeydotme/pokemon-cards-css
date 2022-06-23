@@ -8,6 +8,10 @@
 
 	export let cardBack = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
 	export let img = cardBack;
+
+	// export let card = {};
+	// export let cardtype = "normal";
+
 	export let number = cardBack;
 	export let subtypes = "basic";
 	export let supertype = "pokémon";
@@ -173,18 +177,26 @@
 
 	rarity = rarity.toLowerCase();
 	supertype = supertype.toLowerCase();
+	number = number.toLowerCase();
 	
 	if ( Array.isArray( subtypes ) ) {
 		subtypes = subtypes.join( " " ).toLowerCase();
 	}
 
-	if ( number.startsWith( "TG" ) ) {
-		gallery = true;
-	}
+	gallery = number.startsWith( "tg" );
 
 	const imageLoader = (e) => {
 		loading = false;
 	}
+
+	// if ( card.number ) {
+		
+	// 	rarity = card.rarity.toLowerCase();
+	// 	supertype = card.supertype.toLowerCase();
+	// 	subtypes = Array.isArray( card.subtypes ) ? card.subtypes.map((v) => v.toLowerCase()) : [];
+	// 	gallery = card.number.toLowerCase().startsWith( "tg" );
+
+	// }
 	
 </script>
 
@@ -195,6 +207,7 @@
 	class:active 
 	class:interacting 
 	class:loading
+	data-number="{number}"
 	data-subtypes="{subtypes}"
 	data-supertype="{supertype}"
 	data-rarity="{rarity}" 
@@ -213,7 +226,7 @@
 		>
 			<div class="card__images">
 				<img class="card__back" src="{cardBack}" alt="" />
-				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" on:load="{imageLoader}" />
+				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" on:load="{imageLoader}" loading="lazy" />
 			</div>
 			<Shine {subtypes} {supertype} />
 			<Glare {subtypes} />
