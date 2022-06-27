@@ -28,13 +28,57 @@
 	const key = "efd08569-7f7c-4544-92b5-9b16159d13a1";
 	const headers = new Headers({ "X-Api-Key": key });
 
+	const getCard = async ( id ) => {
+		const json = await fetch( "https://api.pokemontcg.io/v2/cards/?q=id:" + id, { headers });
+		const card = await json.json();
+		return card.data[0];
+	}
+
 	const getCards = async () => {
+
+		let promiseArray = [];
+
 		// const setj = await fetch( "https://api.pokemontcg.io/v2/sets", { headers });
 		// const sets = await setj.json();
-		// console.log(sets);
-		const json = await fetch( "https://api.pokemontcg.io/v2/cards?q=set.id:swsh10", { headers });
-		const cards = await json.json();
-		return cards.data;
+
+		const ids = [
+			// "sm35-1","sm10-33","sm115-7",
+			// "swsh7-49","swsh7-125","swsh10-55",
+			// "swsh45-35","swsh9-120","sm8-142",
+			// "swsh7-63","swsh7-82","swsh7-93",
+			"swsh9-147","swsh10-147","swsh9-132",
+			"swshp-SWSH117","swsh45-60","swshp-SWSH116",
+			// "swsh3-21","swsh1-141","swsh10-53",
+			// "swsh3-183","swsh1-190","swsh10-170",
+			// "swsh4-170","swsh8-250","swsh1-191",
+			// "swsh7-29","swsh45sv-SV111","swsh7-111",
+			// "swshp-SWSH179","swshp-SWSH181","swshp-SWSH183",
+			// "swshp-SWSH180","swshp-SWSH182","swshp-SWSH184",
+			// "swsh7-189","swsh7-180","swsh7-184",
+			// "swsh7-215","swsh8-270","swsh7-212",
+			// "swshp-SWSH195","swsh9-18","swshp-SWSH197",
+			// "swsh6-196","swsh9-167","swsh4-183",
+			// "swsh4-185","swsh6-190","swsh6-192",
+			// "swsh8-268","swsh9-173","swsh4-188",
+			// "swsh10-213","swsh10-214","swsh7-232",
+			// "swsh5-181","swsh7-229","swsh1-213",
+			// "swsh8-280","swsh9-184","swsh7-227",
+			// "swsh9tg-TG11","swsh9tg-TG07","swsh10tg-TG08",
+			// "swsh9tg-TG16","swsh9tg-TG18","swsh10tg-TG17",
+			// "swsh9tg-TG17","swsh9tg-TG19","swsh10tg-TG18",
+		];
+
+		ids.forEach((v,i) => {
+			promiseArray[ i ] = getCard( v );
+		});
+
+		let cards = await Promise.all( promiseArray );
+		return cards;
+
+		// const json = await fetch( "https://api.pokemontcg.io/v2/cards?q=set.id:swsh9tg", { headers });
+		// const cards = await json.json();
+		// return Array.isArray( cards.data ) ? cards.data : [ cards.data ];
+
 	}
 	
 </script>

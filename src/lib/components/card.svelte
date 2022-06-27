@@ -248,12 +248,6 @@
 		--posx: 50%;
 		--posy: 50%;
 		--hyp: 0;
-
-		--red: #cd196d;
-    --yel: #aca21b;
-    --gre: #6fbb77;
-    --blu: #1698c0;
-    --vio: rgb(163, 71, 206);
 	}
 
 	.card {
