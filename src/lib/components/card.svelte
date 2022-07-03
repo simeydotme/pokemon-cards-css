@@ -40,8 +40,15 @@
 	const round = (v) => parseFloat(v.toFixed(3));
 
 	const interact = (e) => {
-
+		
 		if ( $activeCard && $activeCard !== thisCard ) return;
+
+		interacting = true;
+
+		if ( e.type === "touchmove" ) {
+			e.clientX = e.touches[0].clientX;
+			e.clientY = e.touches[0].clientY;
+		}
 
 		const $el = e.target;
 		const rect = $el.getBoundingClientRect(); // get element's current size/position
@@ -57,10 +64,6 @@
 			x: percent.x - 50,
 			y: percent.y - 50
 		};
-		// const angle =
-		// 	(Math.atan2(absolute.y - rect.height / 2, absolute.x - rect.width / 2) * 180) / Math.PI + 90;
-
-		interacting = true;
 
 		springBackground.set({
 			x: round(50 + percent.x / 4 - 12.5),
@@ -94,6 +97,15 @@
 		}, delay);
 	};
 
+	const touchStart = (e) => {
+		active = true;
+	}
+
+	const touchEnd = (e, delay) => {
+		active = false;
+		interactEnd(e, delay);
+	}
+
 	const activate = (e) => {
 		if ( $activeCard && $activeCard === thisCard ) {
 			$activeCard = undefined;
@@ -123,7 +135,11 @@
 	};
 
 	const popover = () => {
+		const rect = thisCard.getBoundingClientRect(); // get element's size/position
 		let delay = 100;
+		let scaleW = ( window.innerWidth / rect.width ) * 0.9;
+		let scaleH = ( window.innerHeight / rect.height ) * 0.9;
+		let scaleF = 1.75;
 		setCenter();
 		if ( firstPop ) {
 			delay = 1000;
@@ -133,7 +149,7 @@
 			});
 		}
 		firstPop = false;
-		springScale.set(1.5);
+		springScale.set(Math.min(scaleW,scaleH,scaleF));
 		interactEnd(null, delay);
 	};
 
@@ -188,15 +204,6 @@
 	const imageLoader = (e) => {
 		loading = false;
 	}
-
-	// if ( card.number ) {
-		
-	// 	rarity = card.rarity.toLowerCase();
-	// 	supertype = card.supertype.toLowerCase();
-	// 	subtypes = Array.isArray( card.subtypes ) ? card.subtypes.map((v) => v.toLowerCase()) : [];
-	// 	gallery = card.number.toLowerCase().startsWith( "tg" );
-
-	// }
 	
 </script>
 
@@ -219,17 +226,19 @@
 		<div
 			class="card__rotator"
 			bind:this={rotator}
-			on:mousemove={interact}
+			on:pointermove={interact}
 			on:mouseout={interactEnd}
+			on:touchstart={touchStart}
+			on:touchend={touchEnd}
 			on:blur={interactEnd}
 			on:click={activate}
 		>
-			<div class="card__images">
-				<img class="card__back" src="{cardBack}" alt="" />
-				<img class="card__front" src="{img.startsWith('http') ? '' : base}{img}" alt="" on:load="{imageLoader}" loading="lazy" />
+			<img class="card__back" src="{cardBack}" alt="" />
+			<div class="card__front">
+				<img src="{img.startsWith('http') ? '' : base}{img}" alt="" on:load="{imageLoader}" loading="lazy" />
+				<Shine {subtypes} {supertype} />
+				<Glare {subtypes} />
 			</div>
-			<Shine {subtypes} {supertype} />
-			<Glare {subtypes} />
 		</div>
 	</div>
 </div>
@@ -262,9 +271,13 @@
 		z-index: calc( var(--s) * 120 );
 	}
 
+	.card.active .card__translater,
+	.card.active .card__rotator {
+		touch-action: none;
+	}
+
 	.card__translater,
-	.card__rotator,
-	.card__images {
+	.card__rotator {
 		display: grid;
 		perspective: 600px;
 		transform-origin: center;
@@ -280,42 +293,46 @@
 	.card__rotator {
 		transform: rotateY(var(--rx)) rotateX(var(--ry));
 		transform-style: preserve-3d;
-		box-shadow: 0px 10px 30px -5px;
+		box-shadow: 0px 10px 20px -5px black;
 		border-radius: var(--radius);
+		transition: box-shadow 0.4s ease;
+	}
+
+	.card.active .card__rotator {
+		box-shadow: 0px 15px 40px -4px;
 	}
 
 	.card__rotator :global(*) {
 		width: 100%;
+		display: grid;
 		grid-area: 1/1;
 		border-radius: var(--radius);
 		image-rendering: optimizeQuality;
 		transform-style: preserve-3d;
 	}
 
-	.card__images {
-		/* aspect-ratio: 200/307; */
-		transform: translateZ(-1px);
-		transform-style: preserve-3d;
-		background: rgb(168, 168, 168);
+	.card__back {
+		transform: rotateY(180deg);
+		backface-visibility: visible;
 	}
 
-	.card__back {
-		transform: rotateY(180deg) translateZ(0px);
-		backface-visibility: visible;
-		z-index: 2;
+	.card__front,
+	.card__front * {
+		backface-visibility: hidden;
 	}
 
 	.card__front {
-		transform: translateZ(1px);
-		backface-visibility: hidden;
-		z-index: 1;
 		opacity: 1;
 		transition: opacity .2s ease-out;
 	}
 
-	.loading .card__front,
-	.loading :global(.card__shine) {
+	.loading .card__front {
 		opacity: 0;
 	}
+
+	.loading .card__back {
+		transform: rotateY(0deg);
+	}
+
 
 </style>

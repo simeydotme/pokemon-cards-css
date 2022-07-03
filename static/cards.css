@@ -19,31 +19,6 @@
 
 /*
 
-  setup
-
-*/
-
-.card__shine {
-  display: grid;
-  overflow: hidden;
-  transform: translateZ(1px);
-  background: transparent;
-  z-index: 3;
-  mix-blend-mode: color-dodge;
-  filter: brightness(.85) contrast(2.75) saturate(.65);
-  background-size: cover;
-  background-position: center;
-  opacity: var(--o);
-}
-
-.card__shine:after {
-  grid-area: 1/1;
-}
-
-
-
-/*
-
   HOLO
 
 */
@@ -147,40 +122,44 @@
 
 .card[data-rarity="rare holo galaxy"] .card__shine {
 
---space: 80px;
---h: 21;
---s: 70%;
---l: 50%;
---bars: 50px;
---bar-color: rgba(255, 255, 255, 0.6);
---bar-bg: rgb(10, 10, 10);
+  --space: 80px;
+  --h: 21;
+  --s: 70%;
+  --l: 50%;
+  --bars: 50px;
+  --bar-color: rgba(255, 255, 255, 0.6);
+  --bar-bg: rgb(10, 10, 10);
 
-clip-path: inset( 10% 8.5% 52.5% 8.5% );
+  clip-path: inset( 10% 8.5% 52.5% 8.5% );
 
-background-image:
-  url("/galaxy.png"),
-  repeating-linear-gradient(82deg, 
-    rgb(218, 56, 50) calc(var(--space)*1), 
-    rgb(219, 204, 86) calc(var(--space)*2), 
-    rgb(121, 199, 58) calc(var(--space)*3), 
-    rgb(58, 192, 183) calc(var(--space)*4), 
-    rgb(71, 98, 207) calc(var(--space)*5), 
-    rgb(170, 69, 209) calc(var(--space)*6),
-    rgb(218, 56, 50) calc(var(--space)*10)
-  ),
-  radial-gradient( 
-    farthest-corner circle 
+  background-image: 
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/galaxy.png"),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/galaxy.png"),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/galaxy.png"), 
+    repeating-linear-gradient(
+      82deg, 
+      rgb(218, 56, 50) calc(var(--space)*1), 
+      rgb(219, 204, 86) calc(var(--space)*2), 
+      rgb(121, 199, 58) calc(var(--space)*3), 
+      rgb(58, 192, 183) calc(var(--space)*4), 
+      rgb(71, 98, 207) calc(var(--space)*5), 
+      rgb(170, 69, 209) calc(var(--space)*6), 
+      rgb(218, 56, 50) calc(var(--space)*10) 
+    ), 
+    radial-gradient( 
+      farthest-corner circle 
       at var(--mx) var(--my), 
       rgba(255, 255, 255, 0.6) 5%, 
       rgba(150, 150, 150, .3) 40%, 
       rgb(0, 0, 0) 100% 
   );
 
-  background-blend-mode: hard-light, color;
-  background-position: center, calc(((50% - var(--posx)) * 4) + 50%) center, center;
-  background-size: cover, 500%, cover;
-  filter: brightness(1.5) contrast(2) saturate(.6);
-  mix-blend-mode: screen;
+  background-blend-mode: color-dodge, color-burn, saturation, screen;
+  background-position: center, center, center, calc(((50% - var(--posx)) * 2.5) + 50%) calc(((50% - var(--posy)) * 2.5) + 50%), center;
+  background-size: cover, cover, cover, 600% 1200%, cover;
+
+  filter: brightness(.75) contrast(1.2) saturate(1.5);
+  mix-blend-mode: color-dodge;
 
 }
 
@@ -275,7 +254,7 @@ background-image:
   --angle: 133deg;
   --imgsize: 60% 30%;
   background-image:
-    url(/vmaxbg.webp),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/vmaxbg.webp"),
     repeating-linear-gradient( -33deg, 
       rgb(206, 42, 36) calc(var(--space)*1),  
       rgb(157, 170, 223) calc(var(--space)*2), 
@@ -332,7 +311,7 @@ background-image:
   --imgsize: 30%;
 
   background-image:
-    url("/ancient.webp"),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/ancient.webp"),
     repeating-linear-gradient( 0deg, 
       rgb(255, 119, 115) calc(var(--space)*1), 
       rgba(255,237,95,1) calc(var(--space)*2), 
@@ -397,7 +376,7 @@ background-image:
   --imgsize: 50%;
 
   background-image:
-    url("/illusion.webp"),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/illusion.webp"),
     repeating-linear-gradient( 0deg, 
       rgb(255, 119, 115) calc(var(--space)*1), 
       rgba(255,237,95,1) calc(var(--space)*2), 
@@ -462,7 +441,7 @@ background-image:
   --imgsize: 50%;
 
   background-image:
-  url("/trainerbg.jpg"),
+  url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/trainerbg.jpg"),
     repeating-linear-gradient( 0deg, 
       rgb(255, 119, 115) calc(var(--space)*1), 
       rgba(255,237,95,1) calc(var(--space)*2), 
@@ -528,7 +507,7 @@ background-image:
   --imgsize: 330px 450px;
 
   background-image:
-    url(/rainbow2.jpg),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/rainbow2.jpg"),
     repeating-linear-gradient( var(--angle), 
       rgb(253, 71, 65) calc(var(--space)*1), 
       rgb(255, 243, 151) calc(var(--space)*2), 
@@ -546,7 +525,7 @@ background-image:
       rgba(14, 21, 46, 0.5) 10% , 
       rgba(14, 21, 46, 0.5) 15% 
     ),
-    url(/illusion2.webp);
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/illusion2.webp");
 
   background-size: 50% 50%, 500% 500%, 1000% 1000%, var(--imgsize);
   background-position: center, 0% calc( var(--posy) * 1.5 ), var(--posx) var(--posy), center;
@@ -582,7 +561,7 @@ background-image:
   --imgsize: 250px;
 
   background-image:
-    url(/rainbow2.jpg),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/rainbow2.jpg"),
     repeating-linear-gradient( var(--angle), 
       rgba(89, 46, 80, 0.5) 0%, 
       hsl(39, 37%, 60%) 2.5%, 
@@ -591,7 +570,7 @@ background-image:
       rgba(14, 21, 46, 0.5) 10% , 
       rgba(14, 21, 46, 0.5) 15% 
     ), 
-    url(/metal.webp);
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/metal.webp");
 
   background-size: 50% 50%, 600% 600%, var(--imgsize);
   background-position: center, var(--posx) var(--posy), center;
@@ -607,7 +586,7 @@ background-image:
   content: "";
 
   background-image:
-    url(/rainbow2.jpg),
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/rainbow2.jpg"),
     repeating-linear-gradient( var(--angle), 
       rgba(89, 46, 80, 0.5) 0%, 
       hsl(39, 37%, 60%) 2.5%, 
@@ -709,7 +688,7 @@ background-image:
 
   background-blend-mode: exclusion, darken, color-dodge;
 
-  filter: brightness(.95) contrast(4) saturate(0.5);
+  filter: brightness(.95) contrast(4) saturate(0.75);
   mix-blend-mode: color-dodge;
 
 }
@@ -718,13 +697,26 @@ background-image:
 
   content: "";
 
-  background-image: url(/rainbow2.jpg);
-  background-size: 40%;
-  background-position: calc( ((var(--posx) - 50%) * 0.25) + 50% ) calc( ((var(--posy) - 50%) * 0.25) + 50% );
-  
-  filter: brightness(0.65) contrast(.35) saturate(.75);
-  mix-blend-mode: overlay;
+  background-image: 
+    url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/rainbow2.jpg"), 
+    repeating-linear-gradient( 55deg, 
+    rgb(255, 161, 158) calc(var(--space)*1), 
+    rgb(85, 178, 255) calc(var(--space)*2), 
+    rgb(255, 199, 146) calc(var(--space)*3), 
+    rgb(130, 255, 213) calc(var(--space)*4), 
+    rgb(253, 170, 240) calc(var(--space)*5), 
+    rgb(148, 241, 255) calc(var(--space)*6), 
+    rgb(255, 161, 158) calc(var(--space)*7) 
+  );
 
+  background-size: 40%, 400%;
+  background-position: center, calc( ((var(--posx) - 50%) * -2.5) + 50% ) calc( ((var(--posy) - 50%) * -2.5) + 50% );
+  
+  filter: brightness(1) contrast(1) saturate(0);
+  mix-blend-mode: soft-light;
+
+  background-blend-mode: multiply;
+  
 }
 
 .card[data-rarity*="radiant"] .card__shine:before {
@@ -743,7 +735,7 @@ background-image:
     );
 
   background-position: center;
-  background-size: 200% 200%;
+  background-size: 350% 350%;
 
   mix-blend-mode: multiply;
 
@@ -822,7 +814,7 @@ background-image:
 
   --space: 5%;
   --angle: 133deg;
-  --img: url("/illusion.webp");
+  --img: url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/illusion.webp");
   --imgsize: 60%;
 
   background-image:
@@ -877,7 +869,7 @@ background-image:
 .card[data-rarity="rare holo v"][data-gallery="true"][data-subtypes*="vmax"] .card__shine,
 .card[data-rarity="rare holo v"][data-gallery="true"][data-subtypes*="vmax"] .card__shine:after {
 
-    --img: url(/stylish.webp);
+    --img: url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/stylish.webp");
     --imgsize: 48%;
 
 }
