@@ -365,7 +365,7 @@
     "supertype": "Pokémon",
     "subtypes": ["VMAX", "Single Strike"],
     "number": "SWSH180",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swshp/SWSH180.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH180_hires.png"
@@ -377,7 +377,7 @@
     "supertype": "Pokémon",
     "subtypes": ["VMAX", "Rapid Strike"],
     "number": "SWSH182",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swshp/SWSH182.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH182_hires.png"
@@ -389,7 +389,7 @@
     "supertype": "Pokémon",
     "subtypes": ["VMAX"],
     "number": "SWSH184",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swshp/SWSH184.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH184_hires.png"
@@ -437,7 +437,7 @@
     "supertype": "Pokémon",
     "subtypes": ["VMAX", "Single Strike"],
     "number": "215",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swsh7/215.png",
       "large": "https://images.pokemontcg.io/swsh7/215_hires.png"
@@ -449,7 +449,7 @@
     "supertype": "Pokémon",
     "subtypes": ["VMAX"],
     "number": "270",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swsh8/270.png",
       "large": "https://images.pokemontcg.io/swsh8/270_hires.png"
@@ -461,7 +461,7 @@
     "supertype": "Pokémon",
     "subtypes": ["VMAX", "Rapid Strike"],
     "number": "212",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swsh7/212.png",
       "large": "https://images.pokemontcg.io/swsh7/212_hires.png"

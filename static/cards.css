@@ -498,13 +498,13 @@
 
 */
 
-.card[data-rarity="rare rainbow"] .card__shine,
-.card[data-rarity="rare rainbow"] .card__shine:after {
+.card[data-rarity^="rare rainbow"] .card__shine,
+.card[data-rarity^="rare rainbow"] .card__shine:after {
 
   --space: 7%;
   --angle: -20deg;
   --angle2: 130deg;
-  --imgsize: 330px 450px;
+  --imgsize: 540px 700px;
 
   background-image:
     url("https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/rainbow2.jpg"),
@@ -531,11 +531,11 @@
   background-position: center, 0% calc( var(--posy) * 1.5 ), var(--posx) var(--posy), center;
   background-blend-mode: color-burn, soft-light, normal;
 
-  filter: brightness(calc((var(--hyp)*0.25) + 0.66)) contrast(4) saturate(.75);
+  filter: brightness(calc((var(--hyp)*0.25) + 0.66)) contrast(2) saturate(.95);
 
 }
 
-.card[data-rarity="rare rainbow"] .card__shine:after {
+.card[data-rarity^="rare rainbow"] .card__shine:after {
 
   content: "";
 
@@ -544,6 +544,19 @@
 
 }
 
+
+/*
+
+  RAINBOW SECRET FULL/ALT
+
+*/
+
+.card[data-rarity="rare rainbow alt"] .card__shine,
+.card[data-rarity="rare rainbow alt"] .card__shine:after {
+
+  filter: brightness(calc((var(--hyp)*0.25) + 0.66)) contrast(3) saturate(.7);
+
+}
 
 
 

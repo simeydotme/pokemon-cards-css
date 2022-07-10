@@ -1,8 +1,21 @@
 <script>
+
+	import { activeCard } from "$lib/stores/activeCard.js";
+
+	let thisGrid;
+
+	$: active = thisGrid && thisGrid.contains( $activeCard );
+
 </script>
 
-<section class="card-grid">
+<section 
+	class="card-grid" 
+	class:active
+	bind:this={thisGrid}
+>
+
 	<slot />
+
 </section>
 
 <style>
@@ -15,6 +28,11 @@
 		max-width: 1200px;
 		margin: auto;
 		padding: 50px;
+		position: relative;
+	}
+
+	.card-grid.active {
+		z-index: 1;
 	}
 
 @media screen and (min-width: 600px) {

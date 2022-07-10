@@ -42,6 +42,18 @@
 		opacity: calc(var(--o)*.66);
   }
 
+
+	.card__glare.vmax {		
+		background: 
+			radial-gradient( 
+				farthest-corner circle at 
+				var(--mx) var(--my), 
+				rgba(255, 255, 255, 0.75) 0%, 
+				rgba(99, 99, 99, 0.35) 45%, 
+				rgba(0, 0, 0, 1) 120% 
+			);
+	}
+
 	:global(.card[data-rarity="rare holo"][data-gallery="true"]) .card__glare {
 		background: radial-gradient(
 			farthest-corner circle at var(--mx) var(--my),

@@ -97,22 +97,24 @@
 		}, delay);
 	};
 
-	const touchStart = (e) => {
-		active = true;
-	}
-
 	const touchEnd = (e, delay) => {
-		active = false;
+		deactivate();
 		interactEnd(e, delay);
 	}
 
 	const activate = (e) => {
-		if ( $activeCard && $activeCard === thisCard ) {
+		const isTouch = e.pointerType === "touch";
+		if ( !isTouch && $activeCard && $activeCard === thisCard ) {
 			$activeCard = undefined;
 		} else {
 			$activeCard = thisCard;
 		}
 	};
+
+	const deactivate = (e) => {
+		interactEnd();
+		$activeCard = undefined;
+	}
 
 	const reposition = (e) => {
 		if ( $activeCard && $activeCard === thisCard ) {
@@ -226,12 +228,11 @@
 		<div
 			class="card__rotator"
 			bind:this={rotator}
+			on:pointerup={activate}
 			on:pointermove={interact}
 			on:mouseout={interactEnd}
-			on:touchstart={touchStart}
-			on:touchend={touchEnd}
-			on:blur={interactEnd}
-			on:click={activate}
+			
+			tabindex=0
 		>
 			<img class="card__back" src="{cardBack}" alt="" />
 			<div class="card__front">
@@ -291,15 +292,25 @@
 	}
 
 	.card__rotator {
+		--glow: #69d1e9;
 		transform: rotateY(var(--rx)) rotateX(var(--ry));
 		transform-style: preserve-3d;
 		box-shadow: 0px 10px 20px -5px black;
 		border-radius: var(--radius);
-		transition: box-shadow 0.4s ease;
+		outline: none;
+		transition: box-shadow 0.4s ease, outline 0.2s ease;
 	}
 
 	.card.active .card__rotator {
 		box-shadow: 0px 15px 40px -4px;
+	}
+
+	.card__rotator:focus {
+		box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow), 0 0 30px 0px var(--glow);
+	}
+
+	.card.active .card__rotator:focus {
+		box-shadow: 0px 10px 30px 3px black;
 	}
 
 	.card__rotator :global(*) {
