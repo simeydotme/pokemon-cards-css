@@ -2,6 +2,7 @@
 	import { spring } from "svelte/motion";
 	import { cubicInOut } from "svelte/easing";
 	import { activeCard } from "$lib/stores/activeCard.js";
+	import { orientation } from "$lib/stores/orientation.js";
 
 	import Glare from "$lib/components/card-glare.svelte";
 	import Shine from "$lib/components/card-shine.svelte";
@@ -205,6 +206,39 @@
 
 	const imageLoader = (e) => {
 		loading = false;
+	}
+
+	const orientate = (e) => {
+
+		console.log("o", e );
+		const percentX = round(e.relative.dx) * 2;
+		const percentY = round(e.relative.dy) * 2;
+
+		springBackground.set({
+			x: round(50 + percentX / 4 - 12.5),
+			y: round(50 + percentY / 3 - 16.67)
+		});
+		springRotate.stiffness = springR.stiffness;
+		springRotate.damping = springR.damping;
+		springRotate.set({
+			x: round(e.relative.dx),
+			y: round(e.relative.dy)
+		});
+		springGlare.stiffness = springR.stiffness;
+		springGlare.damping = springR.damping;
+		springGlare.set({
+			x: 50 + percentX,
+			y: 50 + percentY,
+			o: 1
+		});
+		
+	}
+
+	$: {
+		if ( $activeCard && $activeCard === thisCard ) {
+			interacting = true;
+			orientate( $orientation );
+		}
 	}
 	
 </script>
