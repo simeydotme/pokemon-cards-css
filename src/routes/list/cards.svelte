@@ -22,7 +22,7 @@
 	.card-grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-gap: 1.5em;
+		grid-gap: 2vw;
 		transform-style: preserve-3d;
 		height: 100%;
 		max-width: 1200px;

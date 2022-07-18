@@ -265,7 +265,7 @@
 			on:pointerup={activate}
 			on:pointermove={interact}
 			on:mouseout={interactEnd}
-			
+			on:blur={deactivate}
 			tabindex=0
 		>
 			<img class="card__back" src="{cardBack}" alt="" />
