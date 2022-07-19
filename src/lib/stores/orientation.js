@@ -1,30 +1,51 @@
 import { readable } from "svelte/store";
 
-var getRawOrientation = function(e) {
-  return { alpha: e.alpha, beta: e.beta, gamma: e.gamma };
+
+const getRawOrientation = function(e) {
+  if ( !e ) {
+    return { alpha: 0, beta: 0, gamma: 0 };
+  } else {
+    return { alpha: e.alpha, beta: e.beta, gamma: e.gamma };
+  }
 }
 
 const getOrientationObject = (e) => {
-  if ( !e ) {
-    return {
-      absolute: { alpha: 0, beta: 0, gamma: 0 },
-      relative: { alpha: 0, beta: 0, gamma: 0 }
-    }
-  } else {
-    return {
-      absolute: getRawOrientation(e),
-      relative: getRawOrientation(e)
+  const orientation = getRawOrientation(e);
+  return {
+    absolute: orientation,
+    relative: { 
+      alpha: orientation.alpha - baseOrientation.alpha, 
+      beta: orientation.beta - baseOrientation.beta, 
+      gamma: orientation.gamma - baseOrientation.gamma, 
     }
   }
 }
 
+let firstReading = true;
+let baseOrientation = getRawOrientation();
+
+export const resetBaseOrientation = () => {
+  console.log("Resetting Base Orientation");
+  firstReading = true;
+  baseOrientation = getRawOrientation();
+}
+
 export const orientation = readable( getOrientationObject(), function start( set ) {
 
-  console.log("Starting Orientation Tracking");
+  // console.log("Starting Orientation Tracking");
 
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientation
   const handleOrientation = function(e) {
-    set( getOrientationObject(e) );
+
+    if ( firstReading ) {
+      firstReading = false;
+      baseOrientation = getRawOrientation(e);
+      // console.log("Starting Orientation from: ", baseOrientation );
+    }
+
+    const o = getOrientationObject(e);
+    // console.log("Setting Orientation to: ", o );
+    set( o );
   };
 
   window.addEventListener("deviceorientation", handleOrientation, true);

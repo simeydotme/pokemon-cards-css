@@ -2,7 +2,7 @@
 	import { spring } from "svelte/motion";
 	import { cubicInOut } from "svelte/easing";
 	import { activeCard } from "$lib/stores/activeCard.js";
-	import { orientation } from "$lib/stores/orientation.js";
+	import { orientation, resetBaseOrientation } from "$lib/stores/orientation.js";
 	import { clamp, round } from "$lib/helpers/Math.js";
 
 	import Glare from "$lib/components/card-glare.svelte";
@@ -10,9 +10,6 @@
 
 	export let cardBack = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
 	export let img = cardBack;
-
-	// export let card = {};
-	// export let cardtype = "normal";
 
 	export let number = cardBack;
 	export let subtypes = "basic";
@@ -104,9 +101,11 @@
 	const activate = (e) => {
 		const isTouch = e.pointerType === "touch";
 		if ( !isTouch && $activeCard && $activeCard === thisCard ) {
+			// deactive if already active
 			$activeCard = undefined;
 		} else {
 			$activeCard = thisCard;
+			resetBaseOrientation();
 		}
 	};
 
@@ -208,8 +207,11 @@
 
 	const orientate = (e) => {
 
+		const x = e.relative.gamma;
+		const y = e.relative.beta;
+
 		const max = { x: 16, y: 18 };
-		const degrees = { x: clamp( e.absolute.gamma, -max.x, max.x ), y: clamp( e.absolute.beta, -max.y, max.y ) };
+		const degrees = { x: clamp( x, -max.x, max.x ), y: clamp( y, -max.y, max.y ) };
 		const percent = { x: 50 + (degrees.x / (max.x*2) * 100), y: 50 + (degrees.y / (max.y*2) * 100) };
 
 		springBackground.set({
@@ -225,8 +227,8 @@
 		springGlare.stiffness = springR.stiffness;
 		springGlare.damping = springR.damping;
 		springGlare.set({
-			x: percent.x,
-			y: percent.y,
+			x: round(percent.x),
+			y: round(percent.y),
 			o: 1
 		});
 		
@@ -263,7 +265,7 @@
 			on:pointerup={activate}
 			on:pointermove={interact}
 			on:mouseout={interactEnd}
-			
+			on:blur={deactivate}
 			tabindex=0
 		>
 			<img class="card__back" src="{cardBack}" alt="" />
