@@ -374,7 +374,7 @@
 	}
 
 	.card.active .card__rotator {
-		box-shadow: 0px 15px 40px -4px;
+		box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow), 0 0 30px 0px var(--glow);
 	}
 
 	.card__rotator:focus {
