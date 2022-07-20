@@ -1,6 +1,6 @@
 <script>
 	import { spring } from "svelte/motion";
-	import { cubicInOut } from "svelte/easing";
+	import { onMount } from "svelte";
 	import { activeCard } from "$lib/stores/activeCard.js";
 	import { orientation, resetBaseOrientation } from "$lib/stores/orientation.js";
 	import { clamp, round } from "$lib/helpers/Math.js";
@@ -16,11 +16,13 @@
 	export let supertype = "pokémon";
 	export let rarity = "common";
 	export let gallery = false;
+	export let showcase = false;
 
 	const base = "https://images.pokemontcg.io/"
 
 	let thisCard;
 	let rotator;
+	let debounce;
 	let active = false;
 	let interacting = false;
 	let firstPop = true;
@@ -115,9 +117,12 @@
 	}
 
 	const reposition = (e) => {
-		if ( $activeCard && $activeCard === thisCard ) {
-			setCenter();
-		}
+		clearTimeout(debounce);
+		debounce = setTimeout(() => {
+			if ( $activeCard && $activeCard === thisCard ) {
+				setCenter();
+			}
+		}, 300 );
 	}
 
 	const setCenter = () => {
@@ -191,15 +196,16 @@
 		--hyp: ${ Math.sqrt( ($springGlare.y-50) * ($springGlare.y-50) +  ($springGlare.x-50) * ($springGlare.x-50) ) / 50};
 	`;
 
-	rarity = rarity.toLowerCase();
-	supertype = supertype.toLowerCase();
-	number = number.toLowerCase();
-	
-	if ( Array.isArray( subtypes ) ) {
-		subtypes = subtypes.join( " " ).toLowerCase();
-	}
+	$: {
 
-	gallery = number.startsWith( "tg" );
+		rarity = rarity.toLowerCase();
+		supertype = supertype.toLowerCase();
+		number = number.toLowerCase();
+		gallery = number.startsWith( "tg" );
+		if ( Array.isArray( subtypes ) ) {
+			subtypes = subtypes.join( " " ).toLowerCase();
+		}
+	}
 
 	const imageLoader = (e) => {
 		loading = false;
@@ -240,6 +246,38 @@
 			orientate( $orientation );
 		}
 	}
+
+
+	onMount(() => {
+		if( showcase ) {
+			let showTimer;
+			const s = 0.02;
+			const d = 0.5;
+			setTimeout(() =>{
+				interacting = true;
+				active = true;
+				springRotate.stiffness = s;
+				springRotate.damping = d;
+				springGlare.stiffness = s; 
+				springGlare.damping = d;
+				springBackground.stiffness = s;
+				springBackground.damping = d;
+				
+				springRotate.set({ x: -15, y: 10 });
+				springGlare.set({ x: 90, y: 0, o: 1 });
+				springBackground.set({ x: 90, y: 0 });
+				setTimeout(() =>{
+					springRotate.set({ x: 15, y: 10 });
+					springGlare.set({ x: 10, y: 0, o: 1 });
+					springBackground.set({ x: 10, y: 0 });
+					setTimeout(() =>{
+						interactEnd(0);
+					}, 3000);
+				}, 3000);
+				document.documentElement.scrollTop = 0;
+			}, 2000);
+		}
+	});
 	
 </script>
 
