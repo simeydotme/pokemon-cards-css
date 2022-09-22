@@ -47,8 +47,8 @@
 
 <main>
 	<header>
+		<h1>Pokemon Cards <sup>V2</sup></h1>
 		<section class="intro">
-			<h1>Pokemon Cards <sup>V2</sup></h1>
 			<p>
 				A collection of <mark>advanced CSS</mark> styles to create
 				<mark>realistic-looking effects</mark> for the faces of Pokemon cards.
@@ -57,19 +57,6 @@
 			<p>
 				The cards use <mark>3d transforms</mark>, <mark>filters</mark>, <mark>blend modes</mark>,
 				and interactions to provide a unique experience when taking a closer look!
-			</p>
-
-			<hr />
-
-			<p><mark>(Go ahead, try clicking a card to take a closer look!)</mark></p>
-
-			<hr />
-
-			<p class="small">
-				Under the hood, I'm using SvelteJS to handle interactivity and state; assigning values to
-				css custom properties (variables) which in-turn drive the effects and 3d transforms. <a
-					href="https://github.com/simeydotme/pokemon-cards-css">Source code is in the repository</a
-				>, but it's subject to change as I morph it in to an actual App.
 			</p>
 		</section>
 
@@ -87,6 +74,19 @@
 				/>
 			{/await}
 		</div>
+
+		<section class="info">
+			<h2><em>(Go ahead, try clicking a card to take a closer look!)</em></h2>
+
+			<hr />
+
+			<p class="small">
+				Under the hood, I'm using SvelteJS to handle interactivity and state; assigning values to
+				css custom properties (variables) which in-turn drive the effects and 3d transforms. <a
+					href="https://github.com/simeydotme/pokemon-cards-css">Source code is in the repository</a
+				>, but it's subject to change as I morph it in to an actual App.
+			</p>
+		</section>
 	</header>
 
 	<h2>Common &amp; Uncommon</h2>
@@ -456,8 +456,6 @@
 </main>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:ital,wght@0,300;0,700;1,300;1,700&display=swap');
-
 	main {
 		color: white;
 		padding: 50px;
@@ -471,7 +469,26 @@
 		grid-template-columns: 1fr;
 		grid-gap: 30px;
 		max-width: 900px;
+		margin: auto;
 	}
+
+	header h2 {
+		margin-top: 0;
+		font-weight: 100;
+	}
+
+@media screen and (min-width: 600px) {
+	header {
+		grid-template-columns: 50% 1fr;
+	}
+	.showcase {
+		grid-column: 2;
+		grid-row: 2/4;
+	}
+	.intro, .info {
+		grid-column: 1;
+	}
+}
 
 	@media screen and (min-width: 900px) {
 		header {

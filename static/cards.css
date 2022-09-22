@@ -91,7 +91,7 @@
   background-position: center, calc(((50% - var(--posx)) * 25) + 50%) center, calc(var(--posx)*-1.2) var(--posy), var(--pos), center;
   background-size: 100% 100%, 200% 200%, 237% 237%, 195% 195%, 120% 120%;
 
-  filter: brightness(calc((var(--hyp) + 0.7)*0.7)) contrast(3.2) saturate(.66);
+  filter: brightness(calc((var(--hyp) + 0.7)*0.7)) contrast(3) saturate(.35);
 
 }
 
@@ -110,12 +110,28 @@
 .card[data-rarity="rare holo galaxy"] .card__glare {
   
   background-image:
+  radial-gradient( 
+    farthest-corner circle 
+    at var(--mx) var(--my), 
+    rgba(222, 245, 250, 0.7) 10%, 
+    rgba(255, 255, 255, 0.5) 20%, 
+    rgba(0, 0, 0, 0.5) 90% 
+    );
+    
+}
+
+.card[data-rarity="rare holo"] .card__glare:after,
+.card[data-rarity="rare holo galaxy"] .card__glare:after {
+
+  content: "";
+  clip-path: inset( 10% 8.5% 52.5% 8.5% );
+  background-image: 
     radial-gradient( 
       farthest-corner circle 
-        at var(--mx) var(--my), 
-        rgba(222, 245, 250, 0.7) 10%, 
-        rgba(255, 255, 255, 0.5) 20%, 
-        rgba(0, 0, 0, 0.5) 90% 
+      at var(--mx) var(--my), 
+      rgb(229, 239, 255) 5%, 
+      rgba(100, 100, 100, 0.5) 35%, 
+      rgba(0, 0, 0, 0.9) 80% 
     );
 
 }
@@ -166,11 +182,15 @@
 
 
 .card[data-rarity="rare holo"][data-subtypes^="stage"] .card__shine,
-.card[data-rarity="rare holo galaxy"][data-subtypes^="stage"] .card__shine {
+.card[data-rarity="rare holo galaxy"][data-subtypes^="stage"] .card__shine,
+.card[data-rarity="rare holo"][data-subtypes^="stage"] .card__glare:after,
+.card[data-rarity="rare holo galaxy"][data-subtypes^="stage"] .card__glare:after {
   clip-path: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
 }
 .card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__shine,
-.card[data-rarity="rare holo galaxy"][data-subtypes^="supporter"] .card__shine {
+.card[data-rarity="rare holo galaxy"][data-subtypes^="supporter"] .card__shine,
+.card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__glare:after,
+.card[data-rarity="rare holo galaxy"][data-subtypes^="supporter"] .card__glare:after {
   clip-path: inset(14.5% 7.9% 48.2% 8.7%);
 }
 

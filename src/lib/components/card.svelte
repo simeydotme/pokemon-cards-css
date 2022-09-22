@@ -63,6 +63,8 @@
 			y: percent.y - 50
 		};
 
+		springBackground.stiffness = springR.stiffness;
+		springBackground.damping = springR.damping;
 		springBackground.set({
 			x: round(50 + percent.x / 4 - 12.5),
 			y: round(50 + percent.y / 3 - 16.67)
@@ -84,14 +86,23 @@
 
 	const interactEnd = (e, delay = 500) => {
 		setTimeout(function () {
+
+			const snapStiff = 0.01;
+			const snapDamp = 0.06;
 			interacting = false;
-			springRotate.stiffness = 0.01;
-			springRotate.damping = 0.06;
+
+			springRotate.stiffness = snapStiff;
+			springRotate.damping = snapDamp;
 			springRotate.set({ x: 0, y: 0 });
-			springGlare.stiffness = 0.01;
-			springGlare.damping = 0.06;
+
+			springGlare.stiffness = snapStiff;
+			springGlare.damping = snapDamp;
 			springGlare.set({ x: 50, y: 50, o: 0 });
+
+			springBackground.stiffness = snapStiff;
+			springBackground.damping = snapDamp;
 			springBackground.set({ x: 50, y: 50 });
+
 		}, delay);
 	};
 
@@ -220,6 +231,8 @@
 		const degrees = { x: clamp( x, -max.x, max.x ), y: clamp( y, -max.y, max.y ) };
 		const percent = { x: 50 + (degrees.x / (max.x*2) * 100), y: 50 + (degrees.y / (max.y*2) * 100) };
 
+		springBackground.stiffness = springR.stiffness;
+		springBackground.damping = springR.damping;
 		springBackground.set({
 			x: round(50 + ((max.x*2) * ((50 - -percent.x) / 100)-max.x*2)),
 			y: round(50 + ((max.y*2) * ((50 + percent.y) / 100)- max.y*2))
@@ -253,7 +266,9 @@
 			let showTimer;
 			const s = 0.02;
 			const d = 0.5;
+			let r = 0;
 			setTimeout(() =>{
+				
 				interacting = true;
 				active = true;
 				springRotate.stiffness = s;
@@ -262,19 +277,21 @@
 				springGlare.damping = d;
 				springBackground.stiffness = s;
 				springBackground.damping = d;
-				
-				springRotate.set({ x: -15, y: 10 });
-				springGlare.set({ x: 90, y: 0, o: 1 });
-				springBackground.set({ x: 90, y: 0 });
-				setTimeout(() =>{
-					springRotate.set({ x: 15, y: 10 });
-					springGlare.set({ x: 10, y: 0, o: 1 });
-					springBackground.set({ x: 10, y: 0 });
-					setTimeout(() =>{
-						interactEnd(0);
-					}, 3000);
-				}, 3000);
-				document.documentElement.scrollTop = 0;
+
+				let circle = setInterval( function() {
+					r += 0.05;
+					springRotate.set({ x: Math.sin(r) * 25, y: Math.cos(r) * 25 });
+					springGlare.set({ x: 55 + Math.sin(r) * 55, y: 55 + Math.cos(r) * 55, o: .8 });
+					springBackground.set({ x: 20 + Math.sin(r) * 20, y: 20 + Math.cos(r) * 20 });
+				}, 20 );
+
+				setTimeout(() => {
+					clearInterval( circle );
+					interactEnd(0);
+				}, 4000 );
+
+				thisCard.scrollIntoView({ behaviour: "smooth", block: "center" });
+
 			}, 2000);
 		}
 	});
