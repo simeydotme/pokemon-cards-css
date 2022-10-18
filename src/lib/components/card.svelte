@@ -409,6 +409,7 @@
 		border-radius: var(--radius);
 		image-rendering: optimizeQuality;
 		transform-style: preserve-3d;
+		outline: 1px solid transparent;
 	}
 
 	.card__back {
