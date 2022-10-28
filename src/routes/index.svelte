@@ -71,6 +71,7 @@
 					subtypes={cards[23].subtypes}
 					rarity={cards[23].rarity}
 					showcase={true}
+					name={cards[23].name}
 				/>
 			{/await}
 		</div>
@@ -106,6 +107,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -130,6 +132,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -154,6 +157,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -178,6 +182,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -202,6 +207,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -229,6 +235,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -257,6 +264,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -281,6 +289,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -305,6 +314,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -333,6 +343,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -357,6 +368,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -381,6 +393,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -404,6 +417,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -427,6 +441,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}
@@ -449,6 +464,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					name={card.name}
 				/>
 			{/each}
 		{/await}

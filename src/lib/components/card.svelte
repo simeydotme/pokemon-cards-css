@@ -17,6 +17,7 @@
 	export let rarity = "common";
 	export let gallery = false;
 	export let showcase = false;
+	export let name;
 
 	const base = "https://images.pokemontcg.io/"
 
@@ -314,14 +315,15 @@
 	bind:this={thisCard}>
 
 	<div class="card__translater">
-		<div
+		<button
 			class="card__rotator"
 			bind:this={rotator}
-			on:pointerup={activate}
 			on:pointermove={interact}
 			on:mouseout={interactEnd}
 			on:blur={deactivate}
+			on:click={activate}
 			tabindex=0
+			aria-label="Expand card for {name}"
 		>
 			<img class="card__back" src="{cardBack}" alt="" />
 			<div class="card__front">
@@ -329,7 +331,7 @@
 				<Shine {subtypes} {supertype} />
 				<Glare {subtypes} />
 			</div>
-		</div>
+		</button>
 	</div>
 </div>
 
