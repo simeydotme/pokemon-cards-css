@@ -15,6 +15,12 @@
 
 }
 
+button[class^='card'] {
+	border: none;
+	background: transparent;
+	padding: 0;
+}
+
 
 
 /*
