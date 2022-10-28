@@ -15,5 +15,11 @@ body {
 }
 
 a {
-  color: cyan;
+  color: rgb(34, 240, 255);
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: white;
 }
