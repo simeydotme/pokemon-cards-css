@@ -25,7 +25,7 @@ let firstReading = true;
 let baseOrientation = getRawOrientation();
 
 export const resetBaseOrientation = () => {
-  console.log("Resetting Base Orientation");
+  // console.log("Resetting Base Orientation");
   firstReading = true;
   baseOrientation = getRawOrientation();
 }
@@ -52,7 +52,7 @@ export const orientation = readable( getOrientationObject(), function start( set
 
   return function stop() {
     window.removeEventListener("deviceorientation", handleOrientation, true);
-    console.log("Stopping Orientation Tracking");
+    // console.log("Stopping Orientation Tracking");
   }
 
 });
