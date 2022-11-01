@@ -397,8 +397,10 @@
     --glow: #69d1e9;
     z-index: calc(var(--s) * 100);
     transform: translate3d(0, 0, 0.1px);
+    -webkit-transform: translate3d(0, 0, 0.1px);
     will-change: transform, visibility;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
   }
 
   .card.interacting {
@@ -415,6 +417,7 @@
     display: grid;
     perspective: 600px;
     transform-origin: center;
+    -webkit-transform-origin: center;
     will-change: transform;
   }
 
@@ -422,11 +425,14 @@
     width: auto;
     position: relative;
     transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
+    -webkit-transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
   }
 
   .card__rotator {
     transform: rotateY(var(--rx)) rotateX(var(--ry));
     transform-style: preserve-3d;
+    -webkit-transform: rotateY(var(--rx)) rotateX(var(--ry));
+    -webkit-transform-style: preserve-3d;
     box-shadow: 0px 10px 20px -5px black;
     border-radius: var(--radius);
     outline: none;
@@ -461,6 +467,7 @@
     border-radius: var(--radius);
     image-rendering: optimizeQuality;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
   }
 
   .card__rotator img {
@@ -471,7 +478,8 @@
 
   .card__back {
 		background-color: var(--back);
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
+    -webkit-transform: rotateY(180deg) translateZ(1px);
     backface-visibility: visible;
   }
 
@@ -491,5 +499,6 @@
 
   .loading .card__back {
     transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
   }
 </style>
