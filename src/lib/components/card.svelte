@@ -8,10 +8,11 @@
   import Glare from "../components/card-glare.svelte";
   import Shine from "../components/card-shine.svelte";
 
-  export let back_img = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
+  export let back_img =
+    "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
   export let img = "";
 
-	export let name = "";
+  export let name = "";
   export let number = "0";
   export let subtypes = "basic";
   export let supertype = "pokémon";
@@ -19,15 +20,17 @@
   export let gallery = false;
   export let showcase = false;
 
-	const back_loading = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAANklEQVR42u3OMQEAAAQAMKJJJT4ZXJ4twTKqJ56lhISEhISEhISEhISEhISEhISEhISEhMTdAodwTxGtMFP/AAAAAElFTkSuQmCC";
-	const front_loading = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAAN0lEQVR42u3OIQEAMAgAsNP/AkFfyIDCbAkWP6vfsZCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ2BtyOnuhnmSZZAAAAABJRU5ErkJggg==";
+  const back_loading =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAANklEQVR42u3OMQEAAAQAMKJJJT4ZXJ4twTKqJ56lhISEhISEhISEhISEhISEhISEhISEhMTdAodwTxGtMFP/AAAAAElFTkSuQmCC";
+  const front_loading =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAAN0lEQVR42u3OIQEAMAgAsNP/AkFfyIDCbAkWP6vfsZCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ2BtyOnuhnmSZZAAAAABJRU5ErkJggg==";
 
-  let img_base = img.startsWith('http') ? '' : "https://images.pokemontcg.io/";
-	let front_img = "";
+  let img_base = img.startsWith("http") ? "" : "https://images.pokemontcg.io/";
+  let front_img = "";
 
-	setTimeout(() => {
-		front_img = img_base + img;
-	}, 20 );
+  setTimeout(() => {
+    front_img = img_base + img;
+  }, 20);
 
   let thisCard;
   let rotator;
@@ -36,6 +39,7 @@
   let interacting = false;
   let firstPop = true;
   let loading = true;
+  let isVisible = document.visibilityState === "visible";
 
   const springR = { stiffness: 0.066, damping: 0.25 };
   const springD = { stiffness: 0.033, damping: 0.45 };
@@ -46,10 +50,22 @@
   let springTranslate = spring({ x: 0, y: 0 }, springD);
   let springScale = spring(1, springD);
 
+  let showcaseInterval;
+  let showcaseTimerStart;
+  let showcaseTimerEnd;
+  let showcaseRunning = true;
+
   const interact = (e) => {
-    if (document.hasFocus() && $activeCard && $activeCard !== thisCard) {
-			return interacting = false;
-		}
+    if (showcaseRunning) {
+      clearTimeout(showcaseTimerEnd);
+      clearTimeout(showcaseTimerStart);
+      clearInterval(showcaseInterval);
+      showcaseRunning = false;
+    }
+
+    if (isVisible && $activeCard && $activeCard !== thisCard) {
+      return (interacting = false);
+    }
 
     interacting = true;
 
@@ -102,37 +118,25 @@
 
       springRotate.stiffness = snapStiff;
       springRotate.damping = snapDamp;
-      springRotate.set({ x: 0, y: 0 });
+      springRotate.set({ x: 0, y: 0 }, { soft: 1 });
 
       springGlare.stiffness = snapStiff;
       springGlare.damping = snapDamp;
-      springGlare.set({ x: 50, y: 50, o: 0 });
+      springGlare.set({ x: 50, y: 50, o: 0 }, { soft: 1 });
 
       springBackground.stiffness = snapStiff;
       springBackground.damping = snapDamp;
-      springBackground.set({ x: 50, y: 50 });
+      springBackground.set({ x: 50, y: 50 }, { soft: 1 });
     }, delay);
   };
 
   const activate = (e) => {
-    const isTouch = e.pointerType === "touch";
-		const isKeyboard = e.type === "keyup";
-		if ( isKeyboard ) {
-				if ( [" ","Enter"].includes(e.key) && $activeCard !== thisCard ) {
-					$activeCard = thisCard;
-					resetBaseOrientation();
-				} else {
-					$activeCard = undefined;
-				}
-		} else {
-			if (!isTouch && $activeCard && $activeCard === thisCard) {
-				// deactivate on desktop, if already active
-				$activeCard = undefined;
-			} else {
-				$activeCard = thisCard;
-				resetBaseOrientation();
-			}
-		}
+    if ($activeCard && $activeCard === thisCard) {
+      $activeCard = undefined;
+    } else {
+      $activeCard = thisCard;
+      resetBaseOrientation();
+    }
   };
 
   const deactivate = (e) => {
@@ -183,16 +187,18 @@
   };
 
   const retreat = () => {
-    springTranslate.set({
-      x: 0,
-      y: 0,
-    });
-    springRotateDelta.set({
-      x: 0,
-      y: 0,
-    });
-    springScale.set(1);
+    springScale.set(1, { soft: true });
+    springTranslate.set({ x: 0, y: 0 }, { soft: true });
+    springRotateDelta.set({ x: 0, y: 0 }, { soft: true });
     interactEnd(null, 100);
+  };
+
+  const reset = () => {
+    interactEnd(null, 0);
+    springScale.set(1, { hard: true });
+    springTranslate.set({ x: 0, y: 0 }, { hard: true });
+    springRotateDelta.set({ x: 0, y: 0 }, { hard: true });
+    springRotate.set({ x: 0, y: 0 }, { hard: true });
   };
 
   $: {
@@ -278,13 +284,20 @@
     }
   }
 
+  document.addEventListener("visibilitychange", (e) => {
+    isVisible = document.visibilityState === "visible";
+    if (!isVisible) {
+      reset();
+    }
+  });
+
   onMount(() => {
-    if (showcase && document.hasFocus()) {
+    if (showcase && isVisible) {
       let showTimer;
       const s = 0.02;
       const d = 0.5;
       let r = 0;
-      setTimeout(() => {
+      showcaseTimerStart = setTimeout(() => {
         interacting = true;
         active = true;
         springRotate.stiffness = s;
@@ -293,32 +306,29 @@
         springGlare.damping = d;
         springBackground.stiffness = s;
         springBackground.damping = d;
-
-				if ( document.hasFocus() ) {
-					let circle = setInterval(function () {
-						r += 0.05;
-						springRotate.set({ x: Math.sin(r) * 25, y: Math.cos(r) * 25 });
-						springGlare.set({
-							x: 55 + Math.sin(r) * 55,
-							y: 55 + Math.cos(r) * 55,
-							o: 0.8,
-						});
-						springBackground.set({
-							x: 20 + Math.sin(r) * 20,
-							y: 20 + Math.cos(r) * 20,
-						});
-					}, 20);
-
-					setTimeout(() => {
-						clearInterval(circle);
-						interactEnd(0);
-					}, 4000);
-				} else {
-					interacting = false;
-        	active = false;
-					return;
-				}
-
+        if (isVisible) {
+          showcaseInterval = setInterval(function () {
+            r += 0.05;
+            springRotate.set({ x: Math.sin(r) * 25, y: Math.cos(r) * 25 });
+            springGlare.set({
+              x: 55 + Math.sin(r) * 55,
+              y: 55 + Math.cos(r) * 55,
+              o: 0.8,
+            });
+            springBackground.set({
+              x: 20 + Math.sin(r) * 20,
+              y: 20 + Math.cos(r) * 20,
+            });
+          }, 20);
+          showcaseTimerEnd = setTimeout(() => {
+            clearInterval(showcaseInterval);
+            interactEnd(null, 0);
+          }, 4000);
+        } else {
+          interacting = false;
+          active = false;
+          return;
+        }
       }, 2000);
     }
   });
@@ -347,26 +357,26 @@
       on:pointermove={interact}
       on:mouseout={interactEnd}
       on:blur={deactivate}
-			aria-label="Expand the Pokemon Card; {name}"
-			title="Click to expand the Pokemon Card; {name}"
+      aria-label="Expand the Pokemon Card; {name}"
+      title="Click to expand the Pokemon Card; {name}"
       tabindex="0"
     >
       <img
         class="card__back"
-				src="{back_img}"
+        src={back_img}
         alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below"
-				loading="lazy"
+        loading="lazy"
         width="660"
         height="921"
       />
       <div class="card__front">
         <img
-					src="{front_img}"
+          src={front_img}
           alt="Front image of the {name} Pokemon Card"
           on:load={imageLoader}
           loading="lazy"
-					width="660"
-					height="921"
+          width="660"
+          height="921"
         />
         <Shine {subtypes} {supertype} />
         <Glare {subtypes} />
@@ -393,7 +403,7 @@
 
   .card {
     --radius: 4.55% / 3.5%;
-	  --back: #004177;
+    --back: #004177;
     --glow: #69d1e9;
     z-index: calc(var(--s) * 100);
     transform: translate3d(0, 0, 0.1px);
@@ -432,13 +442,13 @@
     outline: none;
     transition: box-shadow 0.4s ease, outline 0.2s ease;
   }
-	button.card__rotator {
-		appearance: none;
-		-webkit-appearance: none;
-		border: none;
-		background: top;
-		padding: 0;
-	}
+  button.card__rotator {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: top;
+    padding: 0;
+  }
 
   .card.active .card__rotator {
     box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow),
@@ -465,12 +475,12 @@
 
   .card__rotator img {
     outline: 1px solid transparent;
-		aspect-ratio: 0.716;
-		height: auto;
+    aspect-ratio: 0.716;
+    height: auto;
   }
 
   .card__back {
-		background-color: var(--back);
+    background-color: var(--back);
     transform: rotateY(180deg);
     backface-visibility: visible;
   }
@@ -482,7 +492,7 @@
 
   .card__front {
     opacity: 1;
-    transition: opacity .33s ease-out;
+    transition: opacity 0.33s ease-out;
   }
 
   .loading .card__front {
