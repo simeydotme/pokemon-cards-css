@@ -21,7 +21,7 @@
 
 	const back_loading = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAANklEQVR42u3OMQEAAAQAMKJJJT4ZXJ4twTKqJ56lhISEhISEhISEhISEhISEhISEhISEhMTdAodwTxGtMFP/AAAAAElFTkSuQmCC";
 	const front_loading = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAAN0lEQVR42u3OIQEAMAgAsNP/AkFfyIDCbAkWP6vfsZCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ2BtyOnuhnmSZZAAAAABJRU5ErkJggg==";
-	
+
   let img_base = img.startsWith('http') ? '' : "https://images.pokemontcg.io/";
 	let front_img = "";
 
@@ -343,8 +343,7 @@
     <button
       class="card__rotator"
       bind:this={rotator}
-      on:pointerup={activate}
-      on:keyup={activate}
+      on:click={activate}
       on:pointermove={interact}
       on:mouseout={interactEnd}
       on:blur={deactivate}
