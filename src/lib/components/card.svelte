@@ -28,6 +28,8 @@
   let img_base = img.startsWith("http") ? "" : "https://images.pokemontcg.io/";
   let front_img = "";
 
+  const galaxyPosition = Math.floor(Math.random()*1500);
+
   setTimeout(() => {
     front_img = img_base + img;
   }, 20);
@@ -229,6 +231,7 @@
           ($springGlare.x - 50) * ($springGlare.x - 50)
       ) / 50
     };
+    --galaxybg: center ${galaxyPosition}px;
 	`;
 
   $: {

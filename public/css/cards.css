@@ -170,7 +170,7 @@
   );
 
   background-blend-mode: color-dodge, color-burn, saturation, screen;
-  background-position: center, center, center, calc(((50% - var(--posx)) * 2.5) + 50%) calc(((50% - var(--posy)) * 2.5) + 50%), center;
+  background-position: var(--galaxybg, cover), var(--galaxybg, cover), var(--galaxybg, cover), calc(((50% - var(--posx)) * 2.5) + 50%) calc(((50% - var(--posy)) * 2.5) + 50%), center;
   background-size: cover, cover, cover, 400% 900%, cover;
 
   filter: brightness(.75) contrast(1.2) saturate(1.5);
