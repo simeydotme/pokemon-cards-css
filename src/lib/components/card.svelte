@@ -226,10 +226,10 @@
 		--posx: ${$springBackground.x}%;
 		--posy: ${$springBackground.y}%;
 		--hyp: ${
-      Math.sqrt(
+      clamp( Math.sqrt(
         ($springGlare.y - 50) * ($springGlare.y - 50) +
           ($springGlare.x - 50) * ($springGlare.x - 50)
-      ) / 50
+      ) / 50, 0, 1)
     };
     --galaxybg: center ${galaxyPosition}px;
 	`;

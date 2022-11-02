@@ -273,7 +273,7 @@
   --angle: 133deg;
   --imgsize: 60% 30%;
   background-image:
-    url("../img/vmaxbg.webp"),
+    url("../img/vmaxbg.jpg"),
     repeating-linear-gradient( -33deg, 
       rgb(206, 42, 36) calc(var(--space)*1),  
       rgb(157, 170, 223) calc(var(--space)*2), 
@@ -327,10 +327,10 @@
 
   --space: 5%;
   --angle: 133deg;
-  --imgsize: 30%;
+  --imgsize: 18%;
 
   background-image:
-    url("../img/ancient.webp"),
+    url("../img/ancient.png"),
     repeating-linear-gradient( 0deg, 
       rgb(255, 119, 115) calc(var(--space)*1), 
       rgba(255,237,95,1) calc(var(--space)*2), 
@@ -361,7 +361,7 @@
   background-size: var(--imgsize), 200% 700%, 300%, 200%;
   background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
   
-  filter: brightness(.8) contrast(2) saturate(.75);
+  filter: brightness(calc((var(--hyp) * .5) + 0.5)) contrast(2) saturate(.75);
 
 }
 
@@ -372,7 +372,7 @@
   background-size: var(--imgsize), 200% 400%, 195%, 200%;
   background-position: center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
 
-  filter: brightness(1.2) contrast(1.5) saturate(1.75);
+  filter: brightness(calc((var(--hyp) * .5) + 0.8)) contrast(1.5) saturate(1.75);
   mix-blend-mode: exclusion;
 
 }
@@ -395,7 +395,7 @@
   --imgsize: 50%;
 
   background-image:
-    url("../img/illusion.webp"),
+    url("../img/illusion.png"),
     repeating-linear-gradient( 0deg, 
       rgb(255, 119, 115) calc(var(--space)*1), 
       rgba(255,237,95,1) calc(var(--space)*2), 
@@ -457,10 +457,10 @@
 
   --space: 5%;
   --angle: 133deg;
-  --imgsize: 50%;
+  --imgsize: 25%;
 
   background-image:
-  url("../img/trainerbg.jpg"),
+  url("../img/trainerbg.png"),
     repeating-linear-gradient( 0deg, 
       rgb(255, 119, 115) calc(var(--space)*1), 
       rgba(255,237,95,1) calc(var(--space)*2), 
@@ -527,7 +527,7 @@
   --imgsize: 150% 200%;
 
   background-image:
-    url("../img/rainbow2.jpg"),
+    url("../img/glitter.png"),
     repeating-linear-gradient( var(--angle), 
       rgb(253, 71, 65) calc(var(--rainbowspace)*1), 
       rgb(255, 243, 151) calc(var(--rainbowspace)*2), 
@@ -545,7 +545,7 @@
       rgba(14, 21, 46, 0.5) calc(var(--overlayspace)*5) , 
       rgba(14, 21, 46, 0.5) calc(var(--overlayspace)*6) 
     ),
-    url("../img/illusion2.webp");
+    url("../img/illusion2.png");
 
   background-size: 50% 50%, 500% 500%, 1000% 1000%, var(--imgsize);
   background-position: center, calc( var(--posx) * 1.5 ) calc( var(--posy) * 1.5 ), calc( var(--posx) * 1.5 ) var(--posy), bottom left;
@@ -591,10 +591,10 @@
 .card[data-rarity="rare secret"] .card__shine:after {
 
   --angle: 110deg;
-  --imgsize: 250px;
+  --imgsize: 38%;
 
   background-image:
-    url("../img/rainbow2.jpg"),
+    url("../img/glitter.png"),
     repeating-linear-gradient( var(--angle), 
       rgba(89, 46, 80, 0.5) 0%, 
       hsl(39, 37%, 60%) 2.5%, 
@@ -603,7 +603,7 @@
       rgba(14, 21, 46, 0.5) 10% , 
       rgba(14, 21, 46, 0.5) 15% 
     ), 
-    url("../img/metal.webp");
+    url("../img/metal.png");
 
   background-size: 50% 50%, 600% 600%, var(--imgsize);
   background-position: center, var(--posx) var(--posy), center;
@@ -619,7 +619,7 @@
   content: "";
 
   background-image:
-    url("../img/rainbow2.jpg"),
+    url("../img/glitter.png"),
     repeating-linear-gradient( var(--angle), 
       rgba(89, 46, 80, 0.5) 0%, 
       hsl(39, 37%, 60%) 2.5%, 
@@ -731,7 +731,7 @@
   content: "";
 
   background-image: 
-    url("../img/rainbow2.jpg"), 
+    url("../img/glitter.png"), 
     repeating-linear-gradient( 55deg, 
     rgb(255, 161, 158) calc(var(--space)*1), 
     rgb(85, 178, 255) calc(var(--space)*2), 
@@ -847,7 +847,7 @@
 
   --space: 5%;
   --angle: 133deg;
-  --img: url("../img/illusion.webp");
+  --img: url("../img/illusion.png");
   --imgsize: 60%;
 
   background-image:
@@ -902,7 +902,7 @@
 .card[data-rarity="rare holo v"][data-gallery="true"][data-subtypes*="vmax"] .card__shine,
 .card[data-rarity="rare holo v"][data-gallery="true"][data-subtypes*="vmax"] .card__shine:after {
 
-    --img: url("../img/stylish.webp");
-    --imgsize: 48%;
+    --img: url("../img/stylish.png");
+    --imgsize: 30%;
 
 }
