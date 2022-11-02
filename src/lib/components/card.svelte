@@ -360,8 +360,7 @@
       on:pointermove={interact}
       on:mouseout={interactEnd}
       on:blur={deactivate}
-      aria-label="Expand the Pokemon Card; {name}"
-      title="Click to expand the Pokemon Card; {name}"
+      aria-label="Expand the Pokemon Card; {name}."
       tabindex="0"
     >
       <img
@@ -375,7 +374,7 @@
       <div class="card__front">
         <img
           src={front_img}
-          alt="Front image of the {name} Pokemon Card"
+          alt="Front design of the {name} Pokemon Card, with the stats and info around the edge"
           on:load={imageLoader}
           loading="lazy"
           width="660"
