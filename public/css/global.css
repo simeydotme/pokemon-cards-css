@@ -1,12 +1,19 @@
+:root {
+  --primary: rgb(66, 219, 240);
+  --link-hover: rgb(224, 241, 255);
+}
+
 * {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  scroll-padding-top: 2em;
 }
 
 body {
@@ -15,11 +22,172 @@ body {
 }
 
 a {
-  color: rgb(34, 240, 255);
+  color: var(--primary);
   transition: all 0.3s ease;
 }
 
 a:hover,
 a:focus {
+  color: var(--link-hover);
+}
+
+main {
   color: white;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+header h2 {
+  margin-top: 0;
+  font-weight: 100;
+}
+
+header svg {
+  width: 1em;
+  fill: currentColor;
+  position: relative;
+  top: 2px;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    grid-template-columns: 50% 1fr;
+  }
+  .showcase {
+    grid-column: 2;
+    grid-row: 1/5;
+  }
+  .intro,
+  .info,
+  .author {
+    grid-column: 1;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    grid-template-columns: 60% 1fr;
+  }
+}
+
+.showcase {
+  z-index: 99;
+  max-width: min(330px, 80vw);
+  margin: auto;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+p {
+  margin: 0 0 0.25em;
+  line-height: 1.5;
+}
+
+p.small {
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto Condensed";
+}
+
+h1 sup {
+  font-weight: 300;
+  font-size: 0.5em;
+}
+
+h2 {
+  margin-top: 4em;
+  margin-bottom: 0.25em;
+}
+
+h1 a,
+h2 a,
+h3 a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+h1 a:before,
+h2 a:before,
+h3 a:before {
+  content: "⚓";
+  position: absolute;
+  transform: translate(-100px, -5px);
+  width: 1em;
+  height: 1em;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(.55,.06,.68,.19);
+}
+
+h1 a:hover:before,
+h2 a:hover:before,
+h3 a:hover:before,
+h1:target a:before,
+h2:target a:before,
+h3:target a:before {
+  content: "⚓";
+  transform: translate(-200%, -5px);
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(.22,.61,.36,1);
+}
+
+h2 + p,
+h2 + p + p {
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+h2 sup {
+  font-weight: 300;
+  font-size: 0.75em;
+}
+
+hr {
+  border: none;
+  background: white;
+  height: 1px;
+  opacity: 0.25;
+  margin: 1em -1em;
+}
+
+mark {
+  background: #006065;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  padding-inline: 0.25em;
+  border-radius: 3px;
+}
+
+.back-to-top {
+  font-weight: bold;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  padding: .5em 1em;
+  border-radius: 5em;
+  background: var(--primary);
+  color: rgb(5, 58, 71);
+  text-decoration: none;
+  box-shadow: 0 7px 13px -5px currentColor;
 }
