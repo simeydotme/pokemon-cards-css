@@ -19,9 +19,9 @@
 .card__shine {
   display: grid;
   overflow: hidden;
+  z-index: 3;
   transform: translateZ(1px);
   background: transparent;
-  z-index: 3;
   mix-blend-mode: color-dodge;
   filter: brightness(.85) contrast(2.75) saturate(.65);
   background-size: cover;
@@ -29,8 +29,13 @@
   opacity: var(--o);
 }
 
+.card__shine:before {
+  grid-area: 1/1;
+  transform: translateZ(1px);
+}
 .card__shine:after {
   grid-area: 1/1;
+  transform: translateZ(1.2px);
 }
 
 

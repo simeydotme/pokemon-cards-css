@@ -1,16 +1,16 @@
 <script>
 
   export let subtypes = "basic";
+  export let rarity = "common";
 
 </script>
 	
-  <div class="card__glare {subtypes}" />
+  <div class="card__glare {subtypes} {rarity}" />
 
 <style>
   
 	.card__glare {
-		transform: translateZ(1px);
-		z-index: 4;
+		transform: translateZ(1.4px);
 		background: radial-gradient(
 			farthest-corner circle at var(--mx) var(--my),
 			rgba(255, 255, 255, 0.8) 10%,
@@ -58,9 +58,20 @@
 		background: radial-gradient(
 			farthest-corner circle at var(--mx) var(--my),
 			rgba(255, 255, 255, 0.8) 10%,
-			rgba(255, 255, 255, 0.65) 20%,
-			rgba(0, 0, 0, 1) 90%
-		);
+			rgba(255, 255, 255, 0.6) 35%,
+			rgba(0, 0, 0, 1) 85%
+			);
+		}
+		
+	:global(.card[data-rarity="radiant rare"]) .card__glare {
+		background-image: 
+			radial-gradient( 
+				farthest-corner circle at var(--mx) var(--my), 
+				rgba(255, 255, 255, .9) 10%, 
+				rgba(255, 255, 255, 0.6) 30%, 
+				rgba(0, 0, 0, .8) 80% 
+			);
 	}
+		
 
 </style>

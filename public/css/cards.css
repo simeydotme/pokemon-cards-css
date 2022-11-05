@@ -239,7 +239,7 @@
     );
 
   background-blend-mode: screen, hue, hard-light;
-  background-size: var(--imgsize), 200% 700%, 300%, 200%;
+  background-size: var(--imgsize) 100%, 200% 700%, 300% 100%, 200% 100%;
   background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
   
   filter: brightness(.8) contrast(2.95) saturate(.5);
@@ -251,7 +251,7 @@
   content: "";
 
   background-position: center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
-  background-size: var(--imgsize), 200% 400%, 195%, 200%;
+  background-size: var(--imgsize) 100%, 200% 400%, 195% 100%, 200% 100%;
 
   filter: brightness(1) contrast(2.5) saturate(1.75);
   mix-blend-mode: soft-light;
@@ -327,7 +327,7 @@
 
   --space: 5%;
   --angle: 133deg;
-  --imgsize: 18%;
+  --imgsize: 18% 15%;
 
   background-image:
     url("../img/ancient.png"),
@@ -358,7 +358,7 @@
     );
 
   background-blend-mode: soft-light, hue, hard-light;
-  background-size: var(--imgsize), 200% 700%, 300%, 200%;
+  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
   background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
   
   filter: brightness(calc((var(--hyp) * .5) + 0.5)) contrast(2) saturate(.75);
@@ -369,7 +369,7 @@
 
   content: "";
 
-  background-size: var(--imgsize), 200% 400%, 195%, 200%;
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
   background-position: center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
 
   filter: brightness(calc((var(--hyp) * .5) + 0.8)) contrast(1.5) saturate(1.75);
@@ -392,7 +392,7 @@
 
   --space: 5%;
   --angle: 133deg;
-  --imgsize: 50%;
+  --imgsize: 50% 42%;
 
   background-image:
     url("../img/illusion.png"),
@@ -423,8 +423,8 @@
     );
 
   background-blend-mode: exclusion, hue, hard-light;
-  background-size: var(--imgsize), 200% 700%, 300%, 200%;
-  background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
+  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
+  background-position: center center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
 
   filter: brightness(calc((var(--hyp)*0.3) + 0.5)) contrast(2) saturate(1.5);
 
@@ -434,8 +434,8 @@
 
   content: "";
 
-  background-size: var(--imgsize), 200% 400%, 195%, 200%;
-  background-position: center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
+  background-position: center center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
 
   filter: brightness(calc((var(--hyp)*0.5) + .8)) contrast(1.6) saturate(1.4);
   mix-blend-mode: exclusion;
@@ -457,7 +457,7 @@
 
   --space: 5%;
   --angle: 133deg;
-  --imgsize: 25%;
+  --imgsize: 25% 20%;
 
   background-image:
   url("../img/trainerbg.png"),
@@ -488,7 +488,7 @@
     );
 
   background-blend-mode: difference, hue, hard-light;
-  background-size: var(--imgsize), 200% 700%, 300%, 200%;
+  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
   background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
 
   filter: brightness(0.75) contrast(2.5) saturate(.75);
@@ -499,7 +499,7 @@
 
   content: "";
 
-  background-size: var(--imgsize), 200% 400%, 195%, 200%;
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
   background-position: center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
 
   filter: brightness(1.2) contrast(1) saturate(1.75);
@@ -524,7 +524,7 @@
   --overlayspace: 12%;
   --angle: -20deg;
   --angle2: 130deg;
-  --imgsize: 150% 200%;
+  --imgsize: 130% 180%;
 
   background-image:
     url("../img/glitter.png"),
@@ -547,7 +547,7 @@
     ),
     url("../img/illusion2.png");
 
-  background-size: 50% 50%, 500% 500%, 1000% 1000%, var(--imgsize);
+  background-size: 20% 15%, 500% 500%, 1000% 1000%, var(--imgsize);
   background-position: center, calc( var(--posx) * 1.5 ) calc( var(--posy) * 1.5 ), calc( var(--posx) * 1.5 ) var(--posy), bottom left;
   background-blend-mode: color-burn, soft-light, normal;
 
@@ -591,7 +591,7 @@
 .card[data-rarity="rare secret"] .card__shine:after {
 
   --angle: 110deg;
-  --imgsize: 38%;
+  --imgsize: 28% 23%;
 
   background-image:
     url("../img/glitter.png"),
@@ -605,7 +605,7 @@
     ), 
     url("../img/metal.png");
 
-  background-size: 50% 50%, 600% 600%, var(--imgsize);
+  background-size: 25% 25%, 600% 100%, var(--imgsize);
   background-position: center, var(--posx) var(--posy), center;
   background-blend-mode: color-burn, darken;
 
@@ -651,18 +651,17 @@
   --barwidth: 1.2%;
   --space: 200px;
 
-  opacity: calc( ((var(--hyp)*0.7) + 0.2) * var(--o) ) !important;
   clip-path: inset(2.8% 4% round 2.55% / 1.5%);
 
   background-image: 
-    repeating-linear-gradient( 55deg, 
-      rgb(255, 161, 158) calc(var(--space)*1), 
-      rgb(85, 178, 255) calc(var(--space)*2), 
-      rgb(255, 199, 146) calc(var(--space)*3), 
-      rgb(130, 255, 213) calc(var(--space)*4), 
-      rgb(253, 170, 240) calc(var(--space)*5), 
-      rgb(148, 241, 255) calc(var(--space)*6), 
-      rgb(255, 161, 158) calc(var(--space)*7) 
+    repeating-linear-gradient( 0deg, 
+      hsl(180, 70%, 50%) calc(var(--space)*1), 
+      hsl(110, 80%, 50%) calc(var(--space)*2), 
+      hsl(80, 90%, 50%) calc(var(--space)*3), 
+      hsl(50, 90%, 50%) calc(var(--space)*4), 
+      hsl(80, 90%, 50%) calc(var(--space)*5), 
+      hsl(110, 80%, 50%) calc(var(--space)*6), 
+      hsl(180, 70%, 50%) calc(var(--space)*7) 
     ),
     repeating-linear-gradient( 
       45deg, 
@@ -742,7 +741,7 @@
     rgb(255, 161, 158) calc(var(--space)*7) 
   );
 
-  background-size: 40%, 400%;
+  background-size: 25% 25%, 400% 100%;
   background-position: center, calc( ((var(--posx) - 50%) * -2.5) + 50% ) calc( ((var(--posy) - 50%) * -2.5) + 50% );
   
   filter: brightness(1) contrast(1) saturate(0);
@@ -755,7 +754,7 @@
 .card[data-rarity*="radiant"] .card__shine:before {
   
   content: "";
-  z-index: 3;
+  z-index: 7;
   grid-area: 1/1;
 
   background-image:
@@ -766,6 +765,9 @@
       rgba(50, 50, 50, .4) 15%, 
       rgba(0, 0, 0, .6) 30%
     );
+
+  background-image:
+    radial-gradient( farthest-corner ellipse at calc( ((var(--mx)) * 0.5) + 25% ) calc( ((var(--my)) * 0.5) + 25% ), rgba(100, 100, 100, .8) 10%, rgba(50, 50, 50, .34) 20%, rgba(0, 0, 0, 1) 50% );
 
   background-position: center;
   background-size: 350% 350%;
@@ -804,7 +806,7 @@
     );
     
     background-blend-mode: color-dodge;
-    background-size: var(--imgsize), 300%, 200%;
+    background-size: var(--imgsize);
     background-position: 0% calc(var(--posy) * 1), var(--posx) var(--posy);
     
     filter: brightness(calc((var(--hyp)*0.3) + 0.6)) contrast(2.3) saturate(1.1);
@@ -848,7 +850,7 @@
   --space: 5%;
   --angle: 133deg;
   --img: url("../img/illusion.png");
-  --imgsize: 60%;
+  --imgsize: 60% 52%;
 
   background-image:
     var(--img),
@@ -879,7 +881,7 @@
     );
 
   background-blend-mode: exclusion, hue, hard-light;
-  background-size: var(--imgsize), 200% 700%, 300%, 200%;
+  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
   background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
 
   filter: brightness(calc((var(--hyp)*0.4) + .5)) contrast(2.5) saturate(1);
@@ -890,7 +892,7 @@
 
   content: "";
 
-  background-size: var(--imgsize), 200% 400%, 195%, 200%;
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
   background-position: center, 0% var(--posy), calc( var(--posx) * -1) calc( var(--posy) * -1), var(--posx) var(--posy);
 
   filter: brightness(calc((var(--hyp)*0.5) + .7)) contrast(2) saturate(1);
@@ -903,6 +905,6 @@
 .card[data-rarity="rare holo v"][data-gallery="true"][data-subtypes*="vmax"] .card__shine:after {
 
     --img: url("../img/stylish.png");
-    --imgsize: 30%;
+    --imgsize: 30% 26%;
 
 }

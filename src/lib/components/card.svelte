@@ -381,7 +381,7 @@
           height="921"
         />
         <Shine {subtypes} {supertype} />
-        <Glare {subtypes} />
+        <Glare {subtypes} {rarity} />
       </div>
     </button>
   </div>

@@ -183,7 +183,7 @@
     "id": "pgo-4",
     "name": "Radiant Venusaur",
     "supertype": "Pokémon",
-    "subtypes": ["Basic", "V"],
+    "subtypes": ["Basic"],
     "number": "4",
     "rarity": "Radiant Rare",
     "images": {
