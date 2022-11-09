@@ -36,6 +36,7 @@
 .card__shine:after {
   grid-area: 1/1;
   transform: translateZ(1.2px);
+  border-radius: var(--radius);
 }
 
 
