@@ -376,7 +376,7 @@
 	</h2>
 	<p>
 		There's some VMax cards which show a <mark>full, or alternate artwork</mark>. These are
-		<mark>classed as "raindbow rare"</mark>
+		<mark>classed as "rainbow rare"</mark>
 		and have a similar effect to the rainbow cards. It's a really
 		<mark>vibrant and glittery overlay</mark>.
 	</p>
