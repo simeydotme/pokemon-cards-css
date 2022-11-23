@@ -1,0 +1,14 @@
+rarity-types: 
+
+Common
+Uncommon
+Rare Holo
+Rare Holo Galaxy
+Radiant Rare
+Rare Ultra
+Rare Holo VMAX
+Rare Rainbow Alt
+Rare Holo VSTAR
+Rare Rainbow
+Rare Holo V
+Rare Secret

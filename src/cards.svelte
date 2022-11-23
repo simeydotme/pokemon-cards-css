@@ -35,15 +35,21 @@
 		z-index: 99;
 	}
 
+@media screen and (min-width: 400px) {
+	.card-grid {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
 @media screen and (min-width: 600px) {
 	.card-grid {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
 
 @media screen and (min-width: 900px) {
 	.card-grid {
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	}
 }
 
