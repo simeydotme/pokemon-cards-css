@@ -22,12 +22,12 @@
 	.card-grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-gap: 2vw;
+		grid-gap: 1.5vw;
 		transform-style: preserve-3d;
 		height: 100%;
-		max-width: 1200px;
+		max-width: 95%;
 		margin: auto;
-		padding: 50px;
+		padding: 5%;
 		position: relative;
 	}
 
@@ -49,7 +49,7 @@
 
 @media screen and (min-width: 900px) {
 	.card-grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
 }
 

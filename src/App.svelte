@@ -9,7 +9,7 @@
 
 	let isLoading = true;
 
-	let ipfs = "https://ipfs.io/ipfs/QmfLdDc7a6eLykAKFd3yYJpfjgHGnLLjzpPDZJ7YJLrbq5/"
+	let ipfs = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
 
 	const getCards = async () => {
 		let promiseArray = [];
@@ -21,21 +21,7 @@
 
 	getCards().then((cards) => {
 		window.cards = cards;
-		basics = cards.slice(1, 30);
-		// holos = cards.slice(6, 12);
-		// galaxies = cards.slice(12, 15);
-		// radiant = cards.slice(15, 18);
-		// basicGallery = cards.slice(60, 63);
-		// vee = cards.slice(18, 21);
-		// veeUltra = cards.slice(21, 24);
-		// veeAlt = [...cards.slice(27, 30), ...cards.slice(33, 36)];
-		// veeMax = cards.slice(24, 27);
-		// veeMaxAlt = [cards[36], cards[31], cards[37]];
-		// veeStar = cards.slice(39, 42);
-		// trainerHolo = cards.slice(42, 48);
-		// rainbow = cards.slice(48, 51);
-		// gold = cards.slice(51, 60);
-		// veeGallery = cards.slice(63, 69);
+		basics = cards.slice(1, 99);
 		isLoading = false;
 	});
 
@@ -72,23 +58,18 @@
 				The cards use <mark>3d transforms</mark>, <mark>filters</mark>, <mark>blend modes</mark>,
 				<mark>css gradients</mark> and interactions to provide a unique experience when taking a closer look!
 			</p>
-		</section>
+		</section>-->
 
 		<div class="showcase">
 			{#if isLoading}
 				loading...
 			{:else}
-				<Card
-					name={showcase.name}
-					img={showcase.images.large}
-					number={showcase.number}
-					supertype={showcase.supertype}
-					subtypes={showcase.subtypes}
-					rarity={showcase.rarity}
-					showcase={true}
-				/>
+			<Card 
+				img={"https://pbs.twimg.com/media/FhxomwqagAEMlBg?format=jpg&name=large"}
+				rarity="Rare Ultra"
+			/>
 			{/if}
-		</div> -->
+		</div> 
 
 		<!-- <section class="info">
 			<h2><em>(Go ahead, try clicking a card to take a closer look!)</em></h2>
@@ -104,9 +85,9 @@
 		</section> -->
 	</header>
 
-	<h2 id="⚓-common">
-		<a href="#⚓-common">
-			Common &amp; Uncommon
+	<h2 id="⚓-top">
+		<a href="#⚓-top">
+			Your cards
 		</a>
 	</h2>
 	<p>
@@ -118,22 +99,26 @@
 		{#if isLoading}
 			loading...
 		{:else}
-			{#each basics as card, id}
-			 	<Card
-					name={card.name}
-					img={ipfs+"/"+ (id+1) +".png"}
-					number={card.number}
-					supertype={card.supertype}
-					subtypes={card.subtypes}
-					rarity={card.rarity}
-				/>
+			{#each Array(69) as _, i}
+				{#if i <= 15}
+					<Card 
+						img={ipfs+"/"+ (i+1) +".webp"}
+						rarity="Rare Holo V"
+					/>
+				{/if}
+				{#if i > 15}
+					<Card 
+						img={ipfs+"/"+ (i+1) +".webp"}
+						rarity="Common"
+					/>
+				{/if}
 			{/each}
 		{/if}
 	</CardList>
 </main>
 
 <div class="back-to-top">
-  <a href="#⚓-top">Back to Top</a>
+  <a href="#top">Back to Top</a>
 </div>
 
 <style>
@@ -141,4 +126,10 @@
     color: inherit;
     text-decoration: none;
   }
+
+  main {
+	margin: auto;
+	max-width: max-content;
+  }
+
 </style>
