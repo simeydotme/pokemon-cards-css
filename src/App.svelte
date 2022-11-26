@@ -1,14 +1,65 @@
 <script>
 	import CardList from "./cards.svelte";
 	import Card from "./lib/components/card.svelte";
-  import { onMount } from "svelte";
+  	import { onMount } from "svelte";
+	import * as contract from './contract/main.json';
+	import contractAbi from "./contract/main_abi.json"
 
+	import {
+		Account,
+		Contract,
+		defaultProvider,
+		ec,
+		json,
+		stark,
+		SequencerProvider,
+		number
+	} from "starknet";
+
+	// contract variables
+	const provider = new SequencerProvider({ 
+		network: 'goerli-alpha' // or 'goerli-alpha'
+	});
+
+	const account = new Account(
+    provider,
+    "0x0660cC8805f88E40c4e685ABf35B279DC05C02db063f719074A4Fd2c0bfe725a",
+    ec.getKeyPair("")
+  	);
+	  
+	const erc20 = new Contract(contract.abi, "0x04e545be81062ef526f10ce94edb3354510d6ae566bd3da57ad3339fa5ba507c", provider);
+	erc20.connect(account);
+	
+	(async () => {
+	console.log(`Getting url ${account.address}...`);
+	const url = await erc20.uri();
+
+	console.log(
+		`url ${url}`
+	);
+
+	console.log(`Get balance ${account.address}...`);
+	console.log(`Array falopa ${[number.toBN(1, 256), number.toBN(1, 256)]}`)
+
+
+	// const balance = await erc20.balanceOf(
+	// 	account.address, 1
+	// 	);
+
+	// console.log(`Waiting for Tx to be Accepted on Starknet - Minting...`);
+	// await provider.waitForTransaction(mintTxHash);
+	// console.log(
+	// 	`account Address ${account.address} has a balance of: `, 
+	// 	balance.res
+	// );
+
+	
+	})();
+	///
 	let mintedCards;
-
 	let isLoading = true;
-
 	let ipfs = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
-
+		
 	const getCards = async () => {
 		let promiseArray = [];
 
@@ -39,6 +90,7 @@
 </script>
 
 <main>
+	
 	<header>
 		 <h1 id="⚓-top">Cairo Pokemon Cards</h1> 
 
