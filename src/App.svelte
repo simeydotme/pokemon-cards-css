@@ -16,7 +16,8 @@
 		number,
         uint256
 	} from "starknet";
-  import { bnToUint256 } from "starknet/dist/utils/uint256";
+
+    const CARDS_DECK = 69;
 
 	// contract variables
 	const provider = new SequencerProvider({ 
@@ -40,7 +41,7 @@
 	// 	`url ${url}`
 	// );
 
-	const ids = [uint256.bnToUint256(number.toBN(1, 16))]
+	//const ids = [uint256.bnToUint256(number.toBN(1, 16))]
 
 	// console.log(`Get balance ${account.address} for id...`);
 	// const response = await erc20.balanceOf(
@@ -57,19 +58,20 @@
 
 	/////
 
-	console.log("//////////////////////////////")
-	console.log(`Get balance ${account.address} for ids ${ids}...`);
-	const balancResponse = await erc20.balanceOfBatch(
-		[account.address, account.address, account.address],
-		[uint256.bnToUint256(number.toBN(1, 16)),
-		uint256.bnToUint256(number.toBN(2, 16)),
-		uint256.bnToUint256(number.toBN(3, 16))]
-	);
-	
+	// console.log("//////////////////////////////")
+	// console.log(`Get balance ${account.address} for ids ${ids}...`);
+    // const accounts = Array(CARDS_DECK).fill(account.address)
+    // var ids = []
+    // for (var i = 1; i <= CARDS_DECK; i++) {
+    //     ids.push(uint256.bnToUint256(number.toBN(i, 16)));
+    // }
 
-	balancResponse.batch_balances.map((balance) => {
-		console.log("result: ", number.toBN(balance.low, 16).toString())
-	});
+    // console.log(ids)
+	// const balanceResponse = await erc20.balanceOfBatch(accounts, ids);
+
+	// balanceResponse.batch_balances.map((balance) => {
+	// 	console.log("result: ", number.toBN(balance.low, 16).toString())
+	// });
 
 	// console.log("balance batch reuslt: ", balancResponse.batch_balances)
 	// console.log(
@@ -86,16 +88,36 @@
 
 	
 	})();
-	///
 	let mintedCards;
 	let isLoading = true;
 	let ipfs = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
 		
 	const getCards = async () => {
-		let promiseArray = [];
+		const accounts = Array(CARDS_DECK).fill(account.address)
+		var ids = []
+		for (var i = 1; i <= CARDS_DECK; i++) {
+			ids.push(uint256.bnToUint256(number.toBN(i, 16)));
+		}
 
-		let cardFetch = await fetch("/data.json");
-		let cards = await cardFetch.json();
+		var cards = [{}]
+
+		let balanceResponse = await erc20.balanceOfBatch(accounts, ids);
+		
+		for (var i = 0; i < CARDS_DECK; i++) {
+			var id = i;
+			var quantity = number.toBN(balanceResponse.batch_balances[i].low, 16).toString();
+			if (parseInt(quantity) != 0) {
+				cards.push({id, quantity})
+			}	
+		}
+
+		console.log('cards', cards)
+
+		// balanceResponse.batch_balances.map((balance) => {
+		// 	cards.push()
+		// 	console.log("result: ", number.toBN(balance.low, 16).toString())
+		// });
+
 		return cards;
 	};
 
@@ -148,20 +170,20 @@
 		<p class="author">Backend in Cairo by <a href="https://twitter.com/dub_zn"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/> </svg>@dub_zn</a>
 		</p>
 		<div class="showcase">
-			{#if isLoading}
-				Loading..
-			{:else}
 			<Card 
 				img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
 				rarity="Rare Ultra"
 			/>
-			{/if}
 		</div> 
 	</header>
 
 	<h1 id="⚓-top">
 		<a href="#⚓-top">
-			Minted cards 12/69 
+		{#if isLoading}
+			Loading cards..
+		{:else}
+			Minted cards {mintedCards.length}/69 
+		{/if}
 		</a>
 	</h1>
 	<p>
@@ -172,18 +194,21 @@
 		{#if isLoading}
 			Loading..
 		{:else}
-			{#each mintedCards as _, i}
-				{#if i <= 15}
-					<Card 
-						img={ipfs+"/"+ (i+1) +".webp"}
-						rarity="Rare Holo V"
-					/>
-				{/if}
-				{#if i > 15}
-					<Card 
-						img={ipfs+"/"+ (i+1) +".webp"}
-						rarity="Common"
-					/>
+			
+			{#each mintedCards as card, i}
+				{#if card.quantity != 0}
+					{#if i <= 15}
+						<Card 
+							img={ipfs+"/"+ (card.id+1) +".webp"}
+							rarity="Rare Holo V"
+						/>
+					{/if}
+					{#if i > 15}
+						<Card 
+							img={ipfs+"/"+ (card.id+1) +".webp"}
+							rarity="Common"
+						/>
+					{/if}
 				{/if}
 			{/each}
 		{/if}
