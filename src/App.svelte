@@ -13,8 +13,10 @@
 		json,
 		stark,
 		SequencerProvider,
-		number
+		number,
+        uint256
 	} from "starknet";
+  import { bnToUint256 } from "starknet/dist/utils/uint256";
 
 	// contract variables
 	const provider = new SequencerProvider({ 
@@ -31,21 +33,50 @@
 	erc20.connect(account);
 	
 	(async () => {
-	console.log(`Getting url ${account.address}...`);
-	const url = await erc20.uri();
+	// console.log(`Getting url ${account.address}...`);
+	// const url = await erc20.uri();
 
-	console.log(
-		`url ${url}`
-	);
+	// console.log(
+	// 	`url ${url}`
+	// );
 
-	console.log(`Get balance ${account.address}...`);
-	console.log(`Array falopa ${[number.toBN(1, 256), number.toBN(1, 256)]}`)
+	const ids = [uint256.bnToUint256(number.toBN(1, 16))]
 
-
-	// const balance = await erc20.balanceOf(
-	// 	account.address, 1
+	// console.log(`Get balance ${account.address} for id...`);
+	// const response = await erc20.balanceOf(
+	// 	account.address,
+	// 	uint256.bnToUint256(number.toBN(2, 16))
+	// );
+	
+	// console.log("balance simple reuslt: ", response)
+	// console.log(
+	// 	`account Address ${account.address} has a balance of:`,
+	// 	number.toBN(response.balance.low, 16).toString()
 	// 	);
 
+
+	/////
+
+	console.log("//////////////////////////////")
+	console.log(`Get balance ${account.address} for ids ${ids}...`);
+	const balancResponse = await erc20.balanceOfBatch(
+		[account.address, account.address, account.address],
+		[uint256.bnToUint256(number.toBN(1, 16)),
+		uint256.bnToUint256(number.toBN(2, 16)),
+		uint256.bnToUint256(number.toBN(3, 16))]
+	);
+	
+
+	balancResponse.batch_balances.map((balance) => {
+		console.log("result: ", number.toBN(balance.low, 16).toString())
+	});
+
+	// console.log("balance batch reuslt: ", balancResponse.batch_balances)
+	// console.log(
+	// 	`account Address ${account.address} has a balance of:`,
+	// 	number.toBN(balancResponse.result, 16).toString()
+	// 	);
+	
 	// console.log(`Waiting for Tx to be Accepted on Starknet - Minting...`);
 	// await provider.waitForTransaction(mintTxHash);
 	// console.log(
