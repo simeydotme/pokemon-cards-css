@@ -114,8 +114,8 @@
 
   const interactEnd = (e, delay = 100) => {
     setTimeout(function () {
-      const snapStiff = 0.9;
-      const snapDamp = 2;
+      const snapStiff = 0.01;
+      const snapDamp = 0.06;
       interacting = false;
 
       springRotate.stiffness = snapStiff;
