@@ -12,6 +12,24 @@
   text-justify: inter-word;
 }
 
+.wallet-green {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: large;
+  border-radius: 5px;
+  background-color: rgba(124, 227, 101, 0.9);
+}
+
+.wallet-red {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: large;
+  border-radius: 5px;
+  background-color: rgba(255, 151, 82, 0.9);
+}
+
 body,
 html {
   height: 100%;
@@ -47,12 +65,15 @@ main {
 }
 
 .header2 {
+  text-align: center;
+  align-self: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1%;
   margin-bottom: 4rem;
   border-radius: 5px;
   grid-template-columns: 1fr;
-  text-align: center;
+  flex-direction:column;
   grid-gap: 30px;
   max-width: 85%;
   margin: auto;
@@ -108,7 +129,7 @@ header svg {
 
 .showcase {
   z-index: 99;
-  max-width: min(330px, 80vw);
+  max-width: min(430px, 80vw);
   margin: auto;
   
 }

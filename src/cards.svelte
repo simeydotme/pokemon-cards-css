@@ -20,6 +20,7 @@
 
 <style>
 	.card-grid {  
+		
 		background-color: rgba(0, 0, 0, 0.6);
 		grid-template-columns: 1fr;
 		grid-gap: 1.5vw;
@@ -52,7 +53,7 @@
 
 @media screen and (min-width: 900px) {
 	.card-grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
 }
 
