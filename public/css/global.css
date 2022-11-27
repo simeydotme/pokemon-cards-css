@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+.p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 body,
 html {
   height: 100%;
@@ -18,7 +23,10 @@ html {
 
 body {
   font-family: Roboto;
-  background-color: rgb(57, 60, 66);
+  font-size: large;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
@@ -33,17 +41,33 @@ a:focus {
 
 main {
   color: white;
-  padding: 50px;
+  padding-top: 20px;
   max-width: 1200px;
   margin: auto;
 }
 
-header {
+.header2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1%;
   margin-bottom: 4rem;
+  border-radius: 5px;
+  grid-template-columns: 1fr;
+  text-align: center;
+  grid-gap: 30px;
+  max-width: 85%;
+  margin: auto;
+}
+
+
+header {  
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1%;
+  margin-bottom: 4rem;
+  border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 30px;
-  max-width: 900px;
+  max-width: 50%;
   margin: auto;
 }
 
@@ -86,6 +110,7 @@ header svg {
   z-index: 99;
   max-width: min(330px, 80vw);
   margin: auto;
+  
 }
 
 h1 {
@@ -171,7 +196,7 @@ hr {
 }
 
 mark {
-  background: #006065;
+  background: #b53eff;
   color: white;
   font-style: italic;
   font-weight: bold;

@@ -19,16 +19,19 @@
 </section>
 
 <style>
-	.card-grid {
-		display: grid;
+	.card-grid {  
+		background-color: rgba(0, 0, 0, 0.6);
 		grid-template-columns: 1fr;
 		grid-gap: 1.5vw;
-		transform-style: preserve-3d;
 		height: 100%;
 		max-width: 85%;
 		margin: auto;
-		padding: 5%;
+		padding: 1%;
+  		border-radius: 5px;
+		align-items: center;
 		position: relative;
+		transform-style: preserve-3d;
+		display: grid;
 	}
 
 	.card-grid.active {
@@ -49,7 +52,7 @@
 
 @media screen and (min-width: 900px) {
 	.card-grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	}
 }
 

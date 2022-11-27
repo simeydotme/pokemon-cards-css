@@ -26,19 +26,6 @@
 	let isConnected = false;
 	let walletModalVisible;
 	let pokemonContract;
-
-	// contract variables
-	// var provider = new SequencerProvider({ 
-	// 	network: 'goerli-alpha' // or 'goerli-alpha'
-	// });
-
-	// const account = new Account(
-	// 	provider,
-	// 	"0x0660cC8805f88E40c4e685ABf35B279DC05C02db063f719074A4Fd2c0bfe725a",
-	// 	ec.getKeyPair("")
-  	// );
-	  
-	// erc20.connect(account);
 	
 	let mintedCards;
 	let isLoading = true;
@@ -46,16 +33,13 @@
 	const connectWallet = async() => {   
 		try{      
 			walletModalVisible = true
-			// allows a user to pick a wallet on button click      
 			const starknet = await connect()     
-			// connect to the wallet     
 			await starknet?.enable({ starknetVersion: "v4" })     
-			// set account provider to provider state     
+
 			provider = starknet.account     
-			// set user address to address state     
 			address = starknet.selectedAddress    
-			// set connection status     
 			isConnected = true   
+
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
 			walletModalVisible = false
 
@@ -168,19 +152,23 @@
 		{/if}
 	</header>
 
-	<h1 id="⚓-top">
-		<a href="#⚓-top">
-		{#if isLoading}
-			Loading cards..
-		{:else}
-			Minted cards {mintedCards.length}/69 
-		{/if}
-		</a>
-	</h1>
-	<p>
-		All cards get a 3d rotation with CSS based on the cursor position.<br />
-	</p>
-
+	<br>
+	<div class="header2">
+		<h1 id="⚓-top">
+			<a href="#⚓-top">
+			{#if isLoading}
+				Loading cards..
+			{:else}
+				Minted cards {mintedCards.length}/69 
+			{/if}
+			</a>
+		</h1>
+		<p>
+			All cards get a 3d rotation with CSS based on the cursor position.<br />
+		</p>
+	</div>
+	<br>
+	
 	<CardList>
 		{#if isLoading}
 			Loading..
@@ -205,6 +193,7 @@
 		{/if}
 	</CardList>
 </main>
+<br>
 
 <div class="back-to-top">
   <a href="#top">Back to Top</a>
