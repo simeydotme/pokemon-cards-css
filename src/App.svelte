@@ -1,9 +1,8 @@
 <script>
 	import CardList from "./cards.svelte";
 	import Card from "./lib/components/card.svelte";
-  	import { onMount } from "svelte";
+  	import {onMount} from "svelte";
 	import * as contract from './contract/main.json';
-	import contractAbi from "./contract/main_abi.json"
 
 	import {
 		Account,
@@ -16,116 +15,106 @@
 		number,
         uint256
 	} from "starknet";
+	import { connect } from "get-starknet"
 
+	const POKEMON_CONTRACT_ADDRESS = "0x04e545be81062ef526f10ce94edb3354510d6ae566bd3da57ad3339fa5ba507c"
+	const ipfs_url = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
     const CARDS_DECK = 69;
 
+	let provider;
+	let address;
+	let isConnected = false;
+	let walletModalVisible;
+	let pokemonContract;
+
 	// contract variables
-	const provider = new SequencerProvider({ 
-		network: 'goerli-alpha' // or 'goerli-alpha'
-	});
-
-	const account = new Account(
-    provider,
-    "0x0660cC8805f88E40c4e685ABf35B279DC05C02db063f719074A4Fd2c0bfe725a",
-    ec.getKeyPair("")
-  	);
-	  
-	const erc20 = new Contract(contract.abi, "0x04e545be81062ef526f10ce94edb3354510d6ae566bd3da57ad3339fa5ba507c", provider);
-	erc20.connect(account);
-	
-	(async () => {
-	// console.log(`Getting url ${account.address}...`);
-	// const url = await erc20.uri();
-
-	// console.log(
-	// 	`url ${url}`
-	// );
-
-	//const ids = [uint256.bnToUint256(number.toBN(1, 16))]
-
-	// console.log(`Get balance ${account.address} for id...`);
-	// const response = await erc20.balanceOf(
-	// 	account.address,
-	// 	uint256.bnToUint256(number.toBN(2, 16))
-	// );
-	
-	// console.log("balance simple reuslt: ", response)
-	// console.log(
-	// 	`account Address ${account.address} has a balance of:`,
-	// 	number.toBN(response.balance.low, 16).toString()
-	// 	);
-
-
-	/////
-
-	// console.log("//////////////////////////////")
-	// console.log(`Get balance ${account.address} for ids ${ids}...`);
-    // const accounts = Array(CARDS_DECK).fill(account.address)
-    // var ids = []
-    // for (var i = 1; i <= CARDS_DECK; i++) {
-    //     ids.push(uint256.bnToUint256(number.toBN(i, 16)));
-    // }
-
-    // console.log(ids)
-	// const balanceResponse = await erc20.balanceOfBatch(accounts, ids);
-
-	// balanceResponse.batch_balances.map((balance) => {
-	// 	console.log("result: ", number.toBN(balance.low, 16).toString())
+	// var provider = new SequencerProvider({ 
+	// 	network: 'goerli-alpha' // or 'goerli-alpha'
 	// });
 
-	// console.log("balance batch reuslt: ", balancResponse.batch_balances)
-	// console.log(
-	// 	`account Address ${account.address} has a balance of:`,
-	// 	number.toBN(balancResponse.result, 16).toString()
-	// 	);
+	// const account = new Account(
+	// 	provider,
+	// 	"0x0660cC8805f88E40c4e685ABf35B279DC05C02db063f719074A4Fd2c0bfe725a",
+	// 	ec.getKeyPair("")
+  	// );
+	  
+	// erc20.connect(account);
 	
-	// console.log(`Waiting for Tx to be Accepted on Starknet - Minting...`);
-	// await provider.waitForTransaction(mintTxHash);
-	// console.log(
-	// 	`account Address ${account.address} has a balance of: `, 
-	// 	balance.res
-	// );
-
-	
-	})();
 	let mintedCards;
 	let isLoading = true;
-	let ipfs = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
-		
+
+	const connectWallet = async() => {   
+		try{      
+			walletModalVisible = true
+			// allows a user to pick a wallet on button click      
+			const starknet = await connect()     
+			// connect to the wallet     
+			await starknet?.enable({ starknetVersion: "v4" })     
+			// set account provider to provider state     
+			provider = starknet.account     
+			// set user address to address state     
+			address = starknet.selectedAddress    
+			// set connection status     
+			isConnected = true   
+			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
+			walletModalVisible = false
+
+			var data = { provider, address, isConnected}
+			console.log("RETURNING DATA", data)
+			
+			return data
+		}   catch(error){     
+			walletModalVisible = false
+			alert(error.message)   
+		}
+	}
+
 	const getCards = async () => {
-		const accounts = Array(CARDS_DECK).fill(account.address)
+		console.log("ADDRESS", address)
+		const accounts = Array(CARDS_DECK).fill(address.toString())
 		var ids = []
 		for (var i = 1; i <= CARDS_DECK; i++) {
 			ids.push(uint256.bnToUint256(number.toBN(i, 16)));
 		}
 
-		var cards = [{}]
+		var cards = []
 
-		let balanceResponse = await erc20.balanceOfBatch(accounts, ids);
+		let balanceResponse = await pokemonContract.balanceOfBatch(accounts, ids);
 		
 		for (var i = 0; i < CARDS_DECK; i++) {
 			var id = i;
 			var quantity = number.toBN(balanceResponse.batch_balances[i].low, 16).toString();
-			if (parseInt(quantity) != 0) {
+			if (parseInt(quantity) > 0) {
 				cards.push({id, quantity})
 			}	
 		}
-
 		console.log('cards', cards)
-
-		// balanceResponse.batch_balances.map((balance) => {
-		// 	cards.push()
-		// 	console.log("result: ", number.toBN(balance.low, 16).toString())
-		// });
 
 		return cards;
 	};
 
-	getCards().then((cards) => {
-		window.cards = cards;
-		mintedCards = cards.slice(1, 12);
-		isLoading = false;
-	});
+	connectWallet().then(data => {
+		console.log("inside of getCards")
+
+		provider = data.provider
+		address = data.address
+		isConnected = data.isConnected
+
+		if (isConnected) {
+			const account = new Account(
+				provider,
+				address,
+				ec.getKeyPair("")
+			);	
+			console.log("before create contract")
+			pokemonContract.connect(account);
+		
+			getCards().then((cards) => {
+				mintedCards = cards;
+				isLoading = false;
+			});
+		}
+	})
 
 	onMount(() => {
 		const $headings = document.querySelectorAll("h1,h2,h3");
@@ -169,12 +158,14 @@
 		</section>
 		<p class="author">Backend in Cairo by <a href="https://twitter.com/dub_zn"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/> </svg>@dub_zn</a>
 		</p>
-		<div class="showcase">
-			<Card 
-				img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
-				rarity="Rare Ultra"
-			/>
-		</div> 
+		{#if !walletModalVisible}
+			<div class="showcase">
+				<Card 
+					img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+					rarity="Rare Ultra"
+				/>
+			</div> 
+		{/if}
 	</header>
 
 	<h1 id="⚓-top">
@@ -199,13 +190,13 @@
 				{#if card.quantity != 0}
 					{#if i <= 15}
 						<Card 
-							img={ipfs+"/"+ (card.id+1) +".webp"}
+							img={ipfs_url+"/"+ (card.id+1) +".webp"}
 							rarity="Rare Holo V"
 						/>
 					{/if}
 					{#if i > 15}
 						<Card 
-							img={ipfs+"/"+ (card.id+1) +".webp"}
+							img={ipfs_url+"/"+ (card.id+1) +".webp"}
 							rarity="Common"
 						/>
 					{/if}
