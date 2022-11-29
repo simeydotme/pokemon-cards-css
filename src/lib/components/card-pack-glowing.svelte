@@ -8,8 +8,6 @@
   import Glare from "./card-glare.svelte";
   import Shine from "./card-shine.svelte";
 
-  export let back_img =
-    "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
   export let img = "";
 
   export let name = "";
@@ -361,14 +359,6 @@
       aria-label="Expand the Pokemon Card; {name}."
       tabindex="0"
     >
-      <img
-        class="card__back"
-        src={back_img}
-        alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below"
-        loading="lazy"
-        width="660"
-        height="921"
-      />
       <div class="card__front">
         <img
           src={front_img}
@@ -494,13 +484,6 @@
     height: auto;
   }
 
-  .card__back {
-    background-color: var(--back);
-    transform: rotateY(180deg) translateZ(1px);
-    -webkit-transform: rotateY(180deg) translateZ(1px);
-    backface-visibility: visible;
-  }
-
   .card__front,
   .card__front * {
     backface-visibility: hidden;
@@ -513,10 +496,5 @@
 
   .loading .card__front {
     opacity: 0;
-  }
-
-  .loading .card__back {
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
   }
 </style>

@@ -8,9 +8,9 @@
 	import * as contract from './contract/main.json';
 
 	import { Account, Contract, ec, number, uint256 } from "starknet";
-	import { connect } from "get-starknet"
+	import { connect, disconnect } from "get-starknet"
 
-	const POKEMON_CONTRACT_ADDRESS = "0x00cc1cb3722ccd5be372f2fba0c3ad218b10975dda4e256dca4a45acbc5d90e5"
+	const POKEMON_CONTRACT_ADDRESS = "0x07772b6d8f3eba65f779f7972e366980c6aaf98cc42580eae0e84047db8b8ebf"
 	const ipfs_url = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
     const CARDS_DECK = 69;
 
@@ -25,10 +25,12 @@
 	let isLoading = true;
 	let isLoadingMintedToday = true;
 
+	let disconnectOptions;
+
 	const connectWallet = async() => {   
-		try{      
+		try{
 			walletModalVisible = true
-			const starknet = await connect()     
+			const starknet = await connect( {modalOptions: {theme: "dark"}} );     
 			await starknet?.enable({ starknetVersion: "v4" })     
 
 			provider = starknet.account     
@@ -37,17 +39,26 @@
 
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
 			walletModalVisible = false
-
 			var data = { provider, address, isConnected}
 			
 			return data
 		}   catch(error){     
 			walletModalVisible = false
-			alert(error.message)   
+			console.log(error.message)
+		}
+	}
+
+	const mintDailyCards = async() => {
+		try {
+			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
+			await pokemonContract.mintDailyCards()
+		} catch (error) {
+			console.log(error)
 		}
 	}
 
 	const getCards = async () => {
+		isLoading=true;
 		const accounts = Array(CARDS_DECK).fill(address.toString())
 		var ids = []
 		for (var i = 1; i <= CARDS_DECK; i++) {
@@ -89,7 +100,16 @@
 		return cards;
 	};
 
-	connectWallet().then(data => {
+	const handleDisconnect = async () =>{
+		disconnect( {clearLastWallet: true, clearDefaultWallet: true} );
+		isConnected=false
+		mintedCards = []
+		mintedTodayCards = []
+	}
+
+
+	const init = async () => {
+		connectWallet().then(data => {
 		provider = data.provider
 		address = data.address
 		isConnected = data.isConnected
@@ -104,7 +124,6 @@
 		
 			getCardsMintedToday().then((mintedToday) => {
 				mintedTodayCards = mintedToday;
-				// mintedTodayCards = [];
 				isLoadingMintedToday = false;
 			});
 
@@ -113,7 +132,10 @@
 				isLoading = false;
 			});
 		}
-	})
+		})
+	}
+	
+	init()
 
 	onMount(() => {
 		const $headings = document.querySelectorAll("h1,h2,h3");
@@ -171,14 +193,32 @@
 				<h1>Cards obtained today</h1>
 			</div> 
 			<div class="header-inside-minted">
-				{#if !isLoadingMintedToday && mintedTodayCards.length == 0}
-					<div class="minted-today">
+				{#if isConnected && !isLoadingMintedToday && mintedTodayCards.length == 0}
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<div class="minted-today"
+					on:click={() => mintDailyCards()}
+					>
 						<div class="minted-text-has-stock">READY TO CLAIM</div>
 						<CardPackGlowing 
 							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
 							rarity="Rare Holo V"
 
 						/>
+					</div>
+					{#each Array(5) as _, i}
+						<div class="minted-today">
+							<CardMinted 
+							/>
+						</div>
+					{/each}
+				{:else if !isConnected}
+					<div class="minted-today">
+						<div>
+							<CardPackOff 
+								img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+								rarity="Common"
+							/>
+						</div>
 					</div>
 					{#each Array(5) as _, i}
 						<div class="minted-today">
@@ -250,8 +290,9 @@
 			</a>
 		</h1>
 		{#if isConnected}
-			<button class="wallet-green">
-				Wallet connected <br />
+			<button class="wallet-blue"
+			on:click={() => handleDisconnect()}>
+				Disconnect Wallet <br />
 			</button>
 			<br />
 			<p>
@@ -259,8 +300,9 @@
 			</p>
 
 		{:else}
-			<button class="wallet-red">
-				Wallet not connected <br />
+			<button class="wallet-blue"
+			on:click={() => init() }>
+				Click to connect your Wallet<br />
 			</button>
 		{/if}
 	</div>

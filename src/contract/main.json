@@ -232,7 +232,7 @@
         },
         {
             "inputs": [],
-            "name": "mintCardsBatch",
+            "name": "mintDailyCards",
             "outputs": [],
             "type": "function"
         },
@@ -312,12 +312,12 @@
                 "selector": "0x2f0b3c5710379609eb5495f1ecd348cb28167711b73609fe565a72734550354"
             },
             {
-                "offset": "0x87f",
-                "selector": "0x348b9a6e049cc3f9f66737435ed36813556cc5be1cf9d5c64f429c32a17d88a"
+                "offset": "0x840",
+                "selector": "0x334aa0748c93816d891249120a27453f88bd851dbcf101e36ec01320dc2296e"
             },
             {
-                "offset": "0x840",
-                "selector": "0x3f46d1078354f80274c83845b84b12617385475b9792ab59087584f5de68cee"
+                "offset": "0x87f",
+                "selector": "0x348b9a6e049cc3f9f66737435ed36813556cc5be1cf9d5c64f429c32a17d88a"
             }
         ],
         "L1_HANDLER": []
@@ -1380,7 +1380,7 @@
                 "accessible_scopes": [
                     "__main__",
                     "__main__",
-                    "__main__.mintCardsBatch"
+                    "__main__.mintDailyCards"
                 ],
                 "end_pc": 2076,
                 "flow_tracking_data": {
@@ -1389,23 +1389,23 @@
                         "offset": 165
                     },
                     "reference_ids": {
-                        "__main__.mintCardsBatch.__temp103": 1186,
-                        "__main__.mintCardsBatch.__temp104": 1187,
-                        "__main__.mintCardsBatch.__temp105": 1188,
-                        "__main__.mintCardsBatch.caller_adress": 1178,
-                        "__main__.mintCardsBatch.claim_hash": 1191,
-                        "__main__.mintCardsBatch.claimed_pack_today": 1195,
-                        "__main__.mintCardsBatch.current_block": 1175,
-                        "__main__.mintCardsBatch.current_epoch": 1173,
-                        "__main__.mintCardsBatch.date": 1185,
-                        "__main__.mintCardsBatch.day": 1182,
-                        "__main__.mintCardsBatch.month": 1181,
-                        "__main__.mintCardsBatch.month_aux": 1184,
-                        "__main__.mintCardsBatch.pedersen_ptr": 1193,
-                        "__main__.mintCardsBatch.range_check_ptr": 1194,
-                        "__main__.mintCardsBatch.syscall_ptr": 1192,
-                        "__main__.mintCardsBatch.year": 1180,
-                        "__main__.mintCardsBatch.year_aux": 1183
+                        "__main__.mintDailyCards.__temp103": 1186,
+                        "__main__.mintDailyCards.__temp104": 1187,
+                        "__main__.mintDailyCards.__temp105": 1188,
+                        "__main__.mintDailyCards.caller_adress": 1178,
+                        "__main__.mintDailyCards.claim_hash": 1191,
+                        "__main__.mintDailyCards.claimed_pack_today": 1195,
+                        "__main__.mintDailyCards.current_block": 1175,
+                        "__main__.mintDailyCards.current_epoch": 1173,
+                        "__main__.mintDailyCards.date": 1185,
+                        "__main__.mintDailyCards.day": 1182,
+                        "__main__.mintDailyCards.month": 1181,
+                        "__main__.mintDailyCards.month_aux": 1184,
+                        "__main__.mintDailyCards.pedersen_ptr": 1193,
+                        "__main__.mintDailyCards.range_check_ptr": 1194,
+                        "__main__.mintDailyCards.syscall_ptr": 1192,
+                        "__main__.mintDailyCards.year": 1180,
+                        "__main__.mintDailyCards.year_aux": 1183
                     }
                 },
                 "name": "error_message",
@@ -4370,7 +4370,7 @@
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.mintCardsBatch"
+                        "__wrappers__.mintDailyCards"
                     ],
                     "code": "memory[ap] = segments.add()",
                     "flow_tracking_data": {
@@ -4379,12 +4379,12 @@
                             "offset": 0
                         },
                         "reference_ids": {
-                            "__wrappers__.mintCardsBatch.__calldata_actual_size": 1219,
-                            "__wrappers__.mintCardsBatch.__calldata_ptr": 1218,
-                            "__wrappers__.mintCardsBatch.pedersen_ptr": 1221,
-                            "__wrappers__.mintCardsBatch.range_check_ptr": 1222,
-                            "__wrappers__.mintCardsBatch.ret_value": 1223,
-                            "__wrappers__.mintCardsBatch.syscall_ptr": 1220
+                            "__wrappers__.mintDailyCards.__calldata_actual_size": 1219,
+                            "__wrappers__.mintDailyCards.__calldata_ptr": 1218,
+                            "__wrappers__.mintDailyCards.pedersen_ptr": 1221,
+                            "__wrappers__.mintDailyCards.range_check_ptr": 1222,
+                            "__wrappers__.mintDailyCards.ret_value": 1223,
+                            "__wrappers__.mintDailyCards.syscall_ptr": 1220
                         }
                     }
                 }
@@ -6489,21 +6489,21 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch": {
+            "__main__.mintDailyCards": {
                 "decorators": [
                     "external"
                 ],
                 "pc": 2041,
                 "type": "function"
             },
-            "__main__.mintCardsBatch.Args": {
-                "full_name": "__main__.mintCardsBatch.Args",
+            "__main__.mintDailyCards.Args": {
+                "full_name": "__main__.mintDailyCards.Args",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.mintCardsBatch.ImplicitArgs": {
-                "full_name": "__main__.mintCardsBatch.ImplicitArgs",
+            "__main__.mintDailyCards.ImplicitArgs": {
+                "full_name": "__main__.mintDailyCards.ImplicitArgs",
                 "members": {
                     "pedersen_ptr": {
                         "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
@@ -6521,17 +6521,17 @@
                 "size": 3,
                 "type": "struct"
             },
-            "__main__.mintCardsBatch.Return": {
+            "__main__.mintDailyCards.Return": {
                 "cairo_type": "()",
                 "type": "type_definition"
             },
-            "__main__.mintCardsBatch.SIZEOF_LOCALS": {
+            "__main__.mintDailyCards.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 5
             },
-            "__main__.mintCardsBatch.__temp103": {
+            "__main__.mintDailyCards.__temp103": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.__temp103",
+                "full_name": "__main__.mintDailyCards.__temp103",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6544,9 +6544,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.__temp104": {
+            "__main__.mintDailyCards.__temp104": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.__temp104",
+                "full_name": "__main__.mintDailyCards.__temp104",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6559,9 +6559,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.__temp105": {
+            "__main__.mintDailyCards.__temp105": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.__temp105",
+                "full_name": "__main__.mintDailyCards.__temp105",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6574,9 +6574,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.array_amounts_filled_one": {
+            "__main__.mintDailyCards.array_amounts_filled_one": {
                 "cairo_type": "starkware.cairo.common.uint256.Uint256*",
-                "full_name": "__main__.mintCardsBatch.array_amounts_filled_one",
+                "full_name": "__main__.mintDailyCards.array_amounts_filled_one",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6589,9 +6589,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.caller_adress": {
+            "__main__.mintDailyCards.caller_adress": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.caller_adress",
+                "full_name": "__main__.mintDailyCards.caller_adress",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6612,9 +6612,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.claim_hash": {
+            "__main__.mintDailyCards.claim_hash": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.claim_hash",
+                "full_name": "__main__.mintDailyCards.claim_hash",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6635,9 +6635,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.claimed_cards": {
+            "__main__.mintDailyCards.claimed_cards": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.claimed_cards",
+                "full_name": "__main__.mintDailyCards.claimed_cards",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6658,9 +6658,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.claimed_pack_today": {
+            "__main__.mintDailyCards.claimed_pack_today": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.claimed_pack_today",
+                "full_name": "__main__.mintDailyCards.claimed_pack_today",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6673,9 +6673,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.current_block": {
+            "__main__.mintDailyCards.current_block": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.current_block",
+                "full_name": "__main__.mintDailyCards.current_block",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6688,9 +6688,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.current_epoch": {
+            "__main__.mintDailyCards.current_epoch": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.current_epoch",
+                "full_name": "__main__.mintDailyCards.current_epoch",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6703,9 +6703,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.date": {
+            "__main__.mintDailyCards.date": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.date",
+                "full_name": "__main__.mintDailyCards.date",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6718,9 +6718,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.day": {
+            "__main__.mintDailyCards.day": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.day",
+                "full_name": "__main__.mintDailyCards.day",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6733,9 +6733,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.month": {
+            "__main__.mintDailyCards.month": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.month",
+                "full_name": "__main__.mintDailyCards.month",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6748,9 +6748,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.month_aux": {
+            "__main__.mintDailyCards.month_aux": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.month_aux",
+                "full_name": "__main__.mintDailyCards.month_aux",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6763,9 +6763,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.pack": {
+            "__main__.mintDailyCards.pack": {
                 "cairo_type": "starkware.cairo.common.uint256.Uint256*",
-                "full_name": "__main__.mintCardsBatch.pack",
+                "full_name": "__main__.mintDailyCards.pack",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6786,9 +6786,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.pack_len": {
+            "__main__.mintDailyCards.pack_len": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.pack_len",
+                "full_name": "__main__.mintDailyCards.pack_len",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6809,9 +6809,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.pedersen_ptr": {
+            "__main__.mintDailyCards.pedersen_ptr": {
                 "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
-                "full_name": "__main__.mintCardsBatch.pedersen_ptr",
+                "full_name": "__main__.mintDailyCards.pedersen_ptr",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -6920,9 +6920,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.range_check_ptr": {
+            "__main__.mintDailyCards.range_check_ptr": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.range_check_ptr",
+                "full_name": "__main__.mintDailyCards.range_check_ptr",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -7031,9 +7031,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.syscall_ptr": {
+            "__main__.mintDailyCards.syscall_ptr": {
                 "cairo_type": "felt*",
-                "full_name": "__main__.mintCardsBatch.syscall_ptr",
+                "full_name": "__main__.mintDailyCards.syscall_ptr",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -7174,9 +7174,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.year": {
+            "__main__.mintDailyCards.year": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.year",
+                "full_name": "__main__.mintDailyCards.year",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -7189,9 +7189,9 @@
                 ],
                 "type": "reference"
             },
-            "__main__.mintCardsBatch.year_aux": {
+            "__main__.mintDailyCards.year_aux": {
                 "cairo_type": "felt",
-                "full_name": "__main__.mintCardsBatch.year_aux",
+                "full_name": "__main__.mintDailyCards.year_aux",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9628,36 +9628,36 @@
                 "destination": "starkware.cairo.common.memcpy.memcpy",
                 "type": "alias"
             },
-            "__wrappers__.mintCardsBatch": {
+            "__wrappers__.mintDailyCards": {
                 "decorators": [
                     "external"
                 ],
                 "pc": 2112,
                 "type": "function"
             },
-            "__wrappers__.mintCardsBatch.Args": {
-                "full_name": "__wrappers__.mintCardsBatch.Args",
+            "__wrappers__.mintDailyCards.Args": {
+                "full_name": "__wrappers__.mintDailyCards.Args",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__wrappers__.mintCardsBatch.ImplicitArgs": {
-                "full_name": "__wrappers__.mintCardsBatch.ImplicitArgs",
+            "__wrappers__.mintDailyCards.ImplicitArgs": {
+                "full_name": "__wrappers__.mintDailyCards.ImplicitArgs",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__wrappers__.mintCardsBatch.Return": {
+            "__wrappers__.mintDailyCards.Return": {
                 "cairo_type": "(syscall_ptr: felt*, pedersen_ptr: starkware.cairo.common.cairo_builtins.HashBuiltin*, range_check_ptr: felt, size: felt, retdata: felt*)",
                 "type": "type_definition"
             },
-            "__wrappers__.mintCardsBatch.SIZEOF_LOCALS": {
+            "__wrappers__.mintDailyCards.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
             },
-            "__wrappers__.mintCardsBatch.__calldata_actual_size": {
+            "__wrappers__.mintDailyCards.__calldata_actual_size": {
                 "cairo_type": "felt",
-                "full_name": "__wrappers__.mintCardsBatch.__calldata_actual_size",
+                "full_name": "__wrappers__.mintDailyCards.__calldata_actual_size",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9670,9 +9670,9 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch.__calldata_ptr": {
+            "__wrappers__.mintDailyCards.__calldata_ptr": {
                 "cairo_type": "felt*",
-                "full_name": "__wrappers__.mintCardsBatch.__calldata_ptr",
+                "full_name": "__wrappers__.mintDailyCards.__calldata_ptr",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9685,13 +9685,13 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch.__wrapped_func": {
-                "destination": "__main__.mintCardsBatch",
+            "__wrappers__.mintDailyCards.__wrapped_func": {
+                "destination": "__main__.mintDailyCards",
                 "type": "alias"
             },
-            "__wrappers__.mintCardsBatch.pedersen_ptr": {
+            "__wrappers__.mintDailyCards.pedersen_ptr": {
                 "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
-                "full_name": "__wrappers__.mintCardsBatch.pedersen_ptr",
+                "full_name": "__wrappers__.mintDailyCards.pedersen_ptr",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9712,9 +9712,9 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch.range_check_ptr": {
+            "__wrappers__.mintDailyCards.range_check_ptr": {
                 "cairo_type": "felt",
-                "full_name": "__wrappers__.mintCardsBatch.range_check_ptr",
+                "full_name": "__wrappers__.mintDailyCards.range_check_ptr",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9735,9 +9735,9 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch.ret_value": {
+            "__wrappers__.mintDailyCards.ret_value": {
                 "cairo_type": "()",
-                "full_name": "__wrappers__.mintCardsBatch.ret_value",
+                "full_name": "__wrappers__.mintDailyCards.ret_value",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9750,9 +9750,9 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch.retdata": {
+            "__wrappers__.mintDailyCards.retdata": {
                 "cairo_type": "felt*",
-                "full_name": "__wrappers__.mintCardsBatch.retdata",
+                "full_name": "__wrappers__.mintDailyCards.retdata",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9765,9 +9765,9 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch.retdata_size": {
+            "__wrappers__.mintDailyCards.retdata_size": {
                 "cairo_type": "felt",
-                "full_name": "__wrappers__.mintCardsBatch.retdata_size",
+                "full_name": "__wrappers__.mintDailyCards.retdata_size",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9780,9 +9780,9 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch.syscall_ptr": {
+            "__wrappers__.mintDailyCards.syscall_ptr": {
                 "cairo_type": "felt*",
-                "full_name": "__wrappers__.mintCardsBatch.syscall_ptr",
+                "full_name": "__wrappers__.mintDailyCards.syscall_ptr",
                 "references": [
                     {
                         "ap_tracking_data": {
@@ -9803,7 +9803,7 @@
                 ],
                 "type": "reference"
             },
-            "__wrappers__.mintCardsBatch_encode_return.memcpy": {
+            "__wrappers__.mintDailyCards_encode_return.memcpy": {
                 "destination": "starkware.cairo.common.memcpy.memcpy",
                 "type": "alias"
             },

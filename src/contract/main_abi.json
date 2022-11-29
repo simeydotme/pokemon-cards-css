@@ -231,7 +231,7 @@
     },
     {
         "inputs": [],
-        "name": "mintCardsBatch",
+        "name": "mintDailyCards",
         "outputs": [],
         "type": "function"
     },

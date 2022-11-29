@@ -21,13 +21,13 @@
   background-color: rgba(124, 227, 101, 0.9);
 }
 
-.wallet-red {
+.wallet-blue {
   color: white;
   border-color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   font-size: large;
   border-radius: 5px;
-  background-color: rgba(255, 151, 82, 0.9);
+  background-color: rgba(82, 189, 255, 0.9);
 }
 
 body,
@@ -174,7 +174,7 @@ header svg {
 
 .minted-today {
   padding: 3%;
-  max-width: min(215px, 35vw);
+  max-width: min(215px, 50vw);
   margin: auto;
 }
 
