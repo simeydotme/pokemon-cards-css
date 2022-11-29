@@ -399,18 +399,19 @@
     --posx: 50%;
     --posy: 50%;
     --hyp: 0;
+
   }
 
   .card {
     --radius: 4.55% / 3.5%;
     --back: #004177;
-    --glow: #69d1e9;
     z-index: 0;
     transform: translate3d(0, 0, 0.1px);
-    -webkit-transform: translate3d(0, 0, 0.1px);
     will-change: transform, visibility;
     transform-style: preserve-3d;
+    -webkit-transform: translate3d(0, 0, 0.1px);
     -webkit-transform-style: preserve-3d;
+    
   }
 
   .card.interacting {
@@ -472,12 +473,19 @@
 
   .card__rotator :global(*) {
     width: 100%;
+        
+    box-shadow: 
+      0 0 5px 0px #fff, 
+      0 0 10px 0px rgb(0, 255, 60),
+      0 0 20px 0px rgb(110, 255, 168);;
+
     display: grid;
     grid-area: 1/1;
     border-radius: var(--radius);
     image-rendering: optimizeQuality;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+
   }
 
   .card__rotator img {
