@@ -77,24 +77,31 @@ main {
   margin: auto;
 }
 
+.mint-menu {
+  text-align: center;
+  background-color: rgba(136, 255, 89, 0.6);
+  border-radius: 5px;
+  height: 95%;
+  max-width: min(215px, 20vw);
+  padding: 3%;
+  margin: 3%;
+}
+
 .header-inside {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1%;
-  margin-bottom: 4rem;
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr;
-  margin: auto;
 }
 
 .header-inside-minted {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1%;
-  margin-bottom: 4rem;
   border-radius: 5px;
-  display: grid;
+  display: grid;  
   grid-template-columns: 1fr 1fr 1fr;
-  margin: auto;
+  grid-template-rows: 1fr 1fr;
+  padding: 3%;
 }
 
 header {  
@@ -150,12 +157,13 @@ header svg {
 .showcase {
   z-index: 99;
   max-width: min(430px, 80vw);
+  padding: 3%;
   margin: auto;
   
 }
 
 .minted-today {
-  padding: 1%;
+  padding: 3%;
   max-width: min(215px, 35vw);
   margin: auto;
 }

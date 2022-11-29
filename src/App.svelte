@@ -2,20 +2,10 @@
 	import CardList from "./cards.svelte";
 	import Card from "./lib/components/card.svelte";
 	import CardMinted from "./lib/components/card-minted.svelte";
-  	import {onMount} from "svelte";
+  	import { onMount } from "svelte";
 	import * as contract from './contract/main.json';
 
-	import {
-		Account,
-		Contract,
-		defaultProvider,
-		ec,
-		json,
-		stark,
-		SequencerProvider,
-		number,
-        uint256
-	} from "starknet";
+	import { Account, Contract, ec, number, uint256 } from "starknet";
 	import { connect } from "get-starknet"
 
 	const POKEMON_CONTRACT_ADDRESS = "0x00cc1cb3722ccd5be372f2fba0c3ad218b10975dda4e256dca4a45acbc5d90e5"
@@ -31,6 +21,7 @@
 	let mintedCards;
 	let mintedTodayCards;
 	let isLoading = true;
+	let isLoadingMintedToday = true;
 
 	const connectWallet = async() => {   
 		try{      
@@ -73,28 +64,24 @@
 			}	
 		}
 
+		console.log("ALL OF MY CARDS ", cards)
+
 		return cards;
 	};
 
 	const getCardsMintedToday = async () => {
-		const accounts = Array(CARDS_DECK).fill(address.toString())
-		var ids = []
-		for (var i = 1; i <= CARDS_DECK; i++) {
-			ids.push(uint256.bnToUint256(number.toBN(i, 16)));
+		let cardsMinted = await pokemonContract.user_claim_pack(address)
+		let cards = []
+
+		let cardsInString = cardsMinted.toString()
+		if (cardsInString.length % 2 != 0) {
+			cardsInString = "0" + cardsInString;
 		}
 
-		var cards = []
-
-		let balanceResponse = await pokemonContract.balanceOfBatch(accounts, ids);
-		
-		for (var i = 0; i < CARDS_DECK; i++) {
-			var id = i;
-			var quantity = number.toBN(balanceResponse.batch_balances[i].low, 16).toString();
-			if (parseInt(quantity) > 0) {
-				cards.push({id, quantity})
-			}	
+		for (var i = cardsInString.length - 1; i >= 0; i-=2) {
+			cards.push(parseInt(cardsInString[i-1] + cardsInString[i]))
 		}
-
+		console.log(cards)
 		return cards;
 	};
 
@@ -111,6 +98,11 @@
 			);	
 			pokemonContract.connect(account);
 		
+			getCardsMintedToday().then((mintedToday) => {
+				mintedTodayCards = mintedToday;
+				isLoadingMintedToday = false;
+			});
+
 			getCards().then((cards) => {
 				mintedCards = cards;
 				isLoading = false;
@@ -170,37 +162,43 @@
 			{/if}
 		</div>
 		<div class="header-inside-minted">
-			<h1 id="⚓-top">Today Mints!</h1> 
-				{#if isLoading}
+			<div class="minted-today">
+				<CardMinted 
+					img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+					rarity="Rare Holo V"
+				/>
+			</div>
+			{#if isLoadingMintedToday}
 				{#each Array(5) as _, i}
 					<div class="minted-today">
 						<CardMinted 
 						/>
 					</div>
 				{/each}
-				{:else}
-					
-					{#each mintedCards as card, i}
-						{#if card.quantity != 0}
-							{#if card.id <= 15}
-							<div class="minted-today">
-								<CardMinted 
-									img={ipfs_url+"/"+ (card.id+1) +".webp"}
-									rarity="Rare Holo V"
-								/>
-							</div>
-							{/if}
-							{#if card.id > 15}
-							<div class="minted-today">
-								<CardMinted 
-									img={ipfs_url+"/"+ (card.id+1) +".webp"}
-									rarity="Common"
-								/>
-							</div>
-							{/if}
-						{/if}
-					{/each}
-				{/if}
+			{:else}
+				{#each mintedTodayCards as card_id, i}
+					{#if card_id == 0}
+					<CardMinted 
+						/>
+					{/if}
+					{#if card_id <= 15}
+					<div class="minted-today">
+						<CardMinted 
+							img={ipfs_url+"/"+ card_id +".webp"}
+							rarity="Rare Holo V"
+						/>
+					</div>
+					{/if}
+					{#if card_id > 15}
+					<div class="minted-today">
+						<CardMinted 
+							img={ipfs_url+"/"+ card_id +".webp"}
+							rarity="Common"
+						/>
+					</div>
+					{/if}
+				{/each}
+			{/if}
 		</div>
 	</header>
 

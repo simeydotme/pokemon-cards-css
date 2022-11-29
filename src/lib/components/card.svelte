@@ -25,13 +25,12 @@
   const front_loading =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAAN0lEQVR42u3OIQEAMAgAsNP/AkFfyIDCbAkWP6vfsZCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ2BtyOnuhnmSZZAAAAABJRU5ErkJggg==";
 
-  let img_base = img.startsWith("http") ? "" : "https://images.pokemontcg.io/";
   let front_img = "";
 
   const galaxyPosition = Math.floor(Math.random()*1500);
 
   setTimeout(() => {
-    front_img = img_base + img;
+    front_img = img;
   }, 20);
 
   let thisCard;
