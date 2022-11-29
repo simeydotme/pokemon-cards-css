@@ -20,7 +20,6 @@
 
 <style>
 	.card-grid {  
-		
 		background-color: rgba(0, 0, 0, 0.6);
 		grid-template-columns: 1fr;
 		grid-gap: 1.5vw;

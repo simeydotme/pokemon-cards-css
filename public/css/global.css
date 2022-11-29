@@ -73,12 +73,29 @@ main {
   margin-bottom: 4rem;
   border-radius: 5px;
   grid-template-columns: 1fr;
-  flex-direction:column;
-  grid-gap: 30px;
   max-width: 85%;
   margin: auto;
 }
 
+.header-inside {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1%;
+  margin-bottom: 4rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+.header-inside-minted {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1%;
+  margin-bottom: 4rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+}
 
 header {  
   background-color: rgba(0, 0, 0, 0.6);
@@ -86,9 +103,9 @@ header {
   margin-bottom: 4rem;
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 30px;
-  max-width: 50%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1%;
+  max-width: 85%;
   margin: auto;
 }
 
@@ -114,7 +131,10 @@ header svg {
     grid-column: 2;
     grid-row: 1/5;
   }
-  .intro,
+  .intro {
+    text-align: justify;
+    padding-right: 5%;
+  }
   .info,
   .author {
     grid-column: 1;
@@ -132,6 +152,12 @@ header svg {
   max-width: min(430px, 80vw);
   margin: auto;
   
+}
+
+.minted-today {
+  padding: 1%;
+  max-width: min(215px, 35vw);
+  margin: auto;
 }
 
 h1 {
