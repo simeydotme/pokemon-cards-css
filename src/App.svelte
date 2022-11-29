@@ -2,6 +2,8 @@
 	import CardList from "./cards.svelte";
 	import Card from "./lib/components/card.svelte";
 	import CardMinted from "./lib/components/card-minted.svelte";
+	import CardPackGlowing from "./lib/components/card-pack-glowing.svelte";
+	import CardPackOff from "./lib/components/card-pack-off.svelte";
   	import { onMount } from "svelte";
 	import * as contract from './contract/main.json';
 
@@ -64,8 +66,6 @@
 			}	
 		}
 
-		console.log("ALL OF MY CARDS ", cards)
-
 		return cards;
 	};
 
@@ -74,6 +74,11 @@
 		let cards = []
 
 		let cardsInString = cardsMinted.toString()
+
+		if (cardsInString.length == 1) {
+			return cards;
+		}
+
 		if (cardsInString.length % 2 != 0) {
 			cardsInString = "0" + cardsInString;
 		}
@@ -81,7 +86,6 @@
 		for (var i = cardsInString.length - 1; i >= 0; i-=2) {
 			cards.push(parseInt(cardsInString[i-1] + cardsInString[i]))
 		}
-		console.log(cards)
 		return cards;
 	};
 
@@ -100,6 +104,7 @@
 		
 			getCardsMintedToday().then((mintedToday) => {
 				mintedTodayCards = mintedToday;
+				// mintedTodayCards = [];
 				isLoadingMintedToday = false;
 			});
 
@@ -138,8 +143,8 @@
 				</p>
 				<br>
 				<p>
-					The idea is to launch 1 pack per day (contains 11 cards), once the day has passed it cannot be minted. 
-					It is based on the ERC1155 standard, so cards can be transferred with other users.
+					The idea is to launch 1 pack per day (contains 5 cards), once the day has passed it cannot be minted. 
+					It is based on the ERC1155 standard, so cards can be transferred with other users (one trade per day is allowed).
 				</p>
 				<br>
 				<p>
@@ -155,50 +160,80 @@
 			{#if !walletModalVisible}
 				<div class="showcase">
 					<Card 
-						img={"https://i.ibb.co/GxVVRpQ/gengar-cairo.png"}
+						img={"https://i.ibb.co/yqKsRHQ/gengar-cairo.png"}
 						rarity="Rare Ultra"
 					/>
 				</div> 
 			{/if}
 		</div>
-		<div class="header-inside-minted">
-			<div class="minted-today">
-				<CardMinted 
-					img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
-					rarity="Rare Holo V"
-				/>
-			</div>
-			{#if isLoadingMintedToday}
-				{#each Array(5) as _, i}
+		<div class="mint-menu" >
+			<div class="mint-menu-title">
+				<h1>Cards obtained today</h1>
+			</div> 
+			<div class="header-inside-minted">
+				{#if !isLoadingMintedToday && mintedTodayCards.length == 0}
 					<div class="minted-today">
-						<CardMinted 
-						/>
-					</div>
-				{/each}
-			{:else}
-				{#each mintedTodayCards as card_id, i}
-					{#if card_id == 0}
-					<CardMinted 
-						/>
-					{/if}
-					{#if card_id <= 15}
-					<div class="minted-today">
-						<CardMinted 
-							img={ipfs_url+"/"+ card_id +".webp"}
+						<div class="minted-text-has-stock">READY TO CLAIM</div>
+						<CardPackGlowing 
+							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
 							rarity="Rare Holo V"
+
 						/>
 					</div>
-					{/if}
-					{#if card_id > 15}
+					{#each Array(5) as _, i}
+						<div class="minted-today">
+							<CardMinted 
+							/>
+						</div>
+					{/each}
+				{:else}
 					<div class="minted-today">
-						<CardMinted 
-							img={ipfs_url+"/"+ card_id +".webp"}
-							rarity="Common"
-						/>
+						<div>
+							<div class="minted-text-out-stock">OUT OF STOCK</div>
+							<CardPackOff 
+								img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+								rarity="Common"
+							/>
+						</div>
 					</div>
+				{/if}
+				{#if isLoadingMintedToday}
+					{#each Array(5) as _, i}
+						<div class="minted-today">
+							<CardMinted 
+							/>
+						</div>
+					{/each}
+				{:else if mintedTodayCards.length > 0}
+					{#each mintedTodayCards as card_id, i}
+						{#if card_id <= 15}
+						<div class="minted-today">
+							<CardMinted 
+								img={ipfs_url+"/"+ card_id +".webp"}
+								rarity="Rare Holo V"
+							/>
+						</div>
+						{/if}
+						{#if card_id > 15}
+						<div class="minted-today">
+							<CardMinted 
+							
+								img={ipfs_url+"/"+ card_id +".webp"}
+								rarity="Common"
+							/>
+						</div>
+						{/if}
+					{/each}
+					{#if mintedTodayCards.length == 0}
+						{#each Array(5) as _, i}
+							<div class="minted-today">
+								<CardMinted 
+								/>
+							</div>
+						{/each}
 					{/if}
-				{/each}
-			{/if}
+				{/if}
+			</div>
 		</div>
 	</header>
 

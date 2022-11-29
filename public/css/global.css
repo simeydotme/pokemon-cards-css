@@ -78,13 +78,24 @@ main {
 }
 
 .mint-menu {
-  text-align: center;
-  background-color: rgba(136, 255, 89, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: grid;
   border-radius: 5px;
-  height: 95%;
-  max-width: min(215px, 20vw);
-  padding: 3%;
-  margin: 3%;
+}
+
+.mint-menu-title {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 3px;
+  padding-top: 5px;
+  padding-left: 8px;
+}
+
+.starknet-ball {
+  background-image: url("https://i.ibb.co/4mWcrDd/starknet-ball.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 3px;
 }
 
 .header-inside {
@@ -95,7 +106,6 @@ main {
 }
 
 .header-inside-minted {
-  background-color: rgba(0, 0, 0, 0.6);
   padding: 1%;
   border-radius: 5px;
   display: grid;  
@@ -168,10 +178,31 @@ header svg {
   margin: auto;
 }
 
+.minted-text-out-stock {
+  border-radius: 5px;
+  padding: 3px;
+  position:absolute;
+  max-width: min(215px, 35vw);
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.minted-text-has-stock {
+  border-radius: 5px;
+  padding: 3px;
+  position:absolute;
+  max-width: min(215px, 35vw);
+  text-align: center;
+  background-color: rgba(13, 199, 0, 0.8);
+  z-index: 1;
+}
+
 h1 {
   margin-top: 0;
   margin-bottom: 0.25em;
 }
+
 
 p {
   margin: 0 0 0.25em;
