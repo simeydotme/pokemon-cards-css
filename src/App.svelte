@@ -10,7 +10,9 @@
 	import { Account, Contract, ec, number, uint256 } from "starknet";
 	import { connect, disconnect } from "get-starknet"
 
-	const POKEMON_CONTRACT_ADDRESS = "0x07772b6d8f3eba65f779f7972e366980c6aaf98cc42580eae0e84047db8b8ebf"
+	// const OLDEST_POKEMON_CONTRACT_ADDRESS = "0x00cc1cb3722ccd5be372f2fba0c3ad218b10975dda4e256dca4a45acbc5d90e5"
+	const POKEMON_CONTRACT_ADDRESS = "0x028345627f0e0301417fc654b629a3e241675903784cf3e7ec8e1042c8e476be"
+	
 	const ipfs_url = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
     const CARDS_DECK = 69;
 
@@ -24,8 +26,6 @@
 	let mintedTodayCards;
 	let isLoading = true;
 	let isLoadingMintedToday = true;
-
-	let disconnectOptions;
 
 	const connectWallet = async() => {   
 		try{
@@ -211,7 +211,7 @@
 							/>
 						</div>
 					{/each}
-				{:else if !isConnected}
+				{:else if !isConnected || isLoadingMintedToday}
 					<div class="minted-today">
 						<div>
 							<CardPackOff 
@@ -237,14 +237,7 @@
 						</div>
 					</div>
 				{/if}
-				{#if isLoadingMintedToday}
-					{#each Array(5) as _, i}
-						<div class="minted-today">
-							<CardMinted 
-							/>
-						</div>
-					{/each}
-				{:else if mintedTodayCards.length > 0}
+				{#if !isLoadingMintedToday && mintedTodayCards.length > 0}
 					{#each mintedTodayCards as card_id, i}
 						{#if card_id <= 15}
 						<div class="minted-today">
