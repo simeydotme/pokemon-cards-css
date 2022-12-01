@@ -10,10 +10,8 @@
 	import { Account, Contract, ec, number, uint256 } from "starknet";
 	import { connect, disconnect } from "get-starknet"
 
-	// const OLDEST_POKEMON_CONTRACT_ADDRESS = "0x00cc1cb3722ccd5be372f2fba0c3ad218b10975dda4e256dca4a45acbc5d90e5"
 	const POKEMON_CONTRACT_ADDRESS = "0x028345627f0e0301417fc654b629a3e241675903784cf3e7ec8e1042c8e476be"
-	
-	const ipfs_url = "https://gateway.pinata.cloud/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
+	const ipfs_url = "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
     const CARDS_DECK = 69;
 
 	let provider;
@@ -165,13 +163,12 @@
 				</p>
 				<br>
 				<p>
-					The idea is to launch 1 pack per day (contains 5 cards), once the day has passed it cannot be minted. 
+					You can claim a pack per day (contains 5 cards), once the day has passed it cannot be minted. 
 					It is based on the ERC1155 standard, so cards can be transferred with other users (one trade per day is allowed).
 				</p>
 				<br>
 				<p>
 					In principle the base set contains 102 cards, but in this case we will remove the trainer and energy cards (a total of 69 cards remain). 
-					Of which can be repeated.
 				</p>
 			</section>
 
@@ -250,7 +247,6 @@
 						{#if card_id > 15}
 						<div class="minted-today">
 							<CardMinted 
-							
 								img={ipfs_url+"/"+ card_id +".webp"}
 								rarity="Common"
 							/>
