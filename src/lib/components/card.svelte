@@ -1,9 +1,12 @@
 <script>
+// @ts-nocheck
+
   import { spring } from "svelte/motion";
   import { onMount } from "svelte";
   import { activeCard } from "../stores/activeCard.js";
   import { orientation, resetBaseOrientation } from "../stores/orientation.js";
   import { clamp, round } from "../helpers/Math.js";
+	import pokemon from "../../contract/data.json";
 
   import Glare from "../components/card-glare.svelte";
   import Shine from "../components/card-shine.svelte";
@@ -17,6 +20,7 @@
   export let subtypes = "basic";
   export let supertype = "pokémon";
   export let rarity = "common";
+  export let quantity = 1;
   export let gallery = false;
   export let showcase = false;
 
@@ -236,7 +240,8 @@
   $: {
     rarity = rarity.toLowerCase();
     supertype = supertype.toLowerCase();
-    number = number.toLowerCase();
+    number = number.toString();
+    quantity = quantity;
     gallery = number.startsWith("tg");
     if (Array.isArray(subtypes)) {
       subtypes = subtypes.join(" ").toLowerCase();
@@ -343,6 +348,7 @@
   class:active
   class:interacting
   class:loading
+  data-quantity={quantity}
   data-number={number}
   data-subtypes={subtypes}
   data-supertype={supertype}
@@ -383,6 +389,9 @@
         <Glare {subtypes} {rarity} />
       </div>
     </button>
+    {#if !active && quantity > 1}	
+      <div class="quantity-text">x{quantity}</div>
+    {/if}
   </div>
 </div>
 
@@ -476,7 +485,7 @@
     display: grid;
     grid-area: 1/1;
     border-radius: var(--radius);
-    image-rendering: optimizeQuality;
+    /* image-rendering: optimizeQuality; */
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
   }

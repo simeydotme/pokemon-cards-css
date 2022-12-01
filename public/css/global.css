@@ -65,6 +65,9 @@ main {
 }
 
 .header2 {
+  border: solid;
+  border-color: rgba(255, 255, 255, 0.815);
+  
   text-align: center;
   align-self: center;
   align-items: center;
@@ -107,6 +110,7 @@ main {
 }
 
 .header-inside-minted {
+  
   padding: 1%;
   border-radius: 5px;
   display: grid;  
@@ -116,6 +120,8 @@ main {
 }
 
 header {  
+  border: solid;
+  border-color: rgba(255, 255, 255, 0.815);
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1%;
   margin-bottom: 4rem;
@@ -198,6 +204,33 @@ header svg {
   max-width: min(215px, 35vw);
   text-align: center;
   background-color: rgba(13, 199, 0, 0.8);
+  z-index: 1;
+}
+
+.quantity-text {
+  font-family: Roboto;
+  font-size: large;
+  color: white;
+  align-self: flex-end;
+  position: absolute;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.transfer-menu {
+  font-family: Roboto;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: medium;
+  border: solid;
+  border-color: rgba(255, 255, 255, 0.815);
+  color: white;
+  position: absolute;
+  left: 105%;
+  width: 90%;
+  border-radius: 5px;
+  padding: 5px;
   z-index: 1;
 }
 
@@ -305,3 +338,4 @@ mark {
   text-decoration: none;
   box-shadow: 0 7px 13px -5px currentColor;
 }
+

@@ -344,16 +344,20 @@
 		{:else}
 			
 			{#each mintedCards as card, i}
-				{#if card.quantity != 0}
+				{#if card.quantity > 0}	
 					{#if card.id <= 15}
 						<Card 
 							img={ipfs_url+"/"+ (card.id+1) +".webp"}
+							number= {card.id+1}
+							quantity={card.quantity}
 							rarity="Rare Holo V"
 						/>
 					{/if}
 					{#if card.id > 15}
 						<Card 
 							img={ipfs_url+"/"+ (card.id+1) +".webp"}
+							number= {card.id+1}
+							quantity={card.quantity}
 							rarity="Common"
 						/>
 					{/if}

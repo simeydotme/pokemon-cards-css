@@ -10,9 +10,8 @@
 	.card-grid {  
 		grid-template-columns: 1fr;
 		grid-gap: 0.5vw;
-		height: 100%;
 		margin: auto;
-		padding: 1%;
+		padding: 3%;
   		border-radius: 5px;
 		align-items: center;
 		position: relative;
