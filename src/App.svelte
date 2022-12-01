@@ -1,5 +1,6 @@
 <script>
 	import CardList from "./cards.svelte";
+	import CardListDaily from "./cards-mint.svelte";
 	import Card from "./lib/components/card.svelte";
 	import CardMinted from "./lib/components/card-minted.svelte";
 	import CardPackGlowing from "./lib/components/card-pack-glowing.svelte";
@@ -180,8 +181,7 @@
 				<div class="showcase">
 					<Card 
 						img={"https://i.ibb.co/yqKsRHQ/gengar-cairo.png"}
-						rarity="Rare Ultra"
-					/>
+						rarity="Rare Ultra" />
 				</div> 
 			{/if}
 		</div>
@@ -189,9 +189,50 @@
 			<div class="mint-menu-title">
 				<h1>Cards obtained today</h1>
 			</div> 
-			<div class="header-inside-minted">
+			<CardListDaily>
 				{#if isConnected && !isLoadingMintedToday && mintedTodayCards.length == 0}
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<div on:click={() => mintDailyCards()} >
+						<div class="minted-text-has-stock">READY TO CLAIM</div>
+						<CardPackGlowing 
+							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+							rarity="Rare Holo V"
+
+						/>
+					</div>
+					{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
+				{:else if !isConnected || isLoadingMintedToday}
+					<div> <CardPackOff 
+							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+							rarity="Common" />
+					</div>
+					{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
+				{:else}
+					<div>
+						<div class="minted-text-out-stock">OUT OF STOCK</div>
+						<CardPackOff 
+							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+							rarity="Common"
+						/>
+					</div>
+				{/if}
+				{#if !isLoadingMintedToday && mintedTodayCards.length > 0}
+					{#each mintedTodayCards as card, i}
+						{#if card <= 15}
+							<CardMinted
+								img={ipfs_url+"/"+ (card) +".webp"}
+								rarity="Rare Holo V"/>
+						{/if}
+						{#if card > 15}
+							<CardMinted 
+								img={ipfs_url+"/"+ (card) +".webp"}
+								rarity="Common"/>
+						{/if}
+					{/each}
+				{/if}
+			</CardListDaily>
+			<!-- <div class="header-inside-minted">
+				{#if isConnected && !isLoadingMintedToday && mintedTodayCards.length == 0}
 					<div class="minted-today"
 					on:click={() => mintDailyCards()}
 					>
@@ -262,7 +303,7 @@
 						{/each}
 					{/if}
 				{/if}
-			</div>
+			</div> -->
 		</div>
 	</header>
 
