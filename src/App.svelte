@@ -7,6 +7,7 @@
 	import CardPackOff from "./lib/components/card-pack-off.svelte";
   	import { onMount } from "svelte";
 	import * as contract from './contract/main.json';
+	import pokemon from "./contract/data.json";
 
 	import { Account, Contract, ec, number, uint256 } from "starknet";
 	import { connect, disconnect } from "get-starknet"
@@ -24,8 +25,13 @@
 	
 	let mintedCards;
 	let mintedTodayCards;
+	let userTradeData;
 	let isLoading = true;
 	let isLoadingMintedToday = true;
+	let isLoadingTradeData = true;
+
+	let addressToSendCard = "";
+	let cardSelectedToSend;
 
 	const connectWallet = async() => {   
 		try{
@@ -45,6 +51,32 @@
 		}   catch(error){     
 			walletModalVisible = false
 			console.log(error.message)
+		}
+	}
+
+
+	const sendCardToWallet = async() => {
+		try {
+			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
+			console.log("send to: ", addressToSendCard, "card number: ", cardSelectedToSend)
+			// let sendCardResponse = await pokemonContract.send_card_to(addressToSendCard, )
+		} catch (error) {
+			console.log("Error while trying to send card: ", error)
+		}
+	}
+
+	const getDailyTradeData = async() => {
+		try {
+			isLoadingTradeData = true
+			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
+			let dailyTradeResponse = await pokemonContract.get_user_daily_trade(address)
+			let trade = {}
+
+			trade.dailySend = Math.floor((parseInt(dailyTradeResponse) / 10))
+			trade.dailyReceive = (parseInt(dailyTradeResponse) % 10)
+			return trade
+		} catch (error) {
+			console.log(error)
 		}
 	}
 
@@ -81,6 +113,7 @@
 	};
 
 	const getCardsMintedToday = async () => {
+		isLoadingMintedToday = true
 		let cardsMinted = await pokemonContract.get_user_claimed_pack(address)
 		let cards = []
 
@@ -130,6 +163,14 @@
 			getCards().then((cards) => {
 				mintedCards = cards;
 				isLoading = false;
+			});
+
+			getDailyTradeData().then((trade)  => {
+				userTradeData = trade;
+				// trade.dailySend = 0
+				// trade.dailyReceive = 0
+				// userTradeData = trade;
+				isLoadingTradeData = false;
 			});
 		}
 		})
@@ -204,7 +245,6 @@
 						<CardPackGlowing 
 							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
 							rarity="Rare Holo V"
-
 						/>
 					</div>
 					{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
@@ -240,43 +280,96 @@
 			</CardListDaily>
 		</div>
 	</header>
-
-
+	
 	<br>
-	<div class="header2">
-		<h1 id="⚓-top">
-			<a href="#⚓-top">
-			{#if isLoading}
-				Loading cards..
+	<header class="header-inside">
+		<div class="inside-header2">
+			{#if isLoadingTradeData}
+			<h1 id="⚓-top">
+				Loading trade stats..
+			</h1>
 			{:else}
-				Minted cards {mintedCards.length}/69 
+			<h1 id="⚓-top">
+				Daily trades status
+			</h1>
+			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 1fr;">
+				<h2>
+					Send a card 
+				</h2>
+				<div></div>
+				<div>
+					{#if userTradeData.dailySend == 0 && !isLoading}
+						<input class="input-wallet" placeholder="Wallet address.." bind:value={addressToSendCard}>
+						<div class="daily-trade-menu" style="width: 100%;">
+							<select placeholder="Select card to send.." bind:value={cardSelectedToSend}>
+								{#each mintedCards as card}
+									<option value={card.id}>
+										#{card.id} {pokemon.data[card.id].name} (x{card.quantity})
+									</option>
+								{/each}
+							</select>
+							<button class="flags" 
+							on:click={() => sendCardToWallet()}
+									style="background-color: rgba(0, 204, 102, 0.8); width: 100%">
+								Send selected card 
+							</button>
+						</div>
+					{:else}
+						<div class="flags" 
+							style="background-color: rgba(255, 255, 255, 0.3);">
+							Already send a card
+						</div>
+					{/if}
+					{#if userTradeData.dailyReceive == 0}
+						<div class="flags" 
+							style="background-color: rgba(0, 204, 102, 0.8);">
+							Can receive a card
+						</div>
+					{:else}
+						<div class="flags" 
+							style="background-color: rgba(255, 255, 255, 0.3);">
+							Already receive a card
+						</div>
+					{/if}
+				</div>
+			</div>
 			{/if}
-			</a>
-		</h1>
-		{#if isConnected}
-			<button class="wallet-blue"
-			on:click={() => handleDisconnect()}>
-				Disconnect Wallet <br />
-			</button>
-			<br />
-			<p>
-				{address} 
-			</p>
-
-		{:else}
-			<button class="wallet-blue"
-			on:click={() => init() }>
-				Click to connect your Wallet<br />
-			</button>
-		{/if}
-	</div>
+		</div>
+		<!-- SEGUNDA -->
+		<div class="inside-header2">
+			<h1 id="⚓-top">
+				{#if isLoading}
+					Loading cards..
+				{:else}
+					Minted cards {mintedCards.length}/69
+				{/if}
+			</h1>
+			{#if isConnected}
+				<div class="flags" style="background-color: rgba(255, 255, 255, 0.3)">Wallet: {address}</div>
+			{/if}
+			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 25% 25%;">
+				{#if isConnected}
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
+						on:click={() => handleDisconnect()}>
+							Disconnect Wallet
+					</button>
+				{:else}
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
+						on:click={() => init() }>
+							Connect Wallet<br />
+					</button>
+				{/if}
+			</div>
+		</div>
+	</header>
 	<br>
 	
 	<CardList>
 		{#if isLoading}
 			Loading..
 		{:else}
-			
 			{#each mintedCards as card, i}
 				{#if card.quantity > 0}	
 					{#if card.id <= 15}

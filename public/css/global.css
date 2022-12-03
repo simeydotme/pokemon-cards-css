@@ -12,22 +12,13 @@
   text-justify: inter-word;
 }
 
-.wallet-green {
+.wallet-button {
   color: white;
   border-color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   font-size: large;
   border-radius: 5px;
-  background-color: rgba(124, 227, 101, 0.9);
-}
-
-.wallet-blue {
-  color: white;
-  border-color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-  font-size: large;
-  border-radius: 5px;
-  background-color: rgba(82, 189, 255, 0.9);
+  background-color: rgba(245, 103, 255, 0.9);
 }
 
 body,
@@ -110,8 +101,6 @@ main {
 }
 
 .header-inside-minted {
-  
-  padding: 1%;
   border-radius: 5px;
   display: grid;  
   grid-template-columns: 1fr 1fr 1fr;
@@ -339,3 +328,65 @@ mark {
   box-shadow: 0 7px 13px -5px currentColor;
 }
 
+.input-wallet {
+  width: 98%;
+  border-radius: 4px;
+  font-size: large;
+  background-color: white;
+  background-size: 20px 20px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/4803/4803345.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-bottom: 4px;
+}
+
+.flags {
+  font-family: Roboto;
+  align-self: center;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  padding: 12px 20px 12px 20px;
+  background-size: 20px 20px;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  margin-bottom: 4px;
+}
+
+.send-menu {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 1%;
+}
+
+.daily-trade-menu {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 1%;
+  row-gap: 1%;
+}
+
+.inside-header2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3%;
+  border-radius: 5px;
+  display: grid;
+  grid-gap: 1%;
+  row-gap: 1%;
+}
+
+select{
+  font-family: Roboto;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 12px 20px 12px 20px;
+  margin-bottom: 4px;
+}
