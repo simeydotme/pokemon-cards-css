@@ -39,7 +39,7 @@ body {
 }
 
 a {
-  color: var(--primary);
+  color: white;
   transition: all 0.3s ease;
 }
 
@@ -176,13 +176,22 @@ header svg {
   margin: auto;
 }
 
+.card-tag {
+  border-radius: 5px;
+  padding: 3px;
+  position:absolute;
+  max-width: min(215px, 35vw);
+  text-align: center;
+  z-index: 1;
+}
+
 .minted-text-out-stock {
   border-radius: 5px;
   padding: 3px;
   position:absolute;
   max-width: min(215px, 35vw);
   text-align: center;
-  background-color: rgba(255, 0, 0, 0.8);
+  background-color: rgba(213, 21, 238, 0.8);
   z-index: 1;
 }
 

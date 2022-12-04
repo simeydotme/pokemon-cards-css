@@ -4,18 +4,27 @@
 	import Card from "./lib/components/card.svelte";
 	import CardMinted from "./lib/components/card-minted.svelte";
 	import CardPackGlowing from "./lib/components/card-pack-glowing.svelte";
+	import CardPackTxInProgress from "./lib/components/card-pack-tx-progress.svelte";
 	import CardPackOff from "./lib/components/card-pack-off.svelte";
   	import { onMount } from "svelte";
 	import * as contract from './contract/main.json';
 	import pokemon from "./contract/data.json";
-
-	import { Account, Contract, ec, number, uint256 } from "starknet";
+	
+	import { Account, Contract, ec, number, uint256, defaultProvider } from "starknet";
 	import { connect, disconnect } from "get-starknet"
+	import { writable } from 'svelte/store'
+  import Cards from "./cards.svelte";
+
+
+	//'NOT_RECEIVED' | 'RECEIVED' | 'PENDING' | 'ACCEPTED_ON_L2' | 'ACCEPTED_ON_L1' | 'REJECTED';
 
 	const POKEMON_CONTRACT_ADDRESS = "0x02a1e5176c4d391fde798f5739fed081901710377eecffe493a46c8ad880fc39"
 	// const OG_POKEMON_CONTRACT_ADDRESS = "0x028345627f0e0301417fc654b629a3e241675903784cf3e7ec8e1042c8e476be"
 	const ipfs_url = "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
     const CARDS_DECK = 69;
+	const DAILY_MINT_STATUS_KEY = "daily_mint_status"
+	const DAILY_SEND_CARD_STATUS_KEY = "daily_send_card_status"
+	const DEPLOY_SCOPE = "testnet." // if mainnet, leave empty
 
 	let provider;
 	let address;
@@ -30,8 +39,11 @@
 	let isLoadingMintedToday = true;
 	let isLoadingTradeData = true;
 
-	let addressToSendCard = "";
+	let addressToSendCard;
 	let cardSelectedToSend;
+
+	let dailyMintTxStatus = {};
+	let dailySendCardTxStatus = {};
 
 	const connectWallet = async() => {   
 		try{
@@ -54,13 +66,11 @@
 		}
 	}
 
-
 	const sendCardToWallet = async() => {
 		try {
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
-			console.log("send to: ", addressToSendCard, "card number: ", cardSelectedToSend)
-			let cards = [cardSelectedToSend]
-			let sendCardResponse = await pokemonContract.send_card_to(addressToSendCard, uint256.bnToUint256(cardSelectedToSend+1))
+			let sendCardResponse = await pokemonContract.send_card_to(addressToSendCard, uint256.bnToUint256(number.toBN(cardSelectedToSend, 16)))
+			localStorage.setItem(DAILY_SEND_CARD_STATUS_KEY, JSON.stringify({status: "NOT RECEIVED", txHash: sendCardResponse.transaction_hash}))
 		} catch (error) {
 			console.log("Error while trying to send card: ", error)
 		}
@@ -69,9 +79,10 @@
 	const getDailyTradeData = async() => {
 		try {
 			isLoadingTradeData = true
+			let trade = {}
+
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
 			let dailyTradeResponse = await pokemonContract.get_user_daily_trade(address)
-			let trade = {}
 
 			trade.dailySend = Math.floor((parseInt(dailyTradeResponse) / 10))
 			trade.dailyReceive = (parseInt(dailyTradeResponse) % 10)
@@ -84,7 +95,8 @@
 	const mintDailyCards = async() => {
 		try {
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
-			await pokemonContract.mint_daily_cards()
+			let dailyMintCardsResponse = await pokemonContract.mint_daily_cards()
+			localStorage.setItem(DAILY_MINT_STATUS_KEY, JSON.stringify({status: "NOT RECEIVED", txHash: dailyMintCardsResponse.transaction_hash}))
 		} catch (error) {
 			console.log(error)
 		}
@@ -109,7 +121,6 @@
 				cards.push({id, quantity})
 			}	
 		}
-
 		return cards;
 	};
 
@@ -141,8 +152,47 @@
 		mintedTodayCards = []
 	}
 
+	const updateTransactionStatus = async () => {
+		console.log("Checking if a tx is in progress")
+		var dailyMintTxStored = localStorage.getItem(DAILY_MINT_STATUS_KEY)
+		console.log("Daily Mint Tx status: ", dailyMintTxStored)
+		if (dailyMintTxStored != undefined) {
+			let data = JSON.parse(localStorage.getItem(DAILY_MINT_STATUS_KEY))
+
+			//'NOT_RECEIVED' | 'RECEIVED' | 'PENDING' | 'ACCEPTED_ON_L2' | 'ACCEPTED_ON_L1' | 'REJECTED';
+			if (data.status == "NOT_RECEIVED" || data.status == "ACCEPTED_ON_L2" || data.status == "ACCEPTED_ON_L1") {
+				localStorage.removeItem(DAILY_MINT_STATUS_KEY)
+				return;
+			}
+
+			let txStatus = await defaultProvider.getTransactionReceipt(data.txHash)
+			localStorage.setItem(DAILY_MINT_STATUS_KEY, JSON.stringify({status: txStatus.status, txHash: txStatus.transaction_hash}))
+			dailyMintTxStatus.status = txStatus.status
+			dailyMintTxStatus.txHash = txStatus.transaction_hash
+		} 
+
+		var dailySendCardTxStored = localStorage.getItem(DAILY_SEND_CARD_STATUS_KEY)
+		console.log("Daily send card Tx status: ", dailySendCardTxStored)
+		if (dailySendCardTxStored != undefined) {
+			let data = JSON.parse(localStorage.getItem(DAILY_SEND_CARD_STATUS_KEY))
+			
+			//'NOT_RECEIVED' | 'RECEIVED' | 'PENDING' | 'ACCEPTED_ON_L2' | 'ACCEPTED_ON_L1' | 'REJECTED';
+			if (data.status == "NOT_RECEIVED" || data.status == "ACCEPTED_ON_L2" || data.status == "ACCEPTED_ON_L1") {
+				localStorage.removeItem(DAILY_SEND_CARD_STATUS_KEY)
+				return;
+			}
+			// Check if can update data
+			let txStatus = await defaultProvider.getTransactionReceipt(data.txHash)
+			console.log("Transaction receipt ", txStatus.transaction_hash, " status ",txStatus.status)
+			localStorage.setItem(DAILY_SEND_CARD_STATUS_KEY, JSON.stringify({status: txStatus.status, txHash: txStatus.transaction_hash}))
+			dailySendCardTxStatus.status = txStatus.status
+			dailySendCardTxStatus.txHash = txStatus.transaction_hash
+		} 
+	}
 
 	const init = async () => {
+		await updateTransactionStatus()
+		
 		connectWallet().then(data => {
 		provider = data.provider
 		address = data.address
@@ -176,7 +226,7 @@
 		}
 		})
 	}
-	
+
 	init()
 
 	onMount(() => {
@@ -239,11 +289,11 @@
 				<h1>Cards obtained today</h1>
 			</div> 
 			<CardListDaily>
-				{#if isConnected && !isLoadingMintedToday && mintedTodayCards.length == 0}
+				{#if isConnected && !isLoadingMintedToday && mintedTodayCards.length == 0 && dailyMintTxStatus == undefined}
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div on:click={() => mintDailyCards()} >
-						<div class="minted-text-has-stock">READY TO CLAIM</div>
-						<CardPackGlowing 
+					<div class="card-tag" style="background-color: rgba(13, 199, 0, 0.8);">READY TO CLAIM</div>
+						<CardPackGlowing
 							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
 							rarity="Rare Holo V"
 						/>
@@ -255,9 +305,18 @@
 							rarity="Common" />
 					</div>
 					{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
+				{:else if isConnected && dailyMintTxStatus != undefined && (dailyMintTxStatus.status == "RECEIVED" || dailyMintTxStatus.status == "PENDING")}
+					<a href="https://{DEPLOY_SCOPE}starkscan.co/tx/{dailyMintTxStatus.txHash}" target="_blank" rel="noreferrer">
+						<div class="card-tag" style="background-color: rgba(213, 21, 238, 0.8);">TX IN PROGRESS</div>
+						<div> <CardPackTxInProgress 
+								img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+								rarity="Common" />
+						</div>
+					</a>
+				{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
 				{:else}
 					<div>
-						<div class="minted-text-out-stock">OUT OF STOCK</div>
+						<div class="card-tag" style="background-color: rgba(255, 0, 0, 0.8);">OUT OF STOCK</div>
 						<CardPackOff 
 							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
 							rarity="Common"
@@ -299,7 +358,15 @@
 				</h2>
 				<div></div>
 				<div>
-					{#if userTradeData.dailySend == 0 && !isLoading}
+					{#if !isLoading && dailySendCardTxStatus != undefined && (dailySendCardTxStatus.status == "RECEIVED" || dailySendCardTxStatus.status == "PENDING")}
+						<a href="https://{DEPLOY_SCOPE}starkscan.co/tx/{dailySendCardTxStatus.txHash}" target="_blank" rel="noreferrer">
+							<div class="flags" 
+								style="background-color: rgba(213, 21, 238, 0.8);">
+								Send Card transaction in progress..
+								
+							</div>
+						</a>
+					{:else if userTradeData.dailySend == 0 && !isLoading}
 					<input class="input-wallet" placeholder="Wallet address.." bind:value={addressToSendCard}>
 						<div class="daily-trade-menu" style="width: 100%;">
 							<select placeholder="Select card to send.." bind:value={cardSelectedToSend}>
