@@ -138,7 +138,7 @@ header svg {
 
 @media screen and (min-width: 600px) {
   header {
-    grid-template-columns: 50% 1fr;
+    grid-template-columns: 50% 50%;
   }
   .showcase {
     grid-column: 2;
@@ -156,7 +156,7 @@ header svg {
 
 @media screen and (min-width: 900px) {
   header {
-    grid-template-columns: 60% 1fr;
+    grid-template-columns: 60% 40%;
   }
 }
 
@@ -338,7 +338,7 @@ mark {
 }
 
 .input-wallet {
-  width: 98%;
+  width: 100%;
   border-radius: 4px;
   font-size: large;
   background-color: white;
@@ -352,8 +352,8 @@ mark {
 
 .flags {
   font-family: Roboto;
-  align-self: center;
   text-align: center;
+  align-self: center;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   font-size: 16px;
@@ -362,39 +362,40 @@ mark {
   background-size: 20px 20px;
   background-position: 10px 10px; 
   background-repeat: no-repeat;
-  margin-bottom: 4px;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  overflow: hidden;   
 }
 
 .send-menu {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-gap: 1%;
 }
 
 .daily-trade-menu {
   width: 50%;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 1%;
 }
 
 .inside-header2 {
-  background-color: rgba(0, 0, 0, 0.6);
   padding: 3%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: auto;
   border-radius: 5px;
-  display: grid;
-  grid-gap: 1%;
-  row-gap: 1%;
 }
 
 select{
+  width: 100%;
   font-family: Roboto;
   align-self: center;
   text-align: center;
   width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  /* border: 2px solid rgba(255, 255, 255, 0.3); */
   border-radius: 4px;
   font-size: 16px;
   padding: 12px 20px 12px 20px;
-  margin-bottom: 4px;
+  margin-bottom: 1%;
+  margin-right: 1%;
 }

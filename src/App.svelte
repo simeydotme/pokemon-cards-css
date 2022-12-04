@@ -12,14 +12,8 @@
 	
 	import { Account, Contract, ec, number, uint256, defaultProvider } from "starknet";
 	import { connect, disconnect } from "get-starknet"
-	import { writable } from 'svelte/store'
-  import Cards from "./cards.svelte";
-
-
-	//'NOT_RECEIVED' | 'RECEIVED' | 'PENDING' | 'ACCEPTED_ON_L2' | 'ACCEPTED_ON_L1' | 'REJECTED';
 
 	const POKEMON_CONTRACT_ADDRESS = "0x02a1e5176c4d391fde798f5739fed081901710377eecffe493a46c8ad880fc39"
-	// const OG_POKEMON_CONTRACT_ADDRESS = "0x028345627f0e0301417fc654b629a3e241675903784cf3e7ec8e1042c8e476be"
 	const ipfs_url = "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
     const CARDS_DECK = 69;
 	const DAILY_MINT_STATUS_KEY = "daily_mint_status"
@@ -68,6 +62,10 @@
 
 	const sendCardToWallet = async() => {
 		try {
+			if ((addressToSendCard == undefined || addressToSendCard == "") || cardSelectedToSend == undefined) {
+				window.alert("Address or card cannot be empty!")
+				return;
+			}
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
 			let sendCardResponse = await pokemonContract.send_card_to(addressToSendCard, uint256.bnToUint256(number.toBN(cardSelectedToSend, 16)))
 			localStorage.setItem(DAILY_SEND_CARD_STATUS_KEY, JSON.stringify({status: "NOT RECEIVED", txHash: sendCardResponse.transaction_hash}))
@@ -183,9 +181,9 @@
 			}
 			// Check if can update data
 			let txStatus = await defaultProvider.getTransactionReceipt(data.txHash)
-			console.log("Transaction receipt ", txStatus.transaction_hash, " status ",txStatus.status)
 			localStorage.setItem(DAILY_SEND_CARD_STATUS_KEY, JSON.stringify({status: txStatus.status, txHash: txStatus.transaction_hash}))
 			dailySendCardTxStatus.status = txStatus.status
+
 			dailySendCardTxStatus.txHash = txStatus.transaction_hash
 		} 
 	}
@@ -218,9 +216,6 @@
 
 			getDailyTradeData().then((trade)  => {
 				userTradeData = trade;
-				// trade.dailySend = 0
-				// trade.dailyReceive = 0
-				// userTradeData = trade;
 				isLoadingTradeData = false;
 			});
 		}
@@ -345,88 +340,78 @@
 	<header class="header-inside">
 		<div class="inside-header2">
 			{#if isLoadingTradeData}
-			<h1 id="⚓-top">
-				Loading trade stats..
-			</h1>
+				<h1 id="⚓-top">
+					Loading trade stats..
+				</h1>
 			{:else}
-			<h1 id="⚓-top">
-				Daily trades status
-			</h1>
-			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 1fr;">
-				<h2>
-					Send a card 
-				</h2>
-				<div></div>
-				<div>
-					{#if !isLoading && dailySendCardTxStatus != undefined && (dailySendCardTxStatus.status == "RECEIVED" || dailySendCardTxStatus.status == "PENDING")}
-						<a href="https://{DEPLOY_SCOPE}starkscan.co/tx/{dailySendCardTxStatus.txHash}" target="_blank" rel="noreferrer">
-							<div class="flags" 
-								style="background-color: rgba(213, 21, 238, 0.8);">
-								Send Card transaction in progress..
-								
-							</div>
-						</a>
-					{:else if userTradeData.dailySend == 0 && !isLoading}
-					<input class="input-wallet" placeholder="Wallet address.." bind:value={addressToSendCard}>
-						<div class="daily-trade-menu" style="width: 100%;">
-							<select placeholder="Select card to send.." bind:value={cardSelectedToSend}>
-								{#each mintedCards as card}
-									<option value={card.id + 1}>
-										#{card.id + 1} {pokemon.data[card.id].name} (x{card.quantity})
-									</option>
-								{/each}
-							</select>
-							<button class="flags" 
-							on:click={() => sendCardToWallet()}
-									style="background-color: rgba(0, 204, 102, 0.8); width: 100%">
-								Send selected card 
-							</button>
-						</div>
-					{:else}
-						<div class="flags" 
-							style="background-color: rgba(255, 255, 255, 0.3);">
-							Already send a card
-						</div>
-					{/if}
-					{#if userTradeData.dailyReceive == 0}
-						<div class="flags" 
-							style="background-color: rgba(0, 204, 102, 0.8);">
-							Can receive a card
-						</div>
-					{:else}
-						<div class="flags" 
-							style="background-color: rgba(255, 255, 255, 0.3);">
-							Already receive a card
-						</div>
-					{/if}
-				</div>
+				<h1 id="⚓-top">
+					Daily trades status
+				</h1>
+			{/if}
+			
+			<div class="daily-trade-menu" style="width: 100%;">
+				{#if !isLoadingTradeData && userTradeData.dailySend == 0}
+						{#if dailySendCardTxStatus != undefined && (dailySendCardTxStatus.status == "RECEIVED" || dailySendCardTxStatus.status == "PENDING")}
+							<a href="https://{DEPLOY_SCOPE}starkscan.co/tx/{dailySendCardTxStatus.txHash}" target="_blank" rel="noreferrer">
+								<div class="flags" style="background-color: rgba(213, 21, 238, 0.8);">Send Card transaction in progress..</div>
+							</a>
+						{:else}
+							<div class="flags" style="background-color: rgba(0, 204, 102, 0.8);">Can send a card </div>	
+						{/if}
+				{:else}
+					<div class="flags" style="background-color: rgba(255, 255, 255, 0.3);">Already send a card</div>
+				{/if}
+					
+				{#if !isLoadingTradeData && userTradeData.dailyReceive == 0}
+					<div class="flags" style="background-color: rgba(0, 204, 102, 0.8);">Can receive a card</div>
+				{:else}
+					<div class="flags" style="background-color: rgba(255, 255, 255, 0.3);">Already receive a card</div>
+				
+				{/if}
 			</div>
+			{#if !isLoading && !isLoadingTradeData && userTradeData.dailySend == 0}
+				<h2>Send a card</h2>
+				<input class="input-wallet" placeholder="Wallet address.." bind:value={addressToSendCard}>
+				<div class="daily-trade-menu" style="width: 100%;">	
+					<select placeholder="Select card to send.." bind:value={cardSelectedToSend}>
+						{#each mintedCards as card}
+							<option value={card.id + 1}>
+								#{card.id + 1} {pokemon.data[card.id].name} (x{card.quantity})
+							</option>
+						{/each}
+					</select>
+					<button class="flags" on:click={() => sendCardToWallet()} style="background-color: rgba(21, 161, 222, 0.9);">Send selected card</button>
+				</div>
 			{/if}
 		</div>
+
+		<!-- <div>
+			
+		</div> -->
 		<!-- SEGUNDA -->
 		<div class="inside-header2">
+			<h1 id="⚓-top">Wallet stats </h1>
 				{#if isLoading}
-					<h1 id="⚓-top">Loading cards..</h1>
+					<h2>Loading cards..</h2>
 				{:else}
-					<h1 id="⚓-top">Wallet connected </h1>
 					<h2>Minted cards {mintedCards.length}/69</h2>
 				{/if}
 			
 			
 			{#if isConnected}
-			<div class="flags" style="background-color: rgba(255, 255, 255, 0.3)">Wallet: {address}</div>
-			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 25% 25%;">
+			<div class="flags" style="background-color: rgba(255, 255, 255, 0.3)">{address}</div>
+			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 1fr;">
 				
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
+				<button class="flags" style="background-color: rgba(21, 161, 222, 0.9)"
 					on:click={() => handleDisconnect()}>
 						Disconnect Wallet
 				</button>
 			</div>
 			{:else}
-			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 25% 25%;">
+			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 1fr;">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
+				<button class="flags" style="background-color: rgba(21, 161, 222, 0.9)"
 					on:click={() => init() }>
 						Connect Wallet<br />
 				</button>
