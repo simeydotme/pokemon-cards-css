@@ -27,7 +27,7 @@
 		grid-template-columns: 1fr;
 		grid-gap: 1.5vw;
 		height: 100%;
-		max-width: 85%;
+		max-width: 90%;
 		margin: auto;
 		padding: 1%;
   		border-radius: 5px;

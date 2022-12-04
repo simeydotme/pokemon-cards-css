@@ -67,7 +67,7 @@ main {
   margin-bottom: 4rem;
   border-radius: 5px;
   grid-template-columns: 1fr;
-  max-width: 85%;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -98,6 +98,7 @@ main {
   padding: 1%;
   border-radius: 5px;
   display: grid;
+  margin-right: 2%;
 }
 
 .header-inside-minted {
@@ -117,8 +118,7 @@ header {
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1%;
-  max-width: 85%;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -380,10 +380,11 @@ mark {
 }
 
 .inside-header2 {
-  padding: 3%;
+  padding: 2%;
   background-color: rgba(0, 0, 0, 0.6);
   padding: auto;
   border-radius: 5px;
+  margin-right: 2%;
 }
 
 select{

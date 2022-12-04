@@ -284,60 +284,64 @@
 				<h1>Cards obtained today</h1>
 			</div> 
 			<CardListDaily>
-				{#if isConnected && !isLoadingMintedToday && mintedTodayCards.length == 0 && dailyMintTxStatus == undefined}
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<div on:click={() => mintDailyCards()} >
-					<div class="card-tag" style="background-color: rgba(13, 199, 0, 0.8);">READY TO CLAIM</div>
-						<CardPackGlowing
-							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
-							rarity="Rare Holo V"
-						/>
-					</div>
-					{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
-				{:else if !isConnected || isLoadingMintedToday}
-					<div> <CardPackOff 
+				{#if isConnected}
+					{#if isLoadingMintedToday}
+						<div> <CardPackOff 
 							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
 							rarity="Common" />
-					</div>
-					{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
-				{:else if isConnected && dailyMintTxStatus != undefined && (dailyMintTxStatus.status == "RECEIVED" || dailyMintTxStatus.status == "PENDING")}
-					<a href="https://{DEPLOY_SCOPE}starkscan.co/tx/{dailyMintTxStatus.txHash}" target="_blank" rel="noreferrer">
-						<div class="card-tag" style="background-color: rgba(213, 21, 238, 0.8);">TX IN PROGRESS</div>
-						<div> <CardPackTxInProgress 
-								img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
-								rarity="Common" />
 						</div>
-					</a>
-				{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
+						{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}			
+					{:else if !isLoadingMintedToday && mintedTodayCards.length == 0}
+						{#if dailyMintTxStatus != undefined && (dailyMintTxStatus.status == "RECEIVED" || dailyMintTxStatus.status == "PENDING")}
+							<a href="https://{DEPLOY_SCOPE}starkscan.co/tx/{dailyMintTxStatus.txHash}" target="_blank" rel="noreferrer">
+								<div class="card-tag" style="background-color: rgba(213, 21, 238, 0.8);">TX IN PROGRESS</div>
+								<div> <CardPackTxInProgress 
+										img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+										rarity="Common" />
+								</div>
+							</a>
+							{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
+						{:else}
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
+							<div on:click={() => mintDailyCards()} >
+								<div class="card-tag" style="background-color: rgba(13, 199, 0, 0.8);">READY TO CLAIM</div>
+									<CardPackGlowing
+										img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+										rarity="Rare Holo V"
+									/>
+							</div>
+							{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}
+						{/if}
+					{:else}
+						{#if !isLoadingMintedToday && mintedTodayCards.length > 1}
+							<div>
+								<div class="card-tag" style="background-color: rgba(255, 0, 0, 0.8);">OUT OF STOCK</div>
+								<CardPackOff 
+									img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
+									rarity="Common"
+								/>
+							</div>
+							{#each mintedTodayCards as card, i}
+								{#if card <= 15} <CardMinted img={ipfs_url+"/"+ (card) +".webp"} rarity="Rare Holo V"/> {/if}
+								{#if card > 15} <CardMinted img={ipfs_url+"/"+ (card) +".webp"} rarity="Common"/>{/if}
+							{/each}
+						{/if}
+					{/if}
 				{:else}
-					<div>
-						<div class="card-tag" style="background-color: rgba(255, 0, 0, 0.8);">OUT OF STOCK</div>
-						<CardPackOff 
+					{#if isLoadingMintedToday}
+						<div> <CardPackOff 
 							img={"https://crystal-cdn2.crystalcommerce.com/photos/352236/base_set.jpg"}
-							rarity="Common"
-						/>
-					</div>
-				{/if}
-				{#if !isLoadingMintedToday && mintedTodayCards.length > 0}
-					{#each mintedTodayCards as card, i}
-						{#if card <= 15}
-							<CardMinted
-								img={ipfs_url+"/"+ (card) +".webp"}
-								rarity="Rare Holo V"/>
-						{/if}
-						{#if card > 15}
-							<CardMinted 
-								img={ipfs_url+"/"+ (card) +".webp"}
-								rarity="Common"/>
-						{/if}
-					{/each}
+							rarity="Common" />
+						</div>
+						{#each Array(5) as _, i} <div> <CardMinted /> </div> {/each}			
+					{/if}
 				{/if}
 			</CardListDaily>
 		</div>
 	</header>
 	
 	<br>
-	<header class="header-inside">
+	<header style="grid-template-columns: 50% 50%;">
 		<div class="inside-header2">
 			{#if isLoadingTradeData}
 				<h1 id="⚓-top">
@@ -384,11 +388,6 @@
 				</div>
 			{/if}
 		</div>
-
-		<!-- <div>
-			
-		</div> -->
-		<!-- SEGUNDA -->
 		<div class="inside-header2">
 			<h1 id="⚓-top">Wallet stats </h1>
 				{#if isLoading}
