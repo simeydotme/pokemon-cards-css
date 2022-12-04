@@ -59,7 +59,8 @@
 		try {
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
 			console.log("send to: ", addressToSendCard, "card number: ", cardSelectedToSend)
-			// let sendCardResponse = await pokemonContract.send_card_to(addressToSendCard, )
+			let cards = [cardSelectedToSend]
+			let sendCardResponse = await pokemonContract.send_card_to(addressToSendCard, uint256.bnToUint256(cardSelectedToSend+1))
 		} catch (error) {
 			console.log("Error while trying to send card: ", error)
 		}
@@ -299,12 +300,12 @@
 				<div></div>
 				<div>
 					{#if userTradeData.dailySend == 0 && !isLoading}
-						<input class="input-wallet" placeholder="Wallet address.." bind:value={addressToSendCard}>
+					<input class="input-wallet" placeholder="Wallet address.." bind:value={addressToSendCard}>
 						<div class="daily-trade-menu" style="width: 100%;">
 							<select placeholder="Select card to send.." bind:value={cardSelectedToSend}>
 								{#each mintedCards as card}
-									<option value={card.id}>
-										#{card.id} {pokemon.data[card.id].name} (x{card.quantity})
+									<option value={card.id + 1}>
+										#{card.id + 1} {pokemon.data[card.id].name} (x{card.quantity})
 									</option>
 								{/each}
 							</select>
@@ -337,31 +338,33 @@
 		</div>
 		<!-- SEGUNDA -->
 		<div class="inside-header2">
-			<h1 id="⚓-top">
 				{#if isLoading}
-					Loading cards..
+					<h1 id="⚓-top">Loading cards..</h1>
 				{:else}
-					Minted cards {mintedCards.length}/69
+					<h1 id="⚓-top">Wallet connected </h1>
+					<h2>Minted cards {mintedCards.length}/69</h2>
 				{/if}
-			</h1>
+			
+			
 			{#if isConnected}
-				<div class="flags" style="background-color: rgba(255, 255, 255, 0.3)">Wallet: {address}</div>
-			{/if}
+			<div class="flags" style="background-color: rgba(255, 255, 255, 0.3)">Wallet: {address}</div>
 			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 25% 25%;">
-				{#if isConnected}
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
-						on:click={() => handleDisconnect()}>
-							Disconnect Wallet
-					</button>
-				{:else}
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
-						on:click={() => init() }>
-							Connect Wallet<br />
-					</button>
-				{/if}
+				
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
+					on:click={() => handleDisconnect()}>
+						Disconnect Wallet
+				</button>
 			</div>
+			{:else}
+			<div class="daily-trade-menu" style="width: 100%; grid-template-columns: 25% 25%;">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<button class="flags" style="background-color: rgba(114, 213, 255, 0.9)"
+					on:click={() => init() }>
+						Connect Wallet<br />
+				</button>
+			</div>
+			{/if}
 		</div>
 	</header>
 	<br>

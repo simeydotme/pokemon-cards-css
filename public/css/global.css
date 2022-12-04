@@ -367,7 +367,6 @@ mark {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-gap: 1%;
-  row-gap: 1%;
 }
 
 .inside-header2 {
