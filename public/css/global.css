@@ -34,7 +34,7 @@ body {
   font-family: Roboto;
   font-size: large;
   background-image: url("../img/background.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
 }
 
