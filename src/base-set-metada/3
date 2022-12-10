@@ -1,0 +1,11 @@
+{
+	"name": "Chansey",
+	"description": "A rare and elusive Pokémon that is said to bring happiness to those who manage to catch it.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/3.webp",
+	"properties": {
+        "number": "3",
+        "type": "Colorless",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo"
+	}
+}

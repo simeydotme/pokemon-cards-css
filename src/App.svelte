@@ -7,15 +7,15 @@
 	import CardPackTxInProgress from "./lib/components/card-pack-tx-progress.svelte";
 	import CardPackOff from "./lib/components/card-pack-off.svelte";
   	import { onMount } from "svelte";
-	import * as contract from './contract/main_old.json';
+	import * as contract from './contract/main.json';
 	import pokemon from "./contract/data.json";
 	import { stringToFeltArray } from "./utils/utils.js";
 	
 	import { Account, Contract, ec, number, uint256, defaultProvider } from "starknet";
-	import { connect, disconnect } from "get-starknet"
+	import { connect, disconnect, getInstalledWallets, getStarknet } from "get-starknet"
 
-	// const POKEMON_CONTRACT_ADDRESS = "0x016cc2f9a9f1549ffe0e5b5474105e6a0593c879518210cd1fd127c751417d4d"
-	const POKEMON_CONTRACT_ADDRESS = "0x02a1e5176c4d391fde798f5739fed081901710377eecffe493a46c8ad880fc39"
+	const POKEMON_CONTRACT_ADDRESS = "0x07927d282802f2dc3904d4e010a0d7ce983646837da74ed89dba78732ceb663f"
+	// const POKEMON_CONTRACT_ADDRESS = "0x02a1e5176c4d391fde798f5739fed081901710377eecffe493a46c8ad880fc39"
 	const ipfs_url = "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/"
     const CARDS_DECK = 69;
 	const DAILY_MINT_STATUS_KEY = "daily_mint_status"
@@ -44,9 +44,13 @@
 	const connectWallet = async() => {   
 		try{
 			walletModalVisible = true
+    		// await windowStarknet.enable()
 			const starknet = await connect( {modalOptions: {theme: "dark"}} );     
-			await starknet?.enable({ starknetVersion: "v4" })     
+			await starknet?.enable({  starknetVersion: "v4" })     
 
+			console.log("AFRTER")
+			console.log(await getInstalledWallets())
+			console.log(await getStarknet())
 			provider = starknet.account     
 			address = starknet.selectedAddress    
 			isConnected = true    
@@ -69,16 +73,27 @@
 				return;
 			}
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
-			let sendCardResponse = await pokemonContract.send_card_to(addressToSendCard, uint256.bnToUint256(number.toBN(cardSelectedToSend, 16)))
-
+			let sendCardResponse = await pokemonContract.send_card(addressToSendCard, uint256.bnToUint256(number.toBN(cardSelectedToSend, 16)))
+			
 			if (sendCardResponse.transaction_hash != "0x0") {
 				localStorage.setItem(DAILY_SEND_CARD_STATUS_KEY, JSON.stringify({status: "RECEIVED", txHash: sendCardResponse.transaction_hash}))
+				dailySendCardTxStatus.status = "RECEIVED"
+				dailySendCardTxStatus.txHash = sendCardResponse.transaction_hash
 			} else {
 				localStorage.setItem(DAILY_SEND_CARD_STATUS_KEY, JSON.stringify({status: "NOT_RECEIVED", txHash: sendCardResponse.transaction_hash}))
 			}
 
-			await updateDailyTradeTransactionStatus()
 			await provider.waitForTransaction(sendCardResponse.transaction_hash)
+			getCards().then((cards) => {
+				mintedCards = cards;
+				isLoading = false;
+			});	
+						
+			getDailyTradeData().then((trade)  => {
+				userTradeData = trade;
+				isLoadingTradeData = false;
+			});
+
 		} catch (error) {
 			console.log("Error while trying to send card: ", error)
 		}
@@ -107,15 +122,23 @@
 			
 			if (dailyMintCardsResponse.transaction_hash != "0x0") {
 			 	localStorage.setItem(DAILY_MINT_STATUS_KEY, JSON.stringify({status: "RECEIVED", txHash: dailyMintCardsResponse.transaction_hash}))
+				dailyMintTxStatus.status = "RECEIVED"
+				dailyMintTxStatus.txHash = dailyMintCardsResponse.transaction_hash
 			} else {
 				localStorage.setItem(DAILY_MINT_STATUS_KEY, JSON.stringify({status: "NOT_RECEIVED", txHash: dailyMintCardsResponse.transaction_hash}))
 			}
 			
-			console.log("dailyMintCardsResponse: ", dailyMintCardsResponse)
-			await updateDailyMintTransactionStatus()
-			let response = await provider.waitForTransaction(dailyMintCardsResponse.transaction_hash, 5)
-			console.log("waitForTransaction response: ", response)
-			init()			
+			await provider.waitForTransaction(dailyMintCardsResponse.transaction_hash)
+			getCardsMintedToday().then((mintedToday) => {
+				mintedTodayCards = mintedToday;
+				isLoadingMintedToday = false;
+			});
+			
+			getCards().then((cards) => {
+				mintedCards = cards;
+				isLoading = false;
+			});	
+					
 		} catch (error) {
 			console.log(error)
 		}
@@ -135,7 +158,7 @@
 		
 		for (var i = 0; i < CARDS_DECK; i++) {
 			var id = i;
-			var quantity = number.toBN(balanceResponse.batch_balances[i].low, 16).toString();
+			var quantity = number.toBN(balanceResponse.balances[i].low, 16) ? number.toBN(balanceResponse.balances[i].low, 16).toString() : "0";
 			if (parseInt(quantity) > 0) {
 				cards.push({id, quantity})
 			}	
@@ -249,19 +272,22 @@
 
 	init()
 
-	onMount(() => {
-		const $headings = document.querySelectorAll("h1,h2,h3");
-		const $anchor = [...$headings].filter((el) => {
-			const id = el.getAttribute("id")?.replace(/^.*?-/g,"");
-			const hash = window.location.hash?.replace(/^.*?-/g,"")
-			return id === hash;
-		})[0];
-		if( $anchor ) {
-			setTimeout(() => {
-				$anchor.scrollIntoView();
-			},100);
-		}
-	});
+	// console.log(stringToFeltArray("https://gateway.pinata.cloud/ipfs/QmdGwt12YLuJQkbENy3VR1hoRZKCfAXZAbPwXZNZMSXQ7L/"))
+
+	// onMount(() => {
+	// 	const $headings = document.querySelectorAll("h1,h2,h3");
+	// 	const $anchor = [...$headings].filter((el) => {
+	// 		const id = el.getAttribute("id")?.replace(/^.*?-/g,"");
+	// 		const hash = window.location.hash?.replace(/^.*?-/g,"")
+	// 		return id === hash;
+	// 	})[0];
+	// 	if( $anchor ) {
+	// 		setTimeout(() => {
+	// 			$anchor.scrollIntoView();
+	// 		},100);
+	// 	}
+	// });
+
 </script>
 
 <main>

@@ -1,0 +1,62 @@
+{
+    "id": "36",
+    "name": "Magmar",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "24",
+    "hp": "50",
+    "types": [
+    "Fire"
+    ],
+    "evolvesTo": [
+    "Magmortar"
+    ],
+    "attacks": [
+    {
+        "name": "Fire Punch",
+        "cost": [
+        "Fire",
+        "Fire"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "30",
+        "text": ""
+    },
+    {
+        "name": "Flamethrower",
+        "cost": [
+        "Fire",
+        "Fire",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "50",
+        "text": "Discard 1 Fire Energy card attached to Magmar in order to use this attack."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Water",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "36",
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "flavorText": "Its body always burns with an orange glow that enables it to hide perfectly among flames.",
+    "nationalPokedexNumbers": [
+    126
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/36_hires.png"
+}

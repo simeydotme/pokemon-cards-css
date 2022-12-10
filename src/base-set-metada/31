@@ -1,0 +1,11 @@
+{
+	"name": "Jynx",
+	"description": "Merely by meditating, the Pokémon launches a powerful psychic energy attack.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/31.webp",
+	"properties": {
+        "number": "31",
+        "type": "Psychic",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
+    }
+}

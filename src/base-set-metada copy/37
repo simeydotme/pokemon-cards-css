@@ -1,0 +1,64 @@
+{
+    "id": "37",
+    "name": "Nidorino",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Stage 1"
+    ],
+    "level": "25",
+    "hp": "60",
+    "types": [
+    "Grass"
+    ],
+    "evolvesFrom": "Nidoran ♂",
+    "evolvesTo": [
+    "Nidoking"
+    ],
+    "attacks": [
+    {
+        "name": "Double Kick",
+        "cost": [
+        "Grass",
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "30×",
+        "text": "Flip 2 coins. This attack does 30 damage times the number of heads."
+    },
+    {
+        "name": "Horn Drill",
+        "cost": [
+        "Grass",
+        "Grass",
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "50",
+        "text": ""
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Psychic",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "37",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Uncommon",
+    "flavorText": "An aggressive Pokémon that is quick to attack. The horn on its head secretes a powerful venom.",
+    "nationalPokedexNumbers": [
+    33
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/37_hires.png"
+}

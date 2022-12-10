@@ -1,0 +1,58 @@
+{
+    "id": "58",
+    "name": "Pikachu",
+    "supertype": "Pokémon",
+    "subtypes": [
+        "Basic"
+    ],
+    "level": "12",
+    "hp": "40",
+    "types": [
+        "Lightning"
+    ],
+    "evolvesTo": [
+        "Raichu"
+    ],
+    "attacks": [
+        {
+        "name": "Gnaw",
+        "cost": [
+            "Colorless"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "10",
+        "text": ""
+        },
+        {
+        "name": "Thunder Jolt",
+        "cost": [
+            "Lightning",
+            "Colorless"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "30",
+        "text": "Flip a coin. If tails, Pikachu does 10 damage to itself."
+        }
+    ],
+    "weaknesses": [
+        {
+        "type": "Fighting",
+        "value": "×2"
+        }
+    ],
+    "retreatCost": [
+        "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "58",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Common",
+    "flavorText": "When several of these Pokémon gather, their electricity can cause lightning storms.",
+    "nationalPokedexNumbers": [
+        25
+    ],
+    "legalities": {
+        "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/58_hires.png"
+}

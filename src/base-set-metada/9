@@ -1,0 +1,11 @@
+{
+	"name": "Magneton",
+	"description": "Formed by several Magnemites linked together. It frequently appears when sunspots flare up.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/9.webp",
+	"properties": {
+        "number": "9",
+        "type": "Lightning",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Rare Holo"
+    }
+}

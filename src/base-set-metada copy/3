@@ -1,0 +1,67 @@
+{
+    "id": "3",
+    "name": "Chansey",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "55",
+    "hp": "120",
+    "types": [
+    "Colorless"
+    ],
+    "evolvesTo": [
+    "Blissey"
+    ],
+    "attacks": [
+    {
+        "name": "Scrunch",
+        "cost": [
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "",
+        "text": "Flip a coin. If heads, prevent all damage done to Chansey during your opponent's next turn. (Any other effects of attacks still happen.)"
+    },
+    {
+        "name": "Double-edge",
+        "cost": [
+        "Colorless",
+        "Colorless",
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "80",
+        "text": "Chansey does 80 damage to itself."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Fighting",
+        "value": "×2"
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Psychic",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "3",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "A rare and elusive Pokémon that is said to bring happiness to those who manage to catch it.",
+    "nationalPokedexNumbers": [
+    113
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/3_hires.png"
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Venusaur",
+	"description": "This plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/15.webp",
+	"properties": {
+        "number": "15",
+        "type": "Grass",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Rare Holo"
+    }
+}

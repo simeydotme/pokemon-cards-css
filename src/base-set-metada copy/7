@@ -1,0 +1,57 @@
+{
+    "id": "7",
+    "name": "Hitmonchan",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "33",
+    "hp": "70",
+    "types": [
+    "Fighting"
+    ],
+    "attacks": [
+    {
+        "name": "Jab",
+        "cost": [
+        "Fighting"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "20",
+        "text": ""
+    },
+    {
+        "name": "Special Punch",
+        "cost": [
+        "Fighting",
+        "Fighting",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "40",
+        "text": ""
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Psychic",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "7",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "While seeming to do nothing, it fires punches in lightning-fast volleys that are impossible to see.",
+    "nationalPokedexNumbers": [
+    107
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/7_hires.png"
+}

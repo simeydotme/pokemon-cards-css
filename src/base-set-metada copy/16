@@ -1,0 +1,63 @@
+{
+    "id": "16",
+    "name": "Zapdos",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "64",
+    "hp": "90",
+    "types": [
+    "Lightning"
+    ],
+    "attacks": [
+    {
+        "name": "Thunder",
+        "cost": [
+        "Lightning",
+        "Lightning",
+        "Lightning",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "60",
+        "text": "Flip a coin. If tails, Zapdos does 30 damage to itself."
+    },
+    {
+        "name": "Thunderbolt",
+        "cost": [
+        "Lightning",
+        "Lightning",
+        "Lightning",
+        "Lightning"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "100",
+        "text": "Discard all Energy cards attached to Zapdos in order to use this attack."
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Fighting",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "16",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "A legendary bird Pokémon said to appear from clouds while wielding enormous lightning bolts.",
+    "nationalPokedexNumbers": [
+    145
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/16_hires.png"
+}

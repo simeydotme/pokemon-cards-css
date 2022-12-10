@@ -1,0 +1,57 @@
+{
+    "id": "2",
+    "name": "Blastoise",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Stage 2"
+    ],
+    "level": "52",
+    "hp": "100",
+    "types": [
+    "Water"
+    ],
+    "evolvesFrom": "Wartortle",
+    "abilities": [
+    {
+        "name": "Rain Dance",
+        "text": "As often as you like during your turn (before your attack), you may attach 1 Water Energy card to 1 of your Water Pokémon. (This doesn't use up your 1 Energy card attachment for the turn.) This power can't be used if Blastoise is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+    }
+    ],
+    "attacks": [
+    {
+        "name": "Hydro Pump",
+        "cost": [
+        "Water",
+        "Water",
+        "Water"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "40+",
+        "text": "Does 40 damage plus 10 more damage for each Water Energy attached to Blastoise but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd doesn't count."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Lightning",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "2",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "A brutal Pokémon with pressurized water jets on its shell. They are used for high-speed tackles.",
+    "nationalPokedexNumbers": [
+    9
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/2_hires.png"
+}

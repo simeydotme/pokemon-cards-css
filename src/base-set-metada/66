@@ -1,0 +1,61 @@
+{
+    "id": "66",
+    "name": "Tangela",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "8",
+    "hp": "50",
+    "types": [
+    "Grass"
+    ],
+    "evolvesTo": [
+    "Tangrowth"
+    ],
+    "attacks": [
+    {
+        "name": "Bind",
+        "cost": [
+        "Grass",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "20",
+        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+    },
+    {
+        "name": "Poisonpowder",
+        "cost": [
+        "Grass",
+        "Grass",
+        "Grass"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "20",
+        "text": "The Defending Pokémon is now Poisoned."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Fire",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "66",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Common",
+    "flavorText": "Its whole body is swathed with wide vines that are similar to seaweed. These vines shake as it walks.",
+    "nationalPokedexNumbers": [
+    114
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/66_hires.png"
+}

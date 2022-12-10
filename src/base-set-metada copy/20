@@ -1,0 +1,60 @@
+{
+    "id": "20",
+    "name": "Electabuzz",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "35",
+    "hp": "70",
+    "types": [
+    "Lightning"
+    ],
+    "evolvesTo": [
+    "Electivire"
+    ],
+    "attacks": [
+    {
+        "name": "Thundershock",
+        "cost": [
+        "Lightning"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "10",
+        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+    },
+    {
+        "name": "Thunderpunch",
+        "cost": [
+        "Lightning",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "30+",
+        "text": "Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if tails, this attack does 30 damage plus Electabuzz does 10 damage to itself."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Fighting",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "20",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare",
+    "flavorText": "Normally found near power plants, it can wander away and cause major blackouts in cities.",
+    "nationalPokedexNumbers": [
+    125
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/20_hires.png"
+}

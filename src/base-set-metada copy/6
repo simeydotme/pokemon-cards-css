@@ -1,0 +1,68 @@
+{
+    "id": "6",
+    "name": "Gyarados",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Stage 1"
+    ],
+    "level": "41",
+    "hp": "100",
+    "types": [
+    "Water"
+    ],
+    "evolvesFrom": "Magikarp",
+    "attacks": [
+    {
+        "name": "Dragon Rage",
+        "cost": [
+        "Water",
+        "Water",
+        "Water"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "50",
+        "text": ""
+    },
+    {
+        "name": "Bubblebeam",
+        "cost": [
+        "Water",
+        "Water",
+        "Water",
+        "Water"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "40",
+        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Grass",
+        "value": "×2"
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Fighting",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "6",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare Holo",
+    "flavorText": "Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage.",
+    "nationalPokedexNumbers": [
+    130
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/6_hires.png"
+}

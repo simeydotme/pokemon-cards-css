@@ -1,0 +1,66 @@
+{
+    "id": "27",
+    "name": "Farfetch'd",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "20",
+    "hp": "50",
+    "types": [
+    "Colorless"
+    ],
+    "evolvesTo": [
+    "Sirfetch'd"
+    ],
+    "attacks": [
+    {
+        "name": "Leek Slap",
+        "cost": [
+        "Colorless"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "30",
+        "text": "Flip a coin. If tails, this attack does nothing. Either way, you can't use this attack again as long as Farfetch'd stays in play (even putting Farfetch'd on the Bench won't let you use it again)."
+    },
+    {
+        "name": "Pot Smash",
+        "cost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "30",
+        "text": ""
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Lightning",
+        "value": "×2"
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Fighting",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "27",
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "flavorText": "The sprig of green onions it holds is its weapon. This sprig is used much like a metal sword.",
+    "nationalPokedexNumbers": [
+    83
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/27_hires.png"
+}

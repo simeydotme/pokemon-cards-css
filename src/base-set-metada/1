@@ -1,0 +1,11 @@
+{
+	"name": "Alakazam",
+	"description": "Its brain can outperform a supercomputer. Its intelligence quotient is said to be 5000.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/1.webp",
+	"properties": {
+        "number": "1",
+        "type": "Psychic",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo"
+	}
+}

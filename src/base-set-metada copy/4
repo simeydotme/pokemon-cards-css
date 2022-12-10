@@ -1,0 +1,64 @@
+{
+    "id": "4",
+    "name": "Charizard",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Stage 2"
+    ],
+    "level": "76",
+    "hp": "120",
+    "types": [
+    "Fire"
+    ],
+    "evolvesFrom": "Charmeleon",
+    "abilities": [
+    {
+        "name": "Energy Burn",
+        "text": "As often as you like during your turn (before your attack), you may turn all Energy attached to Charizard into Fire Energy for the rest of the turn. This power can't be used if Charizard is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+    }
+    ],
+    "attacks": [
+    {
+        "name": "Fire Spin",
+        "cost": [
+        "Fire",
+        "Fire",
+        "Fire",
+        "Fire"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "100",
+        "text": "Discard 2 Energy cards attached to Charizard in order to use this attack."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Water",
+        "value": "×2"
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Fighting",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "4",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare Holo",
+    "flavorText": "Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.",
+    "nationalPokedexNumbers": [
+    6
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/4_hires.png"
+}

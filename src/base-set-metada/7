@@ -1,0 +1,11 @@
+{
+	"name": "Hitmonchan",
+	"description": "While seeming to do nothing, it fires punches in lightning-fast volleys that are impossible to see.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/7.webp",
+	"properties": {
+        "number": "7",
+        "type": "Fighting",
+        "artist": "Ken Sugimori",
+        "rarity" : "Rare Holo"
+    }
+}

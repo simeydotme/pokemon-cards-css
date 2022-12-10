@@ -1,0 +1,55 @@
+{
+    "id": "57",
+    "name": "Pidgey",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "8",
+    "hp": "40",
+    "types": [
+    "Colorless"
+    ],
+    "evolvesTo": [
+    "Pidgeotto"
+    ],
+    "attacks": [
+    {
+        "name": "Whirlwind",
+        "cost": [
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "10",
+        "text": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon. (Do the damage before switching the Pokémon.)"
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Lightning",
+        "value": "×2"
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Fighting",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "57",
+    "artist": "Ken Sugimori",
+    "rarity": "Common",
+    "flavorText": "A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.",
+    "nationalPokedexNumbers": [
+    16
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/57_hires.png"
+}

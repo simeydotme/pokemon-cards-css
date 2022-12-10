@@ -1,0 +1,63 @@
+{
+    "id": "9",
+    "name": "Magneton",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Stage 1"
+    ],
+    "level": "28",
+    "hp": "60",
+    "types": [
+    "Lightning"
+    ],
+    "evolvesFrom": "Magnemite",
+    "evolvesTo": [
+    "Magnezone"
+    ],
+    "attacks": [
+    {
+        "name": "Thunder Wave",
+        "cost": [
+        "Lightning",
+        "Lightning",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "30",
+        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+    },
+    {
+        "name": "Selfdestruct",
+        "cost": [
+        "Lightning",
+        "Lightning",
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "80",
+        "text": "Does 20 damage to each Pokémon on each player's Bench. (Don't apply Weakness and Resistance for Benched Pokémon.) Magneton does 80 damage to itself."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Fighting",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "9",
+    "artist": "Keiji Kinebuchi",
+    "rarity": "Rare Holo",
+    "flavorText": "Formed by several Magnemites linked together. It frequently appears when sunspots flare up.",
+    "nationalPokedexNumbers": [
+    82
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/9_hires.png"
+}

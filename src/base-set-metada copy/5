@@ -1,0 +1,65 @@
+{
+    "id": "5",
+    "name": "Clefairy",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "14",
+    "hp": "40",
+    "types": [
+    "Colorless"
+    ],
+    "evolvesTo": [
+    "Clefable"
+    ],
+    "attacks": [
+    {
+        "name": "Sing",
+        "cost": [
+        "Colorless"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "",
+        "text": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
+    },
+    {
+        "name": "Metronome",
+        "cost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "",
+        "text": "Choose 1 of the Defending Pokémon's attacks. Metronome copies that attack except for its Energy costs and anything else required in order to use that attack, such as discarding Energy cards. (No matter what type the Defending Pokémon is, Clefairy's type is still Colorless.)"
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Fighting",
+        "value": "×2"
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Psychic",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "5",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "Its magical and cute appeal has many admirers. It is rare and found only in certain areas.",
+    "nationalPokedexNumbers": [
+    35
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/5_hires.png"
+}

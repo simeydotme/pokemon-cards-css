@@ -1,0 +1,11 @@
+{
+	"name": "Mewtwo",
+	"description": "A scientist created this Pokémon after years of horrific gene-splicing and DNA engineering experiments.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/10.webp",
+	"properties": {
+        "number": "10",
+        "type": "Psychic",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo"
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "id": "53",
+    "name": "Magnemite",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "13",
+    "hp": "40",
+    "types": [
+    "Lightning"
+    ],
+    "evolvesTo": [
+    "Magneton"
+    ],
+    "attacks": [
+    {
+        "name": "Thunder Wave",
+        "cost": [
+        "Lightning"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "10",
+        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+    },
+    {
+        "name": "Selfdestruct",
+        "cost": [
+        "Lightning",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "40",
+        "text": "Does 10 damage to each Pokémon on each player's Bench. (Don't apply Weakness and Resistance for Benched Pokémon.) Magnemite does 40 damage to itself."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Fighting",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "53",
+    "artist": "Keiji Kinebuchi",
+    "rarity": "Common",
+    "flavorText": "Uses anti-gravity to stay suspended. Appears without warning and uses attacks like Thunder Wave.",
+    "nationalPokedexNumbers": [
+    81
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/53_hires.png"
+}

@@ -1,0 +1,60 @@
+{
+    "id": "56",
+    "name": "Onix",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "12",
+    "hp": "90",
+    "types": [
+    "Fighting"
+    ],
+    "evolvesTo": [
+    "Steelix"
+    ],
+    "attacks": [
+    {
+        "name": "Rock Throw",
+        "cost": [
+        "Fighting"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "10",
+        "text": ""
+    },
+    {
+        "name": "Harden",
+        "cost": [
+        "Fighting",
+        "Fighting"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "",
+        "text": "During your opponent's next turn, whenever 30 or less damage is done to Onix (after applying Weakness and Resistance), prevent that damage. (Any other effects of attacks still happen.)"
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Grass",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "56",
+    "artist": "Ken Sugimori",
+    "rarity": "Common",
+    "flavorText": "As it grows, the stone portions of its body harden to become similar to a diamond, though colored black.",
+    "nationalPokedexNumbers": [
+    95
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/56_hires.png"
+}

@@ -1,0 +1,49 @@
+{
+    "id": "26",
+    "name": "Dratini",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "10",
+    "hp": "40",
+    "types": [
+    "Colorless"
+    ],
+    "evolvesTo": [
+    "Dragonair"
+    ],
+    "attacks": [
+    {
+        "name": "Pound",
+        "cost": [
+        "Colorless"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "10",
+        "text": ""
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Psychic",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "26",
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "flavorText": "Long considered a mythical Pokémon until recently, when a small colony was found living underwater.",
+    "nationalPokedexNumbers": [
+    147
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/26_hires.png"
+}

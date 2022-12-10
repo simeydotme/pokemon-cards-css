@@ -1,0 +1,48 @@
+{
+    "id": "65",
+    "name": "Staryu",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "15",
+    "hp": "40",
+    "types": [
+    "Water"
+    ],
+    "evolvesTo": [
+    "Starmie"
+    ],
+    "attacks": [
+    {
+        "name": "Slap",
+        "cost": [
+        "Water"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "20",
+        "text": ""
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Lightning",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "65",
+    "artist": "Keiji Kinebuchi",
+    "rarity": "Common",
+    "flavorText": "An enigmatic Pokémon that can effortlessly regenerate any appendage it loses in battle.",
+    "nationalPokedexNumbers": [
+    120
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/65_hires.png"
+}

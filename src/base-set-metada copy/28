@@ -1,0 +1,50 @@
+{
+    "id": "28",
+    "name": "Growlithe",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "18",
+    "hp": "60",
+    "types": [
+    "Fire"
+    ],
+    "evolvesTo": [
+    "Arcanine"
+    ],
+    "attacks": [
+    {
+        "name": "Flare",
+        "cost": [
+        "Fire",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 2,
+        "damage": "20",
+        "text": ""
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Water",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "28",
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "flavorText": "Very protective of its territory. It will bark and bite to repel intruders from its space.",
+    "nationalPokedexNumbers": [
+    58
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/28_hires.png"
+}

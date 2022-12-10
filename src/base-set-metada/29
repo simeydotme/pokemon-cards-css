@@ -1,0 +1,11 @@
+{
+	"name": "Haunter",
+	"description": "Because of its ability to slip through block walls, it is said to be from another dimension.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/29.webp",
+	"properties": {
+        "number": "29",
+        "type": "Psychic",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Uncommon"
+    }
+}

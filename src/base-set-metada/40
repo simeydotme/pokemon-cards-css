@@ -1,0 +1,63 @@
+{
+    "id": "40",
+    "name": "Raticate",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Stage 1"
+    ],
+    "level": "41",
+    "hp": "60",
+    "types": [
+    "Colorless"
+    ],
+    "evolvesFrom": "Rattata",
+    "attacks": [
+    {
+        "name": "Bite",
+        "cost": [
+        "Colorless"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "20",
+        "text": ""
+    },
+    {
+        "name": "Super Fang",
+        "cost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "",
+        "text": "Does damage to the Defending Pokémon equal to half the Defending Pokémon's remaining HP (rounded up to the nearest 10)."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Fighting",
+        "value": "×2"
+    }
+    ],
+    "resistances": [
+    {
+        "type": "Psychic",
+        "value": "-30"
+    }
+    ],
+    "retreatCost": [
+    "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "40",
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "flavorText": "It uses its whiskers to maintain its balance. It seems to slow down if they are cut off.",
+    "nationalPokedexNumbers": [
+    20
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+    "image": "https://images.pokemontcg.io/base1/40_hires.png"
+}

@@ -1,0 +1,58 @@
+{
+    "id": "31",
+    "name": "Jynx",
+    "supertype": "Pokémon",
+    "subtypes": [
+    "Basic"
+    ],
+    "level": "23",
+    "hp": "70",
+    "types": [
+    "Psychic"
+    ],
+    "attacks": [
+    {
+        "name": "Doubleslap",
+        "cost": [
+        "Psychic"
+        ],
+        "convertedEnergyCost": 1,
+        "damage": "10×",
+        "text": "Flip 2 coins. This attack does 10 damage times the number of heads."
+    },
+    {
+        "name": "Meditate",
+        "cost": [
+        "Psychic",
+        "Psychic",
+        "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "20+",
+        "text": "Does 20 damage plus 10 more damage for each damage counter on the Defending Pokémon."
+    }
+    ],
+    "weaknesses": [
+    {
+        "type": "Psychic",
+        "value": "×2"
+    }
+    ],
+    "retreatCost": [
+    "Colorless",
+    "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "31",
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "flavorText": "Merely by meditating, the Pokémon launches a powerful psychic energy attack.",
+    "nationalPokedexNumbers": [
+    124
+    ],
+    "legalities": {
+    "unlimited": "Legal"
+    },
+
+    "image": "https://images.pokemontcg.io/base1/31_hires.png"
+}
