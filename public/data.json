@@ -248,7 +248,8 @@
     "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh10/53.png",
-      "large": "https://images.pokemontcg.io/swsh10/53_hires.png"
+      "large": "https://images.pokemontcg.io/swsh10/53_hires.png",
+      "foil": "public/img/foils/swsh10_53_foil.png"
     }
   },
   {
@@ -260,7 +261,9 @@
     "rarity": "Rare Ultra",
     "images": {
       "small": "https://images.pokemontcg.io/swsh8/250.png",
-      "large": "https://images.pokemontcg.io/swsh8/250_hires.png"
+      "large": "https://images.pokemontcg.io/swsh8/250_hires.png",
+      "foil": "/img/foils/swsh8/foils/250_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh8/masks/250_foil_etched_sunpillar.png"
     }
   },
   {
@@ -272,7 +275,9 @@
     "rarity": "Rare Ultra",
     "images": {
       "small": "https://images.pokemontcg.io/swsh3/183.png",
-      "large": "https://images.pokemontcg.io/swsh3/183_hires.png"
+      "large": "https://images.pokemontcg.io/swsh3/183_hires.png",
+      "foil": "/img/foils/swsh3/foils/183_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh3/masks/183_foil_etched_sunpillar.png"
     }
   },
   {
@@ -284,7 +289,9 @@
     "rarity": "Rare Ultra",
     "images": {
       "small": "https://images.pokemontcg.io/swsh1/190.png",
-      "large": "https://images.pokemontcg.io/swsh1/190_hires.png"
+      "large": "https://images.pokemontcg.io/swsh1/190_hires.png",
+      "foil": "/img/foils/swsh1/foils/190_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh1/masks/190_foil_etched_sunpillar.png"
     }
   },
   {
@@ -296,7 +303,8 @@
     "rarity": "Rare Holo VMAX",
     "images": {
       "small": "https://images.pokemontcg.io/swsh7/29.png",
-      "large": "https://images.pokemontcg.io/swsh7/29_hires.png"
+      "large": "https://images.pokemontcg.io/swsh7/29_hires.png",
+      "foil": "/img/foils/swsh7_29_foil.png"
     }
   },
   {

@@ -11,6 +11,8 @@
   export let back_img =
     "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
   export let img = "";
+  export let foil = "";
+  export let foilmask = "";
 
   export let name = "";
   export let number = "0";
@@ -231,8 +233,13 @@
           ($springGlare.x - 50) * ($springGlare.x - 50)
       ) / 50, 0, 1)
     };
-    --galaxybg: center ${galaxyPosition}px;
 	`;
+
+  const staticStyles = `
+    --galaxybg: center ${galaxyPosition}px;
+    --foilmask: url(${foilmask});
+    --foil: url(${foil});
+  `;
 
   $: {
     rarity = rarity.toLowerCase();
@@ -344,12 +351,13 @@
   class:active
   class:interacting
   class:loading
+  class:masked={!!foil}
   data-number={number}
   data-subtypes={subtypes}
   data-supertype={supertype}
   data-rarity={rarity}
   data-gallery={gallery}
-  style={styles}
+  style={styles + staticStyles}
   bind:this={thisCard}
 >
   <div class="card__translater">

@@ -80,6 +80,8 @@
 				<Card
 					name={showcase.name}
 					img={showcase.images.large}
+					foil={showcase.images.foil}
+					foilmask={showcase.images.foilmask}
 					number={showcase.number}
 					supertype={showcase.supertype}
 					subtypes={showcase.subtypes}
@@ -121,6 +123,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -150,6 +154,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -179,6 +185,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -208,6 +216,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -237,6 +247,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -269,6 +281,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -302,6 +316,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -331,6 +347,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -360,6 +378,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -393,6 +413,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -422,6 +444,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -451,6 +475,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -479,6 +505,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -507,6 +535,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -534,6 +564,8 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
 					number={card.number}
 					supertype={card.supertype}
 					subtypes={card.subtypes}

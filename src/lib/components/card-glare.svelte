@@ -10,7 +10,7 @@
 <style>
   
 	.card__glare {
-		transform: translateZ(1.4px);
+		transform: translateZ(1.41px);
 		background: radial-gradient(
 			farthest-corner circle at var(--mx) var(--my),
 			rgba(255, 255, 255, 0.8) 10%,
