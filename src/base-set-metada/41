@@ -1,48 +1,11 @@
 {
-    "id": "41",
-    "name": "Seel",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "12",
-    "hp": "60",
-    "types": [
-    "Water"
-    ],
-    "evolvesTo": [
-    "Dewgong"
-    ],
-    "attacks": [
-    {
-        "name": "Headbutt",
-        "cost": [
-        "Water"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10",
-        "text": ""
+	"name": "Seel",
+	"description": "The protruding horn on its head is very hard. This horn is used for bashing through thick ice.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/41.webp",
+	"properties": {
+        "number": "41",
+        "type": "Water",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Lightning",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "41",
-    "artist": "Ken Sugimori",
-    "rarity": "Uncommon",
-    "flavorText": "The protruding horn on its head is very hard. This horn is used for bashing through thick ice.",
-    "nationalPokedexNumbers": [
-    86
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/41_hires.png"
 }

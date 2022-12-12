@@ -1,49 +1,11 @@
 {
-    "id": "69",
-    "name": "Weedle",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "12",
-    "hp": "40",
-    "types": [
-    "Grass"
-    ],
-    "evolvesTo": [
-    "Kakuna"
-    ],
-    "attacks": [
-    {
-        "name": "Poison Sting",
-        "cost": [
-        "Grass"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10",
-        "text": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
+	"name": "Weedle",
+	"description": "Often found in forests, eating leaves. It has a sharp, venomous stinger on its head.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/69.webp",
+	"properties": {
+        "number": "69",
+        "type": "Grass",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Fire",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "69",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "flavorText": "Often found in forests, eating leaves. It has a sharp, venomous stinger on its head.",
-    "nationalPokedexNumbers": [
-    13
-    ],
-    "legalities": {
-    "unlimited": "Legal",
-    "expanded": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/69_hires.png"
 }

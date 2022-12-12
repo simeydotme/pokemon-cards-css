@@ -1,62 +1,11 @@
 {
-    "id": "33",
-    "name": "Kakuna",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Stage 1"
-    ],
-    "level": "23",
-    "hp": "80",
-    "types": [
-    "Grass"
-    ],
-    "evolvesFrom": "Weedle",
-    "evolvesTo": [
-    "Beedrill"
-    ],
-    "attacks": [
-    {
-        "name": "Stiffen",
-        "cost": [
-        "Colorless",
-        "Colorless"
-        ],
-        "convertedEnergyCost": 2,
-        "damage": "",
-        "text": "Flip a coin. If heads, prevent all damage done to Kakuna during your opponent's next turn. (Any other effects of attacks still happen.)"
-    },
-    {
-        "name": "Poisonpowder",
-        "cost": [
-        "Grass",
-        "Grass"
-        ],
-        "convertedEnergyCost": 2,
-        "damage": "20",
-        "text": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
+	"name": "Kakuna",
+	"description": "Almost incapable of moving, this Pokémon can only harden its shell to protect itself from predators.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/33.webp",
+	"properties": {
+        "number": "33",
+        "type": "Grass",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Uncommon"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Fire",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless",
-    "Colorless"
-    ],
-    "convertedRetreatCost": 2,
-    "number": "33",
-    "artist": "Keiji Kinebuchi",
-    "rarity": "Uncommon",
-    "flavorText": "Almost incapable of moving, this Pokémon can only harden its shell to protect itself from predators.",
-    "nationalPokedexNumbers": [
-    14
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-
-    "image": "https://images.pokemontcg.io/base1/33_hires.png"
 }

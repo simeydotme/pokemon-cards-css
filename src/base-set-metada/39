@@ -1,64 +1,11 @@
 {
-    "id": "39",
-    "name": "Porygon",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "12",
-    "hp": "30",
-    "types": [
-    "Colorless"
-    ],
-    "evolvesTo": [
-    "Porygon2"
-    ],
-    "attacks": [
-    {
-        "name": "Conversion 1",
-        "cost": [
-        "Colorless"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "",
-        "text": "If the Defending Pokémon has a Weakness, you may change it to a type of your choice other than Colorless."
-    },
-    {
-        "name": "Conversion 2",
-        "cost": [
-        "Colorless",
-        "Colorless"
-        ],
-        "convertedEnergyCost": 2,
-        "damage": "",
-        "text": "Change Porygon's Resistance to a type of your choice other than Colorless."
+	"name": "Porygon",
+	"description": "A Pokémon that consists entirely of programming code. Capable of moving freely in cyberspace.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/39.webp",
+	"properties": {
+        "number": "39",
+        "type": "Colorless",
+        "artist": "Tomoaki Imakuni",
+        "rarity": "Uncommon"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Fighting",
-        "value": "×2"
-    }
-    ],
-    "resistances": [
-    {
-        "type": "Psychic",
-        "value": "-30"
-    }
-    ],
-    "retreatCost": [
-    "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "39",
-    "artist": "Tomoaki Imakuni",
-    "rarity": "Uncommon",
-    "flavorText": "A Pokémon that consists entirely of programming code. Capable of moving freely in cyberspace.",
-    "nationalPokedexNumbers": [
-    137
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/39_hires.png"
 }

@@ -1,48 +1,11 @@
 {
-    "id": "67",
-    "name": "Voltorb",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "10",
-    "hp": "40",
-    "types": [
-    "Lightning"
-    ],
-    "evolvesTo": [
-    "Electrode"
-    ],
-    "attacks": [
-    {
-        "name": "Tackle",
-        "cost": [
-        "Colorless"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10",
-        "text": ""
+	"name": "Voltorb",
+	"description": "Usually found in power plants. Easily mistaken for a Monster Ball, it has zapped many people.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/67.webp",
+	"properties": {
+        "number": "67",
+        "type": "Lightning",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Fighting",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "67",
-    "artist": "Keiji Kinebuchi",
-    "rarity": "Common",
-    "flavorText": "Usually found in power plants. Easily mistaken for a Monster Ball, it has zapped many people.",
-    "nationalPokedexNumbers": [
-    100
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/67_hires.png"
 }

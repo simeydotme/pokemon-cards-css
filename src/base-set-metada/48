@@ -1,50 +1,11 @@
 {
-    "id": "48",
-    "name": "Doduo",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "10",
-    "hp": "50",
-    "types": [
-    "Colorless"
-    ],
-    "evolvesTo": [
-    "Dodrio"
-    ],
-    "attacks": [
-    {
-        "name": "Fury Attack",
-        "cost": [
-        "Colorless"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10×",
-        "text": "Flip 2 coins. This attack does 10 damage times the number of heads."
+	"name": "Doduo",
+	"description": "A bird that makes up for its poor flying with its fast foot speed. Leaves giant footprints.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/48.webp",
+	"properties": {
+        "number": "48",
+        "type": "Colorless",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Lightning",
-        "value": "×2"
-    }
-    ],
-    "resistances": [
-    {
-        "type": "Fighting",
-        "value": "-30"
-    }
-    ],
-    "number": "48",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "flavorText": "A bird that makes up for its poor flying with its fast foot speed. Leaves giant footprints.",
-    "nationalPokedexNumbers": [
-    84
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/48_hires.png"
 }

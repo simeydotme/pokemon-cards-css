@@ -1,49 +1,11 @@
 {
-    "id": "45",
-    "name": "Caterpie",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "13",
-    "hp": "40",
-    "types": [
-    "Grass"
-    ],
-    "evolvesTo": [
-    "Metapod"
-    ],
-    "attacks": [
-    {
-        "name": "String Shot",
-        "cost": [
-        "Grass"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10",
-        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+	"name": "Caterpie",
+	"description": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/45.webp",
+	"properties": {
+        "number": "45",
+        "type": "Grass",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Fire",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "45",
-    "artist": "Ken Sugimori",
-    "rarity": "Common",
-    "flavorText": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
-    "nationalPokedexNumbers": [
-    10
-    ],
-    "legalities": {
-    "unlimited": "Legal",
-    "expanded": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/45_hires.png"
 }

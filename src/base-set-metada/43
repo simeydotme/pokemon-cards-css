@@ -1,44 +1,11 @@
 {
-    "id": "43",
-    "name": "Abra",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "10",
-    "hp": "30",
-    "types": [
-    "Psychic"
-    ],
-    "evolvesTo": [
-    "Kadabra"
-    ],
-    "attacks": [
-    {
-        "name": "Psyshock",
-        "cost": [
-        "Psychic"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10",
-        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
-    }
-    ],
-    "weaknesses": [
-    {
+	"name": "Abra",
+	"description": "Using its ability to read minds, it will identify impending danger and teleport to safety.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/43.webp",
+	"properties": {
+        "number": "43",
         "type": "Psychic",
-        "value": "×2"
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
     }
-    ],
-    "number": "43",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "flavorText": "Using its ability to read minds, it will identify impending danger and teleport to safety.",
-    "nationalPokedexNumbers": [
-    63
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/43_hires.png"
 }

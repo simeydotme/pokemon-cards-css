@@ -1,50 +1,11 @@
 {
-    "id": "61",
-    "name": "Rattata",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "9",
-    "hp": "30",
-    "types": [
-    "Colorless"
-    ],
-    "evolvesTo": [
-    "Raticate"
-    ],
-    "attacks": [
-    {
-        "name": "Bite",
-        "cost": [
-        "Colorless"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "20",
-        "text": ""
+	"name": "Rattata",
+	"description": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/61.webp",
+	"properties": {
+        "number": "61",
+        "type": "Colorless",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Fighting",
-        "value": "×2"
-    }
-    ],
-    "resistances": [
-    {
-        "type": "Psychic",
-        "value": "-30"
-    }
-    ],
-    "number": "61",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "flavorText": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
-    "nationalPokedexNumbers": [
-    19
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/61_hires.png"
 }

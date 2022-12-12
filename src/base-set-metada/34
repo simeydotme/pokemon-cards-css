@@ -1,66 +1,11 @@
 {
-    "id": "34",
-    "name": "Machoke",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Stage 1"
-    ],
-    "level": "40",
-    "hp": "80",
-    "types": [
-    "Fighting"
-    ],
-    "evolvesFrom": "Machop",
-    "evolvesTo": [
-    "Machamp"
-    ],
-    "attacks": [
-    {
-        "name": "Karate Chop",
-        "cost": [
-        "Fighting",
-        "Fighting",
-        "Colorless"
-        ],
-        "convertedEnergyCost": 3,
-        "damage": "50-",
-        "text": "Does 50 damage minus 10 damage for each damage counter on Machoke."
-    },
-    {
-        "name": "Submission",
-        "cost": [
-        "Fighting",
-        "Fighting",
-        "Colorless",
-        "Colorless"
-        ],
-        "convertedEnergyCost": 4,
-        "damage": "60",
-        "text": "Machoke does 20 damage to itself."
+	"name": "Machoke",
+	"description": "Its muscular body is so powerful that it must wear a power-save belt to help regulate its motions.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/34.webp",
+	"properties": {
+        "number": "34",
+        "type": "Fighting",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Psychic",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless",
-    "Colorless",
-    "Colorless"
-    ],
-    "convertedRetreatCost": 3,
-    "number": "34",
-    "artist": "Ken Sugimori",
-    "rarity": "Uncommon",
-    "flavorText": "Its muscular body is so powerful that it must wear a power-save belt to help regulate its motions.",
-    "nationalPokedexNumbers": [
-    67
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-
-    "image": "https://images.pokemontcg.io/base1/34_hires.png"
 }

@@ -1,61 +1,11 @@
 {
-    "id": "54",
-    "name": "Metapod",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Stage 1"
-    ],
-    "level": "21",
-    "hp": "70",
-    "types": [
-    "Grass"
-    ],
-    "evolvesFrom": "Caterpie",
-    "evolvesTo": [
-    "Butterfree"
-    ],
-    "attacks": [
-    {
-        "name": "Stiffen",
-        "cost": [
-        "Colorless",
-        "Colorless"
-        ],
-        "convertedEnergyCost": 2,
-        "damage": "",
-        "text": "Flip a coin. If heads, prevent all damage done to Metapod during your opponent's next turn. (Any other effects of attacks still happen.)"
-    },
-    {
-        "name": "Stun Spore",
-        "cost": [
-        "Grass",
-        "Grass"
-        ],
-        "convertedEnergyCost": 2,
-        "damage": "20",
-        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+	"name": "Metapod",
+	"description": "It is vulnerable to attack because its shell is soft, exposing its weak and tender body.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/54.webp",
+	"properties": {
+        "number": "54",
+        "type": "Grass",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Fire",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless",
-    "Colorless"
-    ],
-    "convertedRetreatCost": 2,
-    "number": "54",
-    "artist": "Ken Sugimori",
-    "rarity": "Common",
-    "flavorText": "It is vulnerable to attack because its shell is soft, exposing its weak and tender body.",
-    "nationalPokedexNumbers": [
-    11
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/54_hires.png"
 }

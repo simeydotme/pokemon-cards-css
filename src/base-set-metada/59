@@ -1,48 +1,11 @@
 {
-    "id": "59",
-    "name": "Poliwag",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "13",
-    "hp": "40",
-    "types": [
-    "Water"
-    ],
-    "evolvesTo": [
-    "Poliwhirl"
-    ],
-    "attacks": [
-    {
-        "name": "Water Gun",
-        "cost": [
-        "Water"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10+",
-        "text": "Does 10 damage plus 10 more damage for each Water Energy attached to Poliwag but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd don't count."
+	"name": "Poliwag",
+	"description": "Its newly grown legs prevent it from running. It appears to prefer swimming over trying to stand.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/59.webp",
+	"properties": {
+        "number": "59",
+        "type": "Water",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Grass",
-        "value": "×2"
-    }
-    ],
-    "retreatCost": [
-    "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "59",
-    "artist": "Ken Sugimori",
-    "rarity": "Common",
-    "flavorText": "Its newly grown legs prevent it from running. It appears to prefer swimming over trying to stand.",
-    "nationalPokedexNumbers": [
-    60
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/59_hires.png"
 }

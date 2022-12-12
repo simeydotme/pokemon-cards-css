@@ -1,60 +1,11 @@
 {
-    "id": "47",
-    "name": "Diglett",
-    "supertype": "Pokémon",
-    "subtypes": [
-    "Basic"
-    ],
-    "level": "8",
-    "hp": "30",
-    "types": [
-    "Fighting"
-    ],
-    "evolvesTo": [
-    "Dugtrio"
-    ],
-    "attacks": [
-    {
-        "name": "Dig",
-        "cost": [
-        "Fighting"
-        ],
-        "convertedEnergyCost": 1,
-        "damage": "10",
-        "text": ""
-    },
-    {
-        "name": "Mud Slap",
-        "cost": [
-        "Fighting",
-        "Fighting"
-        ],
-        "convertedEnergyCost": 2,
-        "damage": "30",
-        "text": ""
+	"name": "Diglett",
+	"description": "Lives about three feet underground, where it feeds on plant roots. It sometimes appears above ground.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/47.webp",
+	"properties": {
+        "number": "47",
+        "type": "Fighting",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Common"
     }
-    ],
-    "weaknesses": [
-    {
-        "type": "Grass",
-        "value": "×2"
-    }
-    ],
-    "resistances": [
-    {
-        "type": "Lightning",
-        "value": "-30"
-    }
-    ],
-    "number": "47",
-    "artist": "Keiji Kinebuchi",
-    "rarity": "Common",
-    "flavorText": "Lives about three feet underground, where it feeds on plant roots. It sometimes appears above ground.",
-    "nationalPokedexNumbers": [
-    50
-    ],
-    "legalities": {
-    "unlimited": "Legal"
-    },
-    "image": "https://images.pokemontcg.io/base1/47_hires.png"
 }
