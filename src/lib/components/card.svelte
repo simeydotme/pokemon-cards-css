@@ -237,9 +237,9 @@
 
   const staticStyles = `
     --galaxybg: center ${galaxyPosition}px;
-    --foilmask: url(${foilmask});
-    --foil: url(${foil});
   `;
+
+  let foils = ``;
 
   $: {
     rarity = rarity.toLowerCase();
@@ -253,6 +253,10 @@
 
   const imageLoader = (e) => {
     loading = false;
+    foils = `
+      --foilmask: url(${foilmask});
+      --foil: url(${foil});
+    `;
   };
 
   const orientate = (e) => {
@@ -351,13 +355,13 @@
   class:active
   class:interacting
   class:loading
-  class:masked={!!foil}
+  class:masked={!!foilmask}
   data-number={number}
   data-subtypes={subtypes}
   data-supertype={supertype}
   data-rarity={rarity}
   data-gallery={gallery}
-  style={styles + staticStyles}
+  style={styles}
   bind:this={thisCard}
 >
   <div class="card__translater">
@@ -379,7 +383,8 @@
         width="660"
         height="921"
       />
-      <div class="card__front">
+      <div class="card__front" 
+        style={ staticStyles + foils }>
         <img
           src={front_img}
           alt="Front design of the {name} Pokemon Card, with the stats and info around the edge"
@@ -421,6 +426,11 @@
     will-change: transform, visibility;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+  }
+
+  .card,
+  .card__rotator {
+    aspect-ratio: 0.716;
   }
 
   .card.interacting {
@@ -492,7 +502,6 @@
 
   .card__rotator img {
     outline: 1px solid transparent;
-    aspect-ratio: 0.716;
     height: auto;
   }
 

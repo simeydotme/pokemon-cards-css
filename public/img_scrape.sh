@@ -70,11 +70,12 @@ for file in ${FOLDER}/masks/*.png; do
   if [[ ! $FILENAME =~ .*reverse.* ]]; then
     # create upscaled, and desaturated version
     echo "🔁 Upscaling & Converting ${file##*/}..."
-    convert ${file} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 50x60 -filter Lanczos2 -distort resize x2048 "${OUTPUT_UPSCALED}";
+    convert ${file} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 50x60 -filter Lanczos2 -distort resize x2048 -quality 66 "${OUTPUT_UPSCALED}";
   else
     echo "  🔽 Skipping Reverse Holo ${file##*/}..."
   fi;
   
 done;
 
-echo "\n✅ Finish upscaling"
+echo "";
+echo "✅ Finish upscaling"

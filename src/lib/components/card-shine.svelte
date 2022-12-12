@@ -39,9 +39,9 @@
   border-radius: var(--radius);
 }
 
-.card__shine,
-.card__shine:before,
-.card__shine:after {
+:global(.card.masked) .card__shine,
+:global(.card.masked) .card__shine:before,
+:global(.card.masked) .card__shine:after {
   mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
   mask-size: cover;
 }
