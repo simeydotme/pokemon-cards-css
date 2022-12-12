@@ -12,7 +12,7 @@
 	import { stringToFeltArray } from "./utils/utils.js";
 	
 	import { Account, Contract, ec, number, uint256, defaultProvider } from "starknet";
-	import { connect, disconnect } from "get-starknet"
+	import { connect, disconnect, getStarknet, getInstalledWallets } from "get-starknet"
 	
 	const POKEMON_CONTRACT_ADDRESS = "0x0344eaf4ccc9f9a4fcccf9140a1cd0820e5a06bccd697847f863fbe733b672f0"
 
@@ -45,13 +45,24 @@
 
 	const connectWallet = async() => {   
 		try{
+			const installed = await getInstalledWallets({ include: ["braavos"],});
+			console.log("installed: ", installed)
 			walletModalVisible = true
-			const starknet = await connect( {modalOptions: {theme: "dark"}} );     
-			await starknet?.enable({  starknetVersion: "v4" })     
+			// var wallet = getStarknet();
+			// console.log("WALLET: ",wallet)
 
-			provider = starknet.account     
-			address = starknet.selectedAddress    
-			isConnected = true    
+			const wallet = await connect({ include: ["braavos"], modalOptions: {theme: "dark"}});
+			// wallet = await connect({ include: ["braavos"], modalOptions: {theme: "dark"}} );     
+			console.log("WALLET:2 ",wallet)
+
+			if (wallet) {
+				await wallet.enable({ showModal: true });
+				isConnected = wallet.isConnected    
+			}
+			// await wallet.enable({ showModal: true, starknetVersion: "v4" })     
+
+			provider = wallet.account     
+			address = wallet.selectedAddress    
 
 			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
 			walletModalVisible = false
@@ -193,9 +204,7 @@
 	}
 
 	const updateDailyMintTransactionStatus = async () => {
-		console.log("Checking if a tx is in progress")
 		var dailyMintTxStored = localStorage.getItem(DAILY_MINT_STATUS_KEY)
-		console.log("Daily Mint Tx status: ", dailyMintTxStored)
 		if (dailyMintTxStored != undefined) {
 			let data = JSON.parse(localStorage.getItem(DAILY_MINT_STATUS_KEY))
 
@@ -215,7 +224,6 @@
 
 	const updateDailyTradeTransactionStatus = async () => {
 		var dailySendCardTxStored = localStorage.getItem(DAILY_SEND_CARD_STATUS_KEY)
-		console.log("Daily send card Tx status: ", dailySendCardTxStored)
 		if (dailySendCardTxStored != undefined) {
 			let data = JSON.parse(localStorage.getItem(DAILY_SEND_CARD_STATUS_KEY))
 			
