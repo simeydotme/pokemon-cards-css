@@ -1,0 +1,11 @@
+{
+	"name": "Squirtle",
+	"description": "After birth, its back swells and hardens into a shell. It powerfully sprays foam from its mouth.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/63.webp",
+	"properties": {
+        "number": "63",
+        "type": "Water",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

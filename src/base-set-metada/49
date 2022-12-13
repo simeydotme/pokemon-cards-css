@@ -1,0 +1,11 @@
+{
+	"name": "Drowzee",
+	"description": "Puts enemies to sleep, then eats their dreams. Occasionally gets sick from eating bad dreams.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/49.webp",
+	"properties": {
+        "number": "49",
+        "type": "Psychic",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
+    }
+}

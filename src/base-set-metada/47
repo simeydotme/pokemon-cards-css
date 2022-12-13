@@ -1,0 +1,11 @@
+{
+	"name": "Diglett",
+	"description": "Lives about three feet underground, where it feeds on plant roots. It sometimes appears above ground.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/47.webp",
+	"properties": {
+        "number": "47",
+        "type": "Fighting",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Common"
+    }
+}

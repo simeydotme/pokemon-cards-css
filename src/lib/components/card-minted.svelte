@@ -405,7 +405,7 @@
     --radius: 4.55% / 3.5%;
     --back: #004177;
     --glow: #69d1e9;
-    z-index: calc(var(--s) * 100);
+    z-index: 0;
     transform: translate3d(0, 0, 0.1px);
     -webkit-transform: translate3d(0, 0, 0.1px);
     will-change: transform, visibility;

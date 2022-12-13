@@ -1,0 +1,11 @@
+{
+	"name": "Sandshrew",
+	"description": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/62.webp",
+	"properties": {
+        "number": "62",
+        "type": "Fighting",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Nidorino",
+	"description": "An aggressive Pokémon that is quick to attack. The horn on its head secretes a powerful venom.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/37.webp",
+	"properties": {
+        "number": "37",
+        "type": "Grass",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Uncommon"
+    }
+}

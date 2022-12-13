@@ -1,0 +1,11 @@
+{
+	"name": "Machop",
+	"description": "Loves to build its muscles. It trains in all styles of martial arts to become even stronger.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/52.webp",
+	"properties": {
+        "number": "52",
+        "type": "Fighting",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

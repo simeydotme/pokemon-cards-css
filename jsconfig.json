@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "target": "ESNext",
     "module": "ESNext",
     /**
@@ -23,10 +23,7 @@
      * Typecheck JS in `.svelte` and `.js` files by default.
      * Disable this if you'd like to use dynamic types.
      */
-    "checkJs": true,
-    "types": [
-      "node"
-    ]
+    "checkJs": true
   },
   /**
    * Use global.d.ts instead of compilerOptions.types

@@ -1,0 +1,11 @@
+{
+	"name": "Seel",
+	"description": "The protruding horn on its head is very hard. This horn is used for bashing through thick ice.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/41.webp",
+	"properties": {
+        "number": "41",
+        "type": "Water",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Poliwrath",
+	"description": "An adept swimmer at both the front crawl and breaststroke. Easily overtakes the best human swimmers.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/13.webp",
+	"properties": {
+        "number": "13",
+        "type": "Water",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo"
+    }
+}

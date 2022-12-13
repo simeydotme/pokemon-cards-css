@@ -1,0 +1,11 @@
+{
+	"name": "Vulpix",
+	"description": "At the time of birth, it has just one tail. Its tail splits from the tip as it grows older.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/68.webp",
+	"properties": {
+        "number": "68",
+        "type": "Fire",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
+    }
+}

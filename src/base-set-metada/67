@@ -1,0 +1,11 @@
+{
+	"name": "Voltorb",
+	"description": "Usually found in power plants. Easily mistaken for a Monster Ball, it has zapped many people.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/67.webp",
+	"properties": {
+        "number": "67",
+        "type": "Lightning",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Common"
+    }
+}

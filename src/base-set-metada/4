@@ -1,0 +1,11 @@
+{
+	"name": "Charizard",
+	"description": "Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.",
+    "image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/4.webp",
+	"properties": {
+        "number": "4",
+        "type": "Fire",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Rare Holo"
+	}
+}

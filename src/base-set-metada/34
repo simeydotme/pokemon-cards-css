@@ -1,0 +1,11 @@
+{
+	"name": "Machoke",
+	"description": "Its muscular body is so powerful that it must wear a power-save belt to help regulate its motions.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/34.webp",
+	"properties": {
+        "number": "34",
+        "type": "Fighting",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
+    }
+}

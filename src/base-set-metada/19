@@ -1,0 +1,11 @@
+{
+	"name": "Dugtrio",
+	"description": "A team of Diglett triplets. It triggers huge earthquakes by burrowing 60 miles underground.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/19.webp",
+	"properties": {
+        "number": "19",
+        "type": "Fighting",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Rare"
+    }
+}

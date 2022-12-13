@@ -20,11 +20,14 @@
 
 <style>
 	.card-grid {  
+		border: solid;
+		border-color: rgba(255, 255, 255, 0.815);
+		
 		background-color: rgba(0, 0, 0, 0.6);
 		grid-template-columns: 1fr;
 		grid-gap: 1.5vw;
 		height: 100%;
-		max-width: 85%;
+		max-width: 90%;
 		margin: auto;
 		padding: 1%;
   		border-radius: 5px;

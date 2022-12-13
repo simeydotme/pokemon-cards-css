@@ -1,0 +1,11 @@
+{
+	"name": "Kakuna",
+	"description": "Almost incapable of moving, this Pokémon can only harden its shell to protect itself from predators.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/33.webp",
+	"properties": {
+        "number": "33",
+        "type": "Grass",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Uncommon"
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Clefairy",
+	"description": "Its magical and cute appeal has many admirers. It is rare and found only in certain areas.",
+    "image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/5.webp",
+	"properties": {
+        "number": "5",
+        "type": "Colorless",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo"
+	}
+}

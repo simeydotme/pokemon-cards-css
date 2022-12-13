@@ -1,0 +1,11 @@
+{
+	"name": "Farfetch'd",
+	"description": "The sprig of green onions it holds is its weapon. This sprig is used much like a metal sword.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/27.webp",
+	"properties": {
+        "number": "27",
+        "type": "Colorless",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
+    }
+}

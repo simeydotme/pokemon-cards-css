@@ -1,0 +1,11 @@
+{
+	"name": "Ninetales",
+	"description": "Very smart and very vengeful. Grabbing one of its many tails could result in a 1,000-year curse.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/12.webp",
+	"properties": {
+        "number": "12",
+        "type": "Fire",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo"
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Porygon",
+	"description": "A Pokémon that consists entirely of programming code. Capable of moving freely in cyberspace.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/39.webp",
+	"properties": {
+        "number": "39",
+        "type": "Colorless",
+        "artist": "Tomoaki Imakuni",
+        "rarity": "Uncommon"
+    }
+}

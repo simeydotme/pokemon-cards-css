@@ -1,0 +1,11 @@
+{
+	"name": "Nidoking",
+	"description": "Uses its powerful tail in battle to smash, constrict, then break its prey's bones.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/11.webp",
+	"properties": {
+        "number": "11",
+        "type": "Grass",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo"
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Growlithe",
+	"description": "Very protective of its territory. It will bark and bite to repel intruders from its space.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/28.webp",
+	"properties": {
+        "number": "28",
+        "type": "Fire",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
+    }
+}

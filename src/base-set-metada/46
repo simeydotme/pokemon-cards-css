@@ -1,0 +1,11 @@
+{
+	"name": "Charmander",
+	"description": "Obviously prefers hot places. If it gets caught in the rain, steam is said to spout from the tip of its tail.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/46.webp",
+	"properties": {
+        "number": "46",
+        "type": "Fire",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

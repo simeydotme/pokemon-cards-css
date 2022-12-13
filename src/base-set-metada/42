@@ -1,0 +1,11 @@
+{
+	"name": "Wartortle",
+	"description": "Often hides in water to stalk unweary prey. When swimming quickly, it moves its ears to maintain balance.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/42.webp",
+	"properties": {
+        "number": "42",
+        "type": "Water",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
+    }
+}

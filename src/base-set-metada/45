@@ -1,0 +1,11 @@
+{
+	"name": "Caterpie",
+	"description": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/45.webp",
+	"properties": {
+        "number": "45",
+        "type": "Grass",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
+    }
+}

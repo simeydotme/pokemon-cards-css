@@ -1,0 +1,11 @@
+{
+	"name": "Bulbasaur",
+	"description": "A strange seed was planted on its back at birth. Thus, a plant sprouted and now grows with this Pokémon.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/44.webp",
+	"properties": {
+        "number": "44",
+        "type": "Grass",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

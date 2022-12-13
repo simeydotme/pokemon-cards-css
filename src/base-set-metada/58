@@ -1,0 +1,11 @@
+{
+	"name": "Pikachu",
+	"description": "When several of these Pokémon gather, their electricity can cause lightning storms.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/58.webp",
+	"properties": {
+        "number": "58",
+        "type": "Lightning",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

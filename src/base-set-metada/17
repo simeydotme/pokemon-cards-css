@@ -1,0 +1,11 @@
+{
+	"name": "Beedrill",
+	"description": "Flies at high speed and attacks using the large, venomous stingers on its forelegs and tail.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/17.webp",
+	"properties": {
+        "number": "17",
+        "type": "Grass",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare"
+    }
+}

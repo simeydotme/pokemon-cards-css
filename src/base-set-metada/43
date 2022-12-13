@@ -1,0 +1,11 @@
+{
+	"name": "Abra",
+	"description": "Using its ability to read minds, it will identify impending danger and teleport to safety.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/43.webp",
+	"properties": {
+        "number": "43",
+        "type": "Psychic",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

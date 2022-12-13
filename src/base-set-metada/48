@@ -1,0 +1,11 @@
+{
+	"name": "Doduo",
+	"description": "A bird that makes up for its poor flying with its fast foot speed. Leaves giant footprints.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/48.webp",
+	"properties": {
+        "number": "48",
+        "type": "Colorless",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

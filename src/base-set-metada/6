@@ -1,0 +1,11 @@
+{
+	"name": "Gyarados",
+	"description": "Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/6.webp",
+	"properties": {
+        "number": "6",
+        "type": "Water",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Rare Holo"
+    }
+}

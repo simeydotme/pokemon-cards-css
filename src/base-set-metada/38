@@ -1,0 +1,11 @@
+{
+	"name": "Poliwhirl",
+	"description": "Capable of living in or out of water. When out of water, it sweats to keep its body slimy.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/38.webp",
+	"properties": {
+        "number": "38",
+        "type": "Water",
+        "artist": "Ken Sugimori",
+        "rarity": "Uncommon"
+    }
+}

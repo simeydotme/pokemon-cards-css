@@ -1,0 +1,11 @@
+{
+	"name": "Magnemite",
+	"description": "Uses anti-gravity to stay suspended. Appears without warning and uses attacks like Thunder Wave.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/53.webp",
+	"properties": {
+        "number": "53",
+        "type": "Lightning",
+        "artist": "Keiji Kinebuchi",
+        "rarity": "Common"
+    }
+}

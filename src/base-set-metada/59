@@ -1,0 +1,11 @@
+{
+	"name": "Poliwag",
+	"description": "Its newly grown legs prevent it from running. It appears to prefer swimming over trying to stand.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/59.webp",
+	"properties": {
+        "number": "59",
+        "type": "Water",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
+    }
+}

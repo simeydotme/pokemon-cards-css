@@ -1,0 +1,11 @@
+{
+	"name": "Ponyta",
+	"description": "Its hooves are 10 times harder than diamonds. It can trample anything flat in moments.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/60.webp",
+	"properties": {
+        "number": "60",
+        "type": "Fire",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Koffing",
+	"description": "Because it stores several kinds of toxic gases in its body, it is prone to exploding without warning.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/51.webp",
+	"properties": {
+        "number": "51",
+        "type": "Grass",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common"
+    }
+}

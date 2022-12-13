@@ -1,0 +1,11 @@
+{
+	"name": "Onix",
+	"description": "As it grows, the stone portions of its body harden to become similar to a diamond, though colored black.",
+	"image": "https://ipfs.io/ipfs/QmbCRMSuCDxxXGRNgvAM3BhDVNC6i8hvCT2NvpnsqgFQhS/56.webp",
+	"properties": {
+        "number": "56",
+        "type": "Fighting",
+        "artist": "Ken Sugimori",
+        "rarity": "Common"
+    }
+}
