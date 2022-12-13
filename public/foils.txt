@@ -1,267 +1,76 @@
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-001-beedrill_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-002-hisuian_voltorb-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-003-hisuian_electrode-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-004-scyther-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-005-scyther-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-006-yanma-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-007-yanmega-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-008-heracross-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-009-kricketot-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-010-kricketune-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-011-combee-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-012-vespiquen-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-013-leafeon-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-014-shaymin-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-015-petilil-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-016-hisuian_lilligant-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-016-hisuian_lilligant-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-017-hisuian_lilligant_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-018-hisuian_lilligant_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-019-rowlet-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-020-dartrix-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-021-ponyta-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-022-rapidash-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-023-cyndaquil-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-024-quilava-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-025-heatran_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-026-heatran_vmax-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-027-radiant_heatran-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-028-psyduck-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-029-golduck-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-030-starmie_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-031-swinub-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-032-piloswine-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-033-mamoswine-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-034-mantine-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-035-barboach-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-036-whiscash-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-037-regice-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-038-glaceon-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-039-origin_forme_palkia_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-040-origin_forme_palkia_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-041-oshawott-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-042-dewott-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-043-hisuian_basculin-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-044-hisuian_basculegion-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-045-keldeo-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-045-keldeo-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-045-keldeo-std-a.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-046-radiant_greninja-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-047-bergmite-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-048-hisuian_avalugg-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-049-galarian_mr_rime_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-050-luxray_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-051-regieleki-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-052-hisuian_typhlosion-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-052-hisuian_typhlosion-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-053-hisuian_typhlosion_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-054-hisuian_typhlosion_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-055-togepi-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-056-togetic-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-057-togekiss-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-057-togekiss-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-058-misdreavus-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-059-mismagius-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-060-ralts-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-061-kirlia-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-062-gallade-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-062-gallade-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-063-drifloon-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-064-drifblim-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-065-uxie-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-066-mesprit-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-066-mesprit-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-067-azelf-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-068-diancie-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-068-diancie-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-069-wyrdeer-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-069-wyrdeer-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-070-hisuian_growlithe-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-071-hisuian_arcanine-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-072-machamp_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-073-machamp_vmax-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-074-sudowoodo-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-075-regirock-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-076-cranidos-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-077-rampardos-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-077-rampardos-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-078-lucario_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-079-hippopotas-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-080-hippowdon-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-081-radiant_hawlucha-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-082-hisuian_decidueye-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-082-hisuian_decidueye-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-083-hisuian_decidueye_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-084-hisuian_decidueye_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-085-kleavor-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-086-kleavor-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-086-kleavor-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-087-kleavor_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-088-hisuian_qwilfish-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-089-hisuian_qwilfish-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-090-hisuian_overqwil-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-091-hisuian_overqwil-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-092-hisuian_sneasel-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-093-hisuian_sneasler-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-093-hisuian_sneasler-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-094-hisuian_sneasler_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-095-poochyena-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-096-mightyena-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-097-absol-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-097-absol-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-098-darkrai_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-099-darkrai_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-100-hisuian_samurott-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-100-hisuian_samurott-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-101-hisuian_samurott_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-102-hisuian_samurott_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-103-nickit-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-104-thievul-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-105-magnemite-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-106-magneton-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-107-magnezone-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-107-magnezone-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-108-registeel-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-109-shieldon-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-110-bastiodon-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-110-bastiodon-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-111-bronzor-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-112-bronzong-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-113-origin_forme_dialga_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-114-origin_forme_dialga_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-115-pawniard-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-116-bisharp-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-117-garchomp_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-118-regidrago-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-119-eevee-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-120-hoothoot-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-121-noctowl-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-122-teddiursa-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-123-ursaring-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-124-ursaluna-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-125-stantler-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-126-miltank-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-126-miltank-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-127-glameow-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-128-purugly-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-129-chatot-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-130-regigigas-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-130-regigigas-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-131-rufflet-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-132-hisuian_braviary-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-133-oranguru_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-134-wyrdeer_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-135-adaman-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-135-adaman-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-136-canceling_cologne-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-137-choy-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-138-cyllene-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-139-dark_patch-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-140-energy_loto-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-141-feather_ball-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-142-gapejaw_bog-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-143-gardenias_vigor-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-144-grant-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-145-gutsy_pickaxe-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-146-hisuian_heavy_ball-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-147-irida-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-147-irida-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-148-jubilife_village-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-149-kamado-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-150-roxanne-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-151-spicy_seasoned_curry-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-152-supereffective_glasses-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-153-sweet_honey-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-154-switch_cart-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-155-temple_of_sinnoh-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-156-trekking_shoes-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-157-unidentified_fossil-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-158-wait_and_see_turbo-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-159-zisu-ph.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-160-beedrill_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-161-beedrill_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-162-hisuian_lilligant_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-163-hisuian_lilligant_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-164-virizion_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-165-heatran_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-166-starmie_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-167-origin_forme_palkia_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-168-luxray_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-169-hisuian_typhlosion_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-170-jirachi_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-171-machamp_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-172-machamp_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-173-hisuian_decidueye_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-174-hisuian_sneasler_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-175-hisuian_sneasler_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-176-hisuian_samurott_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-177-origin_forme_dialga_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-178-garchomp_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-179-oranguru_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-180-wyrdeer_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-181-adaman-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-182-choy-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-183-cyllene-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-184-gardenias_vigor-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-185-grant-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-186-irida-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-187-kamado-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-188-roxanne-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-189-zisu-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-190-hisuian_lilligant_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-191-heatran_vmax-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-192-origin_forme_palkia_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-193-hisuian_typhlosion_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-194-machamp_vmax-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-195-hisuian_decidueye_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-196-kleavor_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-197-hisuian_samurott_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-198-origin_forme_dialga_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-199-adaman-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-200-choy-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-201-cyllene-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-202-gardenias_vigor-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-203-grant-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-204-irida-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-205-kamado-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-206-roxanne-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-207-zisu-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-208-origin_forme_palkia_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-209-hisuian_samurott_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-210-origin_forme_dialga_vstar-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-211-choice_belt-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-212-jubilife_village-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-213-path_to_the_peak-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-214-temple_of_sinnoh-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-215-trekking_shoes-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-216-double_turbo_energy-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG001-abomasnow-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG002-flapple-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG003-kingdra-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG004-frosmoth-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG005-gardevoir-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG006-wyrdeer-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG007-falinks-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG008-kleavor-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG009-mightyena-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG010-galarian_obstagoon-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG011-bronzong-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG012-hoothoot-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG013-starmie_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG014-ice_rider_calyrex_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG015-ice_rider_calyrex_vmax-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG016-galarian_articuno_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG017-shadow_rider_calyrex_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG018-shadow_rider_calyrex_vmax-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG019-galarian_zapdos_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG020-galarian_moltres_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG021-zacian_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG022-zamazenta_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG023-garchomp_v-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG024-allister-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG025-bea-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG026-melony-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG027-milo-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG028-piers-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG029-ice_rider_calyrex_vmax-std.png
-https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-TG030-shadow_rider_calyrex_vmax-std.png
+fetch(`https://api.pokemontcg.io/v2/cards?q=(
+ id:swsh4-170 OR
+ id:sm35-1 OR
+ id:sm10-33 OR
+ id:sm115-7 OR
+ id:swsh12-116 OR
+ id:swsh12-49 OR
+ id:swsh12-85 OR
+ id:pgo-24 OR
+ id:pgo-29 OR
+ id:pgo-12 OR
+ id:swsh1-85 OR
+ id:swsh9-132 OR
+ id:pgo-43 OR
+ id:swsh12tg-TG02 OR
+ id:swshp-SWSH012 OR
+ id:swsh45-60 OR
+ id:swshp-SWSH127 OR
+ id:pgo-11 OR
+ id:swsh12-59 OR
+ id:swsh12-120 OR
+ id:swsh12-138 OR
+ id:swsh7-110 OR
+ id:pgo-49 OR
+ id:swsh8-250 OR
+ id:swsh3-183 OR
+ id:swsh12-176 OR
+ id:swsh7-29 OR
+ id:swsh45-51 OR
+ id:swsh9-29 OR
+ id:swshp-SWSH179 OR
+ id:swshp-SWSH181 OR
+ id:swshp-SWSH183 OR
+ id:swshp-SWSH180 OR
+ id:swshp-SWSH182 OR
+ id:swshp-SWSH184 OR
+ id:swsh10-177 OR
+ id:swsh8-245 OR
+ id:swsh11-186 OR
+ id:swsh7-215 OR
+ id:swsh8-270 OR
+ id:swsh7-212 OR
+ id:pgo-31 OR
+ id:swshp-SWSH214 OR
+ id:swsh9-18 OR
+ id:swsh4-183 OR
+ id:swsh9-167 OR
+ id:swsh6-196 OR
+ id:swsh4-185 OR
+ id:swsh2-189 OR
+ id:swsh1-200 OR
+ id:swsh4-188 OR
+ id:swsh12-197 OR
+ id:swsh10-204 OR
+ id:swsh10-213 OR
+ id:swsh10-214 OR
+ id:swsh7-232 OR
+ id:swsh5-181 OR
+ id:swsh7-229 OR
+ id:swsh1-213 OR
+ id:swsh8-280 OR
+ id:swsh9-184 OR
+ id:swsh11tg-TG30 OR
+ id:swsh11tg-TG03 OR
+ id:swsh11tg-TG05 OR
+ id:swsh12tg-TG02 OR
+ id:swsh9tg-TG16 OR
+ id:swsh9tg-TG18 OR
+ id:swsh10tg-TG17 OR
+ id:swsh9tg-TG17 OR
+ id:swsh9tg-TG19 OR
+ id:swsh10tg-TG18 
+)
+&select=id,name,number,supertype,subtypes,rarity,images,types
+&orderBy=rarity
+`) 
