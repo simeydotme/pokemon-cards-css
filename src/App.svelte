@@ -12,9 +12,11 @@
 	import { stringToFeltArray } from "./utils/utils.js";
 	
 	import { Account, Contract, ec, number, uint256, defaultProvider } from "starknet";
-	import { connect, disconnect, getStarknet, getInstalledWallets } from "get-starknet"
+	import { connect, disconnect } from "get-starknet"
 	
-	const POKEMON_CONTRACT_ADDRESS = "0x0344eaf4ccc9f9a4fcccf9140a1cd0820e5a06bccd697847f863fbe733b672f0"
+	
+	const POKEMON_CONTRACT_ADDRESS = "0x016c26ecae31092f38d330eabcc8a047d65f4037c74b25bc58135b205d07369b"
+	// const POKEMON_CONTRACT_ADDRESS = "0x0344eaf4ccc9f9a4fcccf9140a1cd0820e5a06bccd697847f863fbe733b672f0"
 
 	// const POKEMON_CONTRACT_ADDRESS = "0x07927d282802f2dc3904d4e010a0d7ce983646837da74ed89dba78732ceb663f"
 	// const POKEMON_CONTRACT_ADDRESS = "0x02a1e5176c4d391fde798f5739fed081901710377eecffe493a46c8ad880fc39"
@@ -24,6 +26,10 @@
 	const DAILY_SEND_CARD_STATUS_KEY = "daily_send_card_status"
 	const DEPLOY_SCOPE = "testnet." // if mainnet, leave empty
 
+	const DAILY_MINT = "dailyMint"
+	const OWNED_CARDS = "ownedCards"
+	const DAILY_TRADE = "dailyTrade"
+	
 	let provider;
 	let address;
 	let isConnected = false;
@@ -45,30 +51,22 @@
 
 	const connectWallet = async() => {   
 		try{
-			const installed = await getInstalledWallets({ include: ["braavos"],});
-			console.log("installed: ", installed)
 			walletModalVisible = true
-			// var wallet = getStarknet();
-			// console.log("WALLET: ",wallet)
-
-			const wallet = await connect({ include: ["braavos"], modalOptions: {theme: "dark"}});
-			// wallet = await connect({ include: ["braavos"], modalOptions: {theme: "dark"}} );     
-			console.log("WALLET:2 ",wallet)
+			const wallet = await connect({modalOptions: {theme: "dark"}});
 
 			if (wallet) {
 				await wallet.enable({ showModal: true });
 				isConnected = wallet.isConnected    
+				provider = wallet.account     
+				address = wallet.selectedAddress   
+				
+				pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
+				walletModalVisible = false
+				var data = { provider, address, isConnected}
+				
+				return data
 			}
 			// await wallet.enable({ showModal: true, starknetVersion: "v4" })     
-
-			provider = wallet.account     
-			address = wallet.selectedAddress    
-
-			pokemonContract = new Contract(contract.abi, POKEMON_CONTRACT_ADDRESS, provider);
-			walletModalVisible = false
-			var data = { provider, address, isConnected}
-			
-			return data
 		}   catch(error){     
 			walletModalVisible = false
 			console.log(error.message)
@@ -93,15 +91,7 @@
 			}
 
 			await provider.waitForTransaction(sendCardResponse.transaction_hash)
-			getCards().then((cards) => {
-				mintedCards = cards;
-				isLoading = false;
-			});	
-						
-			getDailyTradeData().then((trade)  => {
-				userTradeData = trade;
-				isLoadingTradeData = false;
-			});
+			refresh([OWNED_CARDS, DAILY_TRADE])
 
 		} catch (error) {
 			console.log("Error while trying to send card: ", error)
@@ -138,15 +128,7 @@
 			}
 			
 			await provider.waitForTransaction(dailyMintCardsResponse.transaction_hash)
-			getCardsMintedToday().then((mintedToday) => {
-				mintedTodayCards = mintedToday;
-				isLoadingMintedToday = false;
-			});
-			
-			getCards().then((cards) => {
-				mintedCards = cards;
-				isLoading = false;
-			});	
+			refresh([OWNED_CARDS, DAILY_MINT])
 					
 		} catch (error) {
 			console.log(error)
@@ -208,17 +190,26 @@
 		if (dailyMintTxStored != undefined) {
 			let data = JSON.parse(localStorage.getItem(DAILY_MINT_STATUS_KEY))
 
-			//'NOT_RECEIVED' | 'RECEIVED' | 'PENDING' | 'ACCEPTED_ON_L2' | 'ACCEPTED_ON_L1' | 'REJECTED';
-			if (data.status == "NOT_RECEIVED" || data.status == "ACCEPTED_ON_L2" || data.status == "ACCEPTED_ON_L1") {
-				localStorage.removeItem(DAILY_MINT_STATUS_KEY)
-				return;
-			}
-
 			let txStatus = await defaultProvider.getTransactionReceipt(data.txHash)
 			localStorage.setItem(DAILY_MINT_STATUS_KEY, JSON.stringify({status: txStatus.status, txHash: txStatus.transaction_hash}))
 			dailyMintTxStatus.status = txStatus.status
 			dailyMintTxStatus.txHash = txStatus.transaction_hash
-			console.log("updating - status:", dailyMintTxStatus.status, " and tx:", dailyMintTxStatus.txHash)
+
+			switch(data.status) {
+				case "NOT_RECEIVED":
+				case "ACCEPTED_ON_L1":
+				case "ACCEPTED_ON_L2":
+					localStorage.removeItem(DAILY_MINT_STATUS_KEY)
+					refresh([OWNED_CARDS, DAILY_MINT])
+					break;
+				case "RECEIVED":
+				case "PENDING":
+					await provider.waitForTransaction(dailyMintTxStatus.txHash)
+					refresh([OWNED_CARDS, DAILY_MINT])
+					break;
+				default:
+					break;
+			}
 		} 
 	}
 
@@ -227,28 +218,52 @@
 		if (dailySendCardTxStored != undefined) {
 			let data = JSON.parse(localStorage.getItem(DAILY_SEND_CARD_STATUS_KEY))
 			
-			//'NOT_RECEIVED' | 'RECEIVED' | 'PENDING' | 'ACCEPTED_ON_L2' | 'ACCEPTED_ON_L1' | 'REJECTED';
-			if (data.status == "NOT_RECEIVED" || data.status == "ACCEPTED_ON_L2" || data.status == "ACCEPTED_ON_L1") {
-				localStorage.removeItem(DAILY_SEND_CARD_STATUS_KEY)
-				return;
-			}
-			// Check if can update data
 			let txStatus = await defaultProvider.getTransactionReceipt(data.txHash)
 			localStorage.setItem(DAILY_SEND_CARD_STATUS_KEY, JSON.stringify({status: txStatus.status, txHash: txStatus.transaction_hash}))
 			dailySendCardTxStatus.status = txStatus.status
-
 			dailySendCardTxStatus.txHash = txStatus.transaction_hash
+		
+			switch(data.status) {
+				case "NOT_RECEIVED":
+				case "ACCEPTED_ON_L1":
+				case "ACCEPTED_ON_L2":
+					localStorage.removeItem(DAILY_SEND_CARD_STATUS_KEY)
+					refresh([OWNED_CARDS, DAILY_TRADE])
+					break;
+				case "RECEIVED":
+				case "PENDING":
+					await provider.waitForTransaction(dailySendCardTxStatus.txHash)
+					refresh([OWNED_CARDS, DAILY_TRADE])
+					break;
+				default:
+					break;
+			}
 		} 
 	}
 
-	const init = async () => {
-		await updateDailyMintTransactionStatus()
-		await updateDailyTradeTransactionStatus()
+	const refresh = async (params) => { 
+		if (params.includes(DAILY_MINT)) {
+			isLoadingMintedToday = true;
+			getCardsMintedToday().then((mintedToday) => { mintedTodayCards = mintedToday; isLoadingMintedToday = false;});
+		} 
+		if (params.includes(DAILY_TRADE)) {
+			isLoadingTradeData = true;
+			getDailyTradeData().then((trade)  => { userTradeData = trade; isLoadingTradeData = false; });
+		}
+		if (params.includes(OWNED_CARDS)) {
+			isLoading = true;
+			getCards().then((cards) => { mintedCards = cards; isLoading = false; });	
+		}
+	}
 
+	const init = async () => {
 		connectWallet().then(data => {
 		provider = data.provider
 		address = data.address
 		isConnected = data.isConnected
+
+		updateDailyMintTransactionStatus()
+		updateDailyTradeTransactionStatus()
 
 		if (isConnected) {
 			const account = new Account(
@@ -257,21 +272,7 @@
 				ec.getKeyPair("")
 			);	
 			pokemonContract.connect(account);
-		
-			getCardsMintedToday().then((mintedToday) => {
-				mintedTodayCards = mintedToday;
-				isLoadingMintedToday = false;
-			});
-
-			getCards().then((cards) => {
-				mintedCards = cards;
-				isLoading = false;
-			});
-
-			getDailyTradeData().then((trade)  => {
-				userTradeData = trade;
-				isLoadingTradeData = false;
-			});
+			refresh([DAILY_MINT, DAILY_TRADE, OWNED_CARDS])
 		}
 		})
 	}

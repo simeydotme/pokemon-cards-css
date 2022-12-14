@@ -5,14 +5,15 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview --host",
+    "clear": "vite clobber --host"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.1.0",
-    "@types/node": "^18.11.9",
+    "@sveltejs/vite-plugin-svelte": "^1.4.0",
     "@tsconfig/svelte": "^3.0.0",
-    "svelte": "^3.52.0",
-    "vite": "^3.2.0"
+    "@types/node": "^18.11.9",
+    "svelte": "^3.54.0",
+    "vite": "^3.0.0"
   },
   "dependencies": {
     "bn.js": "^5.2.1",
