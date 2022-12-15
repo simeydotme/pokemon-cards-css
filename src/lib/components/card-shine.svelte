@@ -42,9 +42,21 @@
 :global(.card.masked) .card__shine,
 :global(.card.masked) .card__shine:before,
 :global(.card.masked) .card__shine:after {
-  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
   mask-size: cover;
 }
+
+:global(.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"]) .card__shine,
+:global(.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"]) .card__shine:before,
+:global(.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"]) .card__shine:after {
+  --foilmask: url("/img/illusion-mask.png");
+  --foil: url("/img/illusion.png");
+  --imgsize: 66%;
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-size: 66%;
+  mask-position: center center;
+}
+
 
 
 </style>

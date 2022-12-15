@@ -30,7 +30,10 @@
   let img_base = img.startsWith("http") ? "" : "https://images.pokemontcg.io/";
   let front_img = "";
 
-  const galaxyPosition = Math.floor(Math.random()*1500);
+  const cosmosPosition = { 
+    x: Math.floor( Math.random() * 734 ), 
+    y: Math.floor( Math.random() * 1280 ) 
+  };
 
   setTimeout(() => {
     front_img = img_base + img;
@@ -236,7 +239,7 @@
 	`;
 
   const staticStyles = `
-    --galaxybg: center ${galaxyPosition}px;
+    --cosmosbg: ${cosmosPosition.x}px ${cosmosPosition.y}px;
   `;
 
   let foils = ``;
@@ -253,10 +256,12 @@
 
   const imageLoader = (e) => {
     loading = false;
-    foils = `
-      --foilmask: url(${foilmask});
-      --foil: url(${foil});
-    `;
+    if ( !!foilmask ) {
+      foils = `
+        --foilmask: url(${foilmask});
+        --foil: url(${foil});
+      `;
+    }
   };
 
   const orientate = (e) => {

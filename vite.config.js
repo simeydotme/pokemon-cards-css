@@ -22,7 +22,7 @@ export default defineConfig(({mode}) => {
     plugins: [svelte(), htmlPlugin()],
     server: {
       watch: {
-        usePolling: true
+        usePolling: false
       }
     }
   }

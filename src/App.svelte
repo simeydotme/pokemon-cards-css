@@ -3,7 +3,7 @@
 	import Card from "./lib/components/card.svelte";
   import { onMount } from "svelte";
 
-	let showcase, basics, holos, galaxies, radiant, basicGallery, 
+	let showcase, basics, reverse, holos, galaxies, radiant, basicGallery, 
 			vee, veeUltra, veeAlt, veeMax, veeMaxAlt, veeStar, 
 			trainerHolo, rainbow, gold, veeGallery;
 
@@ -17,28 +17,33 @@
 		return cards;
 	};
 
-	getCards().then((cards) => {
-		window.cards = cards;
-		showcase = cards[23];
-		basics = cards.slice(0, 6);
-		holos = cards.slice(6, 12);
-		galaxies = cards.slice(12, 15);
-		radiant = cards.slice(15, 18);
-		basicGallery = cards.slice(60, 63);
-		vee = cards.slice(18, 21);
-		veeUltra = cards.slice(21, 24);
-		veeAlt = [...cards.slice(27, 30), ...cards.slice(33, 36)];
-		veeMax = cards.slice(24, 27);
-		veeMaxAlt = [cards[36], cards[31], cards[37]];
-		veeStar = cards.slice(39, 42);
-		trainerHolo = cards.slice(42, 48);
-		rainbow = cards.slice(48, 51);
-		gold = cards.slice(51, 60);
-		veeGallery = cards.slice(63, 69);
-		isLoading = false;
-	});
+	const loadCards = async() => {
+		return getCards()
+			.then((cards) => {
+				window.cards = cards;
+				showcase = cards[0];
+				basics = cards.slice(1, 4);
+				reverse = cards.slice(4, 7);
+				holos = cards.slice(7, 13);
+				galaxies = cards.slice(13, 16);
+				radiant = cards.slice(16, 19);
+				basicGallery = cards.slice(19, 22);
+				vee = cards.slice(22, 25);
+				veeUltra = cards.slice(25, 28);
+				veeAlt = cards.slice(28, 34);
+				veeMax = cards.slice(37, 40);
+				veeMaxAlt = cards.slice(40, 43);
+				veeStar = cards.slice(43, 46);
+				trainerHolo = cards.slice(46, 52);
+				rainbow = cards.slice(52, 55);
+				gold = cards.slice(55, 61);
+				veeGallery = cards.slice(61, 67);
+				isLoading = false;
+			});
+	};
 
 	onMount(() => {
+		loadCards();
 		const $headings = document.querySelectorAll("h1,h2,h3");
 		const $anchor = [...$headings].filter((el) => {
 			const id = el.getAttribute("id")?.replace(/^.*?-/g,"");
@@ -120,6 +125,25 @@
 			loading...
 		{:else}
 			{#each basics as card, id}
+				<Card
+					name={card.name}
+					img={card.images.large}
+					foil={card.images.foil}
+					foilmask={card.images.foilmask}
+					number={card.number}
+					supertype={card.supertype}
+					subtypes={card.subtypes}
+					rarity={card.rarity}
+				/>
+			{/each}
+		{/if}
+	</CardList>
+
+	<CardList>
+		{#if isLoading}
+			loading...
+		{:else}
+			{#each reverse as card, id}
 				<Card
 					name={card.name}
 					img={card.images.large}
