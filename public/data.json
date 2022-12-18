@@ -580,7 +580,7 @@
     "subtypes": ["VMAX"],
     "types": ["Psychic"],
     "number": "270",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swsh8/270.png",
       "large": "https://images.pokemontcg.io/swsh8/270_hires.png",
@@ -595,7 +595,7 @@
     "subtypes": ["VMAX", "Single Strike"],
     "types": ["Darkness"],
     "number": "271",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swsh8/271.png",
       "large": "https://images.pokemontcg.io/swsh8/271_hires.png",
@@ -610,7 +610,7 @@
     "subtypes": ["VMAX", "Single Strike"],
     "types": ["Darkness"],
     "number": "215",
-    "rarity": "Rare Rainbow",
+    "rarity": "Rare Rainbow Alt",
     "images": {
       "small": "https://images.pokemontcg.io/swsh7/215.png",
       "large": "https://images.pokemontcg.io/swsh7/215_hires.png",
@@ -644,8 +644,8 @@
     "images": {
       "small": "https://images.pokemontcg.io/swshp/SWSH214.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH214_hires.png",
-      "foil": "/img/foils/swshpromo/foils/214_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swshpromo/masks/214_foil_etched_sunpillar.png"
+      "foil": "/img/foils/swshpromo/foils/swsh214_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swshpromo/masks/swsh214_foil_etched_sunpillar.png"
     }
   },
   {
@@ -745,7 +745,9 @@
     "rarity": "Rare Rainbow",
     "images": {
       "small": "https://images.pokemontcg.io/swsh4/188.png",
-      "large": "https://images.pokemontcg.io/swsh4/188_hires.png"
+      "large": "https://images.pokemontcg.io/swsh4/188_hires.png",
+      "foil": "/img/foils/swsh4/foils/188_foil_etched_swsecret.jpg",
+      "foilmask": "/img/foils/swsh4/masks/188_foil_etched_swsecret.png"
     }
   },
   {
@@ -758,7 +760,9 @@
     "rarity": "Rare Rainbow",
     "images": {
       "small": "https://images.pokemontcg.io/swsh12/197.png",
-      "large": "https://images.pokemontcg.io/swsh12/197_hires.png"
+      "large": "https://images.pokemontcg.io/swsh12/197_hires.png",
+      "foil": "/img/foils/swsh12/foils/197_foil_etched_swsecret.jpg",
+      "foilmask": "/img/foils/swsh12/masks/197_foil_etched_swsecret.png"
     }
   },
   {
@@ -770,7 +774,9 @@
     "rarity": "Rare Rainbow",
     "images": {
       "small": "https://images.pokemontcg.io/swsh10/204.png",
-      "large": "https://images.pokemontcg.io/swsh10/204_hires.png"
+      "large": "https://images.pokemontcg.io/swsh10/204_hires.png",
+      "foil": "/img/foils/swsh10/foils/204_foil_etched_swsecret.jpg",
+      "foilmask": "/img/foils/swsh10/masks/204_foil_etched_swsecret.png"
     }
   },
   {

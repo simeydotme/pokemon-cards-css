@@ -11,7 +11,7 @@
   
 	.card__glare {
 		transform: translateZ(1.41px);
-		background: radial-gradient(
+		background-image: radial-gradient(
 			farthest-corner circle at var(--mx) var(--my),
 			rgba(255, 255, 255, 0.8) 10%,
 			rgba(255, 255, 255, 0.65) 20%,
@@ -31,7 +31,7 @@
 	.card__glare.vmax,
 	.card__glare.vstar {
     filter: brightness(.9) contrast(1.75);
-		background: 
+		background-image: 
 			radial-gradient( 
 				farthest-corner circle at 
 				var(--mx) var(--my), 
@@ -43,7 +43,7 @@
   }
 
 	.card__glare.rare.ultra {
-		background: 
+		background-image: 
 			radial-gradient( 
 				farthest-corner circle at 
 				var(--mx) var(--my), 
@@ -57,7 +57,7 @@
 
 
 	.card__glare.vmax {		
-		background: 
+		background-image: 
 			radial-gradient( 
 				farthest-corner circle at 
 				var(--mx) var(--my), 
@@ -68,7 +68,7 @@
 	}
 
 	:global(.card[data-rarity*="rare holo"][data-gallery="true"]) .card__glare {
-		background: radial-gradient(
+		background-image: radial-gradient(
 			farthest-corner circle at var(--mx) var(--my),
 			rgba(255, 255, 255, 0.8) 10%,
 			rgba(255, 255, 255, 0.6) 35%,
@@ -84,6 +84,22 @@
 				rgba(255, 255, 255, 0.6) 30%, 
 				rgba(0, 0, 0, .8) 80% 
 			);
+	}
+
+	:global(.card[data-rarity*="rare rainbow"]) .card__glare {
+		
+		background-image: 
+			radial-gradient( 
+				farthest-corner circle at 
+				var(--mx) var(--my), 
+				rgba(230, 252, 255, 0.75) 0%, 
+				rgba(97, 81, 91, 0.5) 45%, 
+				rgb(10, 15, 17) 120% 
+			);
+
+		filter: brightness(.9) contrast(1.75);
+		opacity: calc(var(--o)*.75);
+
 	}
 		
 

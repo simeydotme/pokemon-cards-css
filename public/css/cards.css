@@ -2,7 +2,7 @@
 .card__shine {
 
   --grain: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuMyI+PC9yZWN0Pgo8L3N2Zz4=");
-  
+  --glitter: url("../img/glitter.png");;
   --space: 5%;
   --angle: 133deg;
   --imgsize: 500px;
@@ -517,41 +517,30 @@
 
 */
 
-.card[data-rarity^="rare rainbow"] .card__shine,
-.card[data-rarity^="rare rainbow"] .card__shine:after {
+.card[data-rarity^="rare rainbow"] .card__shine {
 
-  --rainbowspace: 9%;
-  --overlayspace: 12%;
-  --angle: -20deg;
-  --angle2: 130deg;
-  --imgsize: cover;
+  --r-clr-1: hsl(0deg, 57%, 37%);
+  --r-clr-2: hsl(40deg, 53%, 39%);
+  --r-clr-3: hsl(90deg, 60%, 35%);
+  --r-clr-4: hsl(180deg, 60%, 35%);
+  --r-clr-5: hsl(180deg, 60%, 35%);
+  --r-clr-6: hsl(210deg, 57%, 39%);
+  --r-clr-7: hsl(280deg, 55%, 31%);
 
-  background-image:
-    url("../img/glitter.png"),
-    repeating-linear-gradient( var(--angle), 
-      rgb(253, 71, 65) calc(var(--rainbowspace)*1), 
-      rgb(255, 243, 151) calc(var(--rainbowspace)*2), 
-      rgb(95, 255, 180) calc(var(--rainbowspace)*3), 
-      rgba(131,255,247,1) calc(var(--rainbowspace)*4), 
-      rgb(75, 198, 255) calc(var(--rainbowspace)*5), 
-      rgb(255, 73, 246) calc(var(--rainbowspace)*6), 
-      rgb(255, 56, 49) calc(var(--rainbowspace)*7)
-    ),
-    repeating-linear-gradient( var(--angle2), 
-      rgba(89, 46, 80, 0.5) calc(var(--overlayspace)*1), 
-      hsl(263, 43%, 76%) calc(var(--overlayspace)*2), 
-      rgb(223, 96, 202) calc(var(--overlayspace)*3), 
-      hsl(180, 57%, 56%) calc(var(--overlayspace)*4), 
-      rgba(14, 21, 46, 0.5) calc(var(--overlayspace)*5) , 
-      rgba(14, 21, 46, 0.5) calc(var(--overlayspace)*6) 
-    ),
-    var(--foil);
+  background-image: 
+    linear-gradient(-45deg, var(--r-clr-1), var(--r-clr-5)),
+    var(--glitter),
+    linear-gradient( -30deg, 
+      var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+      var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+      var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+      var(--r-clr-1)
+    );
 
-  background-size: 20% 20%, 500% 500%, 1000% 1000%, var(--imgsize);
-  background-position: center, calc( var(--posx) * 1.5 ) calc( var(--posy) * 1.5 ), calc( var(--posx) * 1.5 ) var(--posy), center;
-  background-blend-mode: soft-light, soft-light, color-dodge;
-
-  filter: brightness(calc((var(--hyp)*0.25) + 0.5)) contrast(1.7) saturate(1)
+  background-blend-mode: luminosity, soft-light;
+  background-size: 200% 150%, 35% 35%, 400% 400%;
+  background-position: calc( 50% + (50% - (var(--posx))) * 3 ) calc( 50% + (50% - (var(--posy))) * 3 ), center center, calc( var(--posx) * 1.5) calc( var(--posy) * 1.5 );
+  filter: brightness(calc((var(--hyp)*0.25) + 0.5))  contrast(2) saturate(0.75);
 
 }
 
@@ -559,33 +548,35 @@
 
   content: "";
 
-  background-position: center, 0% calc( var(--posy) * -1.75 ), calc( var(--posx) * -1.75 ) calc( var(--posy) * -1 ) , bottom left;
-  mix-blend-mode: exclusion;
+  mask-image: none!important;
+
+  background-image: 
+    var(--glitter),
+    linear-gradient( -60deg, 
+        var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+        var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+        var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+        var(--r-clr-1)
+    );
+
+  background-blend-mode: soft-light;
+  background-size: 35% 35%, 400% 400%;
+  background-position: center center, calc( var(--posx) * -1.5) calc( var(--posy) * -1.5 );
+  filter: brightness(calc((var(--hyp)*0.3) + 0.55)) contrast(3) saturate(1);
+  mix-blend-mode: screen;
 
 }
 
 .card[data-rarity^="rare rainbow"] .card__shine:before {
 
   content: "";
-  z-index: 5;
 
-  background-image: 
-    url("../img/glitter.png"), 
-    repeating-linear-gradient( 45deg, 
-      rgb(255, 119, 115) calc(var(--space)*1), 
-      rgba(255,237,95,1) calc(var(--space)*2), 
-      rgba(168,255,95,1) calc(var(--space)*3), 
-      rgba(131,255,247,1) calc(var(--space)*4), 
-      rgba(120,148,255,1) calc(var(--space)*5), 
-      rgb(216, 117, 255) calc(var(--space)*6), 
-      rgb(255, 119, 115) calc(var(--space)*7)
-    );
-
-  background-size: 30% 30%, 200% 200%;
-  background-position: center, center;
-  filter: brightness(2) contrast(3);
-  mix-blend-mode:  exclusion;
-  background-blend-mode: hard-light;
+  background-image: var(--foil);
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(1.2) contrast(3) saturate(1);
+  mix-blend-mode: overlay;
+  opacity: calc((var(--hyp) + 0.4 ) * 0.6 );
 
 }
 
@@ -595,11 +586,14 @@
 
 */
 
-.card[data-rarity="rare rainbow alt"] .card__shine,
-.card[data-rarity="rare rainbow alt"] .card__shine:after {
+.card[data-rarity^="rare rainbow alt"] .card__shine,
+.card[data-rarity^="rare rainbow alt"] .card__shine:after {
+  background-blend-mode: luminosity, overlay;
+  filter: brightness(calc((var(--hyp)*0.25) + 0.6)) contrast(2.5) saturate(.66);
+}
 
-  filter: brightness(calc((var(--hyp)*0.25) + 0.66)) contrast(3) saturate(.7);
-
+.card[data-rarity^="rare rainbow alt"] .card__shine:after {
+  background-blend-mode: overlay;
 }
 
 
@@ -618,7 +612,7 @@
   --imgsize: 28% 23%;
 
   background-image:
-    url("../img/glitter.png"),
+    var(--glitter),
     repeating-linear-gradient( var(--angle), 
       rgba(89, 46, 80, 0.5) 0%, 
       hsl(39, 37%, 60%) 2.5%, 
@@ -643,7 +637,7 @@
   content: "";
 
   background-image:
-    url("../img/glitter.png"),
+    var(--glitter),
     repeating-linear-gradient( var(--angle), 
       rgba(89, 46, 80, 0.5) 0%, 
       hsl(39, 37%, 60%) 2.5%, 
@@ -755,7 +749,7 @@
   content: "";
 
   background-image: 
-    url("../img/glitter.png"), 
+    var(--glitter), 
     repeating-linear-gradient( 55deg, 
     rgb(253, 186, 183) calc(var(--space)*1), 
     rgb(174, 218, 255) calc(var(--space)*2), 
