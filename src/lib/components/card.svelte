@@ -16,6 +16,7 @@
 
   export let name = "";
   export let number = "0";
+  export let types = [];
   export let subtypes = "basic";
   export let supertype = "pokémon";
   export let rarity = "common";
@@ -249,6 +250,9 @@
     supertype = supertype.toLowerCase();
     number = number.toLowerCase();
     gallery = number.startsWith("tg");
+    if (Array.isArray(types)) {
+      types = types.join(" ").toLowerCase();
+    }
     if (Array.isArray(subtypes)) {
       subtypes = subtypes.join(" ").toLowerCase();
     }
@@ -356,7 +360,7 @@
 <svelte:window on:scroll={reposition} />
 
 <div
-  class="card"
+  class="card {types}"
   class:active
   class:interacting
   class:loading
@@ -424,7 +428,7 @@
   .card {
     --radius: 4.55% / 3.5%;
     --back: #004177;
-    --glow: #69d1e9;
+    --glow: #ececec;
     z-index: calc(var(--s) * 100);
     transform: translate3d(0, 0, 0.1px);
     -webkit-transform: translate3d(0, 0, 0.1px);
@@ -432,6 +436,16 @@
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
   }
+
+  .card.water { --glow: #35d4fc; }
+  .card.fire { --glow: #eb5a41; }
+  .card.grass { --glow: #96ee5b; }
+  .card.lightning { --glow: #f3e24d; }
+  .card.psychic { --glow: #ac51d6; }
+  .card.fighting { --glow: #a37538; }
+  .card.darkness { --glow: #078da5; }
+  .card.metal { --glow: #aebcbd; }
+  .card.fairy { --glow: #ffc5e9; }
 
   .card,
   .card__rotator {

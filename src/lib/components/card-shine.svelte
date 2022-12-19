@@ -42,7 +42,7 @@
 :global(.card.masked) .card__shine,
 :global(.card.masked) .card__shine:before,
 :global(.card.masked) .card__shine:after {
-  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
   mask-size: cover;
 }
 
@@ -52,7 +52,7 @@
   --foilmask: url("/img/illusion-mask.png");
   --foil: url("/img/illusion.png");
   --imgsize: 66%;
-  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
   mask-size: 66%;
   mask-position: center center;
 }

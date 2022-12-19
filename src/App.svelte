@@ -23,7 +23,7 @@
 				window.cards = cards;
 				showcase = cards[0];
 				basics = cards.slice(1, 4);
-				reverse = cards.slice(4, 7);
+				reverse = [...cards.slice(4, 7), ...cards.slice(70,76)];
 				holos = cards.slice(7, 13);
 				galaxies = cards.slice(13, 16);
 				radiant = cards.slice(16, 19);
@@ -35,9 +35,9 @@
 				veeMaxAlt = cards.slice(40, 43);
 				veeStar = cards.slice(43, 46);
 				trainerHolo = cards.slice(46, 52);
-				rainbow = cards.slice(52, 55);
-				gold = cards.slice(55, 61);
-				veeGallery = cards.slice(61, 67);
+				rainbow = cards.slice(52, 58);
+				gold = cards.slice(58, 64);
+				veeGallery = cards.slice(64, 70);
 				isLoading = false;
 			});
 	};
@@ -88,6 +88,7 @@
 					foil={showcase.images.foil}
 					foilmask={showcase.images.foilmask}
 					number={showcase.number}
+					types={showcase.types}
 					supertype={showcase.supertype}
 					subtypes={showcase.subtypes}
 					rarity={showcase.rarity}
@@ -131,6 +132,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -138,6 +140,17 @@
 			{/each}
 		{/if}
 	</CardList>
+
+	<h2 id="⚓-reverse">
+		<a href="#⚓-reverse">
+			Reverse Holo non-rares
+		</a>
+	</h2>
+	<p>
+		Reverse holo cards come in <mark>many shapes and sizes</mark> (trainer, stage1, and different energy types). <br /> Therefore
+		there are a few examples here to show the different variations. The <mark>background uses a foil and a mask layer</mark>
+		along with a glare. I also <mark>clip the glare</mark> into the image window to treat the image and the holofoil differently.
+	</p>
 
 	<CardList>
 		{#if isLoading}
@@ -150,6 +163,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -181,6 +195,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -212,6 +227,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -243,6 +259,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -274,6 +291,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -308,6 +326,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -343,6 +362,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -374,6 +394,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -405,6 +426,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -440,6 +462,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -471,6 +494,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -502,6 +526,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -532,6 +557,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -562,6 +588,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -591,6 +618,7 @@
 					foil={card.images.foil}
 					foilmask={card.images.foilmask}
 					number={card.number}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
