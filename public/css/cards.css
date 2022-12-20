@@ -67,8 +67,8 @@
 
 .card[data-rarity="rare holo"] .card__shine {
 
-  --space: 1.5%;
-  --bars: 3%;
+  --space: 1px;
+  --bars: 3.2%;
   --bar-color: rgba(255, 255, 255, 0.6);
   --bar-bg: rgb(10, 10, 10);
 
@@ -76,8 +76,29 @@
 
   background-image:
     repeating-linear-gradient( 90deg, 
-      white calc(var(--space) * 0), white calc(var(--space) * 1),
-      black calc(var(--space) * 1), black calc(var(--space) * 2)
+      var(--bar-bg) calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), var(--bar-bg) calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), var(--bar-bg) calc(var(--bars)*5), var(--bar-bg) calc(var(--bars)*12)
+    ),
+    repeating-linear-gradient( 90deg, 
+      var(--bar-bg) calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), var(--bar-bg) calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), var(--bar-bg) calc(var(--bars)*5), var(--bar-bg) calc(var(--bars)*9)
+    );
+
+  background-size: 200% 200%;
+  background-position: calc((((50% - var(--posx)) * 1.3) + 50% ) + (var(--posy) * 0.33)) var(--posx), calc((((50% - var(--posx)) * -1.7) + 50%)  - (var(--posy) * 0.11) ) var(--posy);
+  background-blend-mode: lighten;
+  
+  filter: brightness(1.2) contrast(1);
+  mix-blend-mode: color-dodge;
+
+}
+
+.card[data-rarity="rare holo"] .card__shine:before {
+  
+  content: "";
+
+  background-image:
+    repeating-linear-gradient( 90deg, 
+      white calc(var(--space) * 0.0001), white calc(var(--space) * 1),
+      black calc(var(--space) * 1.0001), black calc(var(--space) * 2)
     ),
     repeating-linear-gradient( 110deg, 
     var(--vio), var(--blu), var(--gre), var(--yel), var(--red), var(--vio), 
@@ -89,27 +110,9 @@
   background-position: center center, calc(((50% - var(--posx)) * 2) + 50%) calc(((50% - var(--posy)) * 3) + 50%);
   background-size: 100px 100px, 400% 400%;
 
-  filter: brightness( calc( var(--hyp) * 0.5 + 0.4 ) ) contrast(1.2) saturate( calc( 1.75 - var(--hyp) ) );
+  filter: brightness( calc( var(--hyp) * .5 + .7) ) contrast(1.2) saturate( calc( 1.5 - var(--hyp) ) );
+  mix-blend-mode: color-burn;
 
-}
-
-.card[data-rarity="rare holo"] .card__shine:before {
-  
-  content: "";
-
-  background-image:
-    repeating-linear-gradient( 90deg, 
-      var(--bar-bg) calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), var(--bar-bg) calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), var(--bar-bg) calc(var(--bars)*5), var(--bar-bg) calc(var(--bars)*12)
-    ),
-    repeating-linear-gradient( 90deg, 
-      var(--bar-bg) calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), var(--bar-bg) calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), var(--bar-bg) calc(var(--bars)*5), var(--bar-bg) calc(var(--bars)*9)
-    );
-
-  background-size: 200% 200%;
-  background-position: calc((((50% - var(--posx)) * 1.8) + 50% ) + (var(--posy) * 0.33)) var(--posx), calc((((50% - var(--posx)) * -2.2) + 50%)  - (var(--posy) * 0.11) ) var(--posy);
-  background-blend-mode: lighten;
-  mix-blend-mode: hard-light;
-  filter: brightness(1.2) contrast(1);
 }
 
 .card[data-rarity="rare holo"] .card__shine:after {
@@ -127,9 +130,8 @@
 
   background-size:  100% 100%;
   mix-blend-mode: hard-light;
-  filter: brightness(1) contrast(1.5);
   opacity: 0.7;
-  
+
 }
 
 
