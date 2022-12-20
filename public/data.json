@@ -54,33 +54,18 @@
     }
   },
   {
-    "id": "swsh12-49",
-    "name": "Pikachu",
+    "id": "swsh12-127",
+    "name": "Togedemaru",
     "supertype": "Pokémon",
     "subtypes": ["Basic"],
-    "types": ["Lightning"],
-    "number": "49",
+    "types": ["Metal"],
+    "number": "127",
     "rarity": "Common Reverse Holo",
     "images": {
-      "small": "https://images.pokemontcg.io/swsh12/49.png",
-      "large": "https://images.pokemontcg.io/swsh12/49_hires.png",
-      "foil": "/img/foils/swsh12/foils/049_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh12/masks/049_foil_holo_reverse.png"
-    }
-  },
-  {
-    "id": "swsh12-116",
-    "name": "Morpeko",
-    "supertype": "Pokémon",
-    "subtypes": ["Basic"],
-    "types": ["Darkness"],
-    "number": "116",
-    "rarity": "Uncommon Reverse Holo",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh12/116.png",
-      "large": "https://images.pokemontcg.io/swsh12/116_hires.png",
-      "foil": "/img/foils/swsh12/foils/116_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh12/masks/116_foil_holo_reverse.png"
+      "small": "https://images.pokemontcg.io/swsh12/127.png",
+      "large": "https://images.pokemontcg.io/swsh12/127_hires.png",
+      "foil": "/img/foils/swsh12/foils/127_foil_holo_reverse.jpg",
+      "foilmask": "/img/foils/swsh12/masks/127_foil_holo_reverse.png"
     }
   },
   {
@@ -96,6 +81,21 @@
       "large": "https://images.pokemontcg.io/swsh12/85_hires.png",
       "foil": "/img/foils/swsh12/foils/085_foil_holo_reverse.jpg",
       "foilmask": "/img/foils/swsh12/masks/085_foil_holo_reverse.png"
+    }
+  },
+  {
+    "id": "swsh12-116",
+    "name": "Morpeko",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Darkness"],
+    "number": "116",
+    "rarity": "Uncommon Reverse Holo",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12/116.png",
+      "large": "https://images.pokemontcg.io/swsh12/116_hires.png",
+      "foil": "/img/foils/swsh12/foils/116_foil_holo_reverse.jpg",
+      "foilmask": "/img/foils/swsh12/masks/116_foil_holo_reverse.png"
     }
   },
   {
@@ -283,7 +283,7 @@
     "subtypes": ["Stage 2"],
     "types": ["Fire"],
     "number": "TG03",
-    "rarity": "Rare Holo",
+    "rarity": "trainer gallery rare holo",
     "images": {
       "small": "https://images.pokemontcg.io/swsh11tg/TG03.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG03_hires.png",
@@ -298,7 +298,7 @@
     "subtypes": ["Basic"],
     "types": ["Lightning"],
     "number": "TG05",
-    "rarity": "Rare Holo",
+    "rarity": "trainer gallery rare holo",
     "images": {
       "small": "https://images.pokemontcg.io/swsh11tg/TG05.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG05_hires.png",
@@ -944,7 +944,9 @@
     "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9tg/TG16.png",
-      "large": "https://images.pokemontcg.io/swsh9tg/TG16_hires.png"
+      "large": "https://images.pokemontcg.io/swsh9tg/TG16_hires.png",
+      "foil": "/img/foils/swsh9/foils/tg16_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh9/masks/tg16_foil_etched_sunpillar.png"
     }
   },
   {
@@ -957,7 +959,9 @@
     "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9tg/TG18.png",
-      "large": "https://images.pokemontcg.io/swsh9tg/TG18_hires.png"
+      "large": "https://images.pokemontcg.io/swsh9tg/TG18_hires.png",
+      "foil": "/img/foils/swsh9/foils/tg18_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh9/masks/tg18_foil_etched_sunpillar.png"
     }
   },
   {
@@ -970,7 +974,9 @@
     "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh10tg/TG17.png",
-      "large": "https://images.pokemontcg.io/swsh10tg/TG17_hires.png"
+      "large": "https://images.pokemontcg.io/swsh10tg/TG17_hires.png",
+      "foil": "/img/foils/swsh10/foils/tg17_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh10/masks/tg17_foil_etched_sunpillar.png"
     }
   },
   {
@@ -983,7 +989,9 @@
     "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9tg/TG17.png",
-      "large": "https://images.pokemontcg.io/swsh9tg/TG17_hires.png"
+      "large": "https://images.pokemontcg.io/swsh9tg/TG17_hires.png",
+      "foil": "/img/foils/swsh9/foils/tg17_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh9/masks/tg17_foil_etched_sunpillar.png"
     }
   },
   {
@@ -996,7 +1004,9 @@
     "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9tg/TG19.png",
-      "large": "https://images.pokemontcg.io/swsh9tg/TG19_hires.png"
+      "large": "https://images.pokemontcg.io/swsh9tg/TG19_hires.png",
+      "foil": "/img/foils/swsh9/foils/tg19_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh9/masks/tg19_foil_etched_sunpillar.png"
     }
   },
   {
@@ -1009,37 +1019,9 @@
     "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh10tg/TG18.png",
-      "large": "https://images.pokemontcg.io/swsh10tg/TG18_hires.png"
-    }
-  },
-  {
-    "id": "swsh12-127",
-    "name": "Togedemaru",
-    "supertype": "Pokémon",
-    "subtypes": ["Basic"],
-    "types": ["Metal"],
-    "number": "127",
-    "rarity": "Common Reverse Holo",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh12/127.png",
-      "large": "https://images.pokemontcg.io/swsh12/127_hires.png",
-      "foil": "/img/foils/swsh12/foils/127_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh12/masks/127_foil_holo_reverse.png"
-    }
-  },
-  {
-    "id": "swsh8-138",
-    "name": "Onix",
-    "supertype": "Pokémon",
-    "subtypes": ["Basic"],
-    "types": ["Fighting"],
-    "number": "138",
-    "rarity": "Common Reverse Holo",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh8/138.png",
-      "large": "https://images.pokemontcg.io/swsh8/138_hires.png",
-      "foil": "/img/foils/swsh8/foils/138_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh8/masks/138_foil_holo_reverse.png"
+      "large": "https://images.pokemontcg.io/swsh10tg/TG18_hires.png",
+      "foil": "/img/foils/swsh10/foils/tg18_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh10/masks/tg18_foil_etched_sunpillar.png"
     }
   },
   {
@@ -1058,17 +1040,47 @@
     }
   },
   {
+    "id": "swsh12-49",
+    "name": "Pikachu",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Lightning"],
+    "number": "49",
+    "rarity": "Common Reverse Holo",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12/49.png",
+      "large": "https://images.pokemontcg.io/swsh12/49_hires.png",
+      "foil": "/img/foils/swsh12/foils/049_foil_holo_reverse.jpg",
+      "foilmask": "/img/foils/swsh12/masks/049_foil_holo_reverse.png"
+    }
+  },
+  {
+    "id": "swsh8-138",
+    "name": "Onix",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Fighting"],
+    "number": "138",
+    "rarity": "Common Reverse Holo",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh8/138.png",
+      "large": "https://images.pokemontcg.io/swsh8/138_hires.png",
+      "foil": "/img/foils/swsh8/foils/138_foil_holo_reverse.jpg",
+      "foilmask": "/img/foils/swsh8/masks/138_foil_holo_reverse.png"
+    }
+  },
+  {
     "id": "pgo-69",
-    "name": "Rare Candy",
+    "name": "PokéStop",
     "supertype": "Trainer",
-    "subtypes": ["Item"],
-    "number": "69",
+    "subtypes": ["Stadium"],
+    "number": "68",
     "rarity": "Uncommon Reverse Holo",
     "images": {
-      "small": "https://images.pokemontcg.io/pgo/69.png",
-      "large": "https://images.pokemontcg.io/pgo/69_hires.png",
-      "foil": "/img/foils/pgo/foils/069_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/pgo/masks/069_foil_holo_reverse.png"
+      "small": "https://images.pokemontcg.io/pgo/68.png",
+      "large": "https://images.pokemontcg.io/pgo/68_hires.png",
+      "foil": "/img/foils/pgo/foils/068_foil_holo_reverse.jpg",
+      "foilmask": "/img/foils/pgo/masks/068_foil_holo_reverse.png"
     }
   },
   {

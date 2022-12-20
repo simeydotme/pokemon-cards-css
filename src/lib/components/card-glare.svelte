@@ -167,6 +167,16 @@
 			opacity: calc( var(--o) * 0.6 );
 			filter: brightness(.9) contrast(1.8);
 	}
+
+:global(.card[data-rarity*="rare holo v"][data-gallery="true"]) .card__glare {
+	background-image: 
+		radial-gradient( 
+			farthest-corner circle at var(--mx) var(--my), 
+			rgba(255, 255, 255, 1) 10%, 
+			rgba(255, 255, 255, 0.7) 35%, 
+			rgba(30, 0, 0, 1) 100% 
+		);
+}
 		
 
 </style>

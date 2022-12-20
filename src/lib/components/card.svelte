@@ -16,7 +16,7 @@
 
   export let name = "";
   export let number = "0";
-  export let types = [];
+  export let types = "";
   export let subtypes = "basic";
   export let supertype = "pokémon";
   export let rarity = "common";
