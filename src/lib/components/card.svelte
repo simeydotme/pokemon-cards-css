@@ -220,23 +220,22 @@
   }
 
   $: styles = `
-		--mx: ${$springGlare.x}%;
-		--my: ${$springGlare.y}%;
-		--tx: ${$springTranslate.x}px;
-		--ty: ${$springTranslate.y}px;
-		--s: ${$springScale};
-		--o: ${$springGlare.o};
-		--rx: ${$springRotate.x + $springRotateDelta.x}deg;
-		--ry: ${$springRotate.y + $springRotateDelta.y}deg;
-		--pos: ${$springBackground.x}% ${$springBackground.y}%;
-		--posx: ${$springBackground.x}%;
-		--posy: ${$springBackground.y}%;
-		--hyp: ${
+		--pointer-x: ${$springGlare.x}%;
+		--pointer-y: ${$springGlare.y}%;
+		--pointer-from-center: ${
       clamp( Math.sqrt(
         ($springGlare.y - 50) * ($springGlare.y - 50) +
           ($springGlare.x - 50) * ($springGlare.x - 50)
       ) / 50, 0, 1)
     };
+		--translate-x: ${$springTranslate.x}px;
+		--translate-y: ${$springTranslate.y}px;
+		--card-scale: ${$springScale};
+		--card-opacity: ${$springGlare.o};
+		--rotate-x: ${$springRotate.x + $springRotateDelta.x}deg;
+		--rotate-y: ${$springRotate.y + $springRotateDelta.y}deg;
+		--position-x: ${$springBackground.x}%;
+		--position-y: ${$springBackground.y}%;
 	`;
 
   const staticStyles = `
@@ -360,7 +359,7 @@
 <svelte:window on:scroll={reposition} />
 
 <div
-  class="card {types}"
+  class="card {types} / interactive / "
   class:active
   class:interacting
   class:loading
@@ -410,143 +409,19 @@
 </div>
 
 <style>
+
   :root {
-    --mx: 50%;
-    --my: 50%;
-    --s: 1;
-    --o: 0;
-    --tx: 0px;
-    --ty: 0px;
-    --rx: 0deg;
-    --ry: 0deg;
-    --pos: 50% 50%;
-    --posx: 50%;
-    --posy: 50%;
-    --hyp: 0;
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --card-scale: 1;
+    --card-opacity: 0;
+    --translate-x: 0px;
+    --translate-y: 0px;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --position-x: 50%;
+    --position-y: 50%;
+    --pointer-from-center: 0;
   }
 
-  .card {
-    --radius: 4.55% / 3.5%;
-    --back: #004177;
-    --glow: #ececec;
-    z-index: calc(var(--s) * 100);
-    transform: translate3d(0, 0, 0.1px);
-    -webkit-transform: translate3d(0, 0, 0.1px);
-    will-change: transform, visibility;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-  }
-
-  .card.water { --glow: #35d4fc; }
-  .card.fire { --glow: #eb5a41; }
-  .card.grass { --glow: #96ee5b; }
-  .card.lightning { --glow: #f3e24d; }
-  .card.psychic { --glow: #ac51d6; }
-  .card.fighting { --glow: #a37538; }
-  .card.darkness { --glow: #078da5; }
-  .card.metal { --glow: #aebcbd; }
-  .card.fairy { --glow: #ffc5e9; }
-
-  .card,
-  .card__rotator {
-    aspect-ratio: 0.716;
-  }
-
-  .card.interacting {
-    z-index: calc(var(--s) * 120);
-  }
-
-  .card.active .card__translater,
-  .card.active .card__rotator {
-    touch-action: none;
-  }
-
-  .card__translater,
-  .card__rotator {
-    display: grid;
-    perspective: 600px;
-    transform-origin: center;
-    -webkit-transform-origin: center;
-    will-change: transform;
-  }
-
-  .card__translater {
-    width: auto;
-    position: relative;
-    transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
-    -webkit-transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
-  }
-
-  .card__rotator {
-    transform: rotateY(var(--rx)) rotateX(var(--ry));
-    transform-style: preserve-3d;
-    -webkit-transform: rotateY(var(--rx)) rotateX(var(--ry));
-    -webkit-transform-style: preserve-3d;
-    box-shadow: 0px 10px 20px -5px black;
-    border-radius: var(--radius);
-    outline: none;
-    transition: box-shadow 0.4s ease, outline 0.2s ease;
-  }
-  button.card__rotator {
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    background: top;
-    padding: 0;
-  }
-
-  .card.active .card__rotator {
-    box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow),
-      0 0 30px 0px var(--glow);
-  }
-
-  .card__rotator:focus {
-    box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow),
-      0 0 30px 0px var(--glow);
-  }
-
-  .card.active .card__rotator:focus {
-    box-shadow: 0px 10px 30px 3px black;
-  }
-
-  .card__rotator :global(*) {
-    width: 100%;
-    display: grid;
-    grid-area: 1/1;
-    border-radius: var(--radius);
-    image-rendering: optimizeQuality;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-  }
-
-  .card__rotator img {
-    outline: 1px solid transparent;
-    height: auto;
-  }
-
-  .card__back {
-    background-color: var(--back);
-    transform: rotateY(180deg) translateZ(1px);
-    -webkit-transform: rotateY(180deg) translateZ(1px);
-    backface-visibility: visible;
-  }
-
-  .card__front,
-  .card__front * {
-    backface-visibility: hidden;
-  }
-
-  .card__front {
-    opacity: 1;
-    transition: opacity 0.33s ease-out;
-  }
-
-  .loading .card__front {
-    opacity: 0;
-  }
-
-  .loading .card__back {
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-  }
 </style>

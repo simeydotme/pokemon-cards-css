@@ -1,0 +1,269 @@
+:root {
+  
+  --card-aspect: 0.716;
+  --card-radius: 4.55% / 3.5%;
+  --card-edge: hsl(47, 100%, 78%);
+  --card-back: hsl(205, 100%, 25%);
+  --card-glow: hsl(175, 100%, 90%);
+
+}
+
+.card {
+
+  /* place the card on a new transform layer and
+  make sure it has hardward acceleration... we gun'need that! */
+  transform: translate3d(0, 0, 0.1px);
+  -webkit-transform: translate3d(0, 0, 0.1px);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  
+  /* make sure the card is above others if it's scaled up */
+  z-index: calc(var(--card-scale) * 2);
+  
+  /* every little helps! */
+  will-change: transform, visibility, z-index;
+
+}
+
+.card:not( .interactive ) .card__translater,
+.card:not( .interactive ) .card__rotator,
+.card:not( .interactive ) .card__shine,
+.card:not( .interactive ) .card__glare {
+
+  /* if this card is not in a framework, we can add simply
+    hover effects when it's not "interactive" */
+  transition: all 0.3s ease;
+
+}
+.card:not( .interactive ):hover {
+  
+  --pointer-x: 30%!important;
+  --pointer-y: 30%!important;
+  --card-scale: 1.1!important;
+  --card-opacity: 1!important;
+  --translate-x: 0px!important;
+  --translate-y: -10px!important;
+  --rotate-x: 10deg!important;
+  --rotate-y: -10deg!important;
+  --position-x: 30%!important;
+  --position-y: 30%!important;
+  --pointer-from-center: .8!important;
+  
+}
+
+.card.water { --card-glow: #35d4fc; }
+.card.fire { --card-glow: #eb5a41; }
+.card.grass { --card-glow: #96ee5b; }
+.card.lightning { --card-glow: #f3e24d; }
+.card.psychic { --card-glow: #ac51d6; }
+.card.fighting { --card-glow: #a37538; }
+.card.darkness { --card-glow: #078da5; }
+.card.metal { --card-glow: #aebcbd; }
+.card.fairy { --card-glow: #ffc5e9; }
+
+.card,
+.card__rotator {
+  outline: none;
+  aspect-ratio: var(--card-aspect);
+  border-radius: var(--card-radius);
+}
+
+.card.interacting {
+  z-index: calc(var(--card-scale) * 120);
+}
+
+.card.active .card__translater,
+.card.active .card__rotator {
+  /* prevent pinch/double-tap zooms on card */
+  touch-action: none;
+}
+
+.card__translater,
+.card__rotator {
+  display: grid;
+  perspective: 600px;
+  will-change: transform, box-shadow, opacity;
+
+  transform-origin: center;
+  -webkit-transform-origin: center;
+}
+
+.card__translater {
+  outline: none;
+  width: auto;
+  position: relative;
+
+  transform: translate3d(var(--translate-x), var(--translate-y), 0) scale(var(--card-scale));
+  -webkit-transform: translate3d(var(--translate-x), var(--translate-y), 0) scale(var(--card-scale));
+}
+
+.card__rotator {
+  /* box-shadow: 0px 10px 20px -5px black; */
+  transition: box-shadow 0.4s ease, outline 0.2s ease;
+
+  transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
+  -webkit-transform-style: preserve-3d;
+}
+
+button.card__rotator {
+  /* because the card is a button, there's some default
+    browser styles which need to be sudued */
+  border: none;
+  background: top;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.card__rotator,
+.card.active .card__rotator:focus {
+  box-shadow: 
+    0 0 2px 1px transparent, 
+    0 0 5px 0px transparent,
+    0px 10px 20px -5px black, 
+    0 0 20px 0px transparent,
+    0 0 20px 0px transparent;
+}
+
+.card.active .card__rotator,
+.card__rotator:focus  {
+  box-shadow: 
+    0 0 2px 1px var(--card-edge), 
+    0 0 8px 1px var(--card-glow),
+    0px 10px 20px -5px black, 
+    0 0 40px -20px var(--card-glow), 
+    0 0 60px -35px var(--card-glow);
+}
+
+.card__rotator * {
+  width: 100%;
+  display: grid;
+  grid-area: 1/1;
+  border-radius: var(--card-radius);
+  image-rendering: optimizeQuality;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.card__rotator img {
+  /* outline is a little trick to anti-alias */
+  outline: 1px solid transparent;
+  height: auto;
+}
+
+.card__back {
+  background-color: var(--card-back);
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+  backface-visibility: visible;
+}
+
+.card__front,
+.card__front * {
+  backface-visibility: hidden;
+}
+
+.card__front {
+  opacity: 1;
+  transition: opacity 0.33s ease-out;
+}
+
+.loading .card__front {
+  opacity: 0;
+}
+
+.loading .card__back {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+}
+
+
+/**
+  
+Shine & Glare Effects
+
+**/
+
+.card__shine {
+
+  display: grid;
+  transform: translateZ(1px);
+  overflow: hidden;
+  z-index: 3;
+
+  background: transparent;
+  background-size: cover;
+  background-position: center;
+
+  filter: brightness(.85) contrast(2.75) saturate(.65);
+  mix-blend-mode: color-dodge;
+
+  opacity: var(--card-opacity);
+
+}
+
+.card__shine:before,
+.card__shine:after {
+
+  grid-area: 1/1;
+  transform: translateZ(1px);
+  border-radius: var(--card-radius);
+
+}
+
+.card__shine:after {
+
+  transform: translateZ(1.2px);
+  
+}
+
+.card__glare {
+
+  /* make sure the glare doesn't clip */
+  transform: translateZ(1.41px);
+
+  background-image: radial-gradient(
+    farthest-corner circle at var(--pointer-x) var(--pointer-y),
+    rgba(255, 255, 255, 0.8) 10%,
+    rgba(255, 255, 255, 0.65) 20%,
+    rgba(0, 0, 0, 0.5) 90%
+  );
+
+  opacity: var(--card-opacity);
+  mix-blend-mode: overlay;
+  
+}
+
+
+/**
+
+  Masking Effects
+
+**/
+
+.card.masked .card__shine,
+.card.masked .card__shine:before,
+.card.masked .card__shine:after {
+
+  /** masking image for cards which are masked **/
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-size: cover;
+
+}
+
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine,
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:before,
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after {
+
+  /* Default Mask Effect for cards without set */
+  --foilmask: url("/img/illusion-mask.png");
+  --foil: url("/img/illusion.png"); 
+  --imgsize: 50%;
+
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-size: 50%;
+  mask-position: center center;
+
+}
