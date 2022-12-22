@@ -62,7 +62,7 @@
 
 }
 
-.card[data-rarity="rare holo"]:not([data-gallery="true"]) .card__glare:after {
+/* .card[data-rarity="rare holo"]:not([data-gallery="true"]) .card__glare:after {
 
   background-image: 
     radial-gradient( 
@@ -75,7 +75,7 @@
 
   mix-blend-mode: hard-light;
 
-}
+} */
 
 .card[data-rarity*="rare holo cosmos"] .card__shine {
 

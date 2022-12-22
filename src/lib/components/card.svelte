@@ -228,6 +228,8 @@
           ($springGlare.x - 50) * ($springGlare.x - 50)
       ) / 50, 0, 1)
     };
+    --pointer-from-top: ${$springGlare.y / 100};
+    --pointer-from-left: ${$springGlare.x / 100};
 		--translate-x: ${$springTranslate.x}px;
 		--translate-y: ${$springTranslate.y}px;
 		--card-scale: ${$springScale};
@@ -419,9 +421,11 @@
     --translate-y: 0px;
     --rotate-x: 0deg;
     --rotate-y: 0deg;
-    --position-x: 50%;
-    --position-y: 50%;
-    --pointer-from-center: 0;
+    --position-x: var(--pointer-x);
+    --position-y: var(--pointer-y);
+    --pointer-from-center: 0;    
+    --pointer-from-top: var(--pointer-from-center);
+    --pointer-from-left: var(--pointer-from-center);;
   }
 
 </style>

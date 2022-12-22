@@ -66,6 +66,8 @@
   --position-x: 30%!important;
   --position-y: 30%!important;
   --pointer-from-center: .8!important;
+  --pointer-from-top: .3!important;
+  --pointer-from-left: .3!important;
   
 }
 
