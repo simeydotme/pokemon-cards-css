@@ -1,33 +1,100 @@
+/*
 
-	.card__glare.reverse.holo {
+  REVERSE HOLO
 
-    opacity: var(--card-opacity);
-		
-		background-image: 
-      radial-gradient(
-        farthest-corner circle at var(--pointer-x) var(--pointer-y),
-        rgba(255, 255, 255, 0.8) 10%,
-        rgba(255, 255, 255, 0.5) 20%,
-        rgba(0, 0, 0, 0.75) 90%
-      );
+*/
 
-		filter: brightness(.55) contrast(1.33);
 
-	}
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity$="reverse holo"] .card__shine {
+  
+  background-image: 
+    radial-gradient( 
+      circle at var(--pointer-x) var(--pointer-y), 
+      #fff 5%, 
+      #000 40%, 
+      #fff 120% 
+      ), 
+      var(--foil);
+      
+  background-blend-mode: difference;
+  background-size: 250% 250% , cover;
+  background-position: center center, center center;
+  
+  filter: brightness(.65) contrast(1.25);
+  mix-blend-mode: color-dodge;
+  opacity: calc( (1.5 * var(--card-opacity)) - var(--pointer-from-center));
+  
+}
+
+.card[data-rarity$="reverse holo"] .card__glare:after {
+  clip-path: inset( 10% 8.5% 52.5% 8.5% );
+}
+
+.card[data-rarity$="reverse holo"][data-subtypes^="stage"] .card__glare:after {
+  clip-path: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
+}
+
+.card[data-rarity$="reverse holo"][data-supertype="trainer"] .card__glare:after {
+  clip-path: inset(14.5% 7.9% 48.2% 8.7%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
 	
-	.card__glare.reverse.holo:after {
+.card__glare.reverse.holo {
 
-		content: "";
-    opacity: var(--card-opacity);
-    
-		background-image: 
-			radial-gradient( 
-				farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-				rgba(255, 255, 255, 1) 10%, 
-				rgba(255, 255, 255, 0.5) 20%, 
-				rgba(0, 0, 0, 0.5) 120% 
-			);
+  opacity: var(--card-opacity);
+  
+  background-image: 
+    radial-gradient(
+      farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      rgba(255, 255, 255, 0.8) 10%,
+      rgba(255, 255, 255, 0.5) 20%,
+      rgba(0, 0, 0, 0.75) 90%
+    );
 
-		filter: brightness(1) contrast(1.5);
+  filter: brightness(.55) contrast(1.33);
 
-	}
+}
+
+.card__glare.reverse.holo:after {
+
+  content: "";
+  opacity: var(--card-opacity);
+  
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      rgba(255, 255, 255, 1) 10%, 
+      rgba(255, 255, 255, 0.5) 20%, 
+      rgba(0, 0, 0, 0.5) 120% 
+    );
+
+  filter: brightness(1) contrast(1.5);
+
+}

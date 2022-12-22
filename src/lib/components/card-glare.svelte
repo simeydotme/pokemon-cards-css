@@ -10,10 +10,6 @@
 <style>
   
 
-  .card__glare.holo:not(.v):not(.vmax):not(.vstar):not(.reverse) {
-		opacity: calc(var(--card-opacity)*.8);
-    filter: brightness(0.8) contrast(1.5);
-  }
 
 	.card__glare.v,
 	.card__glare.vfull,

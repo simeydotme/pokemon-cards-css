@@ -1,3 +1,21 @@
+/*
+
+  BASE STYLES / VARIABLES
+*/
+
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+
 :root {
   
   --card-aspect: 0.716;
@@ -248,7 +266,7 @@ Shine & Glare Effects
 .card.masked .card__shine:after {
 
   /** masking image for cards which are masked **/
-  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
   mask-size: cover;
 
 }
@@ -262,7 +280,7 @@ Shine & Glare Effects
   --foil: url("/img/illusion.png"); 
   --imgsize: 50%;
 
-  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
   mask-size: 50%;
   mask-position: center center;
 

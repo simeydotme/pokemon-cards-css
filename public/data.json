@@ -965,18 +965,18 @@
     }
   },
   {
-    "id": "swsh10tg-TG17",
-    "name": "Shadow Rider Calyrex V",
+    "id": "swsh11tg-TG16",
+    "name": "Pikachu V",
     "supertype": "Pokémon",
     "subtypes": ["Basic", "V"],
-    "types": ["Psychic"],
-    "number": "TG17",
+    "types": ["Lightning"],
+    "number": "TG16",
     "rarity": "Rare Holo V",
     "images": {
-      "small": "https://images.pokemontcg.io/swsh10tg/TG17.png",
-      "large": "https://images.pokemontcg.io/swsh10tg/TG17_hires.png",
-      "foil": "/img/foils/swsh10/foils/tg17_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh10/masks/tg17_foil_etched_sunpillar.png"
+      "small": "https://images.pokemontcg.io/swsh11tg/TG16.png",
+      "large": "https://images.pokemontcg.io/swsh11tg/TG16_hires.png",
+      "foil": "/img/foils/swsh11/foils/tg16_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh11/masks/tg16_foil_etched_sunpillar.png"
     }
   },
   {
@@ -986,7 +986,7 @@
     "subtypes": ["VMAX"],
     "types": ["Psychic"],
     "number": "TG17",
-    "rarity": "Rare Holo V",
+    "rarity": "Rare Holo VMAX",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9tg/TG17.png",
       "large": "https://images.pokemontcg.io/swsh9tg/TG17_hires.png",
@@ -1001,7 +1001,7 @@
     "subtypes": ["VMAX", "Single Strike"],
     "types": ["Fighting"],
     "number": "TG19",
-    "rarity": "Rare Holo V",
+    "rarity": "Rare Holo VMAX",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9tg/TG19.png",
       "large": "https://images.pokemontcg.io/swsh9tg/TG19_hires.png",
@@ -1010,18 +1010,18 @@
     }
   },
   {
-    "id": "swsh10tg-TG18",
-    "name": "Shadow Rider Calyrex VMAX",
+    "id": "swsh11tg-TG17",
+    "name": "Pikachu VMAX",
     "supertype": "Pokémon",
     "subtypes": ["VMAX"],
-    "types": ["Psychic"],
-    "number": "TG18",
-    "rarity": "Rare Holo V",
+    "types": ["Lightning"],
+    "number": "TG17",
+    "rarity": "Rare Holo VMAX",
     "images": {
-      "small": "https://images.pokemontcg.io/swsh10tg/TG18.png",
-      "large": "https://images.pokemontcg.io/swsh10tg/TG18_hires.png",
-      "foil": "/img/foils/swsh10/foils/tg18_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh10/masks/tg18_foil_etched_sunpillar.png"
+      "small": "https://images.pokemontcg.io/swsh11tg/TG17.png",
+      "large": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
+      "foil": "/img/foils/swsh11/foils/tg17_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh11/masks/tg17_foil_etched_sunpillar.png"
     }
   },
   {
