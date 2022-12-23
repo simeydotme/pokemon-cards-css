@@ -71,15 +71,15 @@
   
 }
 
-.card.water { --card-glow: #35d4fc; }
-.card.fire { --card-glow: #eb5a41; }
-.card.grass { --card-glow: #96ee5b; }
-.card.lightning { --card-glow: #f3e24d; }
-.card.psychic { --card-glow: #ac51d6; }
-.card.fighting { --card-glow: #a37538; }
-.card.darkness { --card-glow: #078da5; }
-.card.metal { --card-glow: #aebcbd; }
-.card.fairy { --card-glow: #ffc5e9; }
+.card.water       { --card-glow: hsl(192, 97%,  60%); }
+.card.fire        { --card-glow: hsl(9,   81%,  59%); }
+.card.grass       { --card-glow: hsl(96,  81%,  65%); }
+.card.lightning   { --card-glow: hsl(54,  87%,  63%); }
+.card.psychic     { --card-glow: hsl(281, 62%,  58%); }
+.card.fighting    { --card-glow: hsl(34,  49%,  43%); }
+.card.darkness    { --card-glow: hsl(189, 77%,  27%); }
+.card.metal       { --card-glow: hsl(184, 20%,  70%); }
+.card.fairy       { --card-glow: hsl(323, 100%, 89%); }
 
 .card,
 .card__rotator {
@@ -286,4 +286,22 @@ Shine & Glare Effects
   mask-size: 50%;
   mask-position: center center;
 
+}
+
+.card[data-rarity="rare holo"] .card__glare:after,
+.card[data-rarity="rare holo cosmos"] .card__glare:after,
+.card[data-rarity$="reverse holo"] .card__glare:after {
+  clip-path: inset( 10% 8.5% 52.5% 8.5% );
+}
+
+.card[data-rarity="rare holo"][data-subtypes^="stage"] .card__glare:after,
+.card[data-rarity="rare holo cosmos"][data-subtypes^="stage"] .card__glare:after,
+.card[data-rarity$="reverse holo"][data-subtypes^="stage"] .card__glare:after {
+  clip-path: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
+}
+
+.card[data-rarity="rare holo"][data-supertype="trainer"] .card__glare:after,
+.card[data-rarity="rare holo cosmos"][data-supertype="trainer"] .card__glare:after,
+.card[data-rarity$="reverse holo"][data-supertype="trainer"] .card__glare:after {
+  clip-path: inset(14.5% 7.9% 48.2% 8.7%);
 }

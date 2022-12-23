@@ -73,16 +73,6 @@
 			rgba(80, 100, 100, .9) 60%
 		);
 	}
-		
-	:global(.card[data-rarity="radiant rare"]) .card__glare {
-		background-image: 
-			radial-gradient( 
-				farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-				rgba(255, 255, 255, .9) 10%, 
-				rgba(255, 255, 255, 0.6) 30%, 
-				rgba(0, 0, 0, .8) 80% 
-			);
-	}
 
 :global(.card[data-rarity*="rare rainbow"]) .card__glare {
 	

@@ -425,7 +425,7 @@
     --position-y: var(--pointer-y);
     --pointer-from-center: 0;    
     --pointer-from-top: var(--pointer-from-center);
-    --pointer-from-left: var(--pointer-from-center);;
+    --pointer-from-left: var(--pointer-from-center);
   }
 
 </style>

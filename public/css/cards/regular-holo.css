@@ -4,6 +4,14 @@
 
 */
 
+.card[data-rarity="rare holo"][data-subtypes^="stage"] .card__shine,
+.card[data-rarity="rare holo"][data-subtypes^="stage"] .card__glare:after {
+  clip-path: var(--clip-stage);
+}
+.card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__shine,
+.card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__glare:after {
+  clip-path: var(--clip-trainer);
+}
 
 
 
@@ -120,7 +128,9 @@
 
 .card[data-rarity="rare holo"] .card__glare:after {
 
-  background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), rgb(231, 255, 255) 5%, rgba(100, 100, 100, 0.25) 55%, rgba(0, 0, 0, 0.36) 90% );
+  content: "";
+
+  background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), rgb(231, 255, 255) 5%, rgba(100, 100, 100, 0.25) 55%, rgba(0, 0, 0, 0.36) 110% );
   mix-blend-mode: overlay;
   filter: brightness(130%) contrast(200%);
 

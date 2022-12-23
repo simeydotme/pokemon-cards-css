@@ -37,18 +37,6 @@
   
 }
 
-.card[data-rarity$="reverse holo"] .card__glare:after {
-  clip-path: inset( 10% 8.5% 52.5% 8.5% );
-}
-
-.card[data-rarity$="reverse holo"][data-subtypes^="stage"] .card__glare:after {
-  clip-path: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
-}
-
-.card[data-rarity$="reverse holo"][data-supertype="trainer"] .card__glare:after {
-  clip-path: inset(14.5% 7.9% 48.2% 8.7%);
-}
-
 
 
 
