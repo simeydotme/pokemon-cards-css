@@ -79,6 +79,7 @@
 .card.fighting    { --card-glow: hsl(34,  49%,  43%); }
 .card.darkness    { --card-glow: hsl(189, 77%,  27%); }
 .card.metal       { --card-glow: hsl(184, 20%,  70%); }
+.card.dragon      { --card-glow: rgb(173, 135, 31); }
 .card.fairy       { --card-glow: hsl(323, 100%, 89%); }
 
 .card,

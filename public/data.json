@@ -322,21 +322,6 @@
     }
   },
   {
-    "id": "swsh12-138",
-    "name": "Lugia V",
-    "supertype": "Pokémon",
-    "subtypes": ["Basic", "V"],
-    "types": ["Colorless"],
-    "number": "138",
-    "rarity": "Rare Holo V",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh12/138.png",
-      "large": "https://images.pokemontcg.io/swsh12/138_hires.png",
-      "foil": "/img/foils/swsh12/foils/138_foil_holo_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh12/masks/138_foil_holo_sunpillar.png"
-    }
-  },
-  {
     "id": "swsh7-110",
     "name": "Rayquaza V",
     "supertype": "Pokémon",
@@ -349,6 +334,21 @@
       "large": "https://images.pokemontcg.io/swsh7/110_hires.png",
       "foil": "/img/foils/swsh7/foils/110_foil_holo_sunpillar.jpg",
       "foilmask": "/img/foils/swsh7/masks/110_foil_holo_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh12-138",
+    "name": "Lugia V",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic", "V"],
+    "types": ["Colorless"],
+    "number": "138",
+    "rarity": "Rare Holo V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12/138.png",
+      "large": "https://images.pokemontcg.io/swsh12/138_hires.png",
+      "foil": "/img/foils/swsh12/foils/138_foil_holo_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh12/masks/138_foil_holo_sunpillar.png"
     }
   },
   {

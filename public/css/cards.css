@@ -33,60 +33,7 @@
 
 */
 
-.card[data-rarity*="rare holo v"] .card__shine,
-.card[data-rarity*="rare holo v"] .card__shine:after {
 
-  --space: 5%;
-  --angle: 133deg;
-  --imgsize: 500px;
-
-  background-image:
-    var(--grain),
-    repeating-linear-gradient( 0deg, 
-      rgb(255, 119, 115) calc(var(--space)*1), 
-      rgba(255,237,95,1) calc(var(--space)*2), 
-      rgba(168,255,95,1) calc(var(--space)*3), 
-      rgba(131,255,247,1) calc(var(--space)*4), 
-      rgba(120,148,255,1) calc(var(--space)*5), 
-      rgb(216, 117, 255) calc(var(--space)*6), 
-      rgb(255, 119, 115) calc(var(--space)*7)
-    ),
-    repeating-linear-gradient( 
-      var(--angle), 
-      #0e152e 0%, 
-      hsl(180, 10%, 60%) 3.8%, 
-      hsl(180, 29%, 66%) 4.5%, 
-      hsl(180, 10%, 60%) 5.2%, 
-      #0e152e 10% , 
-      #0e152e 12% 
-      ),
-    radial-gradient(
-      farthest-corner circle 
-      at var(--pointer-x) var(--pointer-y),
-      rgba(0, 0, 0, .1) 12%, 
-      rgba(0, 0, 0, .15) 20%, 
-      rgba(0, 0, 0, .25) 120%
-    );
-
-  background-blend-mode: screen, hue, hard-light;
-  background-size: var(--imgsize) 100%, 200% 700%, 300% 100%, 200% 100%;
-  background-position: center, 0% var(--position-y), var(--position-x) var(--position-y), var(--position-x) var(--position-y);
-  
-  filter: brightness(.8) contrast(2.95) saturate(.5);
-
-}
-
-.card[data-rarity="rare holo v"] .card__shine:after {
-
-  content: "";
-
-  background-position: center, 0% var(--position-y), calc( var(--position-x) * -1) calc( var(--position-y) * -1), var(--position-x) var(--position-y);
-  background-size: var(--imgsize) 100%, 200% 400%, 195% 100%, 200% 100%;
-
-  filter: brightness(1) contrast(2.5) saturate(1.75);
-  mix-blend-mode: soft-light;
-
-}
 
 
 

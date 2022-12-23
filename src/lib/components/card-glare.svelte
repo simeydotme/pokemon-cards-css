@@ -11,7 +11,7 @@
   
 
 
-	.card__glare.v,
+	/* .card__glare.v,
 	.card__glare.vfull,
 	.card__glare.vmax,
 	.card__glare.vstar {
@@ -25,7 +25,7 @@
 				rgba(100, 100, 100, .65) 120% 
 				);
 		opacity: calc(var(--card-opacity)*.66);
-  }
+  } */
 
 	.card__glare.rare.ultra {
 		background-image: 
@@ -65,14 +65,6 @@
 			);
 	}
 
-	:global(.card[data-rarity*="rare holo"][data-gallery="true"]) .card__glare {
-		background-image: radial-gradient(
-			farthest-corner circle at var(--pointer-x) var(--pointer-y),
-			rgba(255, 255, 255, 0.8) 10%,
-			rgba(255, 255, 255, 0.6) 35%,
-			rgba(80, 100, 100, .9) 60%
-		);
-	}
 
 :global(.card[data-rarity*="rare rainbow"]) .card__glare {
 	
