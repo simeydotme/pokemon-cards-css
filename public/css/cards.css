@@ -164,8 +164,6 @@
 
 */
 
-.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine,
-.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine,
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after {
 
@@ -209,7 +207,6 @@
 
 }
 
-.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"]  .card__shine:after {
 
   content: "";
