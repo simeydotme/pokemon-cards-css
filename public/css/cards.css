@@ -573,53 +573,7 @@
 
 */
 
-.card[data-rarity*="rare holo"][data-gallery="true"] .card__shine {
 
-  --space: 5%;
-  --angle: -22deg;
-  --imgsize: 200% 400%;
-
-  clip-path: inset(2.8% 4% round 2.55% / 1.5%);
-
-  background-image:
-    repeating-linear-gradient( var(--angle),  
-      rgba(174, 102, 202, 0.75) calc(var(--space)*1),
-      rgba(228, 77, 72, 0.75) calc(var(--space)*2), 
-      rgba(216, 197, 55, 0.75) calc(var(--space)*3),  
-      rgba(124, 201, 62, 0.75) calc(var(--space)*4),  
-      rgba(80, 177, 170, 0.75) calc(var(--space)*5),  
-      rgba(136, 160, 255, 0.75) calc(var(--space)*6), 
-      rgba(176, 105, 204, 0.75) calc(var(--space)*7)
-    );
-    
-    background-blend-mode: color-dodge;
-    background-size: var(--imgsize);
-    background-position: 0% calc(var(--position-y) * 1), var(--position-x) var(--position-y);
-    
-    filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.6)) contrast(2.3) saturate(1.1);
-
-}
-
-.card[data-rarity*="rare holo"][data-gallery="true"] .card__shine:after {
-  
-  content: "";
-
-  background-image: 
-    radial-gradient( 
-      farthest-corner ellipse 
-      at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
-      rgb(255, 255, 255) 5%, 
-      rgba(55, 0, 55, .6) 25%, 
-      rgb(55, 55, 55) 90% 
-    );
-
-  background-position: center center;
-  background-size: 400% 500%;
-
-  filter: brightness(calc((var(--pointer-from-center)*0.2) + 0.4)) contrast(.85) saturate(1.1);
-  mix-blend-mode: hard-light;
-
-}
 
 
 
