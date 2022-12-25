@@ -1,0 +1,52 @@
+/*
+
+  ULTRA RARE (FULL ART TRAINER)
+  some styles inherited from v-full-art.css
+
+*/
+
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine {
+  
+  filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.8) saturate(1);
+
+}
+
+.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after {
+
+  filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(2) saturate(.5);
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__glare {
+
+  opacity: calc( var(--card-opacity) * 0.75 );
+
+}
+	

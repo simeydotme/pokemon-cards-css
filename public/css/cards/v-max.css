@@ -1,0 +1,96 @@
+/*
+
+  V MAX
+
+*/
+
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare holo vmax"] .card__shine {
+
+  --space: 6%;
+  --angle: 133deg;
+  --imgsize: cover;
+
+  background-image:
+    var(--foil),
+    repeating-linear-gradient( -33deg, 
+      rgb(206, 42, 36) calc(var(--space)*1),  
+      rgb(157, 170, 223) calc(var(--space)*2), 
+      rgb(45, 153, 146) calc(var(--space)*3), 
+      rgb(29, 151, 36) calc(var(--space)*4), 
+      rgb(181, 64, 228) calc(var(--space)*5), 
+      rgb(206, 42, 36) calc(var(--space)*6)
+    ),
+    repeating-linear-gradient( 
+      var(--angle), 
+      rgba(14, 21, 46, 0.5) 0%, 
+      hsl(180, 10%, 50%) 2.5%, 
+      hsl(83, 50%, 35%) 5%, 
+      hsl(180, 10%, 50%) 7.5%, 
+      rgba(14, 21, 46, 0.5) 10% , 
+      rgba(14, 21, 46, 0.5) 15% 
+      ),
+    radial-gradient(
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y),
+      rgba(6, 218, 255, 0.6) 0%, 
+      rgba(38, 235, 127, 0.6) 25%, 
+      rgba(155, 78, 228, 0.6) 50%, 
+      rgba(228, 78, 90, 0.6) 75%
+    );
+
+  background-blend-mode: difference, luminosity, soft-light;
+  background-size: var(--imgsize), 1100% 1100%, 600% 600%, 200% 200%;
+  background-position: 
+    center, 
+    var(--position-x) var(--position-y), 
+    var(--position-x) var(--position-y), 
+    var(--position-x) var(--position-y);
+
+  filter: brightness(calc((var(--pointer-from-center)*0.4) + 0.5)) contrast(2) saturate(1);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+.card[data-rarity="rare holo vmax"] .card__glare {
+
+  filter: brightness(.9) contrast(1.75);
+
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at 
+      var(--pointer-x) var(--pointer-y), 
+      rgba(255, 255, 255, 0.75) 0%, 
+      rgba(99, 99, 99, 0.35) 45%, 
+      rgba(0, 0, 0, 1) 120% 
+    );
+
+  opacity: calc(var(--card-opacity)*.75);
+
+}
