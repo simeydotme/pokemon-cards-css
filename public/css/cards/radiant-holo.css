@@ -163,9 +163,9 @@
 		background-image: 
 			radial-gradient( 
 				farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-				rgba(255, 255, 255, .6) 10%, 
-				rgba(255, 255, 255, .3) 30%, 
-				rgba(0, 0, 0, 1) 120% 
+				hsla(0, 0%, 100%, 0.6) 10%, 
+				hsla(0, 0%, 100%, 0.3) 30%, 
+				hsl(0, 0%, 0%) 120% 
 			);
 	}
 

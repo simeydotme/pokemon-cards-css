@@ -36,8 +36,17 @@
     );
 
   background-blend-mode: luminosity, soft-light;
-  background-size: 200% 150%, var(--glittersize) var(--glittersize), 400% 400%;
-  background-position: calc( 50% + (50% - (var(--position-x))) * 3 ) calc( 50% + (50% - (var(--position-y))) * 3 ), center center, calc( var(--position-x) * 1.5) calc( var(--position-y) * 1.5 );
+
+  background-size: 
+    200% 150%, 
+    var(--glittersize) var(--glittersize), 
+    400% 400%;
+  
+  background-position: 
+    calc( 50% + (50% - (var(--position-x))) * 3 ) calc( 50% + (50% - (var(--position-y))) * 3 ), 
+    center center, 
+    calc( 25% + (var(--pointer-x) / 2 ) ) calc( 25% + (var(--pointer-y) / 2 ) );
+  
   filter: brightness(calc((var(--pointer-from-center)*0.25) + 0.5))  contrast(2) saturate(0.75);
 
 }
@@ -59,7 +68,8 @@
 
     background-blend-mode: soft-light;
     background-size: var(--glittersize) var(--glittersize), 400% 400%;
-    background-position: center center, calc( var(--position-x) * -1.5) calc( var(--position-y) * -1.5 );
+    background-position: center center, var(--pointer-x) var(--pointer-y);
+
     filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.55)) contrast(2) saturate(1);
     mix-blend-mode: color-dodge;
 
@@ -73,6 +83,7 @@
   background-size: cover;
   background-position: center center;
   filter: brightness(1.75) contrast(1);
+
   opacity: calc((var(--pointer-from-center) + 0.4 ) * 0.6 );
   background-blend-mode: difference;
   mix-blend-mode: darken;
