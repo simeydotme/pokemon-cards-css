@@ -39,7 +39,7 @@
     background-size: var(--imgsize);
     background-position: 0% calc(var(--position-y) * 1), var(--position-x) var(--position-y);
     
-    filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.6)) contrast(2.3) saturate(1.1);
+    filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.5)) contrast(2.3) saturate(1);
 
 }
 
@@ -82,10 +82,12 @@
 */
 
 .card[data-rarity="trainer gallery rare holo"] .card__glare {
+
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
     hsla(0, 0%, 100%, 0.8) 10%,
     hsla(0, 0%, 100%, 0.6) 35%,
     hsla(180, 11%, 35%, 0.9) 60%
   );
+
 }

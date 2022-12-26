@@ -27,39 +27,12 @@
 
 
 
-
-
-
-/*
-
-  GOLD SECRET
-
-*/
-
-
-
-
-
-
-
-/*
-
-  TRAINER GALLERY HOLO
-
-*/
-
-
-
-
-
-
-
 /*
 
   TRAINER GALLERY V
 
 */
-
+/* 
 .card[data-rarity="rare holo v"][data-gallery="true"] .card__shine,
 .card[data-rarity="rare holo v"][data-gallery="true"] .card__shine:after {
 
@@ -113,4 +86,4 @@
   filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(1.9) saturate(1.2);
   mix-blend-mode: exclusion;
 
-}
+} */

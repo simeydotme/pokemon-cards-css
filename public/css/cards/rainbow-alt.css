@@ -15,7 +15,8 @@
 
 */
 
-.card[data-rarity="rare rainbow alt"] .card__shine {
+.card[data-rarity="rare rainbow alt"] .card__shine,
+.card[data-rarity="rare holo vmax"][data-gallery="true"] .card__shine {
 
   --r-clr-1: hsl(0, 57%, 37%);
   --r-clr-2: hsl(40, 53%, 39%);
@@ -51,7 +52,8 @@
 
 }
 
-.card[data-rarity="rare rainbow alt"] .card__shine:after {
+.card[data-rarity="rare rainbow alt"] .card__shine:after,
+.card[data-rarity="rare holo vmax"][data-gallery="true"] .card__shine:after {
 
   content: "";
   mask-image: none !important;
@@ -74,7 +76,8 @@
 
 }
 
-.card[data-rarity="rare rainbow alt"] .card__shine:before {
+.card[data-rarity="rare rainbow alt"] .card__shine:before,
+.card[data-rarity="rare holo vmax"][data-gallery="true"] .card__shine:before {
   
   content: "";
 
