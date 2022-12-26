@@ -61,9 +61,9 @@
   background-image: 
     radial-gradient(
       farthest-corner circle at var(--pointer-x) var(--pointer-y),
-      rgba(255, 255, 255, 0.8) 10%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(0, 0, 0, 0.75) 90%
+      hsla(0, 0%, 100%, 0.8) 10%,
+      hsla(0, 0%, 100%, 0.5) 20%,
+      hsla(0, 0%, 0%, 0.75) 90%
     );
 
   filter: brightness(.55) contrast(1.33);
@@ -78,9 +78,9 @@
   background-image: 
     radial-gradient( 
       farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-      rgba(255, 255, 255, 1) 10%, 
-      rgba(255, 255, 255, 0.5) 20%, 
-      rgba(0, 0, 0, 0.5) 120% 
+      hsl(0, 0%, 100%) 10%, 
+      hsla(0, 0%, 100%, 0.5) 20%, 
+      hsla(0, 0%, 0%, 0.5) 120% 
     );
 
   filter: brightness(1) contrast(1.5);

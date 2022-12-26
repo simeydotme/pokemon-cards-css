@@ -28,13 +28,13 @@
   background-image:
     var(--foil),
     repeating-linear-gradient( 0deg, 
-      rgb(255, 119, 115) calc(var(--space)*1), 
-      rgba(255,237,95,1) calc(var(--space)*2), 
-      rgba(168,255,95,1) calc(var(--space)*3), 
-      rgba(131,255,247,1) calc(var(--space)*4), 
-      rgba(120,148,255,1) calc(var(--space)*5), 
-      rgb(216, 117, 255) calc(var(--space)*6), 
-      rgb(255, 119, 115) calc(var(--space)*7)
+      var(--sunpillar-clr-1) calc(var(--space)*1), 
+      var(--sunpillar-clr-2) calc(var(--space)*2), 
+      var(--sunpillar-clr-3) calc(var(--space)*3), 
+      var(--sunpillar-clr-4) calc(var(--space)*4), 
+      var(--sunpillar-clr-5) calc(var(--space)*5), 
+      var(--sunpillar-clr-6) calc(var(--space)*6), 
+      var(--sunpillar-clr-1) calc(var(--space)*7)
     ),
     repeating-linear-gradient( 
       var(--angle), 
@@ -48,16 +48,21 @@
     radial-gradient(
       farthest-corner circle 
       at var(--pointer-x) var(--pointer-y),
-      rgba(0, 0, 0, .1) 12%, 
-      rgba(0, 0, 0, .15) 20%, 
-      rgba(0, 0, 0, .25) 120%
+      hsla(0, 0%, 0%, 0.1) 12%, 
+      hsla(0, 0%, 0%, 0.15) 20%, 
+      hsla(0, 0%, 0%, 0.25) 120%
     );
+
+  background-position: 
+    center center, 
+    0% var(--position-y), 
+    calc( var(--position-x) + (var(--position-y)*0.2) ) var(--position-y), 
+    var(--position-x) var(--position-y);
 
   background-blend-mode: soft-light, hue, hard-light;
   background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
-  background-position: center center, 0% var(--position-y), var(--position-x) var(--position-y), var(--position-x) var(--position-y);
 
-  filter: brightness(calc((var(--pointer-from-center)*0.3) + .6)) contrast(2) saturate(1.5);
+  filter: brightness(calc((var(--pointer-from-center)*0.3) + .5)) contrast(1.8) saturate(1.5);
 
 }
 
@@ -66,10 +71,15 @@
 
   content: "";
 
-  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
-  background-position: center center, 0% var(--position-y), calc( var(--position-x) * -1) calc( var(--position-y) * -1), var(--position-x) var(--position-y);
+  background-position: 
+    center center, 
+    0% var(--position-y), 
+    calc( (var(--position-x) + (var(--position-y)*0.2)) * -1) calc( var(--position-y) * -1), 
+    var(--position-x) var(--position-y);
 
-  filter: brightness(calc((var(--pointer-from-center)*.4) + .8)) contrast(2.5) saturate(1.2);
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
+
+  filter: brightness(calc((var(--pointer-from-center)*.4) + .8)) contrast(2) saturate(1.2);
   mix-blend-mode: exclusion;
 
 }
@@ -97,9 +107,9 @@
     radial-gradient( 
       farthest-corner circle at 
       var(--pointer-x) var(--pointer-y), 
-      rgba(255, 255, 255, 1) 0%, 
-      rgba(133, 137, 141, .4) 45%, 
-      rgba(20, 20, 50, .8) 140% 
+      hsl(0, 0%, 100%) 0%, 
+      hsla(210, 3%, 54%, 0.4) 45%, 
+      hsla(240, 43%, 14%, 0.8) 140% 
     );
 
 		background-size: 100% 120%;

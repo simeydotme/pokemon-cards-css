@@ -104,13 +104,13 @@
   background-image: 
     var(--foil), 
     repeating-linear-gradient( 55deg, 
-    rgb(253, 186, 183) calc(var(--space)*1), 
-    rgb(174, 218, 255) calc(var(--space)*2), 
-    rgb(255, 217, 181) calc(var(--space)*3), 
-    rgb(186, 255, 232) calc(var(--space)*4), 
-    rgb(253, 190, 244) calc(var(--space)*5), 
-    rgb(181, 244, 253) calc(var(--space)*6), 
-    rgb(253, 186, 183) calc(var(--space)*7) 
+    hsl(3, 95%, 85%) calc(var(--space)*1), 
+    hsl(207, 100%, 84%) calc(var(--space)*2), 
+    hsl(29, 100%, 85%) calc(var(--space)*3), 
+    hsl(160, 100%, 86%) calc(var(--space)*4), 
+    hsl(309, 94%, 87%) calc(var(--space)*5), 
+    hsl(188, 95%, 85%) calc(var(--space)*6), 
+    hsl(3, 95%, 85%) calc(var(--space)*7) 
   );
 
   background-size: cover, 400% 100%;
@@ -133,9 +133,9 @@
     var(--glitter), 
     radial-gradient( 
       farthest-corner ellipse at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
-      rgba(100, 100, 100, .8) 10%, 
-      rgba(50, 50, 50, .34) 20%, 
-      rgba(50, 50, 50, .5) 50% 
+      hsla(0, 0%, 39%, 0.8) 10%, 
+      hsla(0, 0%, 20%, 0.34) 20%, 
+      hsla(0, 0%, 20%, 0.5) 50% 
     );
 
   background-position: center;

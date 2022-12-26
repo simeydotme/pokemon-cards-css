@@ -36,25 +36,25 @@
     url("/img/cosmos-bottom.png"), 
     repeating-linear-gradient(
       82deg, 
-      rgb(219, 204, 86) calc(var(--space)*1), 
-      rgb(121, 199, 58) calc(var(--space)*2), 
-      rgb(58, 192, 183) calc(var(--space)*3), 
-      rgb(71, 98, 207) calc(var(--space)*4), 
-      rgb(170, 69, 209) calc(var(--space)*5), 
-      rgb(204, 58, 140) calc(var(--space)*6), 
-      rgb(204, 58, 140) calc(var(--space)*7), 
-      rgb(170, 69, 209) calc(var(--space)*8), 
-      rgb(71, 98, 207) calc(var(--space)*9), 
-      rgb(58, 192, 183) calc(var(--space)*10), 
-      rgb(121, 199, 58) calc(var(--space)*11), 
-      rgb(219, 204, 86) calc(var(--space)*12) 
+      hsl(53, 65%, 60%) calc(var(--space)*1), 
+      hsl(93, 56%, 50%) calc(var(--space)*2), 
+      hsl(176, 54%, 49%) calc(var(--space)*3), 
+      hsl(228, 59%, 55%) calc(var(--space)*4), 
+      hsl(283, 60%, 55%) calc(var(--space)*5), 
+      hsl(326, 59%, 51%) calc(var(--space)*6), 
+      hsl(326, 59%, 51%) calc(var(--space)*7), 
+      hsl(283, 60%, 55%) calc(var(--space)*8), 
+      hsl(228, 59%, 55%) calc(var(--space)*9), 
+      hsl(176, 54%, 49%) calc(var(--space)*10), 
+      hsl(93, 56%, 50%) calc(var(--space)*11), 
+      hsl(53, 65%, 60%) calc(var(--space)*12) 
     ), 
     radial-gradient( 
       farthest-corner circle 
       at var(--pointer-x) var(--pointer-y), 
-      rgba(200, 255, 255, 0.5) 5%, 
-      rgba(130, 160, 160, .3) 40%, 
-      rgb(0, 0, 0) 100% 
+      hsla(180, 100%, 89%, 0.5) 5%, 
+      hsla(180, 14%, 57%, 0.3) 40%, 
+      hsl(0, 0%, 0%) 100% 
   );
 
   background-blend-mode: color-dodge, overlay, color-burn, lighten;
@@ -91,9 +91,9 @@
   background-image: 
     radial-gradient( farthest-corner circle at 
       var(--pointer-x) var(--pointer-y), 
-      rgba(138, 145, 145, 0.2) 28%, 
-      rgba(89, 81, 88, 0.35) 60%, 
-      rgba(78, 78, 78, 0.8) 90%
+      hsla(180, 3%, 55%, 0.2) 28%, 
+      hsla(308, 5%, 33%, 0.35) 60%, 
+      hsla(0, 0%, 31%, 0.8) 90%
     );
   mix-blend-mode: soft-light;
 

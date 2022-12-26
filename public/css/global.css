@@ -1,6 +1,6 @@
 :root {
-  --primary: rgb(66, 219, 240);
-  --link-hover: rgb(224, 241, 255);
+  --primary: hsl(187, 85%, 60%);
+  --link-hover: hsl(207, 100%, 94%)
 }
 
 * {
@@ -18,7 +18,7 @@ html {
 
 body {
   font-family: Roboto;
-  background-color: rgb(57, 60, 66);
+  background-color: hsl(220, 7%, 24%);
 }
 
 a {
@@ -187,7 +187,7 @@ mark {
   padding: .5em 1em;
   border-radius: 5em;
   background: var(--primary);
-  color: rgb(5, 58, 71);
+  color: hsl(192, 87%, 15%);
   text-decoration: none;
   box-shadow: 0 7px 13px -5px currentColor;
 }

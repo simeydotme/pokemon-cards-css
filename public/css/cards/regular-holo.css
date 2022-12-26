@@ -84,9 +84,9 @@
     radial-gradient(
       farthest-corner circle 
         at var(--pointer-x) var(--pointer-y), 
-        rgba(222, 222, 222, .4) 0%, 
-        rgba(100, 100, 100, 0.2) 30%, 
-        rgb(0, 0, 0) 90%
+        hsla(0, 0%, 87%, 0.4) 0%, 
+        hsla(0, 0%, 39%, 0.2) 30%, 
+        hsl(0, 0%, 0%) 90%
       );
     
     background-position: 
@@ -130,7 +130,13 @@
 
   content: "";
 
-  background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), rgb(231, 255, 255) 5%, rgba(100, 100, 100, 0.25) 55%, rgba(0, 0, 0, 0.36) 110% );
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(180, 100%, 95%) 5%, 
+      hsla(0, 0%, 39%, 0.25) 55%, 
+      hsla(0, 0%, 0%, 0.36) 110% 
+    );
   mix-blend-mode: overlay;
   filter: brightness(130%) contrast(200%);
 

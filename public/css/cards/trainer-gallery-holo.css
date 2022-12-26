@@ -26,13 +26,13 @@
 
   background-image:
     repeating-linear-gradient( var(--angle),  
-      rgba(174, 102, 202, 0.75) calc(var(--space)*1),
-      rgba(228, 77, 72, 0.75) calc(var(--space)*2), 
-      rgba(216, 197, 55, 0.75) calc(var(--space)*3),  
-      rgba(124, 201, 62, 0.75) calc(var(--space)*4),  
-      rgba(80, 177, 170, 0.75) calc(var(--space)*5),  
-      rgba(136, 160, 255, 0.75) calc(var(--space)*6), 
-      rgba(176, 105, 204, 0.75) calc(var(--space)*7)
+      hsla(283, 49%, 60%, 0.75) calc(var(--space)*1),
+      hsla(2, 74%, 59%, 0.75) calc(var(--space)*2), 
+      hsla(53, 67%, 53%, 0.75) calc(var(--space)*3),  
+      hsla(93, 56%, 52%, 0.75) calc(var(--space)*4),  
+      hsla(176, 38%, 50%, 0.75) calc(var(--space)*5),  
+      hsla(228, 100%, 77%, 0.75) calc(var(--space)*6), 
+      hsla(283, 49%, 61%, 0.75) calc(var(--space)*7)
     );
     
     background-blend-mode: color-dodge;
@@ -51,9 +51,9 @@
     radial-gradient( 
       farthest-corner ellipse 
       at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
-      rgb(255, 255, 255) 5%, 
-      rgba(55, 0, 55, .6) 40%, 
-      rgb(55, 55, 55) 120% 
+      hsl(0, 0%, 100%) 5%, 
+      hsla(300, 100%, 11%, 0.6) 40%, 
+      hsl(0, 0%, 22%) 120% 
     );
 
   background-position: center center;
@@ -84,8 +84,8 @@
 .card[data-rarity="trainer gallery rare holo"] .card__glare {
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    rgba(255, 255, 255, 0.8) 10%,
-    rgba(255, 255, 255, 0.6) 35%,
-    rgba(80, 100, 100, .9) 60%
+    hsla(0, 0%, 100%, 0.8) 10%,
+    hsla(0, 0%, 100%, 0.6) 35%,
+    hsla(180, 11%, 35%, 0.9) 60%
   );
 }

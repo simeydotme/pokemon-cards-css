@@ -28,13 +28,13 @@
   background-image: 
     repeating-linear-gradient( 
       var(--angle), 
-        rgba(174, 102, 202, 0.75) calc(var(--space)*1), 
-        rgba(223, 79, 74, 0.75) calc(var(--space)*2), 
-        rgba(216, 197, 55, 0.75) calc(var(--space)*3), 
-        rgba(124, 201, 62, 0.75) calc(var(--space)*4), 
-        rgba(80, 177, 170, 0.75) calc(var(--space)*5), 
-        rgba(136, 160, 255, 0.75) calc(var(--space)*6), 
-        rgba(176, 105, 204, 0.75) calc(var(--space)*7) 
+        hsla(283, 49%, 60%, 0.75) calc(var(--space)*1), 
+        hsla(2, 70%, 58%, 0.75) calc(var(--space)*2), 
+        hsla(53, 67%, 53%, 0.75) calc(var(--space)*3), 
+        hsla(93, 56%, 52%, 0.75) calc(var(--space)*4), 
+        hsla(176, 38%, 50%, 0.75) calc(var(--space)*5), 
+        hsla(228, 100%, 77%, 0.75) calc(var(--space)*6), 
+        hsla(283, 49%, 61%, 0.75) calc(var(--space)*7) 
       ),
     var(--glitter),
     linear-gradient( -30deg, 

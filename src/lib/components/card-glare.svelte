@@ -17,9 +17,9 @@
 		background-image: 
 			radial-gradient( 
 				circle at var(--pointer-x) var(--pointer-y), 
-				rgba(255, 250, 240, 0.95) 0%, 
-				rgba(255, 225, 190, 0.45) 30%, 
-				rgba(0, 0, 0, 0.75) 80% 
+				hsla(40, 100%, 97%, 0.95) 0%, 
+				hsla(32, 100%, 87%, 0.45) 30%, 
+				hsla(0, 0%, 0%, 0.75) 80% 
 			);
 			opacity: calc( var(--card-opacity) * 0.6 );
 			filter: brightness(.9) contrast(1.8);
@@ -29,9 +29,9 @@
 	background-image: 
 		radial-gradient( 
 			farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-			rgba(255, 255, 255, 1) 10%, 
-			rgba(255, 255, 255, 0.7) 35%, 
-			rgba(30, 0, 0, 1) 100% 
+			hsl(0, 0%, 100%) 10%, 
+			hsla(0, 0%, 100%, 0.7) 35%, 
+			hsl(0, 100%, 6%) 100% 
 		);
 }
 		

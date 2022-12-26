@@ -79,7 +79,7 @@
 .card.fighting    { --card-glow: hsl(34,  49%,  43%); }
 .card.darkness    { --card-glow: hsl(189, 77%,  27%); }
 .card.metal       { --card-glow: hsl(184, 20%,  70%); }
-.card.dragon      { --card-glow: rgb(173, 135, 31); }
+.card.dragon      { --card-glow: hsl(44, 70%, 40%); }
 .card.fairy       { --card-glow: hsl(323, 100%, 89%); }
 
 .card,
@@ -209,6 +209,13 @@ Shine & Glare Effects
 
 .card__shine {
 
+  --sunpillar-clr-1: hsl(2, 100%, 73%);
+  --sunpillar-clr-2: hsl(53, 100%, 69%);
+  --sunpillar-clr-3: hsl(93, 100%, 69%);
+  --sunpillar-clr-4: hsl(176, 100%, 76%);
+  --sunpillar-clr-5: hsl(228, 100%, 74%);
+  --sunpillar-clr-6: hsl(283, 100%, 73%);
+
   display: grid;
   transform: translateZ(1px);
   overflow: hidden;
@@ -228,6 +235,13 @@ Shine & Glare Effects
 .card__shine:before,
 .card__shine:after {
 
+  --sunpillar-clr-1: hsl(228, 100%, 74%);
+  --sunpillar-clr-2: hsl(283, 100%, 73%);
+  --sunpillar-clr-3: hsl(2, 100%, 73%);
+  --sunpillar-clr-4: hsl(53, 100%, 69%);
+  --sunpillar-clr-5: hsl(93, 100%, 69%);
+  --sunpillar-clr-6: hsl(176, 100%, 76%);
+
   grid-area: 1/1;
   transform: translateZ(1px);
   border-radius: var(--card-radius);
@@ -235,6 +249,13 @@ Shine & Glare Effects
 }
 
 .card__shine:after {
+
+  --sunpillar-clr-1: hsl(283, 100%, 73%);
+  --sunpillar-clr-2: hsl(2, 100%, 73%);
+  --sunpillar-clr-3: hsl(53, 100%, 69%);
+  --sunpillar-clr-4: hsl(93, 100%, 69%);
+  --sunpillar-clr-5: hsl(176, 100%, 76%);
+  --sunpillar-clr-6: hsl(228, 100%, 74%);
 
   transform: translateZ(1.2px);
   
@@ -247,9 +268,9 @@ Shine & Glare Effects
 
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    rgba(255, 255, 255, 0.8) 10%,
-    rgba(255, 255, 255, 0.65) 20%,
-    rgba(0, 0, 0, 0.5) 90%
+    hsla(0, 0%, 100%, 0.8) 10%,
+    hsla(0, 0%, 100%, 0.65) 20%,
+    hsla(0, 0%, 0%, 0.5) 90%
   );
 
   opacity: var(--card-opacity);

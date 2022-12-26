@@ -96,9 +96,9 @@
 		radial-gradient( 
 			farthest-corner circle at 
 			var(--pointer-x) var(--pointer-y), 
-			rgba(230, 252, 255, 0.75) 0%, 
-			rgba(97, 81, 91, 0.5) 45%, 
-			rgb(10, 15, 17) 120% 
+			hsla(187, 100%, 95%, 0.75) 0%, 
+			hsla(323, 9%, 35%, 0.5) 45%, 
+			hsl(197, 26%, 5%) 120% 
 		);
 
 	filter: brightness(.9) contrast(1.75);
