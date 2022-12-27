@@ -1,5 +1,5 @@
 
-.card__shine {
+.card {
 
   --grain: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuMyI+PC9yZWN0Pgo8L3N2Zz4=");
   --glitter: url("/img/glitter.png");
@@ -15,75 +15,9 @@
   --blue: #0dbde9;
   --violet: #c929f1;
 
-  --clip: inset( 10% 8.5% 52.5% 8.5% );;
+  --clip: inset( 10% 8.5% 52.5% 8.5% );
   --clip-stage: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
   --clip-trainer: inset(14.5% 7.9% 48.2% 8.7%);
   --clip-borders: inset(2.8% 4% round 2.55% / 1.5%);
 
 }
-
-
-
-
-
-
-/*
-
-  TRAINER GALLERY V
-
-*/
-/* 
-.card[data-rarity="rare holo v"][data-gallery="true"] .card__shine,
-.card[data-rarity="rare holo v"][data-gallery="true"] .card__shine:after {
-
-  --space: 5%;
-  --angle: 133deg;
-  --imgsize: cover;
-
-  background-image:
-    var(--foil),
-    repeating-linear-gradient( 0deg, 
-      var(--sunpillar-clr-1) calc(var(--space)*1), 
-      var(--sunpillar-clr-2) calc(var(--space)*2), 
-      var(--sunpillar-clr-3) calc(var(--space)*3), 
-      var(--sunpillar-clr-4) calc(var(--space)*4), 
-      var(--sunpillar-clr-5) calc(var(--space)*5), 
-      var(--sunpillar-clr-6) calc(var(--space)*6), 
-      var(--sunpillar-clr-1) calc(var(--space)*7)
-    ),
-    repeating-linear-gradient( 
-      var(--angle), 
-      #0e152e 0%, 
-      hsl(180, 10%, 60%) 3.8%, 
-      hsl(180, 29%, 66%) 4.5%, 
-      hsl(180, 10%, 60%) 5.2%, 
-      #0e152e 10% , 
-      #0e152e 12% 
-      ),
-    radial-gradient(
-      farthest-corner circle 
-      at var(--pointer-x) var(--pointer-y),
-      hsla(0, 0%, 0%, 0.1) 12%, 
-      hsla(0, 0%, 0%, 0.15) 20%, 
-      hsla(0, 0%, 0%, 0.25) 120%
-    );
-
-  background-blend-mode: soft-light, hue, hard-light;
-  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
-  background-position: center center, 0% var(--position-y), var(--position-x) var(--position-y), var(--position-x) var(--position-y);
-
-  filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.7) saturate(1.5);
-
-}
-
-.card[data-rarity="rare holo v"][data-gallery="true"] .card__shine:after {
-
-  content: "";
-
-  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
-  background-position: center center, 0% var(--position-y), calc( var(--position-x) * -1) calc( var(--position-y) * -1), var(--position-x) var(--position-y);
-
-  filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(1.9) saturate(1.2);
-  mix-blend-mode: exclusion;
-
-} */

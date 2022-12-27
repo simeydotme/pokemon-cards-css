@@ -704,48 +704,6 @@
     }
   },
   {
-    "id": "swsh4-183",
-    "name": "Nessa",
-    "supertype": "Trainer",
-    "subtypes": ["Supporter"],
-    "number": "183",
-    "rarity": "Rare Ultra",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh4/183.png",
-      "large": "https://images.pokemontcg.io/swsh4/183_hires.png",
-      "foil": "/img/foils/swsh4/foils/183_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh4/masks/183_foil_etched_sunpillar.png"
-    }
-  },
-  {
-    "id": "swsh4-185",
-    "name": "Pokémon Center Lady",
-    "supertype": "Trainer",
-    "subtypes": ["Supporter"],
-    "number": "185",
-    "rarity": "Rare Ultra",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh4/185.png",
-      "large": "https://images.pokemontcg.io/swsh4/185_hires.png",
-      "foil": "/img/foils/swsh4/foils/185_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh4/masks/185_foil_etched_sunpillar.png"
-    }
-  },
-  {
-    "id": "swsh2-189",
-    "name": "Boss's Orders",
-    "supertype": "Trainer",
-    "subtypes": ["Supporter"],
-    "number": "189",
-    "rarity": "Rare Ultra",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh2/189.png",
-      "large": "https://images.pokemontcg.io/swsh2/189_hires.png",
-      "foil": "/img/foils/swsh2/foils/189_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh2/masks/189_foil_etched_sunpillar.png"
-    }
-  },
-  {
     "id": "swsh1-200",
     "name": "Marnie",
     "supertype": "Trainer",
@@ -757,6 +715,48 @@
       "large": "https://images.pokemontcg.io/swsh1/200_hires.png",
       "foil": "/img/foils/swsh1/foils/200_foil_etched_sunpillar.jpg",
       "foilmask": "/img/foils/swsh1/masks/200_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh11tg-TG27",
+    "name": "Nessa",
+    "supertype": "Trainer",
+    "subtypes": ["Supporter"],
+    "number": "TG27",
+    "rarity": "Rare Ultra",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh11tg/TG27.png",
+      "large": "https://images.pokemontcg.io/swsh11tg/TG27_hires.png",
+      "foil": "/img/foils/swsh11/foils/tg27_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh11/masks/tg27_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh12tg-TG26",
+    "name": "Professor Burnet",
+    "supertype": "Trainer",
+    "subtypes": ["Supporter"],
+    "number": "TG26",
+    "rarity": "Rare Ultra",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12tg/TG26.png",
+      "large": "https://images.pokemontcg.io/swsh12tg/TG26_hires.png",
+      "foil": "/img/foils/swsh12/foils/tg26_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh12/masks/tg26_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh11tg-TG26",
+    "name": "Kabu",
+    "supertype": "Trainer",
+    "subtypes": ["Supporter"],
+    "number": "TG26",
+    "rarity": "Rare Ultra",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh11tg/TG26.png",
+      "large": "https://images.pokemontcg.io/swsh11tg/TG26_hires.png",
+      "foil": "/img/foils/swsh11/foils/tg26_foil_etched_sunpillar.jpg",
+      "foilmask": "/img/foils/swsh11/masks/tg26_foil_etched_sunpillar.png"
     }
   },
   {

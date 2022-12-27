@@ -41,12 +41,22 @@
       var(--violet), var(--blue), var(--green), var(--yellow), var(--red), 
       var(--violet), var(--blue), var(--green), var(--yellow), var(--red),
       var(--violet), var(--blue), var(--green), var(--yellow), var(--red)
+    ),
+    repeating-linear-gradient( 90deg, 
+      var(--scanlines-dark) calc(var(--scanlines-space) * 0), var(--scanlines-dark) calc(var(--scanlines-space) * 2),
+      var(--scanlines-light) calc(var(--scanlines-space) * 2), var(--scanlines-light) calc(var(--scanlines-space) * 4)
     );
 
-  background-position: calc(((50% - var(--position-x)) * 2.6) + 50%) calc(((50% - var(--position-y)) * 3.5) + 50%);
-  background-size: 600% 600%;
+  background-position: 
+    calc(((50% - var(--position-x)) * 2.6) + 50%) calc(((50% - var(--position-y)) * 3.5) + 50%),
+    center center;
 
-  filter: brightness(1) contrast(1.2);
+  background-size: 
+    400% 400%, 
+    cover;
+
+  background-blend-mode: overlay;
+  filter: brightness(1.1) contrast(1.1) saturate(.9);
   mix-blend-mode: color-dodge;
 
 }
@@ -57,52 +67,57 @@
 
   background-image:
     repeating-linear-gradient( 90deg, 
-      var(--scanlines-dark) calc(var(--scanlines-space) * 0), var(--scanlines-dark) calc(var(--scanlines-space) * 2),
-      var(--scanlines-light) calc(var(--scanlines-space) * 2), var(--scanlines-light) calc(var(--scanlines-space) * 4)
+      var(--bar-bg) calc(var(--bars)*2), 
+      var(--bar-color) calc(var(--bars)*3), 
+      var(--bar-bg) calc(var(--bars)*3.5), 
+      var(--bar-color) calc(var(--bars)*4), 
+      var(--bar-bg) calc(var(--bars)*5), 
+      var(--bar-bg) calc(var(--bars)*14)
+    ),
+    repeating-linear-gradient( 90deg, 
+      var(--bar-bg) calc(var(--bars)*2), 
+      var(--bar-color) calc(var(--bars)*3), 
+      var(--bar-bg) calc(var(--bars)*3.5), 
+      var(--bar-color) calc(var(--bars)*4), 
+      var(--bar-bg) calc(var(--bars)*5), 
+      var(--bar-bg) calc(var(--bars)*10)
     );
 
-  /* background-blend-mode: multiply; */
-  background-position: center center;
-  background-size: cover;
+  background-position: 
+    calc((((50% - var(--position-x)) * 1.65) + 50% ) + (var(--position-y) * 0.5)) var(--position-x), 
+    calc((((50% - var(--position-x)) * -0.9) + 50%) - (var(--position-y) * 0.75) ) var(--position-y);
 
-  filter: brightness( 2 ) contrast( 4 ) saturate( 1 );
-  mix-blend-mode: color-burn;
+  background-size: 
+    200% 200%,
+    200% 200%;
+
+  background-blend-mode: screen;
+  filter: brightness( 1.15 ) contrast( 1.1 );
+  mix-blend-mode: hard-light;
 
 }
 
 .card[data-rarity="rare holo"] .card__shine:after {
 
   content: "";
-
-  background-image:
-    repeating-linear-gradient( calc( 90deg - ( var(--pointer-from-left) - 0.5) * -7deg ), 
-      var(--bar-bg) calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), var(--bar-bg) calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), var(--bar-bg) calc(var(--bars)*5), var(--bar-bg) calc(var(--bars)*14)
-    ),
-    repeating-linear-gradient( calc( 90deg + ( var(--pointer-from-left) - 0.5) * 5deg ), 
-      var(--bar-bg) calc(var(--bars)*2), var(--bar-color) calc(var(--bars)*3), var(--bar-bg) calc(var(--bars)*3.5), var(--bar-color) calc(var(--bars)*4), var(--bar-bg) calc(var(--bars)*5), var(--bar-bg) calc(var(--bars)*10)
-    ),
-    radial-gradient(
+    
+  background-image: 
+    radial-gradient( 
       farthest-corner circle 
         at var(--pointer-x) var(--pointer-y), 
-        hsla(0, 0%, 87%, 0.4) 0%, 
-        hsla(0, 0%, 39%, 0.2) 30%, 
-        hsl(0, 0%, 0%) 90%
-      );
+        hsla(0, 0%, 90%, 0.8) 0%, 
+        hsla(0, 0%, 78%, 0.1) 25%, 
+        hsl(0, 0%, 0%) 90% 
+    );
     
-    background-position: 
-      calc((((50% - var(--position-x)) * 3.5) + 50% ) + (var(--position-y) * 0.5)) var(--position-x), 
-      calc((((50% - var(--position-x)) * -2) + 50%) - (var(--position-y) * 0.75) ) var(--position-y), 
-      center center;
-  
-    background-size: 
-      200% 200%,
-      200% 200%,
-      cover;
+  background-position: 
+    center center;
 
-  background-blend-mode: screen, overlay;
+  background-size:
+    cover;
 
-  mix-blend-mode: luminosity;
-  filter: brightness(.8) contrast(1.2);
+  mix-blend-mode: luminosity; 
+  filter: brightness(0.6) contrast(4);
 
 }
 
@@ -137,7 +152,8 @@
       hsla(0, 0%, 39%, 0.25) 55%, 
       hsla(0, 0%, 0%, 0.36) 110% 
     );
+    
   mix-blend-mode: overlay;
-  filter: brightness(130%) contrast(200%);
+  filter: brightness(.6) contrast(3);
 
 }

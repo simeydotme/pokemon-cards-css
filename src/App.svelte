@@ -478,7 +478,7 @@
 	</h2>
 	<p>
 		Again back to the <mark>diagonal gradients overlaying a texture</mark>, VStar are quite
-		<mark>similar to teh Ultra Rare</mark>
+		<mark>similar to the Ultra Rare</mark>
 		(Full/Alt) cards. The cards are generally <mark>brighter with a pastel hue</mark>, though, which
 		makes the gradient and texture more subtle.
 	</p>
@@ -505,12 +505,12 @@
 
 	<h2 id="⚓-trainer-full-art">
 		<a href="#⚓-trainer-full-art">
-			Trainer Holo <sup>(Full Art)</sup>
+			Trainer Holo <sup>(Full Art / Trainer Gallery)</sup>
 		</a>
 	</h2>
 	<p>
 		Again back to the <mark>diagonal gradients overlaying a texture</mark>, VStar are quite
-		<mark>similar to teh Ultra Rare</mark>
+		<mark>similar to the Ultra Rare</mark>
 		(Full/Alt) cards. The cards are generally <mark>brighter with a pastel hue</mark>, though, which
 		makes the gradient and texture more subtle.
 	</p>

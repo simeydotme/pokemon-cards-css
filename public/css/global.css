@@ -160,6 +160,9 @@ h2 + p + p {
 h2 sup {
   font-weight: 300;
   font-size: 0.75em;
+  margin-left: 0.5em;
+  font-style: italic;
+  opacity: 0.8;
 }
 
 hr {
