@@ -26,7 +26,7 @@
 */    
 
 
-.card[data-rarity="rare holo v"][data-gallery="true"] .card__glare {
+.card[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__glare {
   
   filter: brightness(.9) contrast(1.75);
 

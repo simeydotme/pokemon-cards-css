@@ -48,7 +48,7 @@
     );
 
   background-position: 
-    calc(((50% - var(--position-x)) * 2.6) + 50%) calc(((50% - var(--position-y)) * 3.5) + 50%),
+    calc(((50% - var(--background-x)) * 2.6) + 50%) calc(((50% - var(--background-y)) * 3.5) + 50%),
     center center;
 
   background-size: 
@@ -56,7 +56,7 @@
     cover;
 
   background-blend-mode: overlay;
-  filter: brightness(1.1) contrast(1.1) saturate(.9);
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
   mix-blend-mode: color-dodge;
 
 }
@@ -84,8 +84,8 @@
     );
 
   background-position: 
-    calc((((50% - var(--position-x)) * 1.65) + 50% ) + (var(--position-y) * 0.5)) var(--position-x), 
-    calc((((50% - var(--position-x)) * -0.9) + 50%) - (var(--position-y) * 0.75) ) var(--position-y);
+    calc((((50% - var(--background-x)) * 1.65) + 50% ) + (var(--background-y) * 0.5)) var(--background-x), 
+    calc((((50% - var(--background-x)) * -0.9) + 50%) - (var(--background-y) * 0.75) ) var(--background-y);
 
   background-size: 
     200% 200%,
@@ -152,7 +152,7 @@
       hsla(0, 0%, 39%, 0.25) 55%, 
       hsla(0, 0%, 0%, 0.36) 110% 
     );
-    
+
   mix-blend-mode: overlay;
   filter: brightness(.6) contrast(3);
 

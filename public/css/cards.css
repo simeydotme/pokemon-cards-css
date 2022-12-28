@@ -21,3 +21,11 @@
   --clip-borders: inset(2.8% 4% round 2.55% / 1.5%);
 
 }
+
+.card__shine,
+.card__glare {
+  
+  will-change: transform, opacity, background-image, background-size,
+    background-position, background-blend-mode, filter;
+ 
+}

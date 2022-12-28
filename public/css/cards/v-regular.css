@@ -53,7 +53,7 @@
 
   background-blend-mode: screen, hue, hard-light;
   background-size: var(--imgsize) 100%, 200% 700%, 300% 100%, 200% 100%;
-  background-position: center, 0% var(--position-y), var(--position-x) var(--position-y), var(--position-x) var(--position-y);
+  background-position: center, 0% var(--background-y), var(--background-x) var(--background-y), var(--background-x) var(--background-y);
   
   filter: brightness(.8) contrast(2.95) saturate(.65);
 
@@ -63,7 +63,7 @@
 
   content: "";
 
-  background-position: center, 0% var(--position-y), calc( var(--position-x) * -1) calc( var(--position-y) * -1), var(--position-x) var(--position-y);
+  background-position: center, 0% var(--background-y), calc( var(--background-x) * -1) calc( var(--background-y) * -1), var(--background-x) var(--background-y);
   background-size: var(--imgsize) 100%, 200% 400%, 195% 100%, 200% 100%;
 
   filter: brightness(1) contrast(2.5) saturate(1.75);

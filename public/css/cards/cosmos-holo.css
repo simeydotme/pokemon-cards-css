@@ -58,7 +58,7 @@
   );
 
   background-blend-mode: color-dodge, overlay, color-burn, lighten;
-  background-position: var(--cosmosbg, center center), var(--cosmosbg, center center), var(--cosmosbg, center center), calc(((50% - var(--position-x)) * 2.5) + 50%) calc(((50% - var(--position-y)) * 2.5) + 50%), center;
+  background-position: var(--cosmosbg, center center), var(--cosmosbg, center center), var(--cosmosbg, center center), calc(((50% - var(--background-x)) * 2.5) + 50%) calc(((50% - var(--background-y)) * 2.5) + 50%), center;
   background-size: cover, cover, cover, 400% 900%, cover;
 
   filter: brightness(.8) contrast(1.2) saturate(1);

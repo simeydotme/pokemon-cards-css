@@ -20,8 +20,8 @@
 .card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine,
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after,
-.card[data-rarity="rare holo v"][data-gallery="true"] .card__shine,
-.card[data-rarity="rare holo v"][data-gallery="true"] .card__shine:after {
+.card[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine,
+.card[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:after {
 
   --space: 5%;
   --angle: 133deg;
@@ -57,32 +57,32 @@
 
   background-position: 
     center center, 
-    0% var(--position-y), 
-    calc( var(--position-x) + (var(--position-y)*0.2) ) var(--position-y), 
-    var(--position-x) var(--position-y);
+    0% var(--background-y), 
+    calc( var(--background-x) + (var(--background-y)*0.2) ) var(--background-y), 
+    var(--background-x) var(--background-y);
 
   background-blend-mode: soft-light, hue, hard-light;
   background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
 
-  filter: brightness(calc((var(--pointer-from-center)*0.3) + .5)) contrast(1.8) saturate(1.5);
+  filter: brightness(calc((var(--pointer-from-center)*0.4) + .4)) contrast(1.4) saturate(2.25);
 
 }
 
 .card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after,
-.card[data-rarity="rare holo v"][data-gallery="true"] .card__shine:after {
+.card[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:after {
 
   content: "";
 
   background-position: 
     center center, 
-    0% var(--position-y), 
-    calc( (var(--position-x) + (var(--position-y)*0.2)) * -1) calc( var(--position-y) * -1), 
-    var(--position-x) var(--position-y);
+    0% var(--background-y), 
+    calc( (var(--background-x) + (var(--background-y)*0.2)) * -1) calc( var(--background-y) * -1), 
+    var(--background-x) var(--background-y);
 
   background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
 
-  filter: brightness(calc((var(--pointer-from-center)*.4) + .8)) contrast(2) saturate(1.2);
+  filter: brightness(calc((var(--pointer-from-center)*.4) + .7)) contrast(1.25) saturate(1.2);
   mix-blend-mode: exclusion;
 
 }
@@ -117,5 +117,6 @@
 
 		background-size: 100% 120%;
 		background-position: center center;
+    opacity: calc(var(--card-opacity)*.8);
 
 }

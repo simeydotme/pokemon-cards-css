@@ -54,9 +54,9 @@
   background-size: var(--imgsize), 1100% 1100%, 600% 600%, 200% 200%;
   background-position: 
     center, 
-    var(--position-x) var(--position-y), 
-    var(--position-x) var(--position-y), 
-    var(--position-x) var(--position-y);
+    var(--background-x) var(--background-y), 
+    var(--background-x) var(--background-y), 
+    var(--background-x) var(--background-y);
 
   filter: brightness(calc((var(--pointer-from-center)*0.4) + 0.5)) contrast(2) saturate(1);
 
@@ -88,7 +88,7 @@
 
   background-blend-mode: hue, hard-light;
   background-size: 200% 700%, 300% 100%, 200% 100%;
-  background-position: 0% var(--position-y), var(--position-x) var(--position-y), var(--position-x) var(--position-y);
+  background-position: 0% var(--background-y), var(--background-x) var(--background-y), var(--background-x) var(--background-y);
 
   mix-blend-mode: lighten;
   opacity: calc( ((var(--card-opacity) * var(--pointer-from-center)) * 0.5 ));

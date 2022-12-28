@@ -55,19 +55,19 @@
 }
 .card:not( .interactive ):hover {
   
-  --pointer-x: 30%!important;
-  --pointer-y: 30%!important;
+  --pointer-x: 25%!important;
+  --pointer-y: 10%!important;
   --card-scale: 1.1!important;
   --card-opacity: 1!important;
   --translate-x: 0px!important;
   --translate-y: -10px!important;
-  --rotate-x: 10deg!important;
-  --rotate-y: -10deg!important;
-  --position-x: 30%!important;
-  --position-y: 30%!important;
-  --pointer-from-center: .8!important;
-  --pointer-from-top: .3!important;
-  --pointer-from-left: .3!important;
+  --rotate-x: 7deg!important;
+  --rotate-y: -19deg!important;
+  --background-x: 44%!important;
+  --background-y: 36%!important;
+  --pointer-from-center: .9!important;
+  --pointer-from-top: .11!important;
+  --pointer-from-left: .25!important;
   
 }
 
@@ -290,7 +290,7 @@ Shine & Glare Effects
 .card.masked .card__shine:after {
 
   /** masking image for cards which are masked **/
-  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
   mask-size: cover;
 
 }
@@ -300,11 +300,11 @@ Shine & Glare Effects
 .card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after {
 
   /* Default Mask Effect for cards without set */
-  --foilmask: url("/img/illusion-mask.png");
+  --mask: url("/img/illusion-mask.png");
   --foil: url("/img/illusion.png"); 
   --imgsize: 50%;
 
-  mask-image: var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask), var(--foilmask);
+  mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
   mask-size: 50%;
   mask-position: center center;
 

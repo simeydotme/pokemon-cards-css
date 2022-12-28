@@ -86,7 +86,7 @@
 					name={showcase.name}
 					img={showcase.images.large}
 					foil={showcase.images.foil}
-					foilmask={showcase.images.foilmask}
+					mask={showcase.images.foilmask}
 					number={showcase.number}
 					types={showcase.types}
 					supertype={showcase.supertype}
@@ -130,7 +130,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -161,7 +161,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -193,7 +193,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -225,7 +225,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -257,7 +257,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -289,7 +289,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -324,7 +324,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -360,7 +360,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -392,7 +392,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -424,7 +424,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -460,7 +460,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -492,7 +492,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -524,7 +524,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -555,7 +555,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -586,7 +586,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -616,7 +616,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					foilmask={card.images.foilmask}
+					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}

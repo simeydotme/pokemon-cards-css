@@ -16,7 +16,7 @@
 */
 
 .card[data-rarity="rare rainbow alt"] .card__shine,
-.card[data-rarity="rare holo vmax"][data-gallery="true"] .card__shine {
+.card[data-rarity="rare holo vmax"][data-trainer-gallery="true"] .card__shine {
 
   --r-clr-1: hsl(0, 57%, 37%);
   --r-clr-2: hsl(40, 53%, 39%);
@@ -46,14 +46,14 @@
     );
 
   background-size: 200% 400%, var(--glittersize) var(--glittersize), 400% 400%;
-  background-position: 0% calc(var(--position-y) * 1), center center, calc( var(--position-x) * 1.5) calc( var(--position-y) * 1.5 );
+  background-position: 0% calc(var(--background-y) * 1), center center, calc( var(--background-x) * 1.5) calc( var(--background-y) * 1.5 );
   background-blend-mode: luminosity, overlay;
   filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.3)) contrast(3) saturate(1.8);
 
 }
 
 .card[data-rarity="rare rainbow alt"] .card__shine:after,
-.card[data-rarity="rare holo vmax"][data-gallery="true"] .card__shine:after {
+.card[data-rarity="rare holo vmax"][data-trainer-gallery="true"] .card__shine:after {
 
   content: "";
   mask-image: none !important;
@@ -68,7 +68,7 @@
     );
   background-blend-mode: overlay;
   background-size: var(--glittersize) var(--glittersize), 400% 400%;
-  background-position: center center, calc( var(--position-x) * -1.5) calc( var(--position-y) * -1.5 );
+  background-position: center center, calc( var(--background-x) * -1.5) calc( var(--background-y) * -1.5 );
   filter: brightness(calc((var(--pointer-from-center)*0.5) + 0.6)) contrast(3) saturate(1);
   mix-blend-mode: color-dodge;
 
@@ -77,7 +77,7 @@
 }
 
 .card[data-rarity="rare rainbow alt"] .card__shine:before,
-.card[data-rarity="rare holo vmax"][data-gallery="true"] .card__shine:before {
+.card[data-rarity="rare holo vmax"][data-trainer-gallery="true"] .card__shine:before {
   
   content: "";
 

@@ -87,8 +87,8 @@
   background-size: cover, 210% 210%, 210% 210%;
   background-position: 
     center, 
-    calc( ((var(--position-x) - 50%) * 1.5) + 50% ) calc( ((var(--position-y) - 50%) * 1.5) + 50% ), 
-    calc( ((var(--position-x) - 50%) * 1.5) + 50% ) calc( ((var(--position-y) - 50%) * 1.5) + 50% );
+    calc( ((var(--background-x) - 50%) * 1.5) + 50% ) calc( ((var(--background-y) - 50%) * 1.5) + 50% ), 
+    calc( ((var(--background-x) - 50%) * 1.5) + 50% ) calc( ((var(--background-y) - 50%) * 1.5) + 50% );
 
   background-blend-mode: exclusion, darken, color-dodge;
 
@@ -114,7 +114,7 @@
   );
 
   background-size: cover, 400% 100%;
-  background-position: center, calc( ((var(--position-x) - 50%) * -2.5) + 50% ) calc( ((var(--position-y) - 50%) * -2.5) + 50% );
+  background-position: center, calc( ((var(--background-x) - 50%) * -2.5) + 50% ) calc( ((var(--background-y) - 50%) * -2.5) + 50% );
   
   filter: brightness(.6) contrast(3) saturate(2);
   mix-blend-mode: color-dodge;

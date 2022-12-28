@@ -43,7 +43,7 @@
     400% 400%;
   
   background-position: 
-    calc( 50% + (50% - (var(--position-x))) * 3 ) calc( 50% + (50% - (var(--position-y))) * 3 ), 
+    calc( 50% + (50% - (var(--background-x))) * 3 ) calc( 50% + (50% - (var(--background-y))) * 3 ), 
     center center, 
     calc( 25% + (var(--pointer-x) / 2 ) ) calc( 25% + (var(--pointer-y) / 2 ) );
   
