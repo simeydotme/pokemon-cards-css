@@ -11,7 +11,7 @@
       "small": "https://images.pokemontcg.io/swsh4/170.png",
       "large": "https://images.pokemontcg.io/swsh4/170_hires.png",
       "foil": "/img/foils/swsh4/foils/170_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh4/masks/170_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh4/masks/170_foil_etched_sunpillar.png"
     }
   },
   {
@@ -65,7 +65,7 @@
       "small": "https://images.pokemontcg.io/swsh12/127.png",
       "large": "https://images.pokemontcg.io/swsh12/127_hires.png",
       "foil": "/img/foils/swsh12/foils/127_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh12/masks/127_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh12/masks/127_foil_holo_reverse.png"
     }
   },
   {
@@ -80,7 +80,7 @@
       "small": "https://images.pokemontcg.io/swsh12/85.png",
       "large": "https://images.pokemontcg.io/swsh12/85_hires.png",
       "foil": "/img/foils/swsh12/foils/085_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh12/masks/085_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh12/masks/085_foil_holo_reverse.png"
     }
   },
   {
@@ -95,7 +95,7 @@
       "small": "https://images.pokemontcg.io/swsh12/116.png",
       "large": "https://images.pokemontcg.io/swsh12/116_hires.png",
       "foil": "/img/foils/swsh12/foils/116_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh12/masks/116_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh12/masks/116_foil_holo_reverse.png"
     }
   },
   {
@@ -110,7 +110,7 @@
       "small": "https://images.pokemontcg.io/pgo/24.png",
       "large": "https://images.pokemontcg.io/pgo/24_hires.png",
       "foil": "/img/foils/pgo/foils/024_foil_holo_swholo.jpg",
-      "foilmask": "/img/foils/pgo/masks/024_foil_holo_swholo.png"
+      "mask": "/img/foils/pgo/masks/024_foil_holo_swholo.png"
     }
   },
   {
@@ -125,7 +125,7 @@
       "small": "https://images.pokemontcg.io/pgo/29.png",
       "large": "https://images.pokemontcg.io/pgo/29_hires.png",
       "foil": "/img/foils/pgo/foils/029_foil_holo_swholo.jpg",
-      "foilmask": "/img/foils/pgo/masks/029_foil_holo_swholo.png"
+      "mask": "/img/foils/pgo/masks/029_foil_holo_swholo.png"
     }
   },
   {
@@ -140,7 +140,7 @@
       "small": "https://images.pokemontcg.io/pgo/12.png",
       "large": "https://images.pokemontcg.io/pgo/12_hires.png",
       "foil": "/img/foils/pgo/foils/012_foil_holo_swholo.jpg",
-      "foilmask": "/img/foils/pgo/masks/012_foil_holo_swholo.png"
+      "mask": "/img/foils/pgo/masks/012_foil_holo_swholo.png"
     }
   },
   {
@@ -155,7 +155,7 @@
       "small": "https://images.pokemontcg.io/swsh1/85.png",
       "large": "https://images.pokemontcg.io/swsh1/85_hires.png",
       "foil": "/img/foils/swsh1/foils/085_foil_holo_swholo.jpg",
-      "foilmask": "/img/foils/swsh1/masks/085_foil_holo_swholo.png"
+      "mask": "/img/foils/swsh1/masks/085_foil_holo_swholo.png"
     }
   },
   {
@@ -169,7 +169,7 @@
       "small": "https://images.pokemontcg.io/swsh9/132.png",
       "large": "https://images.pokemontcg.io/swsh9/132_hires.png",
       "foil": "/img/foils/swsh9/foils/132_foil_holo_swholo.jpg",
-      "foilmask": "/img/foils/swsh9/masks/132_foil_holo_swholo.png"
+      "mask": "/img/foils/swsh9/masks/132_foil_holo_swholo.png"
     }
   },
   {
@@ -184,7 +184,7 @@
       "small": "https://images.pokemontcg.io/pgo/43.png",
       "large": "https://images.pokemontcg.io/pgo/43_hires.png",
       "foil": "/img/foils/pgo/foils/043_foil_holo_swholo.jpg",
-      "foilmask": "/img/foils/pgo/masks/043_foil_holo_swholo.png"
+      "mask": "/img/foils/pgo/masks/043_foil_holo_swholo.png"
     }
   },
   {
@@ -199,7 +199,7 @@
       "small": "https://images.pokemontcg.io/swshp/SWSH012.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH012_hires.png",
       "foil": "/img/foils/swshp/foils/012_foil_holo_cosmos.jpg",
-      "foilmask": "/img/foils/swshp/masks/012_foil_holo_cosmos.png"
+      "mask": "/img/foils/swshp/masks/012_foil_holo_cosmos.png"
     }
   },
   {
@@ -213,7 +213,7 @@
       "small": "https://images.pokemontcg.io/swsh45/60.png",
       "large": "https://images.pokemontcg.io/swsh45/60_hires.png",
       "foil": "/img/foils/sf/foils/060_foil_holo_swholo.jpg",
-      "foilmask": "/img/foils/sf/masks/060_foil_holo_swholo.png"
+      "mask": "/img/foils/sf/masks/060_foil_holo_swholo.png"
     }
   },
   {
@@ -228,7 +228,7 @@
       "small": "https://images.pokemontcg.io/swshp/SWSH127.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH127_hires.png",
       "foil": "/img/foils/swshp/foils/127_foil_holo_cosmos.jpg",
-      "foilmask": "/img/foils/swshp/masks/127_foil_holo_cosmos.png"
+      "mask": "/img/foils/swshp/masks/127_foil_holo_cosmos.png"
     }
   },
   {
@@ -243,7 +243,7 @@
       "small": "https://images.pokemontcg.io/pgo/11.png",
       "large": "https://images.pokemontcg.io/pgo/11_hires.png",
       "foil": "/img/foils/pgo/foils/011_foil_etched_radiantholo.jpg",
-      "foilmask": "/img/foils/pgo/masks/011_foil_etched_radiantholo.png"
+      "mask": "/img/foils/pgo/masks/011_foil_etched_radiantholo.png"
     }
   },
   {
@@ -258,7 +258,7 @@
       "small": "https://images.pokemontcg.io/swsh12/59.png",
       "large": "https://images.pokemontcg.io/swsh12/59_hires.png",
       "foil": "/img/foils/swsh12/foils/059_foil_etched_radiantholo.jpg",
-      "foilmask": "/img/foils/swsh12/masks/059_foil_etched_radiantholo.png"
+      "mask": "/img/foils/swsh12/masks/059_foil_etched_radiantholo.png"
     }
   },
   {
@@ -273,7 +273,7 @@
       "small": "https://images.pokemontcg.io/swsh12/120.png",
       "large": "https://images.pokemontcg.io/swsh12/120_hires.png",
       "foil": "/img/foils/swsh12/foils/120_foil_etched_radiantholo.jpg",
-      "foilmask": "/img/foils/swsh12/masks/120_foil_etched_radiantholo.png"
+      "mask": "/img/foils/swsh12/masks/120_foil_etched_radiantholo.png"
     }
   },
   {
@@ -288,7 +288,7 @@
       "small": "https://images.pokemontcg.io/swsh11tg/TG03.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG03_hires.png",
       "foil": "/img/foils/swsh11/foils/tg03_foil_holo_rainbow.jpg",
-      "foilmask": "/img/foils/swsh11/masks/tg03_foil_holo_rainbow.png"
+      "mask": "/img/foils/swsh11/masks/tg03_foil_holo_rainbow.png"
     }
   },
   {
@@ -303,7 +303,7 @@
       "small": "https://images.pokemontcg.io/swsh11tg/TG05.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG05_hires.png",
       "foil": "/img/foils/swsh11/foils/tg05_foil_holo_rainbow.jpg",
-      "foilmask": "/img/foils/swsh11/masks/tg05_foil_holo_rainbow.png"
+      "mask": "/img/foils/swsh11/masks/tg05_foil_holo_rainbow.png"
     }
   },
   {
@@ -318,7 +318,7 @@
       "small": "https://images.pokemontcg.io/swsh12tg/TG02.png",
       "large": "https://images.pokemontcg.io/swsh12tg/TG02_hires.png",
       "foil": "/img/foils/swsh12/foils/tg02_foil_holo_rainbow.jpg",
-      "foilmask": "/img/foils/swsh12/masks/tg02_foil_holo_rainbow.png"
+      "mask": "/img/foils/swsh12/masks/tg02_foil_holo_rainbow.png"
     }
   },
   {
@@ -333,7 +333,7 @@
       "small": "https://images.pokemontcg.io/swsh7/110.png",
       "large": "https://images.pokemontcg.io/swsh7/110_hires.png",
       "foil": "/img/foils/swsh7/foils/110_foil_holo_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh7/masks/110_foil_holo_sunpillar.png"
+      "mask": "/img/foils/swsh7/masks/110_foil_holo_sunpillar.png"
     }
   },
   {
@@ -348,7 +348,7 @@
       "small": "https://images.pokemontcg.io/swsh12/138.png",
       "large": "https://images.pokemontcg.io/swsh12/138_hires.png",
       "foil": "/img/foils/swsh12/foils/138_foil_holo_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh12/masks/138_foil_holo_sunpillar.png"
+      "mask": "/img/foils/swsh12/masks/138_foil_holo_sunpillar.png"
     }
   },
   {
@@ -363,7 +363,7 @@
       "small": "https://images.pokemontcg.io/pgo/49.png",
       "large": "https://images.pokemontcg.io/pgo/49_hires.png",
       "foil": "/img/foils/pgo/foils/049_foil_holo_sunpillar.jpg",
-      "foilmask": "/img/foils/pgo/masks/049_foil_holo_sunpillar.png"
+      "mask": "/img/foils/pgo/masks/049_foil_holo_sunpillar.png"
     }
   },
   {
@@ -378,7 +378,7 @@
       "small": "https://images.pokemontcg.io/swsh8/250.png",
       "large": "https://images.pokemontcg.io/swsh8/250_hires.png",
       "foil": "/img/foils/swsh8/foils/250_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh8/masks/250_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh8/masks/250_foil_etched_sunpillar.png"
     }
   },
   {
@@ -393,7 +393,7 @@
       "small": "https://images.pokemontcg.io/swsh3/183.png",
       "large": "https://images.pokemontcg.io/swsh3/183_hires.png",
       "foil": "/img/foils/swsh3/foils/183_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh3/masks/183_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh3/masks/183_foil_etched_sunpillar.png"
     }
   },
   {
@@ -408,7 +408,7 @@
       "small": "https://images.pokemontcg.io/swsh12/176.png",
       "large": "https://images.pokemontcg.io/swsh12/176_hires.png",
       "foil": "/img/foils/swsh12/foils/176_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh12/masks/176_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh12/masks/176_foil_etched_sunpillar.png"
     }
   },
   {
@@ -423,7 +423,7 @@
       "small": "https://images.pokemontcg.io/swshp/SWSH179.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH179_hires.png",
       "foil": "/img/foils/swshp/foils/179_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swshp/masks/179_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swshp/masks/179_foil_etched_sunpillar.png"
     }
   },
   {
@@ -438,7 +438,7 @@
       "small": "https://images.pokemontcg.io/swshp/SWSH181.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH181_hires.png",
       "foil": "/img/foils/swshp/foils/181_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swshp/masks/181_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swshp/masks/181_foil_etched_sunpillar.png"
     }
   },
   {
@@ -453,7 +453,7 @@
       "small": "https://images.pokemontcg.io/swshp/SWSH183.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH183_hires.png",
       "foil": "/img/foils/swshp/foils/183_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swshp/masks/183_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swshp/masks/183_foil_etched_sunpillar.png"
     }
   },
   {
@@ -468,7 +468,7 @@
       "small": "https://images.pokemontcg.io/swsh8/245.png",
       "large": "https://images.pokemontcg.io/swsh8/245_hires.png",
       "foil": "/img/foils/swsh8/foils/245_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh8/masks/245_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh8/masks/245_foil_etched_sunpillar.png"
     }
   },
   {
@@ -483,7 +483,7 @@
       "small": "https://images.pokemontcg.io/swsh11/186.png",
       "large": "https://images.pokemontcg.io/swsh11/186_hires.png",
       "foil": "/img/foils/swsh11/foils/186_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh11/masks/186_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh11/masks/186_foil_etched_sunpillar.png"
     }
   },
   {
@@ -498,7 +498,7 @@
       "small": "https://images.pokemontcg.io/swsh10/177.png",
       "large": "https://images.pokemontcg.io/swsh10/177_hires.png",
       "foil": "/img/foils/swsh10/foils/177_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh10/masks/177_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh10/masks/177_foil_etched_sunpillar.png"
     }
   },
   {
@@ -552,7 +552,7 @@
       "small": "https://images.pokemontcg.io/swsh7/29.png",
       "large": "https://images.pokemontcg.io/swsh7/29_hires.png",
       "foil": "/img/foils/swsh7/foils/029_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh7/masks/029_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh7/masks/029_foil_etched_sunpillar.png"
     }
   },
   {
@@ -567,7 +567,7 @@
       "small": "https://images.pokemontcg.io/swsh45/51.png",
       "large": "https://images.pokemontcg.io/swsh45/51_hires.png",
       "foil": "/img/foils/sf/foils/051_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/sf/masks/051_foil_etched_sunpillar.png"
+      "mask": "/img/foils/sf/masks/051_foil_etched_sunpillar.png"
     }
   },
   {
@@ -582,7 +582,7 @@
       "small": "https://images.pokemontcg.io/swsh9/29.png",
       "large": "https://images.pokemontcg.io/swsh9/29_hires.png",
       "foil": "/img/foils/swsh9/foils/029_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh9/masks/029_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh9/masks/029_foil_etched_sunpillar.png"
     }
   },
   {
@@ -597,7 +597,7 @@
       "small": "https://images.pokemontcg.io/swsh8/270.png",
       "large": "https://images.pokemontcg.io/swsh8/270_hires.png",
       "foil": "/img/foils/swsh8/foils/270_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh8/masks/270_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh8/masks/270_foil_etched_swsecret.png"
     }
   },
   {
@@ -612,7 +612,7 @@
       "small": "https://images.pokemontcg.io/swsh8/271.png",
       "large": "https://images.pokemontcg.io/swsh8/271_hires.png",
       "foil": "/img/foils/swsh8/foils/271_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh8/masks/271_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh8/masks/271_foil_etched_swsecret.png"
     }
   },
   {
@@ -627,7 +627,7 @@
       "small": "https://images.pokemontcg.io/swsh7/215.png",
       "large": "https://images.pokemontcg.io/swsh7/215_hires.png",
       "foil": "/img/foils/swsh7/foils/215_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh7/masks/215_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh7/masks/215_foil_etched_swsecret.png"
     }
   },
   {
@@ -642,7 +642,7 @@
       "small": "https://images.pokemontcg.io/pgo/31.png",
       "large": "https://images.pokemontcg.io/pgo/31_hires.png",
       "foil": "/img/foils/pgo/foils/031_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/pgo/masks/031_foil_etched_sunpillar.png"
+      "mask": "/img/foils/pgo/masks/031_foil_etched_sunpillar.png"
     }
   },
   {
@@ -657,7 +657,7 @@
       "small": "https://images.pokemontcg.io/swshp/SWSH214.png",
       "large": "https://images.pokemontcg.io/swshp/SWSH214_hires.png",
       "foil": "/img/foils/swshp/foils/214_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swshp/masks/214_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swshp/masks/214_foil_etched_sunpillar.png"
     }
   },
   {
@@ -672,7 +672,7 @@
       "small": "https://images.pokemontcg.io/swsh9/18.png",
       "large": "https://images.pokemontcg.io/swsh9/18_hires.png",
       "foil": "/img/foils/swsh9/foils/018_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh9/masks/018_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh9/masks/018_foil_etched_sunpillar.png"
     }
   },
   {
@@ -686,7 +686,7 @@
       "small": "https://images.pokemontcg.io/swsh6/196.png",
       "large": "https://images.pokemontcg.io/swsh6/196_hires.png",
       "foil": "/img/foils/swsh6/foils/196_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh6/masks/196_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh6/masks/196_foil_etched_sunpillar.png"
     }
   },
   {
@@ -700,7 +700,7 @@
       "small": "https://images.pokemontcg.io/swsh9/167.png",
       "large": "https://images.pokemontcg.io/swsh9/167_hires.png",
       "foil": "/img/foils/swsh9/foils/167_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh9/masks/167_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh9/masks/167_foil_etched_sunpillar.png"
     }
   },
   {
@@ -714,7 +714,7 @@
       "small": "https://images.pokemontcg.io/swsh1/200.png",
       "large": "https://images.pokemontcg.io/swsh1/200_hires.png",
       "foil": "/img/foils/swsh1/foils/200_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh1/masks/200_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh1/masks/200_foil_etched_sunpillar.png"
     }
   },
   {
@@ -728,7 +728,7 @@
       "small": "https://images.pokemontcg.io/swsh11tg/TG27.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG27_hires.png",
       "foil": "/img/foils/swsh11/foils/tg27_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh11/masks/tg27_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh11/masks/tg27_foil_etched_sunpillar.png"
     }
   },
   {
@@ -742,7 +742,7 @@
       "small": "https://images.pokemontcg.io/swsh12tg/TG26.png",
       "large": "https://images.pokemontcg.io/swsh12tg/TG26_hires.png",
       "foil": "/img/foils/swsh12/foils/tg26_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh12/masks/tg26_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh12/masks/tg26_foil_etched_sunpillar.png"
     }
   },
   {
@@ -756,7 +756,7 @@
       "small": "https://images.pokemontcg.io/swsh11tg/TG26.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG26_hires.png",
       "foil": "/img/foils/swsh11/foils/tg26_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh11/masks/tg26_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh11/masks/tg26_foil_etched_sunpillar.png"
     }
   },
   {
@@ -771,7 +771,7 @@
       "small": "https://images.pokemontcg.io/swsh4/188.png",
       "large": "https://images.pokemontcg.io/swsh4/188_hires.png",
       "foil": "/img/foils/swsh4/foils/188_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh4/masks/188_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh4/masks/188_foil_etched_swsecret.png"
     }
   },
   {
@@ -786,7 +786,7 @@
       "small": "https://images.pokemontcg.io/swsh12/197.png",
       "large": "https://images.pokemontcg.io/swsh12/197_hires.png",
       "foil": "/img/foils/swsh12/foils/197_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh12/masks/197_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh12/masks/197_foil_etched_swsecret.png"
     }
   },
   {
@@ -800,7 +800,7 @@
       "small": "https://images.pokemontcg.io/swsh10/204.png",
       "large": "https://images.pokemontcg.io/swsh10/204_hires.png",
       "foil": "/img/foils/swsh10/foils/204_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh10/masks/204_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh10/masks/204_foil_etched_swsecret.png"
     }
   },
   {
@@ -815,7 +815,7 @@
       "small": "https://images.pokemontcg.io/swsh8/268.png",
       "large": "https://images.pokemontcg.io/swsh8/268_hires.png",
       "foil": "/img/foils/swsh8/foils/268_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh8/masks/268_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh8/masks/268_foil_etched_swsecret.png"
     }
   },
   {
@@ -830,7 +830,7 @@
       "small": "https://images.pokemontcg.io/swsh9/175.png",
       "large": "https://images.pokemontcg.io/swsh9/175_hires.png",
       "foil": "/img/foils/swsh9/foils/175_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh9/masks/175_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh9/masks/175_foil_etched_swsecret.png"
     }
   },
   {
@@ -844,7 +844,7 @@
       "small": "https://images.pokemontcg.io/swsh12/205.png",
       "large": "https://images.pokemontcg.io/swsh12/205_hires.png",
       "foil": "/img/foils/swsh12/foils/205_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh12/masks/205_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh12/masks/205_foil_etched_swsecret.png"
     }
   },
   {
@@ -858,7 +858,7 @@
       "small": "https://images.pokemontcg.io/swsh2/209.png",
       "large": "https://images.pokemontcg.io/swsh2/209_hires.png",
       "foil": "/img/foils/swsh2/foils/209_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh2/masks/209_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh2/masks/209_foil_etched_swsecret.png"
     }
   },
   {
@@ -872,7 +872,7 @@
       "small": "https://images.pokemontcg.io/swsh9/186.png",
       "large": "https://images.pokemontcg.io/swsh9/186_hires.png",
       "foil": "/img/foils/swsh9/foils/186_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh9/masks/186_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh9/masks/186_foil_etched_swsecret.png"
     }
   },
   {
@@ -886,7 +886,7 @@
       "small": "https://images.pokemontcg.io/swsh10/213.png",
       "large": "https://images.pokemontcg.io/swsh10/213_hires.png",
       "foil": "/img/foils/swsh10/foils/213_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh10/masks/213_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh10/masks/213_foil_etched_swsecret.png"
     }
   },
   {
@@ -901,7 +901,7 @@
       "small": "https://images.pokemontcg.io/swsh8/280.png",
       "large": "https://images.pokemontcg.io/swsh8/280_hires.png",
       "foil": "/img/foils/swsh8/foils/280_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh8/masks/280_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh8/masks/280_foil_etched_swsecret.png"
     }
   },
   {
@@ -916,7 +916,7 @@
       "small": "https://images.pokemontcg.io/swsh9/184.png",
       "large": "https://images.pokemontcg.io/swsh9/184_hires.png",
       "foil": "/img/foils/swsh9/foils/184_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh9/masks/184_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh9/masks/184_foil_etched_swsecret.png"
     }
   },
   {
@@ -931,7 +931,7 @@
       "small": "https://images.pokemontcg.io/swsh11tg/TG30.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG30_hires.png",
       "foil": "/img/foils/swsh11/foils/tg30_foil_etched_swsecret.jpg",
-      "foilmask": "/img/foils/swsh11/masks/tg30_foil_etched_swsecret.png"
+      "mask": "/img/foils/swsh11/masks/tg30_foil_etched_swsecret.png"
     }
   },
   {
@@ -946,7 +946,7 @@
       "small": "https://images.pokemontcg.io/swsh9tg/TG16.png",
       "large": "https://images.pokemontcg.io/swsh9tg/TG16_hires.png",
       "foil": "/img/foils/swsh9/foils/tg16_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh9/masks/tg16_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh9/masks/tg16_foil_etched_sunpillar.png"
     }
   },
   {
@@ -961,7 +961,7 @@
       "small": "https://images.pokemontcg.io/swsh9tg/TG18.png",
       "large": "https://images.pokemontcg.io/swsh9tg/TG18_hires.png",
       "foil": "/img/foils/swsh9/foils/tg18_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh9/masks/tg18_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh9/masks/tg18_foil_etched_sunpillar.png"
     }
   },
   {
@@ -976,7 +976,7 @@
       "small": "https://images.pokemontcg.io/swsh11tg/TG16.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG16_hires.png",
       "foil": "/img/foils/swsh11/foils/tg16_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh11/masks/tg16_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh11/masks/tg16_foil_etched_sunpillar.png"
     }
   },
   {
@@ -991,7 +991,7 @@
       "small": "https://images.pokemontcg.io/swsh9tg/TG17.png",
       "large": "https://images.pokemontcg.io/swsh9tg/TG17_hires.png",
       "foil": "/img/foils/swsh9/foils/tg17_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh9/masks/tg17_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh9/masks/tg17_foil_etched_sunpillar.png"
     }
   },
   {
@@ -1006,7 +1006,7 @@
       "small": "https://images.pokemontcg.io/swsh9tg/TG19.png",
       "large": "https://images.pokemontcg.io/swsh9tg/TG19_hires.png",
       "foil": "/img/foils/swsh9/foils/tg19_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh9/masks/tg19_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh9/masks/tg19_foil_etched_sunpillar.png"
     }
   },
   {
@@ -1021,7 +1021,7 @@
       "small": "https://images.pokemontcg.io/swsh11tg/TG17.png",
       "large": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
       "foil": "/img/foils/swsh11/foils/tg17_foil_etched_sunpillar.jpg",
-      "foilmask": "/img/foils/swsh11/masks/tg17_foil_etched_sunpillar.png"
+      "mask": "/img/foils/swsh11/masks/tg17_foil_etched_sunpillar.png"
     }
   },
   {
@@ -1036,7 +1036,7 @@
       "small": "https://images.pokemontcg.io/swsh9/120.png",
       "large": "https://images.pokemontcg.io/swsh9/120_hires.png",
       "foil": "/img/foils/swsh9/foils/120_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh9/masks/120_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh9/masks/120_foil_holo_reverse.png"
     }
   },
   {
@@ -1051,7 +1051,7 @@
       "small": "https://images.pokemontcg.io/swsh12/49.png",
       "large": "https://images.pokemontcg.io/swsh12/49_hires.png",
       "foil": "/img/foils/swsh12/foils/049_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh12/masks/049_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh12/masks/049_foil_holo_reverse.png"
     }
   },
   {
@@ -1066,7 +1066,7 @@
       "small": "https://images.pokemontcg.io/swsh8/138.png",
       "large": "https://images.pokemontcg.io/swsh8/138_hires.png",
       "foil": "/img/foils/swsh8/foils/138_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh8/masks/138_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh8/masks/138_foil_holo_reverse.png"
     }
   },
   {
@@ -1080,7 +1080,7 @@
       "small": "https://images.pokemontcg.io/pgo/68.png",
       "large": "https://images.pokemontcg.io/pgo/68_hires.png",
       "foil": "/img/foils/pgo/foils/068_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/pgo/masks/068_foil_holo_reverse.png"
+      "mask": "/img/foils/pgo/masks/068_foil_holo_reverse.png"
     }
   },
   {
@@ -1094,7 +1094,7 @@
       "small": "https://images.pokemontcg.io/swsh1/173.png",
       "large": "https://images.pokemontcg.io/swsh1/173_hires.png",
       "foil": "/img/foils/swsh1/foils/173_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh1/masks/173_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh1/masks/173_foil_holo_reverse.png"
     }
   },
   {
@@ -1108,7 +1108,142 @@
       "small": "https://images.pokemontcg.io/swsh9/150.png",
       "large": "https://images.pokemontcg.io/swsh9/150_hires.png",
       "foil": "/img/foils/swsh9/foils/150_foil_holo_reverse.jpg",
-      "foilmask": "/img/foils/swsh9/masks/150_foil_holo_reverse.png"
+      "mask": "/img/foils/swsh9/masks/150_foil_holo_reverse.png"
+    }
+  },
+  {
+    "id": "swsh4-9",
+    "name": "Celebi",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Grass"],
+    "number": "9",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh4/9.png",
+      "large": "https://images.pokemontcg.io/swsh4/9_hires.png",
+      "foil": "/img/foils/swsh4/foils/009_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/swsh4/masks/009_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh4-50",
+    "name": "Raikou",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Lightning"],
+    "number": "50",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh4/50.png",
+      "large": "https://images.pokemontcg.io/swsh4/50_hires.png",
+      "foil": "/img/foils/swsh4/foils/050_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/swsh4/masks/050_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh4-82",
+    "name": "Zacian",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Psychic"],
+    "number": "82",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh4/82.png",
+      "large": "https://images.pokemontcg.io/swsh4/82_hires.png",
+      "foil": "/img/foils/swsh4/foils/082_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/swsh4/masks/082_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh4-102",
+    "name": "Zamazenta",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Fighting"],
+    "number": "102",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh4/102.png",
+      "large": "https://images.pokemontcg.io/swsh4/102_hires.png",
+      "foil": "/img/foils/swsh4/foils/102_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/swsh4/masks/102_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh4-119",
+    "name": "Jirachi",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Metal"],
+    "number": "119",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh4/119.png",
+      "large": "https://images.pokemontcg.io/swsh4/119_hires.png",
+      "foil": "/img/foils/swsh4/foils/119_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/swsh4/masks/119_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh4-138",
+    "name": "Rayquaza",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Colorless"],
+    "number": "138",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh4/138.png",
+      "large": "https://images.pokemontcg.io/swsh4/138_hires.png",
+      "foil": "/img/foils/swsh4/foils/138_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/swsh4/masks/138_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh45-17",
+    "name": "Reshiram",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Fire"],
+    "number": "17",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45/17.png",
+      "large": "https://images.pokemontcg.io/swsh45/17_hires.png",
+      "foil": "/img/foils/sf/foils/017_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/sf/masks/017_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh45-21",
+    "name": "Kyogre",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Water"],
+    "number": "21",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45/21.png",
+      "large": "https://images.pokemontcg.io/swsh45/21_hires.png",
+      "foil": "/img/foils/sf/foils/021_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/sf/masks/021_foil_etched_swsecret.png"
+    }
+  },
+  {
+    "id": "swsh45-46",
+    "name": "Yveltal",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Darkness"],
+    "number": "46",
+    "rarity": "Amazing Rare",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45/46.png",
+      "large": "https://images.pokemontcg.io/swsh45/46_hires.png",
+      "foil": "/img/foils/sf/foils/046_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/sf/masks/046_foil_etched_swsecret.png"
     }
   }
 ]

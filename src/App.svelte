@@ -3,7 +3,7 @@
 	import Card from "./lib/components/card.svelte";
   import { onMount } from "svelte";
 
-	let showcase, basics, reverse, holos, galaxies, radiant, basicGallery, 
+	let showcase, basics, reverse, holos, cosmos, amazings, radiant, basicGallery, 
 			vee, veeUltra, veeAlt, veeMax, veeMaxAlt, veeStar, 
 			trainerHolo, rainbow, gold, veeGallery;
 
@@ -25,7 +25,8 @@
 				basics = cards.slice(1, 4);
 				reverse = [...cards.slice(4, 7), ...cards.slice(70,76)];
 				holos = cards.slice(7, 13);
-				galaxies = cards.slice(13, 16);
+				cosmos = cards.slice(13, 16);
+				amazings = cards.slice(76, 85);
 				radiant = cards.slice(16, 19);
 				basicGallery = cards.slice(19, 22);
 				vee = cards.slice(22, 25);
@@ -86,7 +87,7 @@
 					name={showcase.name}
 					img={showcase.images.large}
 					foil={showcase.images.foil}
-					mask={showcase.images.foilmask}
+					mask={showcase.images.mask}
 					number={showcase.number}
 					types={showcase.types}
 					supertype={showcase.supertype}
@@ -129,8 +130,6 @@
 				<Card
 					name={card.name}
 					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.foilmask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -161,7 +160,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -193,7 +192,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -220,12 +219,41 @@
 		{#if isLoading}
 			loading...
 		{:else}
-			{#each galaxies as card, id}
+			{#each cosmos as card, id}
 				<Card
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
+					number={card.number}
+					types={card.types}
+					supertype={card.supertype}
+					subtypes={card.subtypes}
+					rarity={card.rarity}
+				/>
+			{/each}
+		{/if}
+	</CardList>
+
+	<h2 id="⚓-amazing">
+		<a href="#⚓-amazing">
+			Holofoil Amazing Rare
+		</a>
+	</h2>
+	<p>
+		-
+	</p>
+
+	<CardList>
+		{#if isLoading}
+			loading...
+		{:else}
+			{#each amazings as card, id}
+				<Card
+					name={card.name}
+					img={card.images.large}
+					foil={card.images.foil}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -257,7 +285,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -289,7 +317,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -324,7 +352,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -360,7 +388,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -392,7 +420,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -424,7 +452,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -460,7 +488,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -492,7 +520,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -524,7 +552,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -555,7 +583,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -586,7 +614,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
@@ -616,7 +644,7 @@
 					name={card.name}
 					img={card.images.large}
 					foil={card.images.foil}
-					mask={card.images.foilmask}
+					mask={card.images.mask}
 					number={card.number}
 					types={card.types}
 					supertype={card.supertype}
