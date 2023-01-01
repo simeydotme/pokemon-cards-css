@@ -1245,5 +1245,95 @@
       "foil": "/img/foils/sf/foils/046_foil_etched_swsecret.jpg",
       "mask": "/img/foils/sf/masks/046_foil_etched_swsecret.png"
     }
+  },
+  {
+    "id": "swsh45sv-SV093",
+    "name": "Minccino",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Colorless"],
+    "number": "SV093",
+    "rarity": "Rare Shiny",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45sv/SV093.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV093_hires.png",
+      "foil": "/img/foils/sf/foils/sv093_foil_etched_sunpillar.jpg",
+      "mask": "/img/foils/sf/masks/sv093_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh45sv-SV094",
+    "name": "Cinccino",
+    "supertype": "Pokémon",
+    "subtypes": ["Stage 1"],
+    "types": ["Colorless"],
+    "number": "SV094",
+    "rarity": "Rare Shiny",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45sv/SV094.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV094_hires.png",
+      "foil": "/img/foils/sf/foils/sv094_foil_etched_sunpillar.jpg",
+      "mask": "/img/foils/sf/masks/sv094_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh45sv-SV110",
+    "name": "Lapras V",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic", "V"],
+    "types": ["Water"],
+    "number": "SV110",
+    "rarity": "Rare Shiny V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45sv/SV110.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV110_hires.png",
+      "foil": "/img/foils/sf/foils/sv110_foil_etched_sunpillar.jpg",
+      "mask": "/img/foils/sf/masks/sv110_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh45sv-SV099",
+    "name": "Skwovet",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Colorless"],
+    "number": "SV099",
+    "rarity": "Rare Shiny",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45sv/SV099.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV099_hires.png",
+      "foil": "/img/foils/sf/foils/sv099_foil_etched_sunpillar.jpg",
+      "mask": "/img/foils/sf/masks/sv099_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh45sv-SV100",
+    "name": "Greedent",
+    "supertype": "Pokémon",
+    "subtypes": ["Stage 1"],
+    "types": ["Colorless"],
+    "number": "SV100",
+    "rarity": "Rare Shiny",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45sv/SV100.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV100_hires.png",
+      "foil": "/img/foils/sf/foils/sv100_foil_etched_sunpillar.jpg",
+      "mask": "/img/foils/sf/masks/sv100_foil_etched_sunpillar.png"
+    }
+  },
+  {
+    "id": "swsh45sv-SV107",
+    "name": "Charizard VMAX",
+    "supertype": "Pokémon",
+    "subtypes": ["VMAX"],
+    "types": ["Fire"],
+    "number": "SV107",
+    "rarity": "Rare Shiny VMAX",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45sv/SV107.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV107_hires.png",
+      "foil": "/img/foils/sf/foils/sv107_foil_etched_swsecret.jpg",
+      "mask": "/img/foils/sf/masks/sv107_foil_etched_swsecret.png"
+    }
   }
 ]

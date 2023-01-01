@@ -22,7 +22,7 @@
   --angle: -22deg;
   --imgsize: 300% 400%;
 
-  clip-path: inset(2.8% 4% round 2.55% / 1.5%);
+  clip-path: var(--clip-borders);
 
   background-image:
     repeating-linear-gradient( var(--angle),  

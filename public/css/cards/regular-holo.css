@@ -34,7 +34,7 @@
   --bar-color: hsla(0, 0%, 70%, 1);
   --bar-bg: hsla(0, 0%, 0%, 1);
 
-  clip-path: inset( 10% 8.5% 52.5% 8.5% );
+  clip-path: var(--clip);
 
   background-image: 
     repeating-linear-gradient( 110deg, 

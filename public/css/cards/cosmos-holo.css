@@ -28,7 +28,7 @@
 
   --space: 4%;
 
-  clip-path: inset( 10% 8.5% 52.5% 8.5% );
+  clip-path: var(--clip);
 
   background-image: 
     url("/img/cosmos-top-trans.png"), 

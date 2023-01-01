@@ -265,6 +265,7 @@ Shine & Glare Effects
 
   /* make sure the glare doesn't clip */
   transform: translateZ(1.41px);
+  overflow: hidden;
 
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
@@ -313,17 +314,17 @@ Shine & Glare Effects
 .card[data-rarity="rare holo"] .card__glare:after,
 .card[data-rarity="rare holo cosmos"] .card__glare:after,
 .card[data-rarity$="reverse holo"] .card__glare:after {
-  clip-path: inset( 10% 8.5% 52.5% 8.5% );
+  clip-path: var(--clip);
 }
 
 .card[data-rarity="rare holo"][data-subtypes^="stage"] .card__glare:after,
 .card[data-rarity="rare holo cosmos"][data-subtypes^="stage"] .card__glare:after,
 .card[data-rarity$="reverse holo"][data-subtypes^="stage"] .card__glare:after {
-  clip-path: polygon(91.78% 10%, 57% 10%, 53.92% 12.00%, 17% 12%, 16% 14%, 12% 16%, 8.5% 16%, 7.93% 47.41%, 92.07% 47.41%);
+  clip-path: var(--clip-stage);
 }
 
 .card[data-rarity="rare holo"][data-supertype="trainer"] .card__glare:after,
 .card[data-rarity="rare holo cosmos"][data-supertype="trainer"] .card__glare:after,
 .card[data-rarity$="reverse holo"][data-supertype="trainer"] .card__glare:after {
-  clip-path: inset(14.5% 7.9% 48.2% 8.7%);
+  clip-path: var(--clip-trainer);
 }

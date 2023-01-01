@@ -117,6 +117,7 @@
 
 		background-size: 100% 120%;
 		background-position: center center;
-    opacity: calc(var(--card-opacity)*.8);
+    opacity: calc(var(--card-opacity) * .75 );
+    mix-blend-mode: multiply;
 
 }

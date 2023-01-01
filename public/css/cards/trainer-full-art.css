@@ -19,7 +19,7 @@
 
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine {
   
-  filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.8) saturate(1.5);
+  filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.75) saturate(1.2);
 
 }
 
@@ -46,7 +46,8 @@
 
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__glare {
 
-  opacity: calc( var(--card-opacity) * 0.75 );
+  opacity: calc( var(--card-opacity) * .75 );
+  mix-blend-mode: multiply;
 
 }
 	

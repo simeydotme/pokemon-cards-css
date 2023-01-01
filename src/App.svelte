@@ -5,7 +5,7 @@
 
 	let showcase, basics, reverse, holos, cosmos, amazings, radiant, basicGallery, 
 			vee, veeUltra, veeAlt, veeMax, veeMaxAlt, veeStar, 
-			trainerHolo, rainbow, gold, veeGallery;
+			trainerHolo, rainbow, gold, veeGallery, shinyVault;
 
 	let isLoading = true;
 
@@ -39,6 +39,7 @@
 				rainbow = cards.slice(52, 58);
 				gold = cards.slice(58, 64);
 				veeGallery = cards.slice(64, 70);
+				shinyVault = cards.slice(85,91);
 				isLoading = false;
 			});
 	};
@@ -640,6 +641,35 @@
 			loading...
 		{:else}
 			{#each veeGallery as card, id}
+				<Card
+					name={card.name}
+					img={card.images.large}
+					foil={card.images.foil}
+					mask={card.images.mask}
+					number={card.number}
+					types={card.types}
+					supertype={card.supertype}
+					subtypes={card.subtypes}
+					rarity={card.rarity}
+				/>
+			{/each}
+		{/if}
+	</CardList>
+
+	<h2 id="⚓-shiny-vault">
+		<a href="#⚓-shiny-vault">
+			Shiny Vault <sup>(Basic / Stage 1 / V / VMax)</sup>
+		</a>
+	</h2>
+	<p>
+		-
+	</p>
+
+	<CardList>
+		{#if isLoading}
+			loading...
+		{:else}
+			{#each shinyVault as card, id}
 				<Card
 					name={card.name}
 					img={card.images.large}
