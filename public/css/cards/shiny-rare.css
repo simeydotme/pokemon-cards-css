@@ -14,16 +14,7 @@
 
   SHINE LAYERS
 
-*/  
-
-
-.card[data-rarity="rare shiny"] .card__shine,
-.card[data-rarity="rare shiny v"] .card__shine {
-
-  mix-blend-mode: hard-light;
-  opacity: calc( var(--card-opacity) * 0.3 );
-  
-}
+*/
 
 .card[data-rarity="rare shiny"] .card__shine,
 .card[data-rarity="rare shiny"] .card__shine:after,
@@ -47,12 +38,12 @@
     ),
     repeating-linear-gradient( 
       var(--angle), 
-      #0e152e 0%, 
+      #666 0%, 
       hsl(180, 10%, 60%) 3.8%, 
       hsl(180, 29%, 66%) 4.5%, 
       hsl(180, 10%, 60%) 5.2%, 
-      #0e152e 10% , 
-      #0e152e 12% 
+      #666 10% , 
+      #666 12% 
       ),
     radial-gradient(
       farthest-corner circle 
@@ -71,7 +62,7 @@
   background-blend-mode: soft-light, hue, hard-light;
   background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
 
-  filter: brightness(calc((var(--pointer-from-center)*0.4) + .5)) contrast(2) saturate(1.5);
+  filter: brightness(calc((var(--pointer-from-center)*0.4) + 0.5)) contrast(1.2) saturate(1.5);
 
 }
 
@@ -109,44 +100,18 @@
 
 */
 
-
-.card[data-rarity="rare shiny"] .card__glare {
-  clip-path: var(--clip-invert);
-}
-.card[data-rarity="rare shiny"][data-subtypes^="stage"] .card__glare {
-  clip-path: var(--clip-stage-invert);
-}
-
 .card[data-rarity="rare shiny"] .card__glare,
 .card[data-rarity="rare shiny v"] .card__glare {
 
-  filter: brightness(0.8) contrast(1.5);
-  mix-blend-mode: overlay;
   background-image: 
-    radial-gradient( 
-      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-      hsla(0, 0%, 100%, 0.8) 10%, 
-      hsla(0, 0%, 100%, 0.65) 20%, 
-      hsla(0, 0%, 50%, 0.25) 120% 
-    );
+  radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 100%) 0%, hsla(210, 3%, 40%, 0.45) 45%, hsla(240, 43%, 14%, 0.8) 120% );
 
-}
-
-.card[data-rarity="rare shiny"] .card__glare:after,
-.card[data-rarity="rare shiny v"] .card__glare:after {
-
-  content: "";
-
-  background-image: 
-    radial-gradient( 
-      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-      hsl(180, 100%, 95%) 5%, 
-      hsla(0, 0%, 39%, 0.25) 55%, 
-      hsla(0, 0%, 0%, 0.36) 110% 
-    );
-
-  mix-blend-mode: overlay;
-  filter: brightness(.6) contrast(3);
+  background-size: 100% 120%;
+  background-position: center center;
+  
+  opacity: calc(var(--card-opacity) * 1 );
+  filter: contrast(1.2);
+  mix-blend-mode: multiply;
 
 }
 
