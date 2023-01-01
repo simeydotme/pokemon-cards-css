@@ -1292,33 +1292,33 @@
     }
   },
   {
-    "id": "swsh45sv-SV099",
-    "name": "Skwovet",
+    "id": "swsh45sv-SV023",
+    "name": "Galarian Darumaka",
     "supertype": "Pokémon",
     "subtypes": ["Basic"],
-    "types": ["Colorless"],
-    "number": "SV099",
+    "types": ["Water"],
+    "number": "SV023",
     "rarity": "Rare Shiny",
     "images": {
-      "small": "https://images.pokemontcg.io/swsh45sv/SV099.png",
-      "large": "https://images.pokemontcg.io/swsh45sv/SV099_hires.png",
-      "foil": "/img/foils/sf/foils/sv099_foil_etched_sunpillar.jpg",
-      "mask": "/img/foils/sf/masks/sv099_foil_etched_sunpillar.png"
+      "small": "https://images.pokemontcg.io/swsh45sv/SV023.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV023_hires.png",
+      "foil": "/img/foils/sf/foils/sv023_foil_etched_sunpillar.jpg",
+      "mask": "/img/foils/sf/masks/sv023_foil_etched_sunpillar.png"
     }
   },
   {
-    "id": "swsh45sv-SV100",
-    "name": "Greedent",
+    "id": "swsh45sv-SV076",
+    "name": "Koffing",
     "supertype": "Pokémon",
-    "subtypes": ["Stage 1"],
-    "types": ["Colorless"],
-    "number": "SV100",
+    "subtypes": ["Basic"],
+    "types": ["Darkness"],
+    "number": "SV076",
     "rarity": "Rare Shiny",
     "images": {
-      "small": "https://images.pokemontcg.io/swsh45sv/SV100.png",
-      "large": "https://images.pokemontcg.io/swsh45sv/SV100_hires.png",
-      "foil": "/img/foils/sf/foils/sv100_foil_etched_sunpillar.jpg",
-      "mask": "/img/foils/sf/masks/sv100_foil_etched_sunpillar.png"
+      "small": "https://images.pokemontcg.io/swsh45sv/SV076.png",
+      "large": "https://images.pokemontcg.io/swsh45sv/SV076_hires.png",
+      "foil": "/img/foils/sf/foils/sv076_foil_etched_sunpillar.jpg",
+      "mask": "/img/foils/sf/masks/sv076_foil_etched_sunpillar.png"
     }
   },
   {
