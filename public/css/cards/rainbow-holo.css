@@ -9,6 +9,13 @@
 
 
 
+.card:not(.masked)[data-rarity="rare rainbow"] .card__shine {
+
+  --foil: url("/img/illusion-mask.png"); 
+  --imgsize: 33%;
+
+}
+
 /*
 
   SHINE LAYERS
@@ -80,7 +87,7 @@
   content: "";
 
   background-image: var(--foil);
-  background-size: cover;
+  background-size: var(--imgsize);
   background-position: center center;
   filter: brightness(1.75) contrast(1);
 

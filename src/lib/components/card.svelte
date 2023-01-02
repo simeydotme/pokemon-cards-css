@@ -14,6 +14,7 @@
   // data / pokemon props
   export let name = "";
   export let number = "";
+  export let series = "";
   export let types = "";
   export let subtypes = "basic";
   export let supertype = "pokémon";
@@ -384,6 +385,7 @@
   class:loading
   class:masked={!!mask}
   data-number={number}
+  data-series={series}
   data-subtypes={subtypes}
   data-supertype={supertype}
   data-rarity={rarity}

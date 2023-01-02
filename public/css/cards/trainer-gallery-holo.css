@@ -83,11 +83,14 @@
 
 .card[data-rarity="trainer gallery rare holo"] .card__glare {
 
-  background-image: radial-gradient(
-    farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    hsla(0, 0%, 100%, 0.8) 10%,
-    hsla(0, 0%, 100%, 0.6) 35%,
-    hsla(180, 11%, 35%, 0.9) 60%
-  );
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsla(0, 0%, 100%, 1) 10%, 
+      hsla(0, 0%, 100%, 0.6) 35%, 
+      hsla(180, 11%, 35%, 1) 60% 
+    );
+
+  mix-blend-mode: soft-light;
 
 }

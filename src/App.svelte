@@ -1,6 +1,7 @@
 <script>
 	import CardList from "./cards.svelte";
-	import Card from "./lib/components/card.svelte";
+	// import Card from "./lib/components/card.svelte";
+	import Card from "./lib/components/card-proxy.svelte";
   import { onMount } from "svelte";
 
 	let showcase, basics, reverse, holos, cosmos, amazings, radiant, basicGallery, 
@@ -86,9 +87,7 @@
 			{:else}
 				<Card
 					name={showcase.name}
-					img={showcase.images.large}
-					foil={showcase.images.foil}
-					mask={showcase.images.mask}
+					set={showcase.set}
 					number={showcase.number}
 					types={showcase.types}
 					supertype={showcase.supertype}
@@ -135,7 +134,6 @@
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
-					rarity={card.rarity}
 				/>
 			{/each}
 		{/if}
@@ -159,10 +157,8 @@
 			{#each reverse as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -191,10 +187,8 @@
 			{#each holos as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -223,10 +217,8 @@
 			{#each cosmos as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -252,10 +244,8 @@
 			{#each amazings as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -284,10 +274,8 @@
 			{#each radiant as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -316,10 +304,8 @@
 			{#each basicGallery as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -351,10 +337,8 @@
 			{#each vee as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -387,10 +371,8 @@
 			{#each veeUltra as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -419,10 +401,8 @@
 			{#each veeAlt as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -451,10 +431,8 @@
 			{#each veeMax as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -487,10 +465,8 @@
 			{#each veeMaxAlt as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -519,10 +495,8 @@
 			{#each veeStar as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -551,10 +525,8 @@
 			{#each trainerHolo as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -582,10 +554,8 @@
 			{#each rainbow as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -613,10 +583,8 @@
 			{#each gold as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -643,10 +611,8 @@
 			{#each veeGallery as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
@@ -672,10 +638,8 @@
 			{#each shinyVault as card, id}
 				<Card
 					name={card.name}
-					img={card.images.large}
-					foil={card.images.foil}
-					mask={card.images.mask}
 					number={card.number}
+					set={card.set}
 					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}

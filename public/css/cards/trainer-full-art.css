@@ -11,6 +11,18 @@
 
 
 
+.card:not(.masked)[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine,
+.card:not(.masked)[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after {
+
+  --mask: none;
+  --foil: url("/img/trainerbg.png"); 
+  --imgsize: 20%;
+  
+  background-blend-mode: color-burn, hue, hard-light;
+  filter: brightness(calc((var(--pointer-from-center)*0.05) + .6)) contrast(1.5) saturate(1.2);
+
+}
+
 /*
 
   SHINE LAYERS
@@ -26,6 +38,12 @@
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after {
 
   filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(2) saturate(.5);
+
+}
+
+.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:before {
+
+  opacity: 0.5;
 
 }
 

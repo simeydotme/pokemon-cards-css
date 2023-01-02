@@ -88,8 +88,25 @@
 }
 
 
+.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:before,
+.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:before {
 
+  content: "";
+  mask-image: none;
+  
+  background-image: 
+    radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(0, 0%, 100%) 0%, 
+      hsla(0, 0%, 0%, 0) 80% 
+    );
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: screen;
+  
+  opacity: 0.7;
+  z-index: 1;
 
+}
 
 
 
@@ -120,4 +137,52 @@
     opacity: calc(var(--card-opacity) * .75 );
     mix-blend-mode: multiply;
 
+}
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine,
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
+.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine,
+.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:after {
+
+  --mask: url("/img/illusion-mask.png");
+  --foil: url("/img/illusion.png"); 
+  --imgsize: 33%;
+
+  mask-image: var(--mask);
+  mask-size: var(--imgsize);
+  mask-position: center center;
+
+  background-blend-mode: exclusion, hue, hard-light;
+  filter: brightness(calc((var(--pointer-from-center)*.3) + .5)) contrast(2) saturate(1.5);
+
+}
+
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:before,
+.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:before {
+  content: none;
+  display: none;
+}
+
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
+.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:after {
+  filter: brightness(calc((var(--pointer-from-center)*.5) + .8)) contrast(1.6) saturate(1.4);
+}
+
+.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__glare,
+.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__glare {
+  mix-blend-mode: overlay;
 }

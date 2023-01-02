@@ -111,9 +111,9 @@
 .card[data-rarity="rare shiny v"] .card__glare {
 
   background-image: 
-  radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 100%) 0%, hsla(210, 3%, 40%, 0.45) 45%, hsla(240, 43%, 14%, 0.8) 120% );
+  radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 100%) 0%, hsla(210, 3%, 50%, 0.4) 45%, hsla(240, 43%, 14%, 0.65) 130% );
 
-  background-size: 100% 120%;
+  background-size: cover;
   background-position: center center;
   
   opacity: calc(var(--card-opacity) * 1 );
@@ -147,6 +147,9 @@
 
 .card[data-rarity="rare shiny vmax"] .card__shine {
 
+  --imgsize: cover;
+  --angle: -30deg;
+
   --r-clr-1: hsl(0, 57%, 37%);
   --r-clr-2: hsl(40, 53%, 39%);
   --r-clr-3: hsl(90, 60%, 35%);
@@ -158,7 +161,7 @@
   background-image:
     var(--glitter),
     var(--glitter),
-    linear-gradient( -30deg, 
+    linear-gradient( var(--angle), 
       var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
       var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
       var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
@@ -192,7 +195,7 @@
       hsl(0, 0%, 0%) 120% 
     );
 
-  background-size: cover, cover;
+  background-size: var(--imgsize), cover;
   background-position: center center, center center;
   background-blend-mode: color-burn;
 
@@ -222,7 +225,7 @@
   background-size: 400% 800%;
   background-position: calc( 50% + (50% - (var(--background-x))) * 3 ) calc( 50% + (50% - (var(--background-y))) * 3 );
   filter: brightness(calc( 0.75 - ( var(--pointer-from-center) * 0.5 ))) contrast(1) saturate(1);
-  mix-blend-mode: saturation;
+  mix-blend-mode: hue;
 
 }
 
@@ -270,5 +273,34 @@
   filter: brightness(1) contrast(1.25);
   mix-blend-mode: overlay;
 	opacity: 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked).card[data-rarity*="rare shiny"] .card__shine,
+.card:not(.masked).card[data-rarity*="rare shiny"] .card__shine:after {
+
+  --mask: url("/img/illusion-mask.png");
+  --foil: url("/img/illusion.png"); 
+  --imgsize: 44%;
+
+  mask-image: var(--mask);
+  mask-size: var(--imgsize);
+  mask-position: center center;
 
 }

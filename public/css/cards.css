@@ -7,7 +7,7 @@
 
   --space: 5%;
   --angle: 133deg;
-  --imgsize: 500px;
+  --imgsize: cover;
 
   --red: #f80e35;
   --yellow: #eedf10;

@@ -15,6 +15,10 @@
 
 */
 
+.card[data-rarity="amazing rare"]:not(.masked) .card__shine {
+  clip-path: var(--clip);
+}
+
 .card[data-rarity="amazing rare"] .card__shine {
 
   background-image:
@@ -93,7 +97,7 @@
 
 */
 
-.card[data-rarity="amazing rare"] .card__glare {
+.card.masked[data-rarity="amazing rare"] .card__glare {
 	
 	background-image: 
 		radial-gradient( 
@@ -108,7 +112,7 @@
 
 }
 
-.card[data-rarity="amazing rare"] .card__glare:after {
+.card.masked[data-rarity="amazing rare"] .card__glare:after {
 	
   content: "";
   mask-image: var(--mask);

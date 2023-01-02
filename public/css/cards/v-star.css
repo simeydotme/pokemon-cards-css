@@ -23,7 +23,14 @@
 
 }
 
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine,
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine:after {
 
+  --mask: none;
+  --foil: url("/img/ancient.png"); 
+  --imgsize: 18% 15%;
+
+}
 
 /*
 
@@ -36,7 +43,7 @@
 
   --space: 5%;
   --angle: 133deg;
-  --imgsize: 18% 15%;
+  --imgsize: cover;
 
   background-image:
     var(--foil),
@@ -67,7 +74,7 @@
     );
 
   background-blend-mode: soft-light, hue, hard-light;
-  background-size: cover, 200% 700%, 300% 100%, 200% 100%;
+  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
   background-position: center center, 0% var(--background-y), var(--background-x) var(--background-y), var(--background-x) var(--background-y);
   
   filter: brightness(calc((var(--pointer-from-center) * .75) + .25)) contrast(2) saturate(1.25);
@@ -78,7 +85,7 @@
 
   content: "";
 
-  background-size: cover, 200% 400%, 195% 100%, 200% 100%;
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
   background-position: center center, 0% var(--background-y), calc( var(--background-x) * -1) calc( var(--background-y) * -1), var(--background-x) var(--background-y);
 
   filter: brightness(calc((var(--pointer-from-center) * .75) + .5)) contrast(1.5) saturate(1.5);

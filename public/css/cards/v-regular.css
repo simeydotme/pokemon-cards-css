@@ -16,6 +16,12 @@
 
 */
 
+.card[data-rarity="rare holo v"]:not(.masked) .card__shine {
+
+  filter: brightness(.7) contrast(2) saturate(.5);
+
+}
+
 .card[data-rarity="rare holo v"] .card__shine,
 .card[data-rarity="rare holo v"] .card__shine:after {
 

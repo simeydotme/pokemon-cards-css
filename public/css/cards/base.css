@@ -18,7 +18,7 @@
 
 :root {
   
-  --card-aspect: 0.716;
+  --card-aspect: 0.7165;
   --card-radius: 4.55% / 3.5%;
   --card-edge: hsl(47, 100%, 78%);
   --card-back: hsl(205, 100%, 25%);
@@ -119,9 +119,6 @@
 }
 
 .card__rotator {
-  /* box-shadow: 0px 10px 20px -5px black; */
-  transition: box-shadow 0.4s ease, outline 0.2s ease;
-
   transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
   transform-style: preserve-3d;
   -webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
@@ -138,9 +135,11 @@ button.card__rotator {
   -webkit-appearance: none;
 }
 
-.card__rotator,
-.card.active .card__rotator:focus {
+.card__rotator .card__front,
+.card.active .card__rotator:focus .card__front {
+  transition: box-shadow 0.4s ease, outline 0.2s ease;
   box-shadow: 
+    0 0 3px -1px transparent, 
     0 0 2px 1px transparent, 
     0 0 5px 0px transparent,
     0px 10px 20px -5px black, 
@@ -148,14 +147,15 @@ button.card__rotator {
     0 0 20px 0px transparent;
 }
 
-.card.active .card__rotator,
-.card__rotator:focus  {
+.card.active .card__rotator .card__front,
+.card__rotator:focus .card__front {
   box-shadow: 
-    0 0 2px 1px var(--card-edge), 
-    0 0 8px 1px var(--card-glow),
-    0px 10px 20px -5px black, 
-    0 0 40px -20px var(--card-glow), 
-    0 0 60px -35px var(--card-glow);
+  0 0 3px -1px white, 
+  0 0 3px 1px var(--card-edge), 
+  0 0 12px 2px var(--card-glow), 
+  0px 10px 20px -5px black, 
+  0 0 40px -30px var(--card-glow), 
+  0 0 50px -20px var(--card-glow)
 }
 
 .card__rotator * {
@@ -293,21 +293,6 @@ Shine & Glare Effects
   /** masking image for cards which are masked **/
   mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
   mask-size: cover;
-
-}
-
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine,
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:before,
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after {
-
-  /* Default Mask Effect for cards without set */
-  --mask: url("/img/illusion-mask.png");
-  --foil: url("/img/illusion.png"); 
-  --imgsize: 50%;
-
-  mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
-  mask-size: 50%;
-  mask-position: center center;
 
 }
 
