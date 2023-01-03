@@ -185,6 +185,7 @@
   
   content: "";
   mask-image: none !important;
+  -webkit-mask-image: none !important;
 
   background-image:
     var(--foil),
@@ -209,6 +210,7 @@
 
   content: "";
   mask-image: none !important;
+  -webkit-mask-image: none !important;
 
   background-image: 
     repeating-linear-gradient( 
@@ -259,7 +261,9 @@
 	
   content: "";
   mask-image: var(--mask), var(--mask), var(--mask);
+  -webkit-mask-image: var(--mask), var(--mask), var(--mask);
   mask-size: cover;
+	-webkit-mask-size: cover;
 
 	background-image: 
 		radial-gradient( 
@@ -300,7 +304,9 @@
   --imgsize: 44%;
 
   mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
   mask-size: var(--imgsize);
-  mask-position: center center;
+	-webkit-mask-size: var(--imgsize);
+  
 
 }

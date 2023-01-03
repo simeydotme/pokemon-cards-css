@@ -55,19 +55,19 @@
 }
 .card:not( .interactive ):hover {
   
-  --pointer-x: 25%!important;
-  --pointer-y: 10%!important;
-  --card-scale: 1.1!important;
-  --card-opacity: 1!important;
-  --translate-x: 0px!important;
-  --translate-y: -10px!important;
-  --rotate-x: 7deg!important;
-  --rotate-y: -19deg!important;
-  --background-x: 44%!important;
-  --background-y: 36%!important;
-  --pointer-from-center: .9!important;
-  --pointer-from-top: .11!important;
-  --pointer-from-left: .25!important;
+  --pointer-x: 25% !important;
+  --pointer-y: 10% !important;
+  --card-scale: 1.1 !important;
+  --card-opacity: 1 !important;
+  --translate-x: 0px !important;
+  --translate-y: -10px !important;
+  --rotate-x: 7deg !important;
+  --rotate-y: -19deg !important;
+  --background-x: 44% !important;
+  --background-y: 36% !important;
+  --pointer-from-center: .9 !important;
+  --pointer-from-top: .11 !important;
+  --pointer-from-left: .25 !important;
   
 }
 
@@ -103,7 +103,7 @@
 .card__rotator {
   display: grid;
   perspective: 600px;
-  will-change: transform, box-shadow, opacity;
+  will-change: transform, box-shadow;
 
   transform-origin: center;
   -webkit-transform-origin: center;
@@ -137,7 +137,7 @@ button.card__rotator {
 
 .card__rotator .card__front,
 .card.active .card__rotator:focus .card__front {
-  transition: box-shadow 0.4s ease, outline 0.2s ease;
+  transition: box-shadow 0.4s ease, outline 0.2s ease, opacity .33s ease-out;
   box-shadow: 
     0 0 3px -1px transparent, 
     0 0 2px 1px transparent, 
@@ -292,7 +292,11 @@ Shine & Glare Effects
 
   /** masking image for cards which are masked **/
   mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
+  -webkit-mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
   mask-size: cover;
+	-webkit-mask-size: cover;
+  mask-position: center center;
+  -webkit-mask-position: center center;
 
 }
 

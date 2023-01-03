@@ -93,6 +93,7 @@
 
   content: "";
   mask-image: none;
+  -webkit-mask-image: none;
   
   background-image: 
     radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), 
@@ -129,7 +130,7 @@
       var(--pointer-x) var(--pointer-y), 
       hsl(0, 0%, 100%) 0%, 
       hsla(210, 3%, 54%, 0.4) 45%, 
-      hsla(240, 43%, 14%, 0.8) 140% 
+      hsla(240, 43%, 40%, 0.8) 120% 
     );
 
 		background-size: 100% 120%;
@@ -163,8 +164,9 @@
   --imgsize: 33%;
 
   mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
   mask-size: var(--imgsize);
-  mask-position: center center;
+	-webkit-mask-size: var(--imgsize);
 
   background-blend-mode: exclusion, hue, hard-light;
   filter: brightness(calc((var(--pointer-from-center)*.3) + .5)) contrast(2) saturate(1.5);

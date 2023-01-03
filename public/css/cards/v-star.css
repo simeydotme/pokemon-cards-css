@@ -21,6 +21,18 @@
     var(--mask), 
     var(--mask);
 
+  -webkit-mask-image:  
+    var(--mask), 
+    var(--mask), 
+    radial-gradient(
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 100%, 0) 0%, 
+      hsla(0, 0%, 100%, .5) 120%
+    ), 
+    var(--mask), 
+    var(--mask);
+
 }
 
 .card:not(.masked)[data-rarity="rare holo vstar"] .card__shine,
