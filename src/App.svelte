@@ -13,7 +13,7 @@
 	const getCards = async () => {
 		let promiseArray = [];
 
-		let cardFetch = await fetch("/data.json");
+		let cardFetch = await fetch("/data/cards.json");
 		let cards = await cardFetch.json();
 		return cards;
 	};
@@ -86,6 +86,7 @@
 				loading...
 			{:else}
 				<Card
+					id={showcase.id}
 					name={showcase.name}
 					set={showcase.set}
 					number={showcase.number}
@@ -128,6 +129,7 @@
 		{:else}
 			{#each basics as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					img={card.images.large}
 					number={card.number}
@@ -156,6 +158,7 @@
 		{:else}
 			{#each reverse as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -163,6 +166,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					isReverse
 				/>
 			{/each}
 		{/if}
@@ -186,6 +190,7 @@
 		{:else}
 			{#each holos as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -216,6 +221,7 @@
 		{:else}
 			{#each cosmos as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -243,6 +249,7 @@
 		{:else}
 			{#each amazings as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -273,6 +280,7 @@
 		{:else}
 			{#each radiant as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -303,6 +311,7 @@
 		{:else}
 			{#each basicGallery as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -336,6 +345,7 @@
 		{:else}
 			{#each vee as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -370,6 +380,7 @@
 		{:else}
 			{#each veeUltra as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -400,6 +411,7 @@
 		{:else}
 			{#each veeAlt as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -430,6 +442,7 @@
 		{:else}
 			{#each veeMax as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -448,7 +461,7 @@
 		</a>
 	</h2>
 	<p>
-		There's some VMax cards which show a <mark>full, or alternate artwork</mark>. These are
+		There's some VMax cards that show a <mark>full, or alternate artwork</mark>. These are
 		<mark>classed as "rainbow rare"</mark>
 		and have a similar effect to the rainbow cards. It's a really
 		<mark>vibrant and glittery overlay</mark>.
@@ -464,6 +477,7 @@
 		{:else}
 			{#each veeMaxAlt as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -494,6 +508,7 @@
 		{:else}
 			{#each veeStar as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -524,6 +539,7 @@
 		{:else}
 			{#each trainerHolo as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -553,6 +569,7 @@
 		{:else}
 			{#each rainbow as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -582,6 +599,7 @@
 		{:else}
 			{#each gold as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -610,6 +628,7 @@
 		{:else}
 			{#each veeGallery as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}
@@ -637,6 +656,7 @@
 		{:else}
 			{#each shinyVault as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					number={card.number}
 					set={card.set}

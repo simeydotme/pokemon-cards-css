@@ -1,13 +1,9 @@
 <script>
+  import altArts from "../../../public/data/alternate-arts.json";
 	import Card from "./card.svelte";
 
-  // image props
-  export let img = undefined;
-  export let back = undefined;
-  export let foil = undefined;
-  export let mask = undefined;
-
   // data / pokemon props
+  export let id = undefined;
   export let name = undefined;
   export let number = undefined;
   export let set = undefined;
@@ -15,12 +11,27 @@
   export let subtypes = undefined;
   export let supertype = undefined;
   export let rarity = undefined;
+  export let isReverse = false;
+
+  // image props
+  export let img = undefined;
+  export let back = undefined;
+  export let foil = undefined;
+  export let mask = undefined;
 
   // context/environment props
   export let showcase = false;
 
   const isDefined = (v) => {
     return typeof v !== "undefined" && v !== null;
+  }
+
+  const isShiny = isDefined(number) && number.toLowerCase().startsWith( "sv" );
+  const isGallery = isDefined(number) && number.toLowerCase().startsWith( "tg" );
+  const isAlternate = isDefined(id) && altArts.includes( id ) && !isShiny && !isGallery;
+
+  if ( isReverse ) {
+    rarity = rarity + " Reverse Holo";
   }
 
   const cardImage = () => {
@@ -67,23 +78,8 @@
       style = "radiantholo";
     }
 
-    if ( fRarity.includes( "rare holo" ) && fNumber.startsWith( "tg" ) ) {
-      etch = "holo";
-      style = "rainbow";
-    }
-
-    if ( fRarity.includes( "rare shiny" ) && fNumber.startsWith( "sv" ) ) {
-      etch = "etched";
-      style = "sunpillar";
-    }
-
     if ( fRarity === "rare holo v" ) {
       etch = "holo";
-      style = "sunpillar";
-    }
-
-    if ( fRarity.includes( "rare holo v" ) && fNumber.startsWith( "tg" ) ) {
-      etch = "etched";
       style = "sunpillar";
     }
     
@@ -96,19 +92,52 @@
       etch = "etched";
       style = "swsecret";
     }
-    
-    if ( fRarity === "rare shiny v" || (fRarity === "rare holo v" && fNumber.startsWith( "sv" )) ) {
+
+    if ( isShiny ) {
+
       etch = "etched";
       style = "sunpillar";
-      rarity = "Rare Shiny V";
-      console.log(`/img/foils/${ fset }/${ type }/${ fNumber }_foil_${ etch }_${ style }.${ ext }`)
+
+      if ( fRarity === "rare shiny v" || (fRarity === "rare holo v" && fNumber.startsWith( "sv" )) ) {
+        rarity = "Rare Shiny V";
+      }
+
+      if ( fRarity === "rare shiny vmax" || (fRarity === "rare holo vmax" && fNumber.startsWith( "sv" )) ) {
+        style = "swsecret";
+        rarity = "Rare Shiny VMAX";
+      }
+
     }
-    
-    if ( fRarity === "rare shiny vmax" || (fRarity === "rare holo vmax" && fNumber.startsWith( "sv" )) ) {
+
+    if ( isGallery ) {
+
+      etch = "holo";
+      style = "rainbow";
+
+      if ( fRarity.includes( "rare holo v" ) || fRarity.includes( "rare ultra" ) ) {
+
+        etch = "etched";
+        style = "sunpillar";
+
+      }
+
+    }
+
+    if ( isAlternate ) {
+
       etch = "etched";
-      style = "swsecret";
-      rarity = "Rare Shiny VMAX";
-      console.log(`/img/foils/${ fset }/${ type }/${ fNumber }_foil_${ etch }_${ style }.${ ext }`)
+
+      if ( subtypes.includes( "VMAX" ) ) {
+
+        style = "swsecret";
+        rarity = "Rare Rainbow Alt";
+
+      } else {
+
+        style = "sunpillar";
+
+      }
+
     }
 
     return `/img/foils/${ fset }/${ type }/${ fNumber }_foil_${ etch }_${ style }.${ ext }`;

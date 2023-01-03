@@ -5,12 +5,6 @@
   import { orientation, resetBaseOrientation } from "../stores/orientation.js";
   import { clamp, round } from "../helpers/Math.js";
 
-  // image props
-  export let img = "";
-  export let back = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
-  export let foil = "";
-  export let mask = "";
-
   // data / pokemon props
   export let name = "";
   export let number = "";
@@ -19,6 +13,12 @@
   export let subtypes = "basic";
   export let supertype = "pokémon";
   export let rarity = "common";
+
+  // image props
+  export let img = "";
+  export let back = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
+  export let foil = "";
+  export let mask = "";
 
   // context/environment props
   export let showcase = false;
