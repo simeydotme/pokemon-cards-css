@@ -65,7 +65,7 @@
     "subtypes": ["Basic"],
     "types": ["Metal"],
     "number": "127",
-    "rarity": "Common Reverse Holo",
+    "rarity": "Common",
     "images": {
       "small": "https://images.pokemontcg.io/swsh12/127.png",
       "large": "https://images.pokemontcg.io/swsh12/127_hires.png",
@@ -81,7 +81,7 @@
     "subtypes": ["Basic"],
     "types": ["Psychic"],
     "number": "85",
-    "rarity": "Uncommon Reverse Holo",
+    "rarity": "Uncommon",
     "images": {
       "small": "https://images.pokemontcg.io/swsh12/85.png",
       "large": "https://images.pokemontcg.io/swsh12/85_hires.png",
@@ -97,7 +97,7 @@
     "subtypes": ["Basic"],
     "types": ["Darkness"],
     "number": "116",
-    "rarity": "Uncommon Reverse Holo",
+    "rarity": "Uncommon",
     "images": {
       "small": "https://images.pokemontcg.io/swsh12/116.png",
       "large": "https://images.pokemontcg.io/swsh12/116_hires.png",
@@ -633,7 +633,7 @@
     "subtypes": ["VMAX"],
     "types": ["Psychic"],
     "number": "270",
-    "rarity": "Rare Rainbow Alt",
+    "rarity": "Rare Rainbow",
     "images": {
       "small": "https://images.pokemontcg.io/swsh8/270.png",
       "large": "https://images.pokemontcg.io/swsh8/270_hires.png",
@@ -649,7 +649,7 @@
     "subtypes": ["VMAX", "Single Strike"],
     "types": ["Darkness"],
     "number": "271",
-    "rarity": "Rare Rainbow Alt",
+    "rarity": "Rare Rainbow",
     "images": {
       "small": "https://images.pokemontcg.io/swsh8/271.png",
       "large": "https://images.pokemontcg.io/swsh8/271_hires.png",
@@ -665,7 +665,7 @@
     "subtypes": ["VMAX", "Single Strike"],
     "types": ["Darkness"],
     "number": "215",
-    "rarity": "Rare Rainbow Alt",
+    "rarity": "Rare Rainbow",
     "images": {
       "small": "https://images.pokemontcg.io/swsh7/215.png",
       "large": "https://images.pokemontcg.io/swsh7/215_hires.png",
@@ -1102,7 +1102,7 @@
     "subtypes": ["Basic"],
     "types": ["Colorless"],
     "number": "120",
-    "rarity": "Common Reverse Holo",
+    "rarity": "Common",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9/120.png",
       "large": "https://images.pokemontcg.io/swsh9/120_hires.png",
@@ -1118,7 +1118,7 @@
     "subtypes": ["Basic"],
     "types": ["Lightning"],
     "number": "49",
-    "rarity": "Common Reverse Holo",
+    "rarity": "Common",
     "images": {
       "small": "https://images.pokemontcg.io/swsh12/49.png",
       "large": "https://images.pokemontcg.io/swsh12/49_hires.png",
@@ -1134,7 +1134,7 @@
     "subtypes": ["Basic"],
     "types": ["Fighting"],
     "number": "138",
-    "rarity": "Common Reverse Holo",
+    "rarity": "Common",
     "images": {
       "small": "https://images.pokemontcg.io/swsh8/138.png",
       "large": "https://images.pokemontcg.io/swsh8/138_hires.png",
@@ -1149,7 +1149,7 @@
     "supertype": "Trainer",
     "subtypes": ["Stadium"],
     "number": "68",
-    "rarity": "Uncommon Reverse Holo",
+    "rarity": "Uncommon",
     "images": {
       "small": "https://images.pokemontcg.io/pgo/68.png",
       "large": "https://images.pokemontcg.io/pgo/68_hires.png",
@@ -1164,7 +1164,7 @@
     "supertype": "Trainer",
     "subtypes": ["Supporter"],
     "number": "173",
-    "rarity": "Uncommon Reverse Holo",
+    "rarity": "Uncommon",
     "images": {
       "small": "https://images.pokemontcg.io/swsh1/173.png",
       "large": "https://images.pokemontcg.io/swsh1/173_hires.png",
@@ -1179,7 +1179,7 @@
     "supertype": "Trainer",
     "subtypes": ["Item"],
     "number": "150",
-    "rarity": "Uncommon Reverse Holo",
+    "rarity": "Uncommon",
     "images": {
       "small": "https://images.pokemontcg.io/swsh9/150.png",
       "large": "https://images.pokemontcg.io/swsh9/150_hires.png",
@@ -1371,7 +1371,7 @@
     "subtypes": ["Basic", "V"],
     "types": ["Water"],
     "number": "SV110",
-    "rarity": "Rare Shiny V",
+    "rarity": "Rare Holo V",
     "images": {
       "small": "https://images.pokemontcg.io/swsh45sv/SV110.png",
       "large": "https://images.pokemontcg.io/swsh45sv/SV110_hires.png",
@@ -1419,7 +1419,7 @@
     "subtypes": ["VMAX"],
     "types": ["Fire"],
     "number": "SV107",
-    "rarity": "Rare Shiny VMAX",
+    "rarity": "Rare Holo VMAX",
     "images": {
       "small": "https://images.pokemontcg.io/swsh45sv/SV107.png",
       "large": "https://images.pokemontcg.io/swsh45sv/SV107_hires.png",
