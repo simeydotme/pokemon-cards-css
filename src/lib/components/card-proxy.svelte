@@ -22,19 +22,20 @@
   // context/environment props
   export let showcase = false;
 
-  const isDefined = (v) => {
-    return typeof v !== "undefined" && v !== null;
-  }
-
+  const server = "https://poke-holo.b-cdn.net";
   const isShiny = isDefined(number) && number.toLowerCase().startsWith( "sv" );
   const isGallery = isDefined(number) && number.toLowerCase().startsWith( "tg" );
   const isAlternate = isDefined(id) && altArts.includes( id ) && !isShiny && !isGallery;
-
+  
   if ( isReverse ) {
     rarity = rarity + " Reverse Holo";
   }
+  
+  function isDefined (v) {
+    return typeof v !== "undefined" && v !== null;
+  }
 
-  const cardImage = () => {
+  function cardImage () {
     if ( isDefined( img ) ) {
       return img;
     }
@@ -44,11 +45,11 @@
     return "";
   }
   
-  const foilMaskImage = ( prop, type = "masks" ) => {
+  function foilMaskImage ( prop, type = "masks" ) {
 
     let etch = "holo";
     let style = "reverse";
-    let ext = type === "masks" ? "png" : "jpg";
+    let ext = "webp";
 
     if ( isDefined( prop ) ) {
       if ( prop === false ) {
@@ -63,7 +64,7 @@
 
     const fRarity = rarity.toLowerCase();
     const fNumber = number.toString().toLowerCase().replace( "swsh", "" ).padStart( 3, "0" );
-    const fset = set.toString().toLowerCase().replace( "tg", "" ).replace( "sv", "" );
+    const fSet = set.toString().toLowerCase().replace( "tg", "" ).replace( "sv", "" );
 
     if ( fRarity === "rare holo" ) {
       style = "swholo";
@@ -121,6 +122,13 @@
 
       }
 
+      if ( fRarity === "rare secret" ) {
+
+        etch = "etched";
+        style = "swsecret";
+
+      }
+
     }
 
     if ( isAlternate ) {
@@ -140,14 +148,15 @@
 
     }
 
-    return `/img/foils/${ fset }/${ type }/${ fNumber }_foil_${ etch }_${ style }.${ ext }`;
+    return `${ server }/foils/${ fSet }/${ type }/upscaled/${ fNumber }_foil_${ etch }_${ style }_2x.${ ext }`;
+
   }
 
-  const foilImage = () => {
+  function foilImage () {
     return foilMaskImage( foil, "foils" );
   }
 
-  const maskImage = () => {
+  function maskImage () {
     return foilMaskImage( mask, "masks" );
   }
 
