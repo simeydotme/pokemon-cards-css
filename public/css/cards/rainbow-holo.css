@@ -54,7 +54,7 @@
     center center, 
     calc( 25% + (var(--pointer-x) / 2 ) ) calc( 25% + (var(--pointer-y) / 2 ) );
   
-  filter: brightness(calc((var(--pointer-from-center)*0.25) + 0.5))  contrast(2) saturate(0.75);
+  filter: brightness(calc((var(--pointer-from-center)*0.25) + 0.6))  contrast(2.2) saturate(0.75);
 
 }
 
@@ -90,7 +90,7 @@
   background-image: var(--foil);
   background-size: var(--imgsize);
   background-position: center center;
-  filter: brightness(1.75) contrast(1);
+  filter: brightness(2.5) contrast(1);
 
   opacity: calc((var(--pointer-from-center) + 0.4 ) * 0.6 );
   background-blend-mode: difference;
@@ -112,15 +112,15 @@
 .card[data-rarity="rare rainbow"] .card__glare {
 	
 	background-image: 
-		radial-gradient( 
-			farthest-corner circle at 
-			var(--pointer-x) var(--pointer-y), 
-			hsla(187, 100%, 95%, 0.75) 0%, 
-			hsla(323, 9%, 35%, 0.5) 45%, 
-			hsl(197, 26%, 5%) 120% 
-		);
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(0,0%,80%), 
+      hsla(187, 10%, 85%, 0.25) 30%, 
+      hsl(197, 6%, 25%) 120% 
+    );
 
 	filter: brightness(.9) contrast(1.75);
-	opacity: calc( var(--card-opacity) * 0.75 );
+	opacity: calc( var(--pointer-from-center) * 0.9 );
+  mix-blend-mode: hard-light;
 
 }

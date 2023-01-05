@@ -15,30 +15,26 @@
   SHINE LAYERS
 
 */
+.card {
+  --foil-brightness: 0.55;
+}
 
 .card[data-rarity$="reverse holo"] .card__shine {
   
-  background-image: 
-    radial-gradient( 
-      circle at var(--pointer-x) var(--pointer-y), 
-      #fff 5%, 
-      #000 40%, 
-      #fff 120% 
-      ), 
-      var(--foil);
-      
-  background-blend-mode: difference;
-  background-size: 250% 250% , cover;
-  background-position: center center, center center;
-  
-  filter: brightness(.65) contrast(1.25);
+
+  background-image: radial-gradient( circle at var(--pointer-x) var(--pointer-y), #fff 5%, #000 50%, #fff 80% ), linear-gradient( -45deg, #000 15%, #fff, #000 85% ), var(--foil);
+  background-blend-mode: soft-light, difference;
+  background-size: 120% 120%, 200% 200%, cover;
+  background-position: center center, calc( (100% * var(--pointer-from-left))) calc( (100% * var(--pointer-from-top))) , center center;
+  filter: brightness(var(--foil-brightness)) contrast(1.5) saturate(1);
   mix-blend-mode: color-dodge;
   opacity: calc( (1.5 * var(--card-opacity)) - var(--pointer-from-center));
   
 }
 
-
-
+.card.lightning   { --foil-brightness: 0.7; }
+.card.darkness    { --foil-brightness: 0.8; }
+.card.metal       { --foil-brightness: 0.6; }
 
 
 
@@ -54,7 +50,7 @@
 
 */
 	
-.card__glare.reverse.holo {
+.card[data-rarity$="reverse holo"] .card__glare {
 
   opacity: var(--card-opacity);
   
@@ -66,11 +62,11 @@
       hsla(0, 0%, 0%, 0.75) 90%
     );
 
-  filter: brightness(.55) contrast(1.33);
+  filter: brightness(.7) contrast(1.5);
 
 }
 
-.card__glare.reverse.holo:after {
+.card[data-rarity$="reverse holo"] .card__glare:after {
 
   content: "";
   opacity: var(--card-opacity);
@@ -86,3 +82,9 @@
   filter: brightness(1) contrast(1.5);
 
 }
+
+
+
+/* background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsla(0, 0%, 100%, 0.51) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(222.9, 57.4%, 12%, 0.93) 90% );
+opacity: .45;
+filter: contrast(1.2) brightness(1); */
