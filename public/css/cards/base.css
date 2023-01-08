@@ -291,8 +291,8 @@ Shine & Glare Effects
 .card.masked .card__shine:after {
 
   /** masking image for cards which are masked **/
-  mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
-  -webkit-mask-image: var(--mask), var(--mask), var(--mask), var(--mask), var(--mask);
+  mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
   mask-size: cover;
 	-webkit-mask-size: cover;
   mask-position: center center;
