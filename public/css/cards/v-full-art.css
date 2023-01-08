@@ -188,3 +188,62 @@
 .card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__glare {
   mix-blend-mode: overlay;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare ultra"][data-number="176"] .card__shine {
+  
+  filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.75) saturate(1.25);
+
+}
+
+.card[data-rarity="rare ultra"][data-number="176"] .card__shine:after {
+
+  filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(2) saturate(1.3);
+  opacity: 0.9;
+
+}
+
+.card[data-rarity="rare ultra"][data-number="176"] .card__shine:before {
+
+  opacity: 0.5;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+.card[data-rarity="rare ultra"][data-number="176"] .card__glare {
+
+  opacity: calc( var(--card-opacity) * .75 );
+  mix-blend-mode: multiply;
+
+}

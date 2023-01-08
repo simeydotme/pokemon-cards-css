@@ -260,8 +260,8 @@
 .card[data-rarity="rare shiny vmax"] .card__glare:after {
 	
   content: "";
-  mask-image: var(--mask), var(--mask), var(--mask);
-  -webkit-mask-image: var(--mask), var(--mask), var(--mask);
+  mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
   mask-size: cover;
 	-webkit-mask-size: cover;
 

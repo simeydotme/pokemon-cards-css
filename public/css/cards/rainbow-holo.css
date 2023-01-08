@@ -45,12 +45,12 @@
   background-blend-mode: luminosity, soft-light;
 
   background-size: 
-    200% 150%, 
+    200% 200%, 
     var(--glittersize) var(--glittersize), 
     400% 400%;
   
   background-position: 
-    calc( 50% + (50% - (var(--background-x))) * 3 ) calc( 50% + (50% - (var(--background-y))) * 3 ), 
+    calc( 25% + (50% * var(--pointer-from-left) )) calc( 25% + (50% * var(--pointer-from-top) )), 
     center center, 
     calc( 25% + (var(--pointer-x) / 2 ) ) calc( 25% + (var(--pointer-y) / 2 ) );
   

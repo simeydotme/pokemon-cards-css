@@ -133,8 +133,8 @@
     var(--glitter), 
     radial-gradient( 
       farthest-corner ellipse at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
-      hsla(0, 0%, 39%, 0.8) 10%, 
-      hsla(0, 0%, 20%, 0.34) 20%, 
+      hsla(0, 0%, 58%, 0.8) 10%, 
+      hsla(0, 0%, 20%, 0.9) 20%, 
       hsla(0, 0%, 20%, 0.5) 50% 
     );
 
@@ -160,12 +160,16 @@
 */
 		
 	.card[data-rarity="radiant rare"] .card__glare {
-		background-image: 
-			radial-gradient( 
-				farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-				hsla(0, 0%, 100%, 0.6) 10%, 
-				hsla(0, 0%, 100%, 0.3) 30%, 
-				hsl(0, 0%, 0%) 120% 
-			);
+		
+    background-image: 
+      radial-gradient( 
+        farthest-corner circle at var(--pointer-x) var(--pointer-y),
+        hsla(0, 0%, 100%, 0.33) 0%, 
+        hsl(0, 0%, 25%) 110% 
+      );
+    
+    filter: brightness(1) contrast(1.5);
+    mix-blend-mode: hard-light;
+
 	}
 
