@@ -1,128 +1,243 @@
 
 
-outputDirectory=$1 
-jsonFile=$2
+FOLDER=$1 
+REMOTE_JSON=$2
 
 _extract() {
   echo ${1} | base64 --decode | jq -r ${2};
 }
-# fetch JSON file
-echo "📃 Fetching JSON ~ ${jsonFile}..."
 
-# JSON=$( curl $jsonFile );     # 🌐 remote JSON file
-# JSON=$( cat $jsonFile );      # 💻 local JSON file
-FOLDER="${outputDirectory}";  # local folder
+create_directories() {
+    
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+  echo "╿  ↯  📂 Create directories for images...  "  
+  echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
 
-# make folders for images to go in, if needed
-mkdir -p "$FOLDER/foils/upscaled";
-mkdir -p "$FOLDER/masks/upscaled";
-echo "📂 Create directories for images...";
+  mkdir -p "$FOLDER/foils/upscaled";
+  mkdir -p "$FOLDER/masks/upscaled";
 
-CURL_BATCH="";
-LOOP_COUNT=0;
+}
 
-# for row in $( jq -r '.[] | @base64'); do
+fetch_json() {
+    
+  if [[ -n $REMOTE_JSON ]]; then
 
-#   FOIL_TYPE=$( _extract ${row} '._foil_mask' );
-#   FOIL_EFFECT=$( _extract ${row} '._foil_effect' );
+    echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    echo "╿  ↯  📃 Fetching JSON ┃ $REMOTE_JSON  "  
+    echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
 
-#   # only continue if there's a foil image (some are null)
-#   if [[ $FOIL_TYPE != 'None' ]]; then
+    JSON=$( curl $REMOTE_JSON );     # 🌐 remote JSON file
+    # JSON=$( cat $REMOTE_JSON );      # 💻 local JSON file
 
-#     # get the foil image value
-#     FOIL_IMG=$( _extract ${row} '._foil_img' );
+  else
 
-#     # get name/path parts
-#     EXT="${FOIL_IMG##*.}";
-#     SERIES=$( _extract ${row} '._ptcgo_set' );
-#     NUMBER=$( _extract ${row} '.collector_number.numerator' );
-#     NUMBER="${NUMBER/'SWSH'/}"
-#     SUFFIX="_${FOIL_TYPE,,}_${FOIL_EFFECT,,}";
-#     SUFFIX="${SUFFIX/'reverse_flatsilver'/'holo_reverse'}"
+    echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    echo "╿  ↯  ⛔ No JSON Provided, not fetching"  
+    echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
 
-#     # create new name/output
-#     NAME="${NUMBER,,}_foil$SUFFIX.$EXT";
-#     OUTPUT="${FOLDER}/masks/${NAME}";
+  fi
 
-#     # download the source image
-#     echo "🔻 Downloading ${FOIL_IMG##*/} -> ${NAME}..."
-#     # curl -sN $FOIL_IMG -o $OUTPUT     # curl 1-by-1, not good.
-#     CURL_BATCH="${CURL_BATCH}\\nurl=\"${FOIL_IMG}\"\\noutput=\"${OUTPUT}\"\\n";
+}
 
-#   fi
+download_images() {
+    
+  if [[ -n $JSON ]]; then
 
-# done < <( echo $JSON )
+    local CURL_BATCH="";
+    local LOOP_COUNT=0;
+      
+    for row in $( jq -r '.[] | @base64'); do
 
-echo "";
-# echo -e "$CURL_BATCH" | curl --parallel --parallel-immediate --parallel-max 20 --config -;
-echo "";
+      local FOIL_TYPE=$( _extract ${row} '._foil_mask' );
+      local FOIL_EFFECT=$( _extract ${row} '._foil_effect' );
 
-echo "✅ Finish downloading"
-echo "";
+      # only continue if there's a foil image (some are null)
+      if [[ $FOIL_TYPE != 'None' ]]; then
+
+        # get the foil image value
+        local FOIL_IMG=$( _extract ${row} '._foil_img' );
+
+        # get name/path parts
+        local EXT="${FOIL_IMG##*.}";
+        local SERIES=$( _extract ${row} '._ptcgo_set' );
+        local NUMBER=$( _extract ${row} '.collector_number.numerator' );
+        local NUMBER="${NUMBER/'SWSH'/}"
+        local SUFFIX="_${FOIL_TYPE,,}_${FOIL_EFFECT,,}";
+        local SUFFIX="${SUFFIX/'reverse_flatsilver'/'holo_reverse'}"
+
+        # create new name/output
+        local NAME="${NUMBER,,}_foil$SUFFIX.$EXT";
+        local OUTPUT="${FOLDER}/masks/${NAME}";
+
+        echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+        echo "╿  ↯  🔻 Downloading ${FOIL_IMG##*/} -> ${NAME}..."
+        echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
+        
+        # download the source image
+        CURL_BATCH="${CURL_BATCH}\\nurl=\"${FOIL_IMG}\"\\noutput=\"${OUTPUT}\"\\n";
+
+      fi
+
+    done < <( echo $JSON )
+
+    echo "";
+    echo -e "$CURL_BATCH" | curl --parallel --parallel-immediate --parallel-max 20 --config -;
+    echo "";
+
+    echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    echo "╿  ↯  ✅ Finished Downloading from ${$JSON}  "  
+    echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
+
+  else
+
+    echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    echo "╿  ↯  ⛔ No JSON Provided, not downloading images"  
+    echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
+
+  fi
+
+
+}
+
 
 # ======================================================================
 
 
-for file in ${FOLDER}/masks/*.png; do
+upscale() {
 
-  # get filename for the image
-  FILENAME=$( echo "${file##*/}" | cut -f 1 -d '.' );
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+  echo "╿  ⇑  🔼 Upscaling / Converting ${FOLDER}  "  
+  echo "├┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
+  echo "│ ";
 
-  echo "";
-  echo "🔁 Upscaling & Converting ${file##*/}..."
-  echo "";
+  for file in ${FOLDER}/masks/*.png; do
 
-  # output for 2x masks
-  UPSCALE_MASK2="${FOLDER}/masks/upscaled/${FILENAME}_2x.png";
-  # output for 4x masks
-  UPSCALE_MASK4="${FOLDER}/masks/upscaled/${FILENAME}_4x.png";
+    # get filename for the image
+    local FILENAME=$( echo "${file##*/}" | cut -f 1 -d '.' );
+    local SUFFIX="up"
 
-  echo "  🔼 Upscaling Image with realesrgan.py @ 4️⃣";
-  python3 ~/Real-ESRGAN/inference_realesrgan.py -i ${file} --suffix 4x -o ${FOLDER}/masks/upscaled/
+    # echo "┝ 🔼 Upscaling & Converting ${file##*/}..."
 
-  echo "  🔼 ◼ Creating Mask image @ 4️⃣";
-  convert ${UPSCALE_MASK4} -modulate 100x0 -brightness-contrast 50x60 "${UPSCALE_MASK4}";
+    # params for conversions
+    local mask_alpha="-alpha set -background none -channel A -evaluate multiply 8 +channel"
+    local mask_brightness=""
+    local desaturate="-modulate 100x0"
+    local downsize="-colorspace LAB -filter Lanczos2 -distort resize 50% -colorspace sRGB"
+    local remove_alpha="-background black -alpha remove -alpha off"
+    local foil_brightness="-channel RGB -brightness-contrast 63x73"
 
-  echo "  🔼 ◼ Creating Mask image @ 2️⃣";
-  convert ${UPSCALE_MASK4} -modulate 100x0 -colorspace LAB -filter Lanczos2 -distort resize 50% -colorspace sRGB "${UPSCALE_MASK2}";
+    if [[ $FILENAME =~ .*etched.* ]]; then
+      # only need to boost brightness on etched cards
+      mask_brightness="-channel RGB -brightness-contrast 32x52"
+    fi
 
+    # output for 4x masks
+    local UPSCALED="${FOLDER}/masks/upscaled/${FILENAME}_${SUFFIX}.png";
+    # output for 2x masks
+    local UPSCALE_MASK2="${FOLDER}/masks/upscaled/${FILENAME}_2x.png";
+    # output for 4x masks
+    local UPSCALE_MASK4="${FOLDER}/masks/upscaled/${FILENAME}_4x.png";
+
+    # echo "│  🟣 🔼 4️⃣   Upscaling Mask Image with realesrgan.py";
+    python3 ~/Real-ESRGAN/inference_realesrgan.py -i ${file} --suffix ${SUFFIX} -o ${FOLDER}/masks/upscaled/
+
+    # echo "│  🔵 🔼 4️⃣   Simplifying Mask image";
+    convert ${UPSCALED} ${mask_alpha} ${mask_brightness} "${UPSCALE_MASK4}";
+
+    # echo "│  🔵 🔽 2️⃣   Downsampling Mask image";
+    convert ${UPSCALE_MASK4} ${desaturate} ${downsize} "${UPSCALE_MASK2}";
+
+    # ======================================================================
+
+    # output for 1x foils
+    local OUTPUT_FOIL1="${FOLDER}/foils/${FILENAME}.png";
+    # output for 2x foils
+    local OUTPUT_FOIL2="${FOLDER}/foils/upscaled/${FILENAME}_2x.png";
+    # output for 4x foils
+    local OUTPUT_FOIL4="${FOLDER}/foils/upscaled/${FILENAME}_4x.png";
+
+    # echo "│  ⚫ 1️⃣   Creating Greyscale image";
+    convert ${file} ${desaturate} ${remove_alpha} ${foil_brightness} "${OUTPUT_FOIL1}";
+
+    # echo "│  ⚫ 2️⃣   Creating Greyscale image";
+    convert ${UPSCALED} ${desaturate} ${remove_alpha} ${foil_brightness} ${downsize} "${OUTPUT_FOIL2}";
+
+    # echo "│  ⚫ 4️⃣   Creating Greyscale image";
+    convert ${UPSCALED} ${desaturate} ${remove_alpha} ${foil_brightness} "${OUTPUT_FOIL4}";
+
+    # if [[ ! $FILENAME =~ .*reverse.* ]]; then
+      # create upscaled, and desaturated version
+      # echo "🔁 Upscaling & Converting ${file##*/}..."
+      # convert ${file} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 50x60 -filter Lanczos2 -distort resize x2048 -quality 66 "${OUTPUT_UPSCALED}";
+    # else
+      # echo "  🔽 Skipping Reverse Holo ${file##*/}..."
+    # fi;
+    
+  done;
+
+  echo "┝━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+  echo "│  ⇑  ✅ Finish Upscaling / Converting ${FOLDER}"
+  echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
+
+}
+
+
+# for file in ${FOLDER}/masks/*.png; do
+
+#   # get filename for the image
+#   FILENAME=$( echo "${file##*/}" | cut -f 1 -d '.' );
+
+#   # echo "";
+#   # echo "🔁 Upscaling & Converting ${file##*/}..."
+#   # echo "";
+
+#   # output for 2x masks
+#   UPSCALE_MASK2="${FOLDER}/masks/upscaled/${FILENAME}_2x.png";
+#   # output for 4x masks
+#   UPSCALE_MASK4="${FOLDER}/masks/upscaled/${FILENAME}_4x.png";
+
+#   # echo "  🔼 ◼ Creating Mask image @ 2️⃣";
+#   convert ${UPSCALE_MASK4} -alpha set -background none -channel A -evaluate multiply 8 +channel -colorspace LAB -filter Lanczos2 -distort resize 50% -colorspace sRGB -modulate 100x0 "${UPSCALE_MASK2}";
   
-  # output for 1x foils
-  OUTPUT_FOIL1="${FOLDER}/foils/${FILENAME}.png";
-  # output for 2x foils
-  OUTPUT_FOIL2="${FOLDER}/foils/upscaled/${FILENAME}_2x.png";
-  # output for 4x foils
-  OUTPUT_FOIL4="${FOLDER}/foils/upscaled/${FILENAME}_4x.png";
+# done;
 
-  echo "  ◼ Creating Greyscale image @ 1️⃣";
-  convert ${file} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 50x60 "${OUTPUT_FOIL1}";
 
-  echo "  🔼 ◼ Creating Greyscale image @ 4️⃣";
-  convert ${UPSCALE_MASK4} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 30x40 "${OUTPUT_FOIL4}";
+# ======================================================================
 
-  echo "  🔼 ◼ Creating Greyscale image @ 2️⃣";
-  convert ${UPSCALE_MASK2} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 30x40 "${OUTPUT_FOIL2}";
+compress() {
+    
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+  echo "╿  ⇄  🌐 Creating WebP for ${FOLDER}"  
+  echo "├┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
+  echo "│ ";
 
-  # if [[ ! $FILENAME =~ .*reverse.* ]]; then
-    # create upscaled, and desaturated version
-    # echo "🔁 Upscaling & Converting ${file##*/}..."
-    # convert ${file} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 50x60 -filter Lanczos2 -distort resize x2048 -quality 66 "${OUTPUT_UPSCALED}";
-  # else
-    # echo "  🔽 Skipping Reverse Holo ${file##*/}..."
-  # fi;
-  
-done;
+  shopt -s globstar nullglob;
+  for file in ${FOLDER}/**/*_2x.png; do
 
-echo "";
-echo "✅ Finish upscaling"
+    # echo "┝  🌐 converting ${file} to WebP image";
+    cwebp "${file}" -m 6 -mt -q 56 -alpha_q 62 -quiet -o "${file%.png}.webp"
 
-shopt -s globstar nullglob;
-for file in ${FOLDER}/**/*.png; do
+  done;
+    
+  echo "┝━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+  echo "│  ⇄  ✅ Finish WebP for ${FOLDER}"
+  echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
 
-  echo "  🖼 converting ${file} to WebP image";
-  cwebp "${file}" -m 6 -mt -q 56 -alpha_q 62 -quiet -o "${file%.png}.webp"
+}
 
-done;
+
+
+time ( 
+
+  create_directories
+
+  fetch_json
+  download_images
+
+  upscale
+  compress
+
+)
 
 
 
