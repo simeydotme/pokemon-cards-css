@@ -24,6 +24,20 @@
   --card-back: hsl(205, 100%, 25%);
   --card-glow: hsl(175, 100%, 90%);
 
+  --sunpillar-1: hsl(2, 100%, 73%);
+  --sunpillar-2: hsl(53, 100%, 69%);
+  --sunpillar-3: hsl(93, 100%, 69%);
+  --sunpillar-4: hsl(176, 100%, 76%);
+  --sunpillar-5: hsl(228, 100%, 74%);
+  --sunpillar-6: hsl(283, 100%, 73%);
+
+  --sunpillar-clr-1: var(--sunpillar-1);
+  --sunpillar-clr-2: var(--sunpillar-2);
+  --sunpillar-clr-3: var(--sunpillar-3);
+  --sunpillar-clr-4: var(--sunpillar-4);
+  --sunpillar-clr-5: var(--sunpillar-5);
+  --sunpillar-clr-6: var(--sunpillar-6);
+
 }
 
 .card {
@@ -76,10 +90,10 @@
 .card.grass       { --card-glow: hsl(96,  81%,  65%); }
 .card.lightning   { --card-glow: hsl(54,  87%,  63%); }
 .card.psychic     { --card-glow: hsl(281, 62%,  58%); }
-.card.fighting    { --card-glow: hsl(34,  49%,  43%); }
+.card.fighting    { --card-glow: rgb(145, 90, 39); }
 .card.darkness    { --card-glow: hsl(189, 77%,  27%); }
 .card.metal       { --card-glow: hsl(184, 20%,  70%); }
-.card.dragon      { --card-glow: hsl(44, 70%, 40%); }
+.card.dragon      { --card-glow: hsl(51, 60%, 35%); }
 .card.fairy       { --card-glow: hsl(323, 100%, 89%); }
 
 .card,
@@ -209,13 +223,6 @@ Shine & Glare Effects
 
 .card__shine {
 
-  --sunpillar-clr-1: hsl(2, 100%, 73%);
-  --sunpillar-clr-2: hsl(53, 100%, 69%);
-  --sunpillar-clr-3: hsl(93, 100%, 69%);
-  --sunpillar-clr-4: hsl(176, 100%, 76%);
-  --sunpillar-clr-5: hsl(228, 100%, 74%);
-  --sunpillar-clr-6: hsl(283, 100%, 73%);
-
   display: grid;
   transform: translateZ(1px);
   overflow: hidden;
@@ -235,12 +242,12 @@ Shine & Glare Effects
 .card__shine:before,
 .card__shine:after {
 
-  --sunpillar-clr-1: hsl(228, 100%, 74%);
-  --sunpillar-clr-2: hsl(283, 100%, 73%);
-  --sunpillar-clr-3: hsl(2, 100%, 73%);
-  --sunpillar-clr-4: hsl(53, 100%, 69%);
-  --sunpillar-clr-5: hsl(93, 100%, 69%);
-  --sunpillar-clr-6: hsl(176, 100%, 76%);
+  --sunpillar-clr-1: var(--sunpillar-5);
+  --sunpillar-clr-2: var(--sunpillar-6);
+  --sunpillar-clr-3: var(--sunpillar-1);
+  --sunpillar-clr-4: var(--sunpillar-2);
+  --sunpillar-clr-5: var(--sunpillar-3);
+  --sunpillar-clr-6: var(--sunpillar-4);
 
   grid-area: 1/1;
   transform: translateZ(1px);
@@ -250,12 +257,12 @@ Shine & Glare Effects
 
 .card__shine:after {
 
-  --sunpillar-clr-1: hsl(283, 100%, 73%);
-  --sunpillar-clr-2: hsl(2, 100%, 73%);
-  --sunpillar-clr-3: hsl(53, 100%, 69%);
-  --sunpillar-clr-4: hsl(93, 100%, 69%);
-  --sunpillar-clr-5: hsl(176, 100%, 76%);
-  --sunpillar-clr-6: hsl(228, 100%, 74%);
+  --sunpillar-clr-1: var( --sunpillar-6 );
+  --sunpillar-clr-2: var( --sunpillar-1 ); 
+  --sunpillar-clr-3: var( --sunpillar-2 );
+  --sunpillar-clr-4: var( --sunpillar-3 );
+  --sunpillar-clr-5: var( --sunpillar-4 );
+  --sunpillar-clr-6: var( --sunpillar-5 );
 
   transform: translateZ(1.2px);
   

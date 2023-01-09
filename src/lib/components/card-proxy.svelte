@@ -22,7 +22,8 @@
   // context/environment props
   export let showcase = false;
 
-  const server = "https://poke-holo.b-cdn.net";
+  // const server = "https://poke-holo.b-cdn.net";
+  const server = "/img";
   const isShiny = isDefined(number) && number.toLowerCase().startsWith( "sv" );
   const isGallery = isDefined(number) && number.toLowerCase().startsWith( "tg" );
   const isAlternate = isDefined(id) && altArts.includes( id ) && !isShiny && !isGallery;
