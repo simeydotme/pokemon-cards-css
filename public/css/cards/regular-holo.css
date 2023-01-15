@@ -24,12 +24,6 @@
 
 */
 
-@media screen and (max-width: 500px) {
-  .card[data-rarity="rare holo"] .card__shine {
-    --scanlines-space: .5px;
-  }
-}
-
 .card[data-rarity="rare holo"] .card__shine {
 
   --scanlines-space: 1px;
@@ -127,6 +121,11 @@
 
 }
 
+@media screen and (max-width: 900px) {
+  .card[data-rarity="rare holo"] .card__shine {
+    --scanlines-space: .5px;
+  }
+}
 
 
 

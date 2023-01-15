@@ -240,7 +240,8 @@
 		</a>
 	</h2>
 	<p>
-		-
+		Amazing Rare cards have a <mark>very unique shiny foil</mark> that extends past the frame and is much shinier than
+		a regular holo effect, and textured. We achieve this by using a mask and applying a glitter effect with a lighten filter.
 	</p>
 
 	<CardList>
@@ -588,9 +589,9 @@
 		</a>
 	</h2>
 	<p>
-		GOLD! The effect from Rainbow is borrowed, except the color of the gradients, and the filter
-		effects (hue) are different. There's also a different background image with a more subtle
-		overlay. This gives a sparkly gold look which is very similar to reality!
+		<mark>GOLD!</mark> Here we apply two glitter layers on top of each other with a overlay effect and
+	<mark>slide the two layers in opposite directions</mark>. We also <mark>mask the foil image</mark> with a gadient so
+	that foil and glitter layers are mutually exclusive. The resulting effect is a shimmering glitter layer!
 	</p>
 
 	<CardList>
@@ -647,7 +648,10 @@
 		</a>
 	</h2>
 	<p>
-		-
+		Shiny Vault cards have quite a unique effect in whereby the foil background is a shiny silver
+		color. To achieve this we apply the foil image with some radial gradients to darken the foil
+		over the background. This creates a slightly silver effect on top of the white card background.
+		This effect works best in Firefox.
 	</p>
 
 	<CardList>

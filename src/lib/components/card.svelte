@@ -3,12 +3,12 @@
   import { onMount } from "svelte";
   import { activeCard } from "../stores/activeCard.js";
   import { orientation, resetBaseOrientation } from "../stores/orientation.js";
-  import { clamp, round } from "../helpers/Math.js";
+  import { clamp, round, adjust } from "../helpers/Math.js";
 
   // data / pokemon props
   export let name = "";
   export let number = "";
-  export let series = "";
+  export let set = "";
   export let types = "";
   export let subtypes = "basic";
   export let supertype = "pokémon";
@@ -99,8 +99,8 @@
       y: e.clientY - rect.top, // get mouse position from right
     };
     const percent = {
-      x: round((100 / rect.width) * absolute.x),
-      y: round((100 / rect.height) * absolute.y),
+      x: clamp(round((100 / rect.width) * absolute.x)),
+      y: clamp(round((100 / rect.height) * absolute.y)),
     };
     const center = {
       x: percent.x - 50,
@@ -108,8 +108,8 @@
     };
 
     updateSprings({
-      x: round(50 + percent.x / 4 - 12.5),
-      y: round(50 + percent.y / 3 - 16.67),
+      x: adjust(percent.x, 0, 100, 37, 63),
+      y: adjust(percent.y, 0, 100, 33, 67),
     },{
       x: round(-(center.x / 3.5)),
       y: round(center.y / 2),
@@ -223,26 +223,29 @@
 
 
   let foilStyles = ``;
-  const staticStyles = `--cosmosbg: ${cosmosPosition.x}px ${cosmosPosition.y}px;`;
+  const staticStyles = `
+    --seedx: ${randomSeed.x};
+    --seedy: ${randomSeed.y};
+    --cosmosbg: ${cosmosPosition.x}px ${cosmosPosition.y}px;
+  `;
   $: dynamicStyles = `
-		--pointer-x: ${$springGlare.x}%;
-		--pointer-y: ${$springGlare.y}%;
-		--pointer-from-center: ${
-      clamp( Math.sqrt(
-        ($springGlare.y - 50) * ($springGlare.y - 50) +
-          ($springGlare.x - 50) * ($springGlare.x - 50)
-      ) / 50, 0, 1)
-    };
+    --pointer-x: ${$springGlare.x}%;
+    --pointer-y: ${$springGlare.y}%;
+    --pointer-from-center: ${ 
+      clamp( Math.sqrt( 
+        ($springGlare.y - 50) * ($springGlare.y - 50) + 
+        ($springGlare.x - 50) * ($springGlare.x - 50) 
+      ) / 50, 0, 1) };
     --pointer-from-top: ${$springGlare.y / 100};
     --pointer-from-left: ${$springGlare.x / 100};
-		--translate-x: ${$springTranslate.x}px;
-		--translate-y: ${$springTranslate.y}px;
-		--card-scale: ${$springScale};
-		--card-opacity: ${$springGlare.o};
-		--rotate-x: ${$springRotate.x + $springRotateDelta.x}deg;
-		--rotate-y: ${$springRotate.y + $springRotateDelta.y}deg;
-		--background-x: ${$springBackground.x}%;
-		--background-y: ${$springBackground.y}%;
+    --translate-x: ${$springTranslate.x}px;
+    --translate-y: ${$springTranslate.y}px;
+    --card-scale: ${$springScale};
+    --card-opacity: ${$springGlare.o};
+    --rotate-x: ${$springRotate.x + $springRotateDelta.x}deg;
+    --rotate-y: ${$springRotate.y + $springRotateDelta.y}deg;
+    --background-x: ${$springBackground.x}%;
+    --background-y: ${$springBackground.y}%;
 	`;
 
   $: {
@@ -269,20 +272,15 @@
       y: clamp(y, -limit.y, limit.y) 
     };
 
-    const percent = {
-      x: 50 + (degrees.x / (limit.x * 2)) * 100,
-      y: 50 + (degrees.y / (limit.y * 2)) * 100,
-    };
-
     updateSprings({
-      x: round(50 + (limit.x * 2 * ((50 - -percent.x) / 100) - limit.x * 2)),
-      y: round(50 + (limit.y * 2 * ((50 + percent.y) / 100) - limit.y * 2)),
+      x: adjust(degrees.x, -limit.x, limit.x, 37, 63),
+      y: adjust(degrees.y, -limit.y, limit.y, 33, 67),
     },{
       x: round(degrees.x * -1),
       y: round(degrees.y),
     },{
-      x: round(percent.x),
-      y: round(percent.y),
+      x: adjust(degrees.x, -limit.x, limit.x, 0, 100),
+      y: adjust(degrees.y, -limit.y, limit.y, 0, 100),
       o: 1,
     });
 
@@ -320,8 +318,8 @@
     loading = false;
     if ( mask || foil ) {
       foilStyles = `
-        --mask: url(${mask});
-        --foil: url(${foil});
+    --mask: url(${mask});
+    --foil: url(${foil});
       `;
     }
   };
@@ -385,7 +383,7 @@
   class:loading
   class:masked={!!mask}
   data-number={number}
-  data-series={series}
+  data-set={set}
   data-subtypes={subtypes}
   data-supertype={supertype}
   data-rarity={rarity}
@@ -402,7 +400,7 @@
       on:blur={deactivate}
       aria-label="Expand the Pokemon Card; {name}."
       tabindex="0"
-    >
+      >
       <img
         class="card__back"
         src={back_img}
