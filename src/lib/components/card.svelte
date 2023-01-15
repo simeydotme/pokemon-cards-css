@@ -243,13 +243,10 @@
     --rotate-y: ${$springRotate.y + $springRotateDelta.y}deg;
     --background-x: ${$springBackground.x}%;
     --background-y: ${$springBackground.y}%;
-	`;
-
-  $: translateStyles = `
     --card-scale: ${$springScale};
     --translate-x: ${$springTranslate.x}px;
     --translate-y: ${$springTranslate.y}px;
-  `;
+	`;
 
   $: {
     rarity = rarity.toLowerCase();
@@ -395,8 +392,7 @@
   bind:this={thisCard}
 >
   <div 
-    class="card__translater" 
-    style={translateStyles}>
+    class="card__translater">
     <button
       class="card__rotator"
       on:click={activate}

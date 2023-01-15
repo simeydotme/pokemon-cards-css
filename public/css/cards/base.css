@@ -142,7 +142,7 @@
   
   /* performance */
   pointer-events: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   isolation: isolate;
 }
 
