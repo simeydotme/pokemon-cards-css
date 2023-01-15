@@ -238,15 +238,18 @@
       ) / 50, 0, 1) };
     --pointer-from-top: ${$springGlare.y / 100};
     --pointer-from-left: ${$springGlare.x / 100};
-    --translate-x: ${$springTranslate.x}px;
-    --translate-y: ${$springTranslate.y}px;
-    --card-scale: ${$springScale};
     --card-opacity: ${$springGlare.o};
     --rotate-x: ${$springRotate.x + $springRotateDelta.x}deg;
     --rotate-y: ${$springRotate.y + $springRotateDelta.y}deg;
     --background-x: ${$springBackground.x}%;
     --background-y: ${$springBackground.y}%;
 	`;
+
+  $: translateStyles = `
+    --card-scale: ${$springScale};
+    --translate-x: ${$springTranslate.x}px;
+    --translate-y: ${$springTranslate.y}px;
+  `;
 
   $: {
     rarity = rarity.toLowerCase();
@@ -391,7 +394,9 @@
   style={dynamicStyles}
   bind:this={thisCard}
 >
-  <div class="card__translater">
+  <div 
+    class="card__translater" 
+    style={translateStyles}>
     <button
       class="card__rotator"
       on:click={activate}

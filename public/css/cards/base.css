@@ -44,10 +44,12 @@
 
   /* place the card on a new transform layer and
   make sure it has hardward acceleration... we gun'need that! */
-  transform: translate3d(0, 0, 0.1px);
-  -webkit-transform: translate3d(0, 0, 0.1px);
+  transform: translate3d(0px, 0px, 0.01px);
+  -webkit-transform: translate3d(0px, 0px, 0.01px);
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  pointer-events: none;
+  isolation: isolate;
   
   /* make sure the card is above others if it's scaled up */
   z-index: calc(var(--card-scale) * 2);
@@ -137,11 +139,16 @@
   transform-style: preserve-3d;
   -webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
   -webkit-transform-style: preserve-3d;
+  
+  /* performance */
+  pointer-events: auto;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 button.card__rotator {
   /* because the card is a button, there's some default
-    browser styles which need to be sudued */
+    browser styles which need to be subdued */
   border: none;
   background: transparent;
   padding: 0;
@@ -164,12 +171,12 @@ button.card__rotator {
 .card.active .card__rotator,
 .card__rotator:focus {
   box-shadow: 
-  0 0 3px -1px white, 
-  0 0 3px 1px var(--card-edge), 
-  0 0 12px 2px var(--card-glow), 
-  0px 10px 20px -5px black, 
-  0 0 40px -30px var(--card-glow), 
-  0 0 50px -20px var(--card-glow)
+    0 0 3px -1px white, 
+    0 0 3px 1px var(--card-edge), 
+    0 0 12px 2px var(--card-glow), 
+    0px 10px 20px -5px black, 
+    0 0 40px -30px var(--card-glow), 
+    0 0 50px -20px var(--card-glow)
 }
 
 .card__rotator * {
@@ -178,20 +185,23 @@ button.card__rotator {
   grid-area: 1/1;
   border-radius: var(--card-radius);
   image-rendering: optimizeQuality;
-  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  pointer-events: none;
 }
 
 .card__rotator img {
   /* outline is a little trick to anti-alias */
   outline: 1px solid transparent;
   height: auto;
+  -webkit-transform: translate3d(0px, 0px, 0.01px);
+  transform: translate3d(0px, 0px, 0.01px);
 }
 
 .card__back {
   background-color: var(--card-back);
-  transform: rotateY(180deg) translateZ(1px);
   -webkit-transform: rotateY(180deg) translateZ(1px);
+  transform: rotateY(180deg) translateZ(1px);
   backface-visibility: visible;
 }
 
@@ -203,6 +213,8 @@ button.card__rotator {
 .card__front {
   opacity: 1;
   transition: opacity 0.33s ease-out;
+  -webkit-transform: translate3d(0px, 0px, 0.01px);
+  transform: translate3d(0px, 0px, 0.01px);
 }
 
 .loading .card__front {

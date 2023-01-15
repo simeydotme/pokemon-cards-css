@@ -209,8 +209,7 @@
 		</a>
 	</h2>
 	<p>
-		Similar to the Holofoil, but this uses a special image <mark>background of a galaxy effect</mark
-		>
+		Similar to the Holofoil, but this uses a special image <mark>background of a galaxy effect</mark>
 		with a <mark>gradient rainbow set to color-dodge &amp; color-burn</mark> on top.
 	</p>
 	<h3>An instant classic for any PTCG fan!</h3>
