@@ -11,8 +11,8 @@
 
 
 
-.card:not(.masked)[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine,
-.card:not(.masked)[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after {
+.card:not(.masked)[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine,
+.card:not(.masked)[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:after {
 
   --mask: none;
   --foil: url("/img/trainerbg.png"); 
@@ -29,22 +29,30 @@
 
 */
 
-.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine {
+.card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine {
   
   filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.75) saturate(1.2);
 
 }
 
-.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after {
+.card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:after {
 
   filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(2) saturate(.5);
 
 }
 
-.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:before {
+.card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:before {
 
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(0, 0%, 100%) 0%, 
+      hsla(0, 0%, 0%, 0) 80% 
+    );
+  
+  mix-blend-mode: screen;
   opacity: 0.5;
-
+  
 }
 
 

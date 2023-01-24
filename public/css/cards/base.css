@@ -49,7 +49,6 @@
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   pointer-events: none;
-  isolation: isolate;
   
   /* make sure the card is above others if it's scaled up */
   z-index: calc(var(--card-scale) * 2);
@@ -130,8 +129,8 @@
   width: auto;
   position: relative;
 
-  transform: translate3d(var(--translate-x), var(--translate-y), 0) scale(var(--card-scale));
-  -webkit-transform: translate3d(var(--translate-x), var(--translate-y), 0) scale(var(--card-scale));
+  transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
+  -webkit-transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
 }
 
 .card__rotator {
@@ -142,7 +141,7 @@
   
   /* performance */
   pointer-events: auto;
-  /* overflow: hidden; */
+  /* overflow: hidden; <-- this improves perf on mobile, but breaks backface visibility. */
   isolation: isolate;
 }
 
@@ -188,6 +187,7 @@ button.card__rotator {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .card__rotator img {

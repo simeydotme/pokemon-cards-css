@@ -68,9 +68,9 @@
 
 }
 
-.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
-.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:after,
-.card[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:after {
+.card[data-supertype="pokémon"][data-rarity="rare ultra"] .card__shine:after,
+.card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:after,
+.card[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__shine:after {
 
   content: "";
 
@@ -82,14 +82,14 @@
 
   background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
 
-  filter: brightness(calc((var(--pointer-from-center)*.4) + .7)) contrast(1.25) saturate(1.2);
+  filter: brightness(calc((var(--pointer-from-center)*.4) + .8)) contrast(1.5) saturate(1.25);
   mix-blend-mode: exclusion;
 
 }
 
 
-.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:before,
-.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__shine:before {
+.card[data-supertype="pokémon"][data-rarity="rare ultra"] .card__shine:before,
+.card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:before {
 
   content: "";
   mask-image: none;
@@ -98,13 +98,13 @@
   background-image: 
     radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), 
       hsl(0, 0%, 100%) 0%, 
-      hsla(0, 0%, 0%, 0) 80% 
+      hsla(0, 0%, 0%, 0) 40% 
     );
   background-position: center;
   background-size: cover;
-  mix-blend-mode: screen;
+  mix-blend-mode: overlay;
   
-  opacity: 0.7;
+  opacity: 0.75;
   z-index: 1;
 
 }
@@ -121,8 +121,8 @@
 
 */
 
-.card[data-rarity="rare ultra"][data-supertype="pokémon"] .card__glare,
-.card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__glare {
+.card[data-supertype="pokémon"][data-rarity="rare ultra"] .card__glare,
+.card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__glare {
 
   background-image: 
     radial-gradient( 
@@ -147,6 +147,8 @@
 
 
 
+
+
 /*
 
   NO MASK
@@ -154,12 +156,12 @@
 */
 
 
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine,
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
-.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine,
-.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:after {
+.card:not(.masked)[data-supertype="pokémon"][data-rarity="rare ultra"] .card__shine,
+.card:not(.masked)[data-supertype="pokémon"][data-rarity="rare ultra"] .card__shine:after,
+.card:not(.masked)[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__shine,
+.card:not(.masked)[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__shine:after {
 
-  --mask: url("/img/illusion-mask.png");
+  --mask: none;
   --foil: url("/img/illusion.png"); 
   --imgsize: 33%;
 
@@ -169,81 +171,24 @@
 	-webkit-mask-size: var(--imgsize);
 
   background-blend-mode: exclusion, hue, hard-light;
-  filter: brightness(calc((var(--pointer-from-center)*.3) + .5)) contrast(2) saturate(1.5);
+  filter: brightness(calc((var(--pointer-from-center)*.3) + .35)) contrast(2) saturate(1.5);
 
 }
 
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:before,
-.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:before {
+.card:not(.masked)[data-supertype="pokémon"][data-rarity="rare ultra"] .card__shine:before,
+.card:not(.masked)[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__shine:before {
   content: none;
   display: none;
 }
 
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__shine:after,
-.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__shine:after {
+.card:not(.masked)[data-supertype="pokémon"][data-rarity="rare ultra"] .card__shine:after,
+.card:not(.masked)[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__shine:after {
   filter: brightness(calc((var(--pointer-from-center)*.5) + .8)) contrast(1.6) saturate(1.4);
 }
 
-.card:not(.masked)[data-rarity="rare ultra"][data-supertype="pokémon"] .card__glare,
-.card:not(.masked)[data-rarity="rare holo v"][data-trainer-gallery="true"] .card__glare {
+.card:not(.masked)[data-supertype="pokémon"][data-rarity="rare ultra"] .card__glare,
+.card:not(.masked)[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__glare {
   mix-blend-mode: overlay;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-  SHINE LAYERS
-
-*/
-
-.card[data-rarity="rare ultra"][data-number="176"] .card__shine {
-  
-  filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.75) saturate(1.25);
-
-}
-
-.card[data-rarity="rare ultra"][data-number="176"] .card__shine:after {
-
-  filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(2) saturate(1.3);
-  opacity: 0.9;
-
-}
-
-.card[data-rarity="rare ultra"][data-number="176"] .card__shine:before {
-
-  opacity: 0.5;
-
-}
-
-
-
-
-
-
-
-
-
-
-/*
-
-  GLARE LAYERS
-
-*/
-
-.card[data-rarity="rare ultra"][data-number="176"] .card__glare {
-
-  opacity: calc( var(--card-opacity) * .75 );
-  mix-blend-mode: multiply;
-
-}
