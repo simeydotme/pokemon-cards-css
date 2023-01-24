@@ -1,5 +1,5 @@
 <script>
-  import altArts from "../../../public/data/alternate-arts.json";
+  import altArts from "./alternate-arts.json";
 	import Card from "./card.svelte";
 
   // data / pokemon props

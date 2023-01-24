@@ -120,3 +120,32 @@
 	opacity: calc( var(--card-opacity) * 0.75 );
 
 }
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked)[data-rarity="rare rainbow alt"] .card__shine,
+.card:not(.masked)[data-rarity="rare holo vmax"][data-trainer-gallery="true"] .card__shine {
+
+  --mask: none;
+  --foil: none;
+  --imgsize: 25% auto;
+
+}
+
+
+
+

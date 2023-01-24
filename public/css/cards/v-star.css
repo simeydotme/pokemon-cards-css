@@ -11,36 +11,21 @@
 
   mask-image: 
     var(--mask), 
-    var(--mask), 
     radial-gradient(
       farthest-corner circle 
       at var(--pointer-x) var(--pointer-y),
       hsla(0, 0%, 100%, 0) 0%, 
       hsla(0, 0%, 100%, .5) 120%
-    ), 
-    var(--mask), 
-    var(--mask);
+    );
 
   -webkit-mask-image:  
     var(--mask), 
-    var(--mask), 
     radial-gradient(
       farthest-corner circle 
       at var(--pointer-x) var(--pointer-y),
       hsla(0, 0%, 100%, 0) 0%, 
       hsla(0, 0%, 100%, .5) 120%
-    ), 
-    var(--mask), 
-    var(--mask);
-
-}
-
-.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine,
-.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine:after {
-
-  --mask: none;
-  --foil: url("/img/ancient.png"); 
-  --imgsize: 18% 15%;
+    ); 
 
 }
 
@@ -105,6 +90,16 @@
 
 }
 
+.card[data-rarity="rare holo vstar"] .card__shine::before {
+
+  content: "";
+  background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsla(190, 7%, 80%, 0.75) 0%, hsla(260, 7%, 50%, 0.25) 45%, hsl(310, 7%, 50%) 120% );
+  mix-blend-mode: hard-light;
+  z-index: 2;
+  opacity: 0.8;
+  
+}
+
 
 
 
@@ -114,7 +109,7 @@
 
   GLARE LAYERS
 
-*/    
+*/
 
 
 .card[data-rarity="rare holo vstar"] .card__glare {
@@ -125,10 +120,51 @@
     radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), 
     hsl(190, 7%, 80%) 0%, 
     hsla(260, 7%, 60%, 0.71) 45%, 
-    hsl(310, 7%, 20%) 120% 
+    hsl(310, 7%, 10%) 120% 
   );
   
   mix-blend-mode: hard-light;
   opacity: calc(var(--card-opacity)*.66);
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine,
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine:after {
+
+  --mask: none;
+  --foil: url("/img/ancient.png"); 
+  --imgsize: 18% 15%;
+
+  background-blend-mode: exclusion, hue, hard-light;
+  filter: brightness(calc((var(--pointer-from-center) * .5) + .25)) contrast(2) saturate(1.75);
+
+}
+
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine:after {
+
+  filter: brightness(calc((var(--pointer-from-center) * .75) + .5)) contrast(1.5) saturate(1.5);
+
+}
+
+
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__glare {
+  
+  mix-blend-mode: multiply;
 
 }

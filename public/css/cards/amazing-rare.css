@@ -15,10 +15,6 @@
 
 */
 
-.card[data-rarity="amazing rare"]:not(.masked) .card__shine {
-  clip-path: var(--clip);
-}
-
 .card[data-rarity="amazing rare"] .card__shine {
 
   background-image:
@@ -135,4 +131,34 @@
   mix-blend-mode: overlay;
 	opacity: 1;
 
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+.card:not(.masked)[data-rarity="amazing rare"] .card__shine {
+  clip-path: var(--clip);
+}
+
+.card:not(.masked)[data-rarity="amazing rare"] .card__glare {
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsla(0, 0%, 100%, 1) 10%, 
+      hsla(0, 0%, 100%, 0.85) 20%, 
+      hsla(0, 0%, 0%, 0.35) 90% 
+    );
+  mix-blend-mode: multiply;
 }
