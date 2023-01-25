@@ -182,6 +182,7 @@ button.card__rotator {
   width: 100%;
   display: grid;
   grid-area: 1/1;
+  aspect-ratio: var(--card-aspect);
   border-radius: var(--card-radius);
   image-rendering: optimizeQuality;
   -webkit-transform-style: preserve-3d;
@@ -297,6 +298,10 @@ Shine & Glare Effects
   mix-blend-mode: overlay;
   
 }
+
+
+
+
 
 
 /**

@@ -60,6 +60,8 @@
 
   opacity: calc( var(--card-opacity) * .75 );
   mix-blend-mode: multiply;
+  filter: brightness(1.5) contrast(1.4) saturate(1);
+  background-size: 170% 170%;
 
 }
 

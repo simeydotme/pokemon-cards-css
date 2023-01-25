@@ -57,11 +57,22 @@
       hsl(0, 0%, 0%) 100% 
   );
 
-  background-blend-mode: color-dodge, overlay, color-burn, lighten;
-  background-position: var(--cosmosbg, center center), var(--cosmosbg, center center), var(--cosmosbg, center center), calc(((50% - var(--background-x)) * 2.5) + 50%) calc(((50% - var(--background-y)) * 2.5) + 50%), center;
+  background-blend-mode: 
+    color-dodge, 
+    color-dodge, 
+    color-burn, 
+    multiply;
+
+  background-position: 
+    var(--cosmosbg, center center), 
+    var(--cosmosbg, center center), 
+    var(--cosmosbg, center center), 
+    calc(((50% - var(--background-x)) * 2.5) + 50%) calc(((50% - var(--background-y)) * 2.5) + 50%), 
+    center center;
+
   background-size: cover, cover, cover, 400% 900%, cover;
 
-  filter: brightness(.8) contrast(1.2) saturate(1);
+  filter: brightness(1.25) contrast(1.75) saturate(.8);;
   mix-blend-mode: color-dodge;
 
 }

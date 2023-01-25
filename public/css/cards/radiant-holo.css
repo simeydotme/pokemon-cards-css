@@ -183,12 +183,12 @@
 
 
 
-  /*
-  
-    NO MASK
-  
-  */
-  
+/*
+
+  NO MASK
+
+*/
+
 .card:not(.masked)[data-rarity="radiant rare"] .card__shine,
 .card:not(.masked)[data-rarity="radiant rare"] .card__shine:after {
 
@@ -199,7 +199,7 @@
 }
   
 .card:not(.masked)[data-rarity="radiant rare"] .card__shine:after {
-  
+
   background-blend-mode: difference;
   
 }

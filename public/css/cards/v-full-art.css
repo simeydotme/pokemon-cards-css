@@ -126,17 +126,19 @@
 
   background-image: 
     radial-gradient( 
-      farthest-corner circle at 
-      var(--pointer-x) var(--pointer-y), 
-      hsl(0, 0%, 100%) 0%, 
-      hsla(210, 3%, 54%, 0.4) 45%, 
-      hsla(240, 43%, 40%, 0.8) 120% 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(0, 0%, 75%) 5%, 
+      hsl(200, 5%, 35%) 60%, 
+      hsl(320, 40%, 10%) 150% 
     );
 
-		background-size: 100% 120%;
-		background-position: center center;
-    opacity: calc(var(--card-opacity) * .75 );
-    mix-blend-mode: multiply;
+  background-size: 120% 150%;
+  background-position: center center;
+
+  mix-blend-mode: hard-light;
+  filter: brightness(1) contrast(1.2) saturate(1);
+  
+  opacity: calc(var(--card-opacity) * .75 );
 
 }
 
@@ -184,11 +186,6 @@
 .card:not(.masked)[data-supertype="pokémon"][data-rarity="rare ultra"] .card__shine:after,
 .card:not(.masked)[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__shine:after {
   filter: brightness(calc((var(--pointer-from-center)*.5) + .8)) contrast(1.6) saturate(1.4);
-}
-
-.card:not(.masked)[data-supertype="pokémon"][data-rarity="rare ultra"] .card__glare,
-.card:not(.masked)[data-trainer-gallery="true"][data-rarity="rare holo v"] .card__glare {
-  mix-blend-mode: overlay;
 }
 
 

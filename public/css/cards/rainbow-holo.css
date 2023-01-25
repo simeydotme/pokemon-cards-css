@@ -9,12 +9,6 @@
 
 
 
-.card:not(.masked)[data-rarity="rare rainbow"] .card__shine {
-
-  --foil: url("/img/illusion-mask.png"); 
-  --imgsize: 33%;
-
-}
 
 /*
 
@@ -122,5 +116,28 @@
 	filter: brightness(.9) contrast(1.75);
 	opacity: calc( var(--pointer-from-center) * 0.9 );
   mix-blend-mode: hard-light;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked)[data-rarity="rare rainbow"] .card__shine {
+
+  --foil: url("/img/illusion-mask.png"); 
+  --imgsize: 33%;
 
 }
