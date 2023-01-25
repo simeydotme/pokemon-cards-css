@@ -66,7 +66,7 @@
     var(--background-x) var(--background-y), 
     var(--background-x) var(--background-y);
 
-  filter: brightness(calc((var(--pointer-from-center)*0.4) + 0.5)) contrast(2) saturate(1);
+  filter: brightness(calc((var(--pointer-from-center) * .6) + .5)) contrast(2) saturate(1);
 
 }
 
@@ -99,7 +99,7 @@
   background-position: 0% var(--background-y), var(--background-x) var(--background-y), var(--background-x) var(--background-y);
 
   mix-blend-mode: lighten;
-  opacity: calc( ((var(--card-opacity) * var(--pointer-from-center)) * 0.5 ));
+  opacity: calc( ((var(--card-opacity) * var(--pointer-from-center)) * 0.75 ));
   filter: saturate(1.5);
 
 }
@@ -121,6 +121,7 @@
 
 .card[data-rarity="rare holo vmax"] .card__glare {
 
+  mix-blend-mode: hard-light;
   filter: brightness(.9) contrast(1.75);
 
   background-image: 
@@ -135,3 +136,34 @@
   opacity: calc(var(--card-opacity)*.75);
 
 }
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+
+.card[data-rarity="rare holo vmax"] .card__shine {
+
+  filter: brightness(calc((var(--pointer-from-center) * .4) + .4)) contrast(2) saturate(1);
+
+}
+
+
+
+
+
+
+
+

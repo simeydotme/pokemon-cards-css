@@ -85,8 +85,8 @@
 .card[data-rarity="rare shiny v"] .card__shine:before {
 
   content: "";
-  mask-image: none;
   -webkit-mask-image: none;
+  mask-image: none;
   
   background-image: 
     radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), 
@@ -129,7 +129,7 @@
   mix-blend-mode: darken;
   filter: brightness(.88) contrast(2.25) saturate(.7);
   
-  opacity: calc(var(--card-opacity) * .65 );
+  opacity: calc( var(--card-opacity) * var(--pointer-from-center) * 0.75 );
 
 }
 
@@ -156,10 +156,10 @@
   --foil: url("/img/illusion.png"); 
   --imgsize: 33%;
 
-  mask-image: var(--mask);
   -webkit-mask-image: var(--mask);
-  mask-size: var(--imgsize);
+  mask-image: var(--mask);
 	-webkit-mask-size: var(--imgsize);
+  mask-size: var(--imgsize);
 
   background-blend-mode: exclusion, hue, hard-light;
   filter: brightness(calc((var(--pointer-from-center)*.3) + .35)) contrast(2) saturate(1.5);

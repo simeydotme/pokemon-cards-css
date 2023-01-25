@@ -37,8 +37,8 @@
 .card[data-rarity="amazing rare"] .card__shine:before {
   
   content: "";
-  mask-image: none !important;
   -webkit-mask-image: none !important;
+  mask-image: none !important;
 
   background-image:
     var(--foil),
@@ -62,8 +62,8 @@
 .card[data-rarity="amazing rare"] .card__shine:after {
 
   content: "";
-  mask-image: none !important;
   -webkit-mask-image: none !important;
+  mask-image: none !important;
 
   background-image: 
     repeating-linear-gradient( 
@@ -113,10 +113,10 @@
 .card.masked[data-rarity="amazing rare"] .card__glare:after {
 	
   content: "";
-  mask-image: var(--mask);
   -webkit-mask-image: var(--mask);
-  mask-size: cover;
+  mask-image: var(--mask);
 	-webkit-mask-size: cover;
+  mask-size: cover;
 
 	background-image: 
 		radial-gradient( 

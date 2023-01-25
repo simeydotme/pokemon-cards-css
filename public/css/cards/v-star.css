@@ -9,15 +9,6 @@
 .card.masked[data-rarity="rare holo vstar"] .card__shine::before, 
 .card.masked[data-rarity="rare holo vstar"] .card__shine::after {
 
-  mask-image: 
-    var(--mask), 
-    radial-gradient(
-      farthest-corner circle 
-      at var(--pointer-x) var(--pointer-y),
-      hsla(0, 0%, 100%, 0) 0%, 
-      hsla(0, 0%, 100%, .5) 120%
-    );
-
   -webkit-mask-image:  
     var(--mask), 
     radial-gradient(
@@ -26,6 +17,15 @@
       hsla(0, 0%, 100%, 0) 0%, 
       hsla(0, 0%, 100%, .5) 120%
     ); 
+
+  mask-image: 
+    var(--mask), 
+    radial-gradient(
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 100%, 0) 0%, 
+      hsla(0, 0%, 100%, .5) 120%
+    );
 
 }
 

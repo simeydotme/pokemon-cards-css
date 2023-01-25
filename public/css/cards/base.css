@@ -44,10 +44,10 @@
 
   /* place the card on a new transform layer and
   make sure it has hardward acceleration... we gun'need that! */
-  transform: translate3d(0px, 0px, 0.01px);
   -webkit-transform: translate3d(0px, 0px, 0.01px);
-  transform-style: preserve-3d;
+  transform: translate3d(0px, 0px, 0.01px);
   -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   pointer-events: none;
   
   /* make sure the card is above others if it's scaled up */
@@ -129,15 +129,15 @@
   width: auto;
   position: relative;
 
-  transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
   -webkit-transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
+  transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
 }
 
 .card__rotator {
-  transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
-  transform-style: preserve-3d;
   -webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
   -webkit-transform-style: preserve-3d;
+  transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
+  transform-style: preserve-3d;
   
   /* performance */
   pointer-events: auto;
@@ -151,8 +151,8 @@ button.card__rotator {
   border: none;
   background: transparent;
   padding: 0;
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .card__rotator,
@@ -223,8 +223,8 @@ button.card__rotator {
 }
 
 .loading .card__back {
-  transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 
@@ -315,12 +315,12 @@ Shine & Glare Effects
 .card.masked .card__shine:after {
 
   /** masking image for cards which are masked **/
-  mask-image: var(--mask);
   -webkit-mask-image: var(--mask);
-  mask-size: cover;
+  mask-image: var(--mask);
 	-webkit-mask-size: cover;
-  mask-position: center center;
+  mask-size: cover;
   -webkit-mask-position: center center;
+  mask-position: center center;
 
 }
 

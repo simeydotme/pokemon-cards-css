@@ -56,8 +56,8 @@
 
   content: "";
 
-  mask-image: none !important;
   -webkit-mask-image: none !important;
+  mask-image: none !important;
 
   background-image: 
     var(--glitter),
