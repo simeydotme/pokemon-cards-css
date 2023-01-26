@@ -85,7 +85,7 @@ download_images() {
     echo "";
 
     echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
-    echo "╿  ↯  ✅ Finished Downloading from ${$JSON}  "  
+    echo "╿  ↯  ✅ Finished Downloading from ${JSON}  "  
     echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
 
   else
@@ -165,14 +165,6 @@ upscale() {
     # echo "│  ⚫ 4️⃣   Creating Greyscale image";
     convert ${UPSCALED} ${desaturate} ${remove_alpha} ${foil_brightness} "${OUTPUT_FOIL4}";
 
-    # if [[ ! $FILENAME =~ .*reverse.* ]]; then
-      # create upscaled, and desaturated version
-      # echo "🔁 Upscaling & Converting ${file##*/}..."
-      # convert ${file} -modulate 100x0 -background black -alpha remove -alpha off -brightness-contrast 50x60 -filter Lanczos2 -distort resize x2048 -quality 66 "${OUTPUT_UPSCALED}";
-    # else
-      # echo "  🔽 Skipping Reverse Holo ${file##*/}..."
-    # fi;
-    
   done;
 
   echo "┝━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
@@ -180,27 +172,6 @@ upscale() {
   echo "└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";
 
 }
-
-
-# for file in ${FOLDER}/masks/*.png; do
-
-#   # get filename for the image
-#   FILENAME=$( echo "${file##*/}" | cut -f 1 -d '.' );
-
-#   # echo "";
-#   # echo "🔁 Upscaling & Converting ${file##*/}..."
-#   # echo "";
-
-#   # output for 2x masks
-#   UPSCALE_MASK2="${FOLDER}/masks/upscaled/${FILENAME}_2x.png";
-#   # output for 4x masks
-#   UPSCALE_MASK4="${FOLDER}/masks/upscaled/${FILENAME}_4x.png";
-
-#   # echo "  🔼 ◼ Creating Mask image @ 2️⃣";
-#   convert ${UPSCALE_MASK4} -alpha set -background none -channel A -evaluate multiply 8 +channel -colorspace LAB -filter Lanczos2 -distort resize 50% -colorspace sRGB -modulate 100x0 "${UPSCALE_MASK2}";
-  
-# done;
-
 
 # ======================================================================
 
@@ -238,13 +209,3 @@ time (
   compress
 
 )
-
-
-
-
-# python3 inference_realesrgan.py -s 4 -i i.png -o folder/
-# cwebp i.png -m 6 -mt -q 56 -alpha_q 62 -o o.webp
-#
-
-# python3 inference_realesrgan.py -i ../Dev/pokemon-deck-builder/public/img/tests/170_foil_etched_sunpillar.png -o ../Dev/pokemon-deck-builder/public/img/tests/170_foil_etched_sunpillar-ganup.png
-# python3 ../../../Real-ESRGAN/inference_realesrgan.py -i img/tests/170_foil_etched_sunpillar.png -o img/tests/170_foil_etched_sunpillar-ganupxx.png

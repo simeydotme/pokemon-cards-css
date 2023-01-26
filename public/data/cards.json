@@ -1,18 +1,16 @@
 [
   {
-    "id": "swsh4-170",
-    "set": "swsh4",
-    "name": "Pikachu V",
+    "id": "swsh12pt5-160",
+    "set": "swsh12pt5",
+    "name": "Pikachu",
     "supertype": "Pokémon",
-    "subtypes": ["Basic", "V"],
+    "subtypes": ["Basic"],
     "types": ["Lightning"],
-    "number": "170",
-    "rarity": "Rare Ultra",
+    "number": "160",
+    "rarity": "Rare Secret",
     "images": {
-      "small": "https://images.pokemontcg.io/swsh4/170.png",
-      "large": "https://images.pokemontcg.io/swsh4/170_hires.png",
-      "foil": "/img/foils/swsh4/foils/170_foil_etched_sunpillar.jpg",
-      "mask": "/img/foils/swsh4/masks/170_foil_etched_sunpillar.png"
+      "small": "https://images.pokemontcg.io/swsh12pt5/160.png",
+      "large": "https://images.pokemontcg.io/swsh12pt5/160_hires.png"
     }
   },
   {
