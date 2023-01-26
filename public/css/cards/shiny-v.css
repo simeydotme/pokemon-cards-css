@@ -1,0 +1,178 @@
+/*
+
+  SHINY V (ULTRA RARE)
+
+*/
+
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare shiny v"] .card__shine,
+.card[data-rarity="rare shiny v"] .card__shine:after {
+
+  --space: 5%;
+  --angle: 133deg;
+  --imgsize: cover;
+
+  background-image:
+    var(--foil),
+    repeating-linear-gradient( 0deg, 
+      var(--sunpillar-clr-1) calc(var(--space)*1), 
+      var(--sunpillar-clr-2) calc(var(--space)*2), 
+      var(--sunpillar-clr-3) calc(var(--space)*3), 
+      var(--sunpillar-clr-4) calc(var(--space)*4), 
+      var(--sunpillar-clr-5) calc(var(--space)*5), 
+      var(--sunpillar-clr-6) calc(var(--space)*6), 
+      var(--sunpillar-clr-1) calc(var(--space)*7)
+    ),
+    repeating-linear-gradient( 
+      var(--angle), 
+      #0e152e 0%, 
+      hsl(180, 10%, 60%) 3.8%, 
+      hsl(180, 29%, 66%) 4.5%, 
+      hsl(180, 10%, 60%) 5.2%, 
+      #0e152e 10% , 
+      #0e152e 12% 
+      ),
+    radial-gradient(
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 0%, 0.1) 12%, 
+      hsla(0, 0%, 0%, 0.15) 20%, 
+      hsla(0, 0%, 0%, 0.25) 120%
+    );
+
+  background-position: 
+    center center, 
+    0% var(--background-y), 
+    calc( var(--background-x) + (var(--background-y)*0.2) ) var(--background-y), 
+    var(--background-x) var(--background-y);
+
+  background-blend-mode: soft-light, hue, hard-light;
+  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
+
+  filter: brightness(calc((var(--pointer-from-center)*0.4) + .4)) contrast(1.4) saturate(2.25);
+
+}
+
+.card[data-rarity="rare shiny v"] .card__shine:after {
+
+  content: "";
+
+  background-position: 
+    center center, 
+    0% var(--background-y), 
+    calc( (var(--background-x) + (var(--background-y)*0.2)) * -1) calc( var(--background-y) * -1), 
+    var(--background-x) var(--background-y);
+
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
+
+  filter: brightness(calc((var(--pointer-from-center)*.4) + .8)) contrast(1.5) saturate(1.25);
+  mix-blend-mode: exclusion;
+
+}
+
+
+.card[data-rarity="rare shiny v"] .card__shine:before {
+
+  content: "";
+  -webkit-mask-image: none;
+  mask-image: none;
+  
+  background-image: 
+    radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(0, 0%, 100%) 0%, 
+      hsla(0, 0%, 0%, 0) 40% 
+    );
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: overlay;
+  
+  opacity: 0.75;
+  z-index: 1;
+
+}
+
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+.card[data-rarity="rare shiny v"] .card__glare {
+
+  background-image: 
+    radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(0, 0%, 90%) 5%, 
+      hsl(200, 5%, 45%) 80%, 
+      hsl(320, 40%, 10%) 150% 
+    );
+
+  background-size: 120% 140%;
+  background-position: center center;
+
+  mix-blend-mode: darken;
+  filter: brightness(.88) contrast(2.25) saturate(.7);
+  
+  opacity: calc( var(--card-opacity) * var(--pointer-from-center) * 0.75 );
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked)[data-rarity="rare shiny v"] .card__shine,
+.card:not(.masked)[data-rarity="rare shiny v"] .card__shine:after {
+
+  --mask: none;
+  --foil: url("/img/illusion.png"); 
+  --imgsize: 33%;
+
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+	-webkit-mask-size: var(--imgsize);
+  mask-size: var(--imgsize);
+
+  background-blend-mode: exclusion, hue, hard-light;
+  filter: brightness(calc((var(--pointer-from-center)*.3) + .35)) contrast(2) saturate(1.5);
+
+}
+
+.card:not(.masked)[data-rarity="rare shiny v"] .card__shine:before {
+  content: none;
+  display: none;
+}
+
+.card:not(.masked)[data-rarity="rare shiny v"] .card__shine:after {
+  filter: brightness(calc((var(--pointer-from-center)*.5) + .8)) contrast(1.6) saturate(1.4);
+}
+
+

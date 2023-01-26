@@ -1,0 +1,76 @@
+fetch(`https://api.pokemontcg.io/v2/cards?q=(
+ id:swsh4-170 OR
+ id:sm35-1 OR
+ id:sm10-33 OR
+ id:sm115-7 OR
+ id:swsh12-116 OR
+ id:swsh12-49 OR
+ id:swsh12-85 OR
+ id:pgo-24 OR
+ id:pgo-29 OR
+ id:pgo-12 OR
+ id:swsh1-85 OR
+ id:swsh9-132 OR
+ id:pgo-43 OR
+ id:swsh12tg-TG02 OR
+ id:swshp-SWSH012 OR
+ id:swsh45-60 OR
+ id:swshp-SWSH127 OR
+ id:pgo-11 OR
+ id:swsh12-59 OR
+ id:swsh12-120 OR
+ id:swsh12-138 OR
+ id:swsh7-110 OR
+ id:pgo-49 OR
+ id:swsh8-250 OR
+ id:swsh3-183 OR
+ id:swsh12-176 OR
+ id:swsh7-29 OR
+ id:swsh45-51 OR
+ id:swsh9-29 OR
+ id:swshp-SWSH179 OR
+ id:swshp-SWSH181 OR
+ id:swshp-SWSH183 OR
+ id:swshp-SWSH180 OR
+ id:swshp-SWSH182 OR
+ id:swshp-SWSH184 OR
+ id:swsh10-177 OR
+ id:swsh8-245 OR
+ id:swsh11-186 OR
+ id:swsh7-215 OR
+ id:swsh8-270 OR
+ id:swsh7-212 OR
+ id:pgo-31 OR
+ id:swshp-SWSH214 OR
+ id:swsh9-18 OR
+ id:swsh4-183 OR
+ id:swsh9-167 OR
+ id:swsh6-196 OR
+ id:swsh4-185 OR
+ id:swsh2-189 OR
+ id:swsh1-200 OR
+ id:swsh4-188 OR
+ id:swsh12-197 OR
+ id:swsh10-204 OR
+ id:swsh10-213 OR
+ id:swsh10-214 OR
+ id:swsh7-232 OR
+ id:swsh5-181 OR
+ id:swsh7-229 OR
+ id:swsh1-213 OR
+ id:swsh8-280 OR
+ id:swsh9-184 OR
+ id:swsh11tg-TG30 OR
+ id:swsh11tg-TG03 OR
+ id:swsh11tg-TG05 OR
+ id:swsh12tg-TG02 OR
+ id:swsh9tg-TG16 OR
+ id:swsh9tg-TG18 OR
+ id:swsh10tg-TG17 OR
+ id:swsh9tg-TG17 OR
+ id:swsh9tg-TG19 OR
+ id:swsh10tg-TG18 
+)
+&select=id,name,number,supertype,subtypes,rarity,images,types
+&orderBy=rarity
+`) 

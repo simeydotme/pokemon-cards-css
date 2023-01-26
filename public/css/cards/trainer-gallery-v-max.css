@@ -1,0 +1,44 @@
+/*
+
+  TRAINER GALLERY (V MAX)
+	some styles inherited from rainbow-alt.css
+
+*/
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/    
+
+
+.card[data-rarity="rare holo vmax"][data-trainer-gallery="true"] .card__glare {
+  
+	background-image: 
+		radial-gradient( 
+			farthest-corner circle at 
+			var(--pointer-x) var(--pointer-y), 
+			hsla(50, 20%, 90%, 0.75) 0%, 
+			hsla(150, 20%, 30%, 0.65) 45%, 
+			hsla(0, 0%, 0%, 1) 100% 
+		);
+
+	filter: brightness(.9) contrast(2);
+	opacity: calc( var(--card-opacity) * 0.75 );
+
+}

@@ -3,69 +3,85 @@
   import { onMount } from "svelte";
   import { activeCard } from "../stores/activeCard.js";
   import { orientation, resetBaseOrientation } from "../stores/orientation.js";
-  import { clamp, round } from "../helpers/Math.js";
+  import { clamp, round, adjust } from "../helpers/Math.js";
 
-  import Glare from "../components/card-glare.svelte";
-  import Shine from "../components/card-shine.svelte";
-
-  export let back_img =
-    "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
-  export let img = "";
-
+  // data / pokemon props
   export let name = "";
-  export let number = "0";
+  export let number = "";
+  export let set = "";
+  export let types = "";
   export let subtypes = "basic";
   export let supertype = "pokémon";
   export let rarity = "common";
-  export let gallery = false;
+
+  // image props
+  export let img = "";
+  export let back = "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
+  export let foil = "";
+  export let mask = "";
+
+  // context/environment props
   export let showcase = false;
 
-  const back_loading =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAANklEQVR42u3OMQEAAAQAMKJJJT4ZXJ4twTKqJ56lhISEhISEhISEhISEhISEhISEhISEhMTdAodwTxGtMFP/AAAAAElFTkSuQmCC";
-  const front_loading =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAAN0lEQVR42u3OIQEAMAgAsNP/AkFfyIDCbAkWP6vfsZCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ2BtyOnuhnmSZZAAAAABJRU5ErkJggg==";
+  const randomSeed = {
+    x: Math.random(),
+    y: Math.random()
+  }
 
-  let img_base = img.startsWith("http") ? "" : "https://images.pokemontcg.io/";
+  const cosmosPosition = { 
+    x: Math.floor( randomSeed.x * 734 ), 
+    y: Math.floor( randomSeed.y * 1280 ) 
+  };
+
+  let isTrainerGallery = false;
+
+  let back_img = back;
   let front_img = "";
+  let img_base = img.startsWith("http") ? "" : "https://images.pokemontcg.io/";
 
-  const galaxyPosition = Math.floor(Math.random()*1500);
-
-  setTimeout(() => {
-    front_img = img_base + img;
-  }, 20);
 
   let thisCard;
-  let rotator;
-  let debounce;
+  let repositionTimer;
+
   let active = false;
   let interacting = false;
   let firstPop = true;
   let loading = true;
   let isVisible = document.visibilityState === "visible";
 
-  const springR = { stiffness: 0.066, damping: 0.25 };
-  const springD = { stiffness: 0.033, damping: 0.45 };
-  let springRotate = spring({ x: 0, y: 0 }, springR);
-  let springGlare = spring({ x: 50, y: 50, o: 0 }, springR);
-  let springBackground = spring({ x: 50, y: 50 }, springR);
-  let springRotateDelta = spring({ x: 0, y: 0 }, springD);
-  let springTranslate = spring({ x: 0, y: 0 }, springD);
-  let springScale = spring(1, springD);
+  const springInteractSettings = { stiffness: 0.066, damping: 0.25 };
+  const springPopoverSettings = { stiffness: 0.033, damping: 0.45 };
+  let springRotate = spring({ x: 0, y: 0 }, springInteractSettings);
+  let springGlare = spring({ x: 50, y: 50, o: 0 }, springInteractSettings);
+  let springBackground = spring({ x: 50, y: 50 }, springInteractSettings);
+  let springRotateDelta = spring({ x: 0, y: 0 }, springPopoverSettings);
+  let springTranslate = spring({ x: 0, y: 0 }, springPopoverSettings);
+  let springScale = spring(1, springPopoverSettings);
 
   let showcaseInterval;
   let showcaseTimerStart;
   let showcaseTimerEnd;
-  let showcaseRunning = true;
+  let showcaseRunning = showcase;
 
-  const interact = (e) => {
+  const endShowcase = () => {
     if (showcaseRunning) {
       clearTimeout(showcaseTimerEnd);
       clearTimeout(showcaseTimerStart);
       clearInterval(showcaseInterval);
       showcaseRunning = false;
     }
+  };
 
-    if (isVisible && $activeCard && $activeCard !== thisCard) {
+  const interact = (e) => {
+    
+    endShowcase();
+
+    if (!isVisible) {
+      return (interacting = false);
+    }
+    
+    // prevent other background cards being interacted with
+    if ($activeCard && $activeCard !== thisCard) {
       return (interacting = false);
     }
 
@@ -83,31 +99,23 @@
       y: e.clientY - rect.top, // get mouse position from right
     };
     const percent = {
-      x: round((100 / rect.width) * absolute.x),
-      y: round((100 / rect.height) * absolute.y),
+      x: clamp(round((100 / rect.width) * absolute.x)),
+      y: clamp(round((100 / rect.height) * absolute.y)),
     };
     const center = {
       x: percent.x - 50,
       y: percent.y - 50,
     };
 
-    springBackground.stiffness = springR.stiffness;
-    springBackground.damping = springR.damping;
-    springBackground.set({
-      x: round(50 + percent.x / 4 - 12.5),
-      y: round(50 + percent.y / 3 - 16.67),
-    });
-    springRotate.stiffness = springR.stiffness;
-    springRotate.damping = springR.damping;
-    springRotate.set({
+    updateSprings({
+      x: adjust(percent.x, 0, 100, 37, 63),
+      y: adjust(percent.y, 0, 100, 33, 67),
+    },{
       x: round(-(center.x / 3.5)),
       y: round(center.y / 2),
-    });
-    springGlare.stiffness = springR.stiffness;
-    springGlare.damping = springR.damping;
-    springGlare.set({
-      x: percent.x,
-      y: percent.y,
+    },{
+      x: round(percent.x),
+      y: round(percent.y),
       o: 1,
     });
   };
@@ -147,8 +155,8 @@
   };
 
   const reposition = (e) => {
-    clearTimeout(debounce);
-    debounce = setTimeout(() => {
+    clearTimeout(repositionTimer);
+    repositionTimer = setTimeout(() => {
       if ($activeCard && $activeCard === thisCard) {
         setCenter();
       }
@@ -213,72 +221,85 @@
     }
   }
 
-  $: styles = `
-		--mx: ${$springGlare.x}%;
-		--my: ${$springGlare.y}%;
-		--tx: ${$springTranslate.x}px;
-		--ty: ${$springTranslate.y}px;
-		--s: ${$springScale};
-		--o: ${$springGlare.o};
-		--rx: ${$springRotate.x + $springRotateDelta.x}deg;
-		--ry: ${$springRotate.y + $springRotateDelta.y}deg;
-		--pos: ${$springBackground.x}% ${$springBackground.y}%;
-		--posx: ${$springBackground.x}%;
-		--posy: ${$springBackground.y}%;
-		--hyp: ${
-      clamp( Math.sqrt(
-        ($springGlare.y - 50) * ($springGlare.y - 50) +
-          ($springGlare.x - 50) * ($springGlare.x - 50)
-      ) / 50, 0, 1)
-    };
-    --galaxybg: center ${galaxyPosition}px;
+
+  let foilStyles = ``;
+  const staticStyles = `
+    --seedx: ${randomSeed.x};
+    --seedy: ${randomSeed.y};
+    --cosmosbg: ${cosmosPosition.x}px ${cosmosPosition.y}px;
+  `;
+  $: dynamicStyles = `
+    --pointer-x: ${$springGlare.x}%;
+    --pointer-y: ${$springGlare.y}%;
+    --pointer-from-center: ${ 
+      clamp( Math.sqrt( 
+        ($springGlare.y - 50) * ($springGlare.y - 50) + 
+        ($springGlare.x - 50) * ($springGlare.x - 50) 
+      ) / 50, 0, 1) };
+    --pointer-from-top: ${$springGlare.y / 100};
+    --pointer-from-left: ${$springGlare.x / 100};
+    --card-opacity: ${$springGlare.o};
+    --rotate-x: ${$springRotate.x + $springRotateDelta.x}deg;
+    --rotate-y: ${$springRotate.y + $springRotateDelta.y}deg;
+    --background-x: ${$springBackground.x}%;
+    --background-y: ${$springBackground.y}%;
+    --card-scale: ${$springScale};
+    --translate-x: ${$springTranslate.x}px;
+    --translate-y: ${$springTranslate.y}px;
 	`;
 
   $: {
     rarity = rarity.toLowerCase();
     supertype = supertype.toLowerCase();
     number = number.toLowerCase();
-    gallery = number.startsWith("tg");
+    isTrainerGallery = number.startsWith("tg");
+    if (Array.isArray(types)) {
+      types = types.join(" ").toLowerCase();
+    }
     if (Array.isArray(subtypes)) {
       subtypes = subtypes.join(" ").toLowerCase();
     }
   }
 
-  const imageLoader = (e) => {
-    loading = false;
-  };
-
   const orientate = (e) => {
+
     const x = e.relative.gamma;
     const y = e.relative.beta;
+    const limit = { x: 16, y: 18 };
 
-    const max = { x: 16, y: 18 };
-    const degrees = { x: clamp(x, -max.x, max.x), y: clamp(y, -max.y, max.y) };
-    const percent = {
-      x: 50 + (degrees.x / (max.x * 2)) * 100,
-      y: 50 + (degrees.y / (max.y * 2)) * 100,
+    const degrees = { 
+      x: clamp(x, -limit.x, limit.x), 
+      y: clamp(y, -limit.y, limit.y) 
     };
 
-    springBackground.stiffness = springR.stiffness;
-    springBackground.damping = springR.damping;
-    springBackground.set({
-      x: round(50 + (max.x * 2 * ((50 - -percent.x) / 100) - max.x * 2)),
-      y: round(50 + (max.y * 2 * ((50 + percent.y) / 100) - max.y * 2)),
-    });
-    springRotate.stiffness = springR.stiffness;
-    springRotate.damping = springR.damping;
-    springRotate.set({
+    updateSprings({
+      x: adjust(degrees.x, -limit.x, limit.x, 37, 63),
+      y: adjust(degrees.y, -limit.y, limit.y, 33, 67),
+    },{
       x: round(degrees.x * -1),
       y: round(degrees.y),
-    });
-    springGlare.stiffness = springR.stiffness;
-    springGlare.damping = springR.damping;
-    springGlare.set({
-      x: round(percent.x),
-      y: round(percent.y),
+    },{
+      x: adjust(degrees.x, -limit.x, limit.x, 0, 100),
+      y: adjust(degrees.y, -limit.y, limit.y, 0, 100),
       o: 1,
     });
+
   };
+
+  const updateSprings = ( background, rotate, glare ) => {
+
+    springBackground.stiffness = springInteractSettings.stiffness;
+    springBackground.damping = springInteractSettings.damping;
+    springRotate.stiffness = springInteractSettings.stiffness;
+    springRotate.damping = springInteractSettings.damping;
+    springGlare.stiffness = springInteractSettings.stiffness;
+    springGlare.damping = springInteractSettings.damping;
+
+    springBackground.set(background);
+    springRotate.set(rotate);
+    springGlare.set(glare);
+
+  }
 
   $: {
     if ($activeCard && $activeCard === thisCard) {
@@ -289,12 +310,28 @@
 
   document.addEventListener("visibilitychange", (e) => {
     isVisible = document.visibilityState === "visible";
-    if (!isVisible) {
-      reset();
-    }
+    endShowcase();
+    reset();
   });
 
+  const imageLoader = (e) => {
+    loading = false;
+    if ( mask || foil ) {
+      foilStyles = `
+    --mask: url(${mask});
+    --foil: url(${foil});
+      `;
+    }
+  };
+
   onMount(() => {
+
+    // set the front image on mount so that
+    // the lazyloading can work correctly
+    front_img = img_base + img;
+
+    // run a cute little animation on load
+    // for showcase card
     if (showcase && isVisible) {
       let showTimer;
       const s = 0.02;
@@ -340,29 +377,31 @@
 <svelte:window on:scroll={reposition} />
 
 <div
-  class="card"
+  class="card {types} / interactive / "
   class:active
   class:interacting
   class:loading
+  class:masked={!!mask}
   data-number={number}
+  data-set={set}
   data-subtypes={subtypes}
   data-supertype={supertype}
   data-rarity={rarity}
-  data-gallery={gallery}
-  style={styles}
+  data-trainer-gallery={isTrainerGallery}
+  style={dynamicStyles}
   bind:this={thisCard}
 >
-  <div class="card__translater">
+  <div 
+    class="card__translater">
     <button
       class="card__rotator"
-      bind:this={rotator}
       on:click={activate}
       on:pointermove={interact}
       on:mouseout={interactEnd}
       on:blur={deactivate}
       aria-label="Expand the Pokemon Card; {name}."
       tabindex="0"
-    >
+      >
       <img
         class="card__back"
         src={back_img}
@@ -371,7 +410,8 @@
         width="660"
         height="921"
       />
-      <div class="card__front">
+      <div class="card__front" 
+        style={ staticStyles + foilStyles }>
         <img
           src={front_img}
           alt="Front design of the {name} Pokemon Card, with the stats and info around the edge"
@@ -380,137 +420,29 @@
           width="660"
           height="921"
         />
-        <Shine {subtypes} {supertype} />
-        <Glare {subtypes} {rarity} />
+        <div class="card__shine"></div>
+        <div class="card__glare"></div>
       </div>
     </button>
   </div>
 </div>
 
 <style>
+
   :root {
-    --mx: 50%;
-    --my: 50%;
-    --s: 1;
-    --o: 0;
-    --tx: 0px;
-    --ty: 0px;
-    --rx: 0deg;
-    --ry: 0deg;
-    --pos: 50% 50%;
-    --posx: 50%;
-    --posy: 50%;
-    --hyp: 0;
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --card-scale: 1;
+    --card-opacity: 0;
+    --translate-x: 0px;
+    --translate-y: 0px;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: var(--pointer-x);
+    --background-y: var(--pointer-y);
+    --pointer-from-center: 0;    
+    --pointer-from-top: var(--pointer-from-center);
+    --pointer-from-left: var(--pointer-from-center);
   }
 
-  .card {
-    --radius: 4.55% / 3.5%;
-    --back: #004177;
-    --glow: #69d1e9;
-    z-index: calc(var(--s) * 100);
-    transform: translate3d(0, 0, 0.1px);
-    -webkit-transform: translate3d(0, 0, 0.1px);
-    will-change: transform, visibility;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-  }
-
-  .card.interacting {
-    z-index: calc(var(--s) * 120);
-  }
-
-  .card.active .card__translater,
-  .card.active .card__rotator {
-    touch-action: none;
-  }
-
-  .card__translater,
-  .card__rotator {
-    display: grid;
-    perspective: 600px;
-    transform-origin: center;
-    -webkit-transform-origin: center;
-    will-change: transform;
-  }
-
-  .card__translater {
-    width: auto;
-    position: relative;
-    transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
-    -webkit-transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
-  }
-
-  .card__rotator {
-    transform: rotateY(var(--rx)) rotateX(var(--ry));
-    transform-style: preserve-3d;
-    -webkit-transform: rotateY(var(--rx)) rotateX(var(--ry));
-    -webkit-transform-style: preserve-3d;
-    box-shadow: 0px 10px 20px -5px black;
-    border-radius: var(--radius);
-    outline: none;
-    transition: box-shadow 0.4s ease, outline 0.2s ease;
-  }
-  button.card__rotator {
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    background: top;
-    padding: 0;
-  }
-
-  .card.active .card__rotator {
-    box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow),
-      0 0 30px 0px var(--glow);
-  }
-
-  .card__rotator:focus {
-    box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow),
-      0 0 30px 0px var(--glow);
-  }
-
-  .card.active .card__rotator:focus {
-    box-shadow: 0px 10px 30px 3px black;
-  }
-
-  .card__rotator :global(*) {
-    width: 100%;
-    display: grid;
-    grid-area: 1/1;
-    border-radius: var(--radius);
-    image-rendering: optimizeQuality;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-  }
-
-  .card__rotator img {
-    outline: 1px solid transparent;
-    aspect-ratio: 0.716;
-    height: auto;
-  }
-
-  .card__back {
-    background-color: var(--back);
-    transform: rotateY(180deg) translateZ(1px);
-    -webkit-transform: rotateY(180deg) translateZ(1px);
-    backface-visibility: visible;
-  }
-
-  .card__front,
-  .card__front * {
-    backface-visibility: hidden;
-  }
-
-  .card__front {
-    opacity: 1;
-    transition: opacity 0.33s ease-out;
-  }
-
-  .loading .card__front {
-    opacity: 0;
-  }
-
-  .loading .card__back {
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-  }
 </style>

@@ -1,0 +1,143 @@
+/*
+
+  RAINBOW (SECRET) HOLO
+
+*/
+
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare rainbow"] .card__shine {
+
+  --r-clr-1: hsl(0, 57%, 37%);
+  --r-clr-2: hsl(40, 53%, 39%);
+  --r-clr-3: hsl(90, 60%, 35%);
+  --r-clr-4: hsl(180, 60%, 35%);
+  --r-clr-5: hsl(180, 60%, 35%);
+  --r-clr-6: hsl(210, 57%, 39%);
+  --r-clr-7: hsl(280, 55%, 31%);
+
+  background-image: 
+    linear-gradient(-45deg, var(--r-clr-1), var(--r-clr-5)),
+    var(--glitter),
+    linear-gradient( -30deg, 
+      var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+      var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+      var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+      var(--r-clr-1)
+    );
+
+  background-blend-mode: luminosity, soft-light;
+
+  background-size: 
+    200% 200%, 
+    var(--glittersize) var(--glittersize), 
+    400% 400%;
+  
+  background-position: 
+    calc( 25% + (50% * var(--pointer-from-left) )) calc( 25% + (50% * var(--pointer-from-top) )), 
+    center center, 
+    calc( 25% + (var(--pointer-x) / 2 ) ) calc( 25% + (var(--pointer-y) / 2 ) );
+  
+  filter: brightness(calc((var(--pointer-from-center)*0.25) + 0.6))  contrast(2.2) saturate(0.75);
+
+}
+
+.card[data-rarity="rare rainbow"] .card__shine:after {
+
+  content: "";
+
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+
+  background-image: 
+    var(--glitter),
+    linear-gradient( -60deg, 
+        var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+        var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+        var(--r-clr-1), var(--r-clr-2), var(--r-clr-3), var(--r-clr-4), var(--r-clr-5), var(--r-clr-6), var(--r-clr-7), 
+        var(--r-clr-1)
+    );
+
+    background-blend-mode: soft-light;
+    background-size: var(--glittersize) var(--glittersize), 400% 400%;
+    background-position: center center, var(--pointer-x) var(--pointer-y);
+
+    filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.55)) contrast(2) saturate(1);
+    mix-blend-mode: color-dodge;
+
+}
+
+.card[data-rarity="rare rainbow"] .card__shine:before {
+
+  content: "";
+
+  background-image: var(--foil);
+  background-size: var(--imgsize);
+  background-position: center center;
+  filter: brightness(2.5) contrast(1);
+
+  opacity: calc((var(--pointer-from-center) + 0.4 ) * 0.6 );
+  background-blend-mode: difference;
+  mix-blend-mode: darken;
+
+}
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+.card[data-rarity="rare rainbow"] .card__glare {
+	
+	background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(0,0%,80%), 
+      hsla(187, 10%, 85%, 0.25) 30%, 
+      hsl(197, 6%, 25%) 120% 
+    );
+
+	filter: brightness(.9) contrast(1.75);
+	opacity: calc( var(--pointer-from-center) * 0.9 );
+  mix-blend-mode: hard-light;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked)[data-rarity="rare rainbow"] .card__shine {
+
+  --foil: url("/img/illusion-mask.png"); 
+  --imgsize: 33%;
+
+}

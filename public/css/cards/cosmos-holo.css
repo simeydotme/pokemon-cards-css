@@ -1,0 +1,111 @@
+/*
+
+  COSMOS HOLO
+
+*/
+
+.card[data-rarity="rare holo cosmos"][data-subtypes^="stage"] .card__shine,
+.card[data-rarity="rare holo cosmos"][data-subtypes^="stage"] .card__glare:after {
+  clip-path: var(--clip-stage);
+}
+.card[data-rarity="rare holo cosmos"][data-subtypes^="supporter"] .card__shine,
+.card[data-rarity="rare holo cosmos"][data-subtypes^="supporter"] .card__glare:after {
+  clip-path: var(--clip-trainer);
+}
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare holo cosmos"] .card__shine {
+
+  --space: 4%;
+
+  clip-path: var(--clip);
+
+  background-image: 
+    url("/img/cosmos-top-trans.png"), 
+    url("/img/cosmos-middle-trans.png"), 
+    url("/img/cosmos-bottom.png"), 
+    repeating-linear-gradient(
+      82deg, 
+      hsl(53, 65%, 60%) calc(var(--space)*1), 
+      hsl(93, 56%, 50%) calc(var(--space)*2), 
+      hsl(176, 54%, 49%) calc(var(--space)*3), 
+      hsl(228, 59%, 55%) calc(var(--space)*4), 
+      hsl(283, 60%, 55%) calc(var(--space)*5), 
+      hsl(326, 59%, 51%) calc(var(--space)*6), 
+      hsl(326, 59%, 51%) calc(var(--space)*7), 
+      hsl(283, 60%, 55%) calc(var(--space)*8), 
+      hsl(228, 59%, 55%) calc(var(--space)*9), 
+      hsl(176, 54%, 49%) calc(var(--space)*10), 
+      hsl(93, 56%, 50%) calc(var(--space)*11), 
+      hsl(53, 65%, 60%) calc(var(--space)*12) 
+    ), 
+    radial-gradient( 
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y), 
+      hsla(180, 100%, 89%, 0.5) 5%, 
+      hsla(180, 14%, 57%, 0.3) 40%, 
+      hsl(0, 0%, 0%) 100% 
+  );
+
+  background-blend-mode: 
+    color-dodge, 
+    color-dodge, 
+    color-burn, 
+    multiply;
+
+  background-position: 
+    var(--cosmosbg, center center), 
+    var(--cosmosbg, center center), 
+    var(--cosmosbg, center center), 
+    calc(((50% - var(--background-x)) * 2.5) + 50%) calc(((50% - var(--background-y)) * 2.5) + 50%), 
+    center center;
+
+  background-size: cover, cover, cover, 400% 900%, cover;
+
+  filter: brightness(1.25) contrast(1.75) saturate(.8);;
+  mix-blend-mode: color-dodge;
+
+}
+
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+.card[data-rarity="rare holo cosmos"] .card__glare {
+  
+  filter: brightness(.8) contrast(1.5) saturate(2);
+    
+}
+
+.card[data-rarity="rare holo cosmos"] .card__glare:after {
+
+  content: "";
+
+  background-image: 
+    radial-gradient( farthest-corner circle at 
+      var(--pointer-x) var(--pointer-y), 
+      hsla(180, 3%, 55%, 0.2) 28%, 
+      hsla(308, 5%, 33%, 0.35) 60%, 
+      hsla(0, 0%, 31%, 0.8) 90%
+    );
+  mix-blend-mode: soft-light;
+
+}

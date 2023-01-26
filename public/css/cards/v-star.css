@@ -1,0 +1,171 @@
+/*
+
+  V STAR
+
+*/
+
+
+.card.masked[data-rarity="rare holo vstar"] .card__shine, 
+.card.masked[data-rarity="rare holo vstar"] .card__shine::before, 
+.card.masked[data-rarity="rare holo vstar"] .card__shine::after {
+
+  -webkit-mask-image:  
+    var(--mask), 
+    radial-gradient(
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 100%, 0) 0%, 
+      hsla(0, 0%, 100%, .5) 120%
+    ); 
+
+  mask-image: 
+    var(--mask), 
+    radial-gradient(
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 100%, 0) 0%, 
+      hsla(0, 0%, 100%, .5) 120%
+    );
+
+}
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare holo vstar"] .card__shine,
+.card[data-rarity="rare holo vstar"] .card__shine:after {
+
+  --space: 5%;
+  --angle: 133deg;
+  --imgsize: cover;
+
+  background-image:
+    var(--foil),
+    repeating-linear-gradient( 0deg, 
+      var(--sunpillar-clr-1) calc(var(--space)*1), 
+      var(--sunpillar-clr-2) calc(var(--space)*2), 
+      var(--sunpillar-clr-3) calc(var(--space)*3), 
+      var(--sunpillar-clr-4) calc(var(--space)*4), 
+      var(--sunpillar-clr-5) calc(var(--space)*5), 
+      var(--sunpillar-clr-6) calc(var(--space)*6), 
+      var(--sunpillar-clr-1) calc(var(--space)*7)
+    ),
+    repeating-linear-gradient( 
+      var(--angle), 
+      #0e152e 0%, 
+      hsl(180, 10%, 60%) 3.8%, 
+      hsl(180, 29%, 66%) 4.5%, 
+      hsl(180, 10%, 60%) 5.2%, 
+      #0e152e 10% , 
+      #0e152e 12% 
+    ),
+    radial-gradient(
+      farthest-corner circle 
+      at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 0%, 0.1) 12%, 
+      hsla(0, 0%, 0%, 0.15) 20%, 
+      hsla(0, 0%, 0%, 0.25) 120%
+    );
+
+  background-blend-mode: soft-light, hue, hard-light;
+  background-size: var(--imgsize), 200% 700%, 300% 100%, 200% 100%;
+  background-position: center center, 0% var(--background-y), var(--background-x) var(--background-y), var(--background-x) var(--background-y);
+  
+  filter: brightness(calc((var(--pointer-from-center) * .75) + .25)) contrast(2) saturate(1.25);
+
+}
+
+.card[data-rarity="rare holo vstar"] .card__shine:after {
+
+  content: "";
+
+  background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
+  background-position: center center, 0% var(--background-y), calc( var(--background-x) * -1) calc( var(--background-y) * -1), var(--background-x) var(--background-y);
+
+  filter: brightness(calc((var(--pointer-from-center) * .75) + .5)) contrast(1.5) saturate(1.5);
+  mix-blend-mode: exclusion;
+
+}
+
+.card[data-rarity="rare holo vstar"] .card__shine::before {
+
+  content: "";
+  background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsla(190, 7%, 80%, 0.75) 0%, hsla(260, 7%, 50%, 0.25) 45%, hsl(310, 7%, 50%) 120% );
+  mix-blend-mode: hard-light;
+  z-index: 2;
+  opacity: 0.8;
+  
+}
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+
+.card[data-rarity="rare holo vstar"] .card__glare {
+  
+  filter: brightness(.7) contrast(2);
+
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(195, 90%, 90%) 5%, 
+      hsl(300, 3%, 60%) 60%, 
+      hsl(350, 0%, 15%) 150% 
+    );
+  
+  mix-blend-mode: hard-light;
+  opacity: calc(var(--card-opacity)*(var(--pointer-from-center)*.75));
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine,
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine:after {
+
+  --mask: none;
+  --foil: url("/img/ancient.png"); 
+  --imgsize: 18% 15%;
+
+  background-blend-mode: exclusion, hue, hard-light;
+  filter: brightness(calc((var(--pointer-from-center) * .25) + .35)) contrast(1.8) saturate(1.75);
+
+}
+
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__shine:after {
+
+  filter: brightness(calc((var(--pointer-from-center) * .75) + .5)) contrast(1.5) saturate(1.5);
+
+}
+
+
+.card:not(.masked)[data-rarity="rare holo vstar"] .card__glare {
+  
+  filter: brightness(.55) contrast(2);
+
+}

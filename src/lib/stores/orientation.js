@@ -25,14 +25,11 @@ let firstReading = true;
 let baseOrientation = getRawOrientation();
 
 export const resetBaseOrientation = () => {
-  // console.log("Resetting Base Orientation");
   firstReading = true;
   baseOrientation = getRawOrientation();
 }
 
 export const orientation = readable( getOrientationObject(), function start( set ) {
-
-  // console.log("Starting Orientation Tracking");
 
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientation
   const handleOrientation = function(e) {
@@ -40,11 +37,9 @@ export const orientation = readable( getOrientationObject(), function start( set
     if ( firstReading ) {
       firstReading = false;
       baseOrientation = getRawOrientation(e);
-      // console.log("Starting Orientation from: ", baseOrientation );
     }
 
     const o = getOrientationObject(e);
-    // console.log("Setting Orientation to: ", o );
     set( o );
   };
 
@@ -52,7 +47,6 @@ export const orientation = readable( getOrientationObject(), function start( set
 
   return function stop() {
     window.removeEventListener("deviceorientation", handleOrientation, true);
-    // console.log("Stopping Orientation Tracking");
   }
 
 });

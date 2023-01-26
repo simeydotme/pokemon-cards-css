@@ -1,0 +1,181 @@
+/*
+
+  REGULAR HOLO
+
+*/
+
+.card[data-rarity="rare holo"][data-subtypes^="stage"] .card__shine,
+.card[data-rarity="rare holo"][data-subtypes^="stage"] .card__glare:after {
+  clip-path: var(--clip-stage);
+}
+.card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__shine,
+.card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__glare:after {
+  clip-path: var(--clip-trainer);
+}
+
+
+
+
+
+
+/*
+
+  SHINE LAYERS
+
+*/
+
+.card[data-rarity="rare holo"] .card__shine {
+
+  --scanlines-space: 1px;
+  --scanlines-light: #666;
+  --scanlines-dark: black;
+
+  --bars: 3%;
+  --bar-color: hsla(0, 0%, 70%, 1);
+  --bar-bg: hsla(0, 0%, 0%, 1);
+
+  clip-path: var(--clip);
+
+  background-image: 
+    repeating-linear-gradient( 110deg, 
+      var(--violet), var(--blue), var(--green), var(--yellow), var(--red), 
+      var(--violet), var(--blue), var(--green), var(--yellow), var(--red),
+      var(--violet), var(--blue), var(--green), var(--yellow), var(--red)
+    ),
+    repeating-linear-gradient( 90deg, 
+      var(--scanlines-dark) calc(var(--scanlines-space) * 0), var(--scanlines-dark) calc(var(--scanlines-space) * 2),
+      var(--scanlines-light) calc(var(--scanlines-space) * 2), var(--scanlines-light) calc(var(--scanlines-space) * 4)
+    );
+
+  background-position: 
+    calc(((50% - var(--background-x)) * 2.6) + 50%) calc(((50% - var(--background-y)) * 3.5) + 50%),
+    center center;
+
+  background-size: 
+    400% 400%, 
+    cover;
+
+  background-blend-mode: overlay;
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  mix-blend-mode: color-dodge;
+
+}
+
+.card[data-rarity="rare holo"] .card__shine:before {
+  
+  content: "";
+
+  background-image:
+    repeating-linear-gradient( 90deg, 
+      var(--bar-bg) calc(var(--bars)*2), 
+      var(--bar-color) calc(var(--bars)*3), 
+      var(--bar-bg) calc(var(--bars)*3.5), 
+      var(--bar-color) calc(var(--bars)*4), 
+      var(--bar-bg) calc(var(--bars)*5), 
+      var(--bar-bg) calc(var(--bars)*14)
+    ),
+    repeating-linear-gradient( 90deg, 
+      var(--bar-bg) calc(var(--bars)*2), 
+      var(--bar-color) calc(var(--bars)*3), 
+      var(--bar-bg) calc(var(--bars)*3.5), 
+      var(--bar-color) calc(var(--bars)*4), 
+      var(--bar-bg) calc(var(--bars)*5), 
+      var(--bar-bg) calc(var(--bars)*10)
+    );
+
+  background-position: 
+    calc((((50% - var(--background-x)) * 1.65) + 50% ) + (var(--background-y) * 0.5)) var(--background-x), 
+    calc((((50% - var(--background-x)) * -0.9) + 50%) - (var(--background-y) * 0.75) ) var(--background-y);
+
+  background-size: 
+    200% 200%,
+    200% 200%;
+
+  background-blend-mode: screen;
+  filter: brightness( 1.15 ) contrast( 1.1 );
+  mix-blend-mode: hard-light;
+
+}
+
+.card[data-rarity="rare holo"] .card__shine:after {
+
+  content: "";
+    
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle 
+        at var(--pointer-x) var(--pointer-y), 
+        hsla(0, 0%, 90%, 0.8) 0%, 
+        hsla(0, 0%, 78%, 0.1) 25%, 
+        hsl(0, 0%, 0%) 90% 
+    );
+    
+  background-position: 
+    center center;
+
+  background-size:
+    cover;
+
+  mix-blend-mode: luminosity; 
+  filter: brightness(0.6) contrast(4);
+
+}
+
+@media screen and (max-width: 900px) {
+  .card[data-rarity="rare holo"] .card__shine {
+    --scanlines-space: .5px;
+  }
+}
+
+
+
+
+
+
+/*
+
+  GLARE LAYERS
+
+*/
+
+.card[data-rarity="rare holo"] .card__glare {
+
+  opacity: calc( var(--card-opacity) * .8 );
+  filter: brightness(0.8) contrast(1.5);
+  mix-blend-mode: overlay;
+
+}
+
+.card[data-rarity="rare holo"] .card__glare:after {
+
+  content: "";
+
+  background-image: 
+    radial-gradient( 
+      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
+      hsl(180, 100%, 95%) 5%, 
+      hsla(0, 0%, 39%, 0.25) 55%, 
+      hsla(0, 0%, 0%, 0.36) 110% 
+    );
+
+  mix-blend-mode: overlay;
+  filter: brightness(.6) contrast(3);
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+  NO MASK
+
+*/
+
+

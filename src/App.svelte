@@ -1,44 +1,52 @@
 <script>
 	import CardList from "./cards.svelte";
-	import Card from "./lib/components/card.svelte";
+	// import Card from "./lib/components/card.svelte";
+	import Card from "./lib/components/card-proxy.svelte";
   import { onMount } from "svelte";
 
-	let showcase, basics, holos, galaxies, radiant, basicGallery, 
+	let showcase, basics, reverse, holos, cosmos, amazings, radiant, basicGallery, 
 			vee, veeUltra, veeAlt, veeMax, veeMaxAlt, veeStar, 
-			trainerHolo, rainbow, gold, veeGallery;
+			trainerHolo, rainbow, gold, veeGallery, shinyVault;
 
 	let isLoading = true;
 
 	const getCards = async () => {
 		let promiseArray = [];
 
-		let cardFetch = await fetch("/data.json");
+		let cardFetch = await fetch("/data/cards.json");
 		let cards = await cardFetch.json();
 		return cards;
 	};
 
-	getCards().then((cards) => {
-		window.cards = cards;
-		showcase = cards[23];
-		basics = cards.slice(0, 6);
-		holos = cards.slice(6, 12);
-		galaxies = cards.slice(12, 15);
-		radiant = cards.slice(15, 18);
-		basicGallery = cards.slice(60, 63);
-		vee = cards.slice(18, 21);
-		veeUltra = cards.slice(21, 24);
-		veeAlt = [...cards.slice(27, 30), ...cards.slice(33, 36)];
-		veeMax = cards.slice(24, 27);
-		veeMaxAlt = [cards[36], cards[31], cards[37]];
-		veeStar = cards.slice(39, 42);
-		trainerHolo = cards.slice(42, 48);
-		rainbow = cards.slice(48, 51);
-		gold = cards.slice(51, 60);
-		veeGallery = cards.slice(63, 69);
-		isLoading = false;
-	});
+	const loadCards = async() => {
+		return getCards()
+			.then((cards) => {
+				window.cards = cards;
+				showcase = cards[0];
+				basics = cards.slice(1, 4);
+				reverse = [...cards.slice(4, 7), ...cards.slice(70,76)];
+				holos = cards.slice(7, 13);
+				cosmos = cards.slice(13, 16);
+				amazings = cards.slice(76, 85);
+				radiant = cards.slice(16, 19);
+				basicGallery = cards.slice(19, 22);
+				vee = cards.slice(22, 25);
+				veeUltra = cards.slice(25, 28);
+				veeAlt = cards.slice(28, 34);
+				veeMax = cards.slice(37, 40);
+				veeMaxAlt = cards.slice(40, 43);
+				veeStar = cards.slice(43, 46);
+				trainerHolo = cards.slice(46, 52);
+				rainbow = cards.slice(52, 58);
+				gold = cards.slice(58, 64);
+				veeGallery = cards.slice(64, 70);
+				shinyVault = cards.slice(85,91);
+				isLoading = false;
+			});
+	};
 
 	onMount(() => {
+		loadCards();
 		const $headings = document.querySelectorAll("h1,h2,h3");
 		const $anchor = [...$headings].filter((el) => {
 			const id = el.getAttribute("id")?.replace(/^.*?-/g,"");
@@ -78,9 +86,11 @@
 				loading...
 			{:else}
 				<Card
+					id={showcase.id}
 					name={showcase.name}
-					img={showcase.images.large}
+					set={showcase.set}
 					number={showcase.number}
+					types={showcase.types}
 					supertype={showcase.supertype}
 					subtypes={showcase.subtypes}
 					rarity={showcase.rarity}
@@ -119,12 +129,44 @@
 		{:else}
 			{#each basics as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
 					img={card.images.large}
 					number={card.number}
+					types={card.types}
+					supertype={card.supertype}
+					subtypes={card.subtypes}
+				/>
+			{/each}
+		{/if}
+	</CardList>
+
+	<h2 id="⚓-reverse">
+		<a href="#⚓-reverse">
+			Reverse Holo non-rares
+		</a>
+	</h2>
+	<p>
+		Reverse holo cards come in <mark>many shapes and sizes</mark> (trainer, stage1, and different energy types). <br /> Therefore
+		there are a few examples here to show the different variations. The <mark>background uses a foil and a mask layer</mark>
+		along with a glare. I also <mark>clip the glare</mark> into the image window to treat the image and the holofoil differently.
+	</p>
+
+	<CardList>
+		{#if isLoading}
+			loading...
+		{:else}
+			{#each reverse as card, id}
+				<Card
+					id={card.id}
+					name={card.name}
+					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					isReverse
 				/>
 			{/each}
 		{/if}
@@ -148,9 +190,11 @@
 		{:else}
 			{#each holos as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -165,8 +209,7 @@
 		</a>
 	</h2>
 	<p>
-		Similar to the Holofoil, but this uses a special image <mark>background of a galaxy effect</mark
-		>
+		Similar to the Holofoil, but this uses a special image <mark>background of a galaxy effect</mark>
 		with a <mark>gradient rainbow set to color-dodge &amp; color-burn</mark> on top.
 	</p>
 	<h3>An instant classic for any PTCG fan!</h3>
@@ -175,11 +218,42 @@
 		{#if isLoading}
 			loading...
 		{:else}
-			{#each galaxies as card, id}
+			{#each cosmos as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
+					supertype={card.supertype}
+					subtypes={card.subtypes}
+					rarity={card.rarity}
+				/>
+			{/each}
+		{/if}
+	</CardList>
+
+	<h2 id="⚓-amazing">
+		<a href="#⚓-amazing">
+			Holofoil Amazing Rare
+		</a>
+	</h2>
+	<p>
+		Amazing Rare cards have a <mark>very unique shiny foil</mark> that extends past the frame and is much shinier than
+		a regular holo effect, and textured. We achieve this by using a mask and applying a glitter effect with a lighten filter.
+	</p>
+
+	<CardList>
+		{#if isLoading}
+			loading...
+		{:else}
+			{#each amazings as card, id}
+				<Card
+					id={card.id}
+					name={card.name}
+					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -206,9 +280,11 @@
 		{:else}
 			{#each radiant as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -235,9 +311,11 @@
 		{:else}
 			{#each basicGallery as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -267,9 +345,11 @@
 		{:else}
 			{#each vee as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -300,9 +380,11 @@
 		{:else}
 			{#each veeUltra as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -329,9 +411,11 @@
 		{:else}
 			{#each veeAlt as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -358,9 +442,11 @@
 		{:else}
 			{#each veeMax as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -375,7 +461,7 @@
 		</a>
 	</h2>
 	<p>
-		There's some VMax cards which show a <mark>full, or alternate artwork</mark>. These are
+		There's some VMax cards that show a <mark>full, or alternate artwork</mark>. These are
 		<mark>classed as "rainbow rare"</mark>
 		and have a similar effect to the rainbow cards. It's a really
 		<mark>vibrant and glittery overlay</mark>.
@@ -391,9 +477,11 @@
 		{:else}
 			{#each veeMaxAlt as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -409,7 +497,7 @@
 	</h2>
 	<p>
 		Again back to the <mark>diagonal gradients overlaying a texture</mark>, VStar are quite
-		<mark>similar to teh Ultra Rare</mark>
+		<mark>similar to the Ultra Rare</mark>
 		(Full/Alt) cards. The cards are generally <mark>brighter with a pastel hue</mark>, though, which
 		makes the gradient and texture more subtle.
 	</p>
@@ -420,9 +508,11 @@
 		{:else}
 			{#each veeStar as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -433,12 +523,12 @@
 
 	<h2 id="⚓-trainer-full-art">
 		<a href="#⚓-trainer-full-art">
-			Trainer Holo <sup>(Full Art)</sup>
+			Trainer Holo <sup>(Full Art / Trainer Gallery)</sup>
 		</a>
 	</h2>
 	<p>
 		Again back to the <mark>diagonal gradients overlaying a texture</mark>, VStar are quite
-		<mark>similar to teh Ultra Rare</mark>
+		<mark>similar to the Ultra Rare</mark>
 		(Full/Alt) cards. The cards are generally <mark>brighter with a pastel hue</mark>, though, which
 		makes the gradient and texture more subtle.
 	</p>
@@ -449,9 +539,11 @@
 		{:else}
 			{#each trainerHolo as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -477,9 +569,11 @@
 		{:else}
 			{#each rainbow as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -494,9 +588,9 @@
 		</a>
 	</h2>
 	<p>
-		GOLD! The effect from Rainbow is borrowed, except the color of the gradients, and the filter
-		effects (hue) are different. There's also a different background image with a more subtle
-		overlay. This gives a sparkly gold look which is very similar to reality!
+		<mark>GOLD!</mark> Here we apply two glitter layers on top of each other with a overlay effect and
+	<mark>slide the two layers in opposite directions</mark>. We also <mark>mask the foil image</mark> with a gadient so
+	that foil and glitter layers are mutually exclusive. The resulting effect is a shimmering glitter layer!
 	</p>
 
 	<CardList>
@@ -505,9 +599,11 @@
 		{:else}
 			{#each gold as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
@@ -532,9 +628,42 @@
 		{:else}
 			{#each veeGallery as card, id}
 				<Card
+					id={card.id}
 					name={card.name}
-					img={card.images.large}
 					number={card.number}
+					set={card.set}
+					types={card.types}
+					supertype={card.supertype}
+					subtypes={card.subtypes}
+					rarity={card.rarity}
+				/>
+			{/each}
+		{/if}
+	</CardList>
+
+	<h2 id="⚓-shiny-vault">
+		<a href="#⚓-shiny-vault">
+			Shiny Vault <sup>(Basic / Stage 1 / V / VMax)</sup>
+		</a>
+	</h2>
+	<p>
+		Shiny Vault cards have quite a unique effect in whereby the foil background is a shiny silver
+		color. To achieve this we apply the foil image with some radial gradients to darken the foil
+		over the background. This creates a slightly silver effect on top of the white card background.
+		This effect works best in Firefox.
+	</p>
+
+	<CardList>
+		{#if isLoading}
+			loading...
+		{:else}
+			{#each shinyVault as card, id}
+				<Card
+					id={card.id}
+					name={card.name}
+					number={card.number}
+					set={card.set}
+					types={card.types}
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}

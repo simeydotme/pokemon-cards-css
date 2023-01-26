@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+public/**/tests
+public/img/foils/
 
 # Editor directories and files
 .vscode/*
