@@ -142,7 +142,7 @@
   /* performance */
   pointer-events: auto;
   /* overflow: hidden; <-- this improves perf on mobile, but breaks backface visibility. */
-  isolation: isolate;
+  /* isolation: isolate; <-- this improves perf, but breaks backface visibility on Chrome. */
 }
 
 button.card__rotator {
