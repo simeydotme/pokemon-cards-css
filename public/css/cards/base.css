@@ -58,6 +58,12 @@
 
 }
 
+.card,
+.card * {
+  /* outline is a little trick to anti-alias */
+  outline: 1px solid transparent;
+}
+
 .card:not( .interactive ) .card__translater,
 .card:not( .interactive ) .card__rotator,
 .card:not( .interactive ) .card__shine,
@@ -99,7 +105,6 @@
 
 .card,
 .card__rotator {
-  outline: none;
   aspect-ratio: var(--card-aspect);
   border-radius: var(--card-radius);
 }
@@ -125,7 +130,6 @@
 }
 
 .card__translater {
-  outline: none;
   width: auto;
   position: relative;
 
@@ -157,7 +161,7 @@ button.card__rotator {
 
 .card__rotator,
 .card.active .card__rotator:focus {
-  transition: box-shadow 0.4s ease, outline 0.2s ease, opacity .33s ease-out;
+  transition: box-shadow 0.4s ease, opacity .33s ease-out;
   box-shadow: 
     0 0 3px -1px transparent, 
     0 0 2px 1px transparent, 
@@ -192,8 +196,6 @@ button.card__rotator {
 }
 
 .card__rotator img {
-  /* outline is a little trick to anti-alias */
-  outline: 1px solid transparent;
   height: auto;
   -webkit-transform: translate3d(0px, 0px, 0.01px);
   transform: translate3d(0px, 0px, 0.01px);
