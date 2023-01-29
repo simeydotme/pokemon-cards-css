@@ -133,7 +133,7 @@
       hsl(0, 0%, 0%) 120% 
     );
 
-  opacity: calc(var(--card-opacity)*.75);
+    opacity: calc( var(--card-opacity) * var(--pointer-from-center) * 0.8 );
 
 }
 
