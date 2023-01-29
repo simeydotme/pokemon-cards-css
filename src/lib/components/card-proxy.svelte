@@ -23,8 +23,17 @@
   export let showcase = false;
 
   const server = import.meta.env.VITE_CDN;
+  /**
+   * Shiny Vault Card (starts with sv)
+   */
   const isShiny = isDefined(number) && number.toLowerCase().startsWith( "sv" );
-  const isGallery = isDefined(number) && number.toLowerCase().startsWith( "tg" );
+  /**
+   Trainer / Galar Gallery Card (not shiny)
+   */
+  const isGallery = isDefined(number) && !!number.match(/^[tg]g/i);
+  /**
+   Alternate Art Card (not shiny / gallery)
+   */
   const isAlternate = isDefined(id) && altArts.includes( id ) && !isShiny && !isGallery;
   
   if ( isReverse ) {
@@ -122,7 +131,7 @@
 
       }
 
-      if ( fRarity === "rare secret" ) {
+      if ( fRarity.includes( "rare secret" ) ) {
 
         etch = "etched";
         style = "swsecret";
