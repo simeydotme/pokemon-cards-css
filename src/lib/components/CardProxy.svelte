@@ -1,6 +1,7 @@
 <script>
   import altArts from "./alternate-arts.json";
-	import Card from "./card.svelte";
+  import promos from "./promos.json";
+	import Card from "./Card.svelte";
 
   // data / pokemon props
   export let id = undefined;
@@ -35,13 +36,52 @@
    Alternate Art Card (not shiny / gallery)
    */
   const isAlternate = isDefined(id) && altArts.includes( id ) && !isShiny && !isGallery;
+  /**
+   Promo Card
+   */
+  const isPromo = isDefined(set) && set === "swshp";
   
   if ( isReverse ) {
     rarity = rarity + " Reverse Holo";
   }
+
+  if ( isGallery ) {
+    if ( isDefined(rarity) && rarity.startsWith( "Trainer Gallery" ) ) {
+      rarity = rarity.replace( /Trainer Gallery\s*/, "" );
+    }
+    if ( isDefined(rarity) && rarity.includes( "Rare Holo V" ) && isDefined(subtypes) && subtypes.includes("VMAX") ) {
+      rarity = "Rare Holo VMAX";
+    }
+    if ( isDefined(rarity) && rarity.includes( "Rare Holo V" ) && isDefined(subtypes) && subtypes.includes("VSTAR") ) {
+      rarity = "Rare Holo VSTAR";
+    }
+  }
+
+  if ( isPromo ) {
+    if ( id === "swshp-SWSH076" || id === "swshp-SWSH077" ) {
+      rarity = "Rare Secret";
+
+    } else if ( isDefined(subtypes) && subtypes.includes("V") ) {
+      rarity = "Rare Holo V";
+    } else if ( isDefined(subtypes) && subtypes.includes("V-UNION") ) {
+      rarity = "Rare Holo VUNION";
+    } else if ( isDefined(subtypes) && subtypes.includes("VMAX") ) {
+      rarity = "Rare Holo VMAX";
+    } else if ( isDefined(subtypes) && subtypes.includes("VSTAR") ) {
+      rarity = "Rare Holo VSTAR";
+    } else if ( isDefined(subtypes) && subtypes.includes("Radiant") ) {
+      rarity = "Radiant Rare";
+    }
+  }
+
+
   
   function isDefined (v) {
     return typeof v !== "undefined" && v !== null;
+  }
+  
+  function isArray (v) {
+    return typeof v !== "undefined" && Array.isArray(v);
   }
 
   function cardImage () {
@@ -73,7 +113,7 @@
 
     const fRarity = rarity.toLowerCase();
     const fNumber = number.toString().toLowerCase().replace( "swsh", "" ).padStart( 3, "0" );
-    const fSet = set.toString().toLowerCase().replace( "tg", "" ).replace( "sv", "" );
+    const fSet = set.toString().toLowerCase().replace( /(tg|gg|sv)/, "" );
 
     if ( fRarity === "rare holo" ) {
       style = "swholo";
@@ -88,7 +128,7 @@
       style = "radiantholo";
     }
 
-    if ( fRarity === "rare holo v" ) {
+    if ( fRarity === "rare holo v" || fRarity === "rare holo vunion" || fRarity === "basic v" ) {
       etch = "holo";
       style = "sunpillar";
     }
@@ -157,6 +197,21 @@
 
     }
 
+    if ( isPromo ) {
+
+      let promoStyle = promos[ id ];
+      if ( promoStyle ) {
+        style = promoStyle.style.toLowerCase();
+        etch = promoStyle.etch.toLowerCase();
+        if ( style === "swholo" ) {
+          rarity = "Rare Holo";
+        } else if ( style === "cosmos" ) {
+          rarity = "Rare Holo Cosmos";
+        }
+      }
+
+    }
+
     return `${ server }/foils/${ fSet }/${ type }/upscaled/${ fNumber }_foil_${ etch }_${ style }_2x.${ ext }`;
 
   }
@@ -176,6 +231,7 @@
     foil: foilImage(),
     mask: maskImage(),
 
+    id,
     name,
     number,
     set,

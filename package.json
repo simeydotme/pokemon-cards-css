@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "pokemontcgsdk": "^2.0.0",
     "svelte": "^3.52.0",
     "vite": "^3.2.0"
   }

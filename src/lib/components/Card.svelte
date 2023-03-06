@@ -6,6 +6,7 @@
   import { clamp, round, adjust } from "../helpers/Math.js";
 
   // data / pokemon props
+  export let id = "";
   export let name = "";
   export let number = "";
   export let set = "";
@@ -252,7 +253,7 @@
     rarity = rarity.toLowerCase();
     supertype = supertype.toLowerCase();
     number = number.toLowerCase();
-    isTrainerGallery = number.startsWith("tg");
+    isTrainerGallery = !!number.match(/^[tg]g/i) || !!( id === "swshp-SWSH076" || id === "swshp-SWSH077" );
     if (Array.isArray(types)) {
       types = types.join(" ").toLowerCase();
     }
