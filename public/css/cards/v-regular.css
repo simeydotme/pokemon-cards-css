@@ -16,14 +16,17 @@
 
 */
 
-.card[data-rarity="rare holo v"]:not(.masked) .card__shine {
+.card[data-rarity="rare holo v"]:not(.masked) .card__shine,
+.card[data-subtypes="v-union"]:not(.masked) .card__shine {
 
   filter: brightness(.7) contrast(2) saturate(.5);
 
 }
 
 .card[data-rarity="rare holo v"] .card__shine,
-.card[data-rarity="rare holo v"] .card__shine:after {
+.card[data-rarity="rare holo v"] .card__shine:after,
+.card[data-subtypes="v-union"] .card__shine,
+.card[data-subtypes="v-union"] .card__shine:after {
 
   --space: 5%;
   --angle: 133deg;
@@ -65,7 +68,8 @@
 
 }
 
-.card[data-rarity="rare holo v"] .card__shine:after {
+.card[data-rarity="rare holo v"] .card__shine:after,
+.card[data-subtypes="v-union"] .card__shine:after {
 
   content: "";
 
@@ -94,7 +98,8 @@
 
 */
 
-.card[data-rarity="rare holo v"] .card__glare {
+.card[data-rarity="rare holo v"] .card__glare,
+.card[data-subtypes="v-union"] .card__glare {
 
   background-image: 
     radial-gradient( 

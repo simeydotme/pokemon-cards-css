@@ -66,7 +66,7 @@
     var(--background-x) var(--background-y), 
     var(--background-x) var(--background-y);
 
-  filter: brightness(calc((var(--pointer-from-center) * .6) + .5)) contrast(2) saturate(1);
+  filter: brightness(calc((var(--pointer-from-center) * .4) + .4)) contrast(2) saturate(1);
 
 }
 
@@ -99,7 +99,7 @@
   background-position: 0% var(--background-y), var(--background-x) var(--background-y), var(--background-x) var(--background-y);
 
   mix-blend-mode: lighten;
-  opacity: calc( ((var(--card-opacity) * var(--pointer-from-center)) * 0.75 ));
+  opacity: calc( (0.3 * var(--card-opacity)) + var(--card-opacity) * var(--pointer-from-center) * 0.5 );
   filter: saturate(1.5);
 
 }
@@ -122,18 +122,17 @@
 .card[data-rarity="rare holo vmax"] .card__glare {
 
   mix-blend-mode: hard-light;
-  filter: brightness(.9) contrast(1.75);
+  filter: brightness(1) contrast(1);
 
   background-image: 
     radial-gradient( 
       farthest-corner circle at 
       var(--pointer-x) var(--pointer-y), 
       hsla(0, 0%, 100%, 0.75) 0%, 
-      hsla(0, 0%, 39%, 0.35) 45%, 
       hsl(0, 0%, 0%) 120% 
     );
 
-    opacity: calc( var(--card-opacity) * var(--pointer-from-center) * 0.8 );
+    opacity: calc( (0.2 * var(--card-opacity)) + var(--card-opacity) * var(--pointer-from-center) * 0.8 );
 
 }
 
@@ -154,7 +153,7 @@
 
 
 
-.card[data-rarity="rare holo vmax"] .card__shine {
+.card:not(.masked) [data-rarity="rare holo vmax"] .card__shine {
 
   filter: brightness(calc((var(--pointer-from-center) * .4) + .4)) contrast(2) saturate(1);
 

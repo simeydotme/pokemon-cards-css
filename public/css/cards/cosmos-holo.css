@@ -167,10 +167,10 @@
   background-image: 
     radial-gradient( 
       farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-      hsla(0, 0%, 100%, 0.8) 5%, 
-      hsl(0, 0%, 20%) 150% 
+      hsla(204, 100%, 95%, 0.8) 5%, 
+      hsla(250, 15%, 20%, 1) 150% 
     );
-  filter: brightness(.75) contrast(1.5) saturate(2);
+  filter: brightness(.75) contrast(2) saturate(2);
   mix-blend-mode: overlay;
   opacity: calc( var(--card-opacity) * ( 0.25 + var(--pointer-from-center) ) );
     
@@ -183,12 +183,12 @@
   background-image: 
     radial-gradient( farthest-corner circle at 
       var(--pointer-x) var(--pointer-y), 
-      hsl(180, 50%, 100%) 5%, 
-      hsl(310, 10%, 86%), 
-      hsl(0, 0%, 10%) 50%
+      hsl(280, 100%, 96%) 5%, 
+      hsl(0, 0%, 10%) 60%
     );
 
-  mix-blend-mode: multiply;
+  filter: brightness(.75) contrast(2.5) saturate(2);
+  mix-blend-mode: soft-light;
   opacity: calc( 1 - var(--pointer-from-top) * .75 );
 
 }
