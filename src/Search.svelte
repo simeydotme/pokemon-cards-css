@@ -135,11 +135,13 @@
     font-size: 18px;
     display: grid;
     place-items: center start;
-    gap: 0 1em;
     max-width: 500px;
     margin: 120px 0 10px;
+    padding: 5px;
     position: sticky;
     top: 10px;
+    border-radius: .66em;
+    backdrop-filter: blur(5px);
     z-index: 999;
 
   }
@@ -161,8 +163,8 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: .5em;
     padding: .5em 2em .5em .75em;
-    margin: 0 5px;
-    background: hsl(220, 7%, 17%);
+    margin: 0;
+    background: hsla(220, 7%, 17%, .66);
     color: white;
     outline: none;
     transition: all 0.5s ease;
@@ -171,15 +173,13 @@
     grid-row: 1;
     grid-column: 1;
     width: 100%;
-    opacity: 0.85;
-    backdrop-filter: blur(5px);
 
   }
 
   input:active,
   input:focus,
   input:hover {
-    opacity: 1;
+    background: hsla(220, 7%, 17%, .88);
   }
 
   input:active,
