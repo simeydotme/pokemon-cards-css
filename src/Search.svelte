@@ -29,7 +29,8 @@
 				.where({ 
 					q: `( set.id:swsh* AND name:"*${query}*" )`,
 					select: `id,name,number,supertype,subtypes,rarity,images,types,set`,
-					orderBy: `-set.releaseDate,-number`
+					orderBy: `-set.releaseDate,-number`,
+          pageSize: 36
 				})
 
 				.then(result => {
@@ -39,7 +40,7 @@
           queryResult = [];
           isError = false;
 
-					let cardsMap = cards.map(card => {
+					let cardsMap = cards.slice(0, 36).map(card => {
 						if ( card.rarity === "Common" || card.rarity === "Uncommon" ) {
 							card.isReverse = !!Math.round(Math.random());
 						}
