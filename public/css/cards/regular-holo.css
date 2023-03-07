@@ -9,7 +9,9 @@
   clip-path: var(--clip-stage);
 }
 .card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__shine,
-.card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__glare:after {
+.card[data-rarity="rare holo"][data-subtypes^="supporter"] .card__glare:after,
+.card[data-rarity="rare holo"][data-subtypes^="item"] .card__shine,
+.card[data-rarity="rare holo"][data-subtypes^="item"] .card__glare:after {
   clip-path: var(--clip-trainer);
 }
 
