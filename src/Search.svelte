@@ -27,7 +27,7 @@
 			pokemon.card
 
 				.where({ 
-					q: `( set.id:swsh* AND name:*${query}* )`,
+					q: `( set.id:swsh* AND name:"*${query}*" )`,
 					select: `id,name,number,supertype,subtypes,rarity,images,types,set`,
 					orderBy: `-set.releaseDate,-number`
 				})
