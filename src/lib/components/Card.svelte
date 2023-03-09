@@ -147,6 +147,22 @@
     } else {
       $activeCard = thisCard;
       resetBaseOrientation();
+      // @ts-ignore
+      gtag("event", "select_item", {
+        item_list_id: "cards_list",
+        item_list_name: "Pokemon Cards",
+        items: [
+          {
+            item_id: id,
+            item_name: name,
+            item_category: set,
+            item_category2: supertype,
+            item_category3: subtypes,
+            item_category4: rarity
+          }
+        ]
+      });
+
     }
   };
 

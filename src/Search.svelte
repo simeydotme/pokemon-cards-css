@@ -59,6 +59,12 @@
           isError = true;
         });
 
+        // @ts-ignore
+        gtag("event", "search", {
+          search_term: query
+        });
+
+
 		},666);
 	};
 
