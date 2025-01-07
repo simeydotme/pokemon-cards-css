@@ -11,6 +11,11 @@ in the Sword and Shield era of Pokemon Trading Cards.
 
 <img src="public/pokemon-cards-demo.gif" />
 
+---
+
+### ⚠️ NOTE
+Please [read `#issues/19` before asking / requesting any help](https://github.com/simeydotme/pokemon-cards-css/issues/19) or advice on the Project.  
+Thank you.
 
 ---
 
