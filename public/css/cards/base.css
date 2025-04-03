@@ -197,6 +197,8 @@ button.card__rotator {
 
 .card__rotator img {
   height: auto;
+}
+.card__rotator img:not(.card__back) {
   -webkit-transform: translate3d(0px, 0px, 0.01px);
   transform: translate3d(0px, 0px, 0.01px);
 }
