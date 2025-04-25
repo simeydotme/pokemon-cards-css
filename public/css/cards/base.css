@@ -124,15 +124,14 @@
   display: grid;
   perspective: 600px;
   will-change: transform, box-shadow;
-
   transform-origin: center;
   -webkit-transform-origin: center;
+  transform-style: preserve-3d;
 }
 
 .card__translater {
   width: auto;
   position: relative;
-
   -webkit-transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
   transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
 }
@@ -141,7 +140,6 @@
   -webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
   -webkit-transform-style: preserve-3d;
   transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
-  transform-style: preserve-3d;
   
   /* performance */
   pointer-events: auto;
