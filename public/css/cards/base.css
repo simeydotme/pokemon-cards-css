@@ -46,8 +46,6 @@
   make sure it has hardward acceleration... we gun'need that! */
   -webkit-transform: translate3d(0px, 0px, 0.01px);
   transform: translate3d(0px, 0px, 0.01px);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
   pointer-events: none;
   
   /* make sure the card is above others if it's scaled up */
@@ -56,6 +54,11 @@
   /* every little helps! */
   will-change: transform, visibility, z-index;
 
+}
+
+.card.active {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .card,
