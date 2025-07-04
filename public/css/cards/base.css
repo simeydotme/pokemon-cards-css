@@ -54,9 +54,8 @@
   /* every little helps! */
   will-change: transform, visibility, z-index;
 
-}
-
-.card.active {
+  /* this prevents major problems in firefox, but also causes a bit of
+  clipping as the card animates to/from active state. worth it. */
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
