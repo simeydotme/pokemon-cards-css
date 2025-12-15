@@ -43,6 +43,8 @@
 
   let thisCard;
   let repositionTimer;
+  let rafId = null;
+  let pendingSpringUpdate = null;
 
   let active = false;
   let interacting = false;
@@ -108,20 +110,47 @@
       y: percent.y - 50,
     };
 
-    updateSprings({
-      x: adjust(percent.x, 0, 100, 37, 63),
-      y: adjust(percent.y, 0, 100, 33, 67),
-    },{
-      x: round(-(center.x / 3.5)),
-      y: round(center.y / 2),
-    },{
-      x: round(percent.x),
-      y: round(percent.y),
-      o: 1,
-    });
+    // Store the latest interaction data
+    pendingSpringUpdate = {
+      background: {
+        x: adjust(percent.x, 0, 100, 37, 63),
+        y: adjust(percent.y, 0, 100, 33, 67),
+      },
+      rotate: {
+        x: round(-(center.x / 3.5)),
+        y: round(center.y / 3.5),
+      },
+      glare: {
+        x: round(percent.x),
+        y: round(percent.y),
+        o: 1,
+      }
+    };
+
+    // Schedule spring update for next frame if not already scheduled
+    if (rafId === null) {
+      rafId = requestAnimationFrame(() => {
+        if (pendingSpringUpdate) {
+          updateSprings(
+            pendingSpringUpdate.background,
+            pendingSpringUpdate.rotate,
+            pendingSpringUpdate.glare
+          );
+          pendingSpringUpdate = null;
+        }
+        rafId = null;
+      });
+    }
   };
 
   const interactEnd = (e, delay = 500) => {
+    // Cancel any pending animation frame
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+    pendingSpringUpdate = null;
+
     setTimeout(function () {
       const snapStiff = 0.01;
       const snapDamp = 0.06;

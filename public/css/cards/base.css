@@ -115,6 +115,7 @@
   z-index: calc(var(--card-scale) * 120);
 }
 
+
 .card.active .card__translater,
 .card.active .card__rotator {
   /* prevent pinch/double-tap zooms on card */
@@ -134,13 +135,16 @@
 .card__translater {
   width: auto;
   position: relative;
-  -webkit-transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
-  transform: translate3d(var(--translate-x), var(--translate-y), 0.1px) scale(var(--card-scale));
+
+  --translate-z: calc(var(--card-scale) * 150px + 0.01px); /* add 150px to the z-axis to ensure the card is always in front of the others */
+  -webkit-transform: translate3d(var(--translate-x), var(--translate-y), var(--translate-z)) scale(var(--card-scale));
+  transform: translate3d(var(--translate-x), var(--translate-y), var(--translate-z)) scale(var(--card-scale));
 }
 
 .card__rotator {
   -webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
   -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
   
   /* performance */

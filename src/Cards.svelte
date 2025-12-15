@@ -33,7 +33,7 @@
 	
 	.card-grid.active {
 		z-index: 99;
-		isolation: isolate;
+		/* isolation: isolate; */
 	}
 		
 	@media screen and (min-width: 900px) {
