@@ -116,6 +116,22 @@
 		}
 	}
 
+	@media (pointer: coarse) {
+		.card .card__shine,
+		.card .card__glare {
+			display: none !important;
+		}
+
+		.card .card__rotator {
+			will-change: transform;
+		}
+
+		.card .card__front::before,
+		.card .card__front::after {
+			display: none !important;
+		}
+	}
+
 	:global( .card-grid > .card.active ) {
 		transform: translate3d(0, 0, 0.1px)!important;
 	}

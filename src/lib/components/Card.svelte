@@ -347,12 +347,19 @@
 
   }
 
+  let orientationRafId = null;
   $: {
     if ($activeCard && $activeCard === thisCard) {
       interacting = true;
-      orientate($orientation);
+      if (orientationRafId === null) {
+        orientationRafId = requestAnimationFrame(() => {
+          orientate($orientation);
+          orientationRafId = null;
+        });
+      }
     }
   }
+
 
   document.addEventListener("visibilitychange", (e) => {
     isVisible = document.visibilityState === "visible";
